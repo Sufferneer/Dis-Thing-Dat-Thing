@@ -1,0 +1,26 @@
+[
+	{
+		"word": ["maturity", "mature"],
+		"alt_spellings": [],
+		"word_class": "noun",
+		"forms": {
+			"verb": ["mature", "maturing", "matured", "matured"],
+			"adjective": "mature"
+		},
+		"plural": [],
+		"definition": "The state of being completely grown physically",
+		"translation": ["發育成熟，長成"]
+	},
+	{
+		"word": ["metabolism", "metabolic"],
+		"alt_spellings": ["metabolise"],
+		"word_class": "noun",
+		"forms": {
+			"verb": ["metabolize", "metabolizing", "metabolized", "metabolized"],
+			"adjective": "metabolic"
+		},
+		"plural": [],
+		"definition": "The conversion of the chemical energy in food to energy for running cellular processes; the conversion of food to building blocks; and the elimination of metabolic wastes.",
+		"translation": ["發育成熟，長成"]
+	}
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "word": [
+            "hypothesis",
+            "hypotheses",
+            "hypothesize"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {
+            "verb": [
+                "hypothesize",
+                "hypothesizing",
+                "hypothesized",
+                "hypothesized"
+            ],
+            "adjective": [
+                "hypothetical"
+            ],
+            "adverb": [
+                "hypothetically"
+            ]
+        },
+        "plural": [
+            "hypotheses"
+        ],
+        "definition": "A proposed explanation for a phenomenon that is done before experimentation.",
+        "translation": [
+            "\u5047\u8aaa"
+        ]
+    }
+]
