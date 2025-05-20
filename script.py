@@ -22,6 +22,7 @@ pygame.display.set_caption('Dis Sheet Dat Sheet - With CCC')
 screen = pygame.display.set_mode(SCREENSIZE)
 mousePos = pygame.mouse.get_pos() # Mouse position variable that updates every tick.
 DIALOGUE_SILENT_CHARS = [' ', ',', "'", '"', '.', '!', '?', '(', ')'] # These characters do NOT play the dialogue sound
+DIALOGUE_PAUSE_CHARS = [',', ';', ':', '.', '!', '?'] # These characters delay the dialogue
 
 def get_asset_path(path):
     # Simple function that returns the relative path of the assets.
@@ -291,7 +292,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         if (self.fade_time != -1 and self.tick < self.fade_time + 1) or (self.fade_time == -1 and self.tick < 2):
             self.tick += 1 / FPS
         if self.displayed_text != self.text:
-            if self.tick >= self.delay:
+            if self.tick >= (self.delay if self.text[self.cur_letter - 1] not in DIALOGUE_PAUSE_CHARS else self.delay * 4):
                 if self.text[self.cur_letter] not in DIALOGUE_SILENT_CHARS:
                     pygame.mixer.Sound.play(dialogueSound)
                     if self.cur_letter % 3 == 0 or self.delay >= 0.05:
@@ -421,7 +422,6 @@ def dictionary_word_menu(wordData):
         for w in range(len(wordData['forms'][key])):
             if key == 'verb':
                 wordTenseTxt = SuffText(32, wordFormTitleTxt.y + 58 + 32 * w, 48, tenses[w], 16, (255, 255, 255))
-                wordTenseTxt.set_alpha(128)
             wordFormTxt = SuffText(32 + (wordTenseTxt.get_width() + 16 if key == 'verb' else 0),
                                    wordFormTitleTxt.y + 48 + 32 * w, 48, wordData['forms'][key][w], 32, (255, 255, 255))
             prevHeight += 32
@@ -645,7 +645,7 @@ def main_menu():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    CCC.change_expression(random.choice(['angry', 'furious', 'smug', 'evil', 'house']))
+                    CCC.change_expression(random.choice(['angry', 'furious', 'smug', 'evil', 'house', 'horror']))
                     dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() + 32, 300),
                                               random.choice(random_dialogue), 20, 'right')
         # button rendering
