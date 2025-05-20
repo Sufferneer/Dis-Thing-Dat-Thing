@@ -261,7 +261,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         self.pos:tuple = pos
         self.text:str = text
         self.cur_letter:int = 0
-        self.delay:float = 0.05
+        self.delay:float = 0.025
         self.displayed_text:str = ''
         self.style:str = style
         self.max_char:int = max_char
@@ -294,7 +294,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
             if self.tick >= self.delay:
                 if self.text[self.cur_letter] not in DIALOGUE_SILENT_CHARS:
                     pygame.mixer.Sound.play(dialogueSound)
-                    if self.cur_letter % 2 == 0 or self.delay >= 0.05:
+                    if self.cur_letter % 3 == 0 or self.delay >= 0.05:
                         CCC.talk_tick = 0
                         CCC.talk_force = random.random() * 0.5 + 0.5
                         CCC.talk_offset = random.randint(-10, 10)
@@ -441,6 +441,7 @@ def dictionary_word_menu(wordData):
     maxScroll = min(-math.ceil((max(txtYOriginalOrigin) + 48 - SCREENSIZE[1]) / 64), 0)
     print(maxScroll)
     txtTypeTick = 0
+    playAnim = 3
     while True:
         state_functions()
         wordTitle.x = suff_lerp(wordTitle.x, 32, 1 / FPS * 6)
@@ -453,16 +454,18 @@ def dictionary_word_menu(wordData):
         txtTypeTick += 1 / FPS
         playSound = False
         for i in range(len(textGroup)):
-            if len(textGroup[i].text) < len(txtText[i]) and txtTypeTick > 0.02:
+            if len(textGroup[i].text) < len(txtText[i]) and txtTypeTick > 0.025:
                 if txtText[i][len(textGroup[i].text)] not in DIALOGUE_SILENT_CHARS: playSound = True
                 textGroup[i].set_text(textGroup[i].text + txtText[i][len(textGroup[i].text)])
             textGroup[i].draw()
-        if txtTypeTick > 0.06:
-            if playSound:
+        if playSound:
+            dialogueSound.play()
+            playAnim += 1
+            if playAnim > 3:
                 CCC.talk_force = random.random() * 0.5 + 0.5
                 CCC.talk_tick = 0
                 CCC.talk_offset = random.randint(-10, 10)
-                dialogueSound.play()
+                playAnim = 0
             txtTypeTick = 0
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
