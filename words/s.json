@@ -50,7 +50,11 @@
         ],
         "alt_spellings": [],
         "word_class": "noun",
-        "forms": {},
+        "forms": {
+            "adjective": [
+                "systemic"
+            ]
+        },
         "plural": [
             "systems"
         ],

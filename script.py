@@ -71,13 +71,13 @@ class SuffSprite(pygame.sprite.Sprite): # Custom sprites with its surface and re
     """
     Creates a configurable PyGame sprite.
 
-    :param int x: X position of the sprite.
-    :param int y: Y position of the sprite.
+    :param tuple pos: Position of the sprite.
     :param str imagePath: Path of the sprite's image.
     """
     def __init__(self, x, y, imagePath = ''):
         pygame.sprite.Sprite.__init__(self)
-        self.x, self.y, = x, y
+        self.x = x
+        self.y = y
         self.angle:float = 0
         self.angle_offset:pygame.Vector2 = pygame.Vector2(0, 0)
         self.surface:pygame.Surface = pygame.Surface(screen.get_size())
@@ -94,8 +94,7 @@ class SuffText(list): # Yes, I know. It's actually a list, but it needs to be fo
     """
     Creates a configurable PyGame text sprite with multi-line support.
 
-    :param int x: X position of the text
-    :param int y: Y position of the text
+    :param tuple pos: Position of the text
     :param int width: Width in characters of the text
     :param str text: The string to be displayed
     :param int size: The size in pixels of the text
@@ -137,7 +136,7 @@ class SuffButton(pygame.sprite.Group):
     Creates a custom button that runs a function when clicked.
 
     :param tuple pos: Position of the button.
-    :param int size: Size of the button.
+    :param tuple size: Size of the button.
     :param function function: Function run when button is clicked.
     :param str base_texture: Texture of the button.
     :param str text: The text to be displayed on the button.
@@ -165,16 +164,16 @@ class SuffButton(pygame.sprite.Group):
         self.base = SuffSprite(pos[0], pos[1], f'images/buttons/{base_texture}.png')
         self.base.surface.set_alpha(128)
         self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
-        self.text = SuffText(pos[0] + text_size / 2, pos[1] + size[1] / 4, size[0] // (text_hover_size // 2), self.text, text_size, (255, 255, 255))
+        self.button_text = SuffText(pos[0] + text_size / 2, pos[1] + size[1] / 4, size[0] // (text_hover_size // 2), self.text, text_size, (255, 255, 255))
     def draw(self):
         self.base.draw()
-        self.text.draw()
+        self.button_text.draw()
         if self.pos[0] + self.size[0] >= mousePos[0] >= self.pos[0] and self.pos[1] + self.size[1] >= mousePos[1] >= \
                 self.pos[1]:
             if not self.hovered:
                 if self.hover_function is not None: self.hover_function()
                 self.hovered = True
-            self.text.set_size(int(suff_lerp(self.text.size, self.text_hover_size, 1 / FPS * 6)))
+            self.button_text.set_size(int(suff_lerp(self.button_text.size, self.text_hover_size, 1 / FPS * 6)))
             if os.path.exists(get_asset_path(f'images/buttons/{self.base_texture}_highlighted.png')):
                 self.base.surface = pygame.image.load(
                     get_asset_path(f'images/buttons/{self.base_texture}_highlighted.png')).convert_alpha()
@@ -186,7 +185,7 @@ class SuffButton(pygame.sprite.Group):
             elif pygame.mouse.get_pressed()[0] == 0 and self.clicked:
                 self.clicked = False
         else:
-            self.text.set_size(int(suff_lerp(self.text.size, self.text_size, 1 / FPS * 6)))
+            self.button_text.set_size(int(suff_lerp(self.button_text.size, self.text_size, 1 / FPS * 6)))
             if self.hovered:
                 self.hovered = False
                 if os.path.exists(get_asset_path(f'images/buttons/{self.base_texture}_highlighted.png')):
@@ -200,6 +199,8 @@ class SuffButton(pygame.sprite.Group):
 class Dust(SuffSprite): # Ambient dust particles
     def __init__(self, x, y):
         SuffSprite.__init__(self, x, y, '')
+        self.x = x
+        self.y = y
         self.size = random.randint(4, 8)
         self.rect = pygame.Rect(0, 0, self.size, self.size)
         pygame.draw.rect(self.surface, (255, 255, 255), self.rect)
@@ -209,20 +210,19 @@ class Dust(SuffSprite): # Ambient dust particles
         self.real_x = x
         self.real_y = y
     def draw(self):
-        self.real_x = suff_lerp(self.real_x, self.x, 1 / FPS * 6)
-        self.real_y = suff_lerp(self.real_y, self.y, 1 / FPS * 6)
+        self.real_x, self.real_y = suff_lerp(self.real_x, self.x, 1 / FPS * 6), suff_lerp(self.real_y, self.y, 1 / FPS * 6)
         offsetX, offsetY = math.sin(curTime * (60 / FPS) * self.flitter_speed) * self.flitter_torque, math.cos(curTime * (60 / FPS) * self.flitter_speed) * self.flitter_torque
         screen.blit(self.surface, (self.real_x + offsetX * self.size, self.real_y + offsetY * self.size), self.rect)
 class CCCSprite(pygame.sprite.Group): # The sprite of the game master capable of speech
     """
     Summon the almighty biology teacher Mr. Triple C into the algorithm.
 
-    :param int x: The X position of Mr. Triple C.
-    :param int y: The Y position of Mr. Triple C.
+    :param tuple pos: The position of Mr. Triple C.
     """
     def __init__(self, x, y):
         pygame.sprite.Group.__init__(self)
-        self.x, self.y, = x, y
+        self.x = x
+        self.y = y
         self.angle = 0
         self.offset = pygame.Vector2(128, 0)
         self.talk_tick = 1
@@ -232,7 +232,7 @@ class CCCSprite(pygame.sprite.Group): # The sprite of the game master capable of
         self.mouth = SuffSprite(self.x, self.y, 'images/ccc/neutral_mouth.png')
     def change_expression(self, expression):
         self.head.load_graphic(f'images/ccc/{expression}_head.png')
-        self.mouth.load_graphic(f'images/ccc/{expression}_head.png')
+        self.mouth.load_graphic(f'images/ccc/{expression}_mouth.png')
     def draw(self):
         if self.talk_tick < math.pi * 3:
             self.talk_tick += 1 / FPS * 30
@@ -348,10 +348,12 @@ bgMode = 1
 changeBG = True
 def state_pre_functions(): # This function is called every time a menu initializes
     global dustGroup
+    global CCC
     for dust in dustGroup: # Dust scattering
         randomPos = (random.randint(0, SCREENSIZE[0]), random.randint(0, SCREENSIZE[1]))
         dust.x = randomPos[0]
         dust.y = randomPos[1]
+    CCC.change_expression('neutral') # Make CCC neutral every time he switches to menu
 def state_functions(): # This function is called before every tick function in a menu
     global curTime
     global mousePos
@@ -367,7 +369,6 @@ def state_functions(): # This function is called before every tick function in a
     background.y = (SCREENSIZE[1] - background.surface.get_height()) / 2 + math.cos(curTime / 120) * 36
     if round(math.pow(math.cos(curTime / 30), 2)) == 0 and changeBG == True:
         changeBG = False
-        print(bgMode)
         bgMode += 1
         if bgMode > 2: bgMode = 1
         background.load_graphic(f'images/background_{bgMode}.png')
@@ -437,7 +438,8 @@ def dictionary_word_menu(wordData):
         textGroup[i].set_text('')
         txtYOriginalOrigin.append(textGroup[i].y)
         txtYOrigin.append(textGroup[i].y)
-    maxScroll = max(0, max(txtYOriginalOrigin) - SCREENSIZE[1]) // -64
+    maxScroll = min(-math.ceil((max(txtYOriginalOrigin) + 48 - SCREENSIZE[1]) / 64), 0)
+    print(maxScroll)
     txtTypeTick = 0
     while True:
         state_functions()
@@ -553,11 +555,13 @@ def dictionary_menu():
                             dictionary_word_menu(w)
                         else:
                             invalidSound.play()
+                            CCC.change_expression('angry')
                             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
                                                       'I don\'t think that word exists in the biology curriculum.', 20,
                                                       'down', -1)
                     else:
                         invalidSound.play()
+                        CCC.change_expression('angry')
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
                                                   'I don\'t believe a human speaks like that.', 20, 'down', -1)
                 elif event.key == pygame.K_BACKSPACE:
@@ -578,6 +582,8 @@ def dictionary_menu():
 def main_menu():
     state_pre_functions()
     def dict_hover():
+        global CCC
+        CCC.change_expression('happy')
         buttonHoverSound.play()
         global dialogueBox
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
@@ -588,6 +594,8 @@ def main_menu():
         dictionary_menu()
 
     def quiz_hover():
+        global CCC
+        CCC.change_expression('smug')
         buttonHoverSound.play()
         global dialogueBox
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
@@ -596,6 +604,8 @@ def main_menu():
         CCC.x += 5
 
     def flashcards_hover():
+        global CCC
+        CCC.change_expression('neutral')
         buttonHoverSound.play()
         global dialogueBox
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
@@ -605,6 +615,8 @@ def main_menu():
         CCC.x += 5
 
     def credits_hover():
+        global CCC
+        CCC.change_expression('furious')
         buttonHoverSound.play()
         global dialogueBox
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Check out the sole idiot that made this garbage possible.', 20, 'left')
@@ -630,6 +642,7 @@ def main_menu():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
+                    CCC.change_expression(random.choice(['angry', 'furious', 'smug', 'evil', 'house']))
                     dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() + 32, 300),
                                               random.choice(random_dialogue), 20, 'right')
         # button rendering
