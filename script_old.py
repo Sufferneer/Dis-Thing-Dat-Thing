@@ -56,8 +56,6 @@ def separate_string(text, max_char = 16):
             tally += word + ' '
     textlist.append(tally[0:len(tally) - 1].replace('\n ', '')) # Exclude ending space of string and put into list
     return textlist
-def clamp(val, minimum, maximum):
-    return min(max(val, minimum), maximum)
 
 # CONSTANTS FOR SOUNDS
 buttonHoverSound = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
@@ -365,7 +363,6 @@ def state_pre_functions(): # This function is called every time a menu initializ
     dialogueBox = DialogueBox((0, 0), '', 10)
     CCC.change_expression('neutral') # Make CCC neutral every time he switches to menu
 def state_functions(): # This function is called before every tick function in a menu
-    global CCC
     global curTime
     global mousePos
     global background
@@ -392,134 +389,144 @@ def state_functions(): # This function is called before every tick function in a
     for dust in dustGroup:
         dust.draw()
 def state_post_functions(): # This function is called after every tick function in a menu
-    global CCC
     fpsCounter.set_text(str(int(clock.get_fps())) + ' FPS')
     fpsCounter.draw()
     infoText.draw()
     pygame.display.update()
 
-class SuffState():
-    def __init__(self):
-        state_pre_functions()
-    def update(self):
+def dictionary_word_menu(wordData):
+    state_pre_functions()
+    textGroup = []
+
+    wordTitle = SuffText(len(wordData['word'][0]) * -96 * FONT_WIDTH_RATIO, 32, 32, wordData['word'][0].upper(), 96,
+                         (255, 255, 255))
+    wordTitle.set_alpha(0)
+    textGroup.append(wordTitle)
+    wordClassTxtString = wordData['word_class'] # part of speech
+    if len(wordData['plural']) > 0:
+        wordClassTxtString += ', plural \'' + ', '.join(wordData['plural']) + '\'' # plural form
+    wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height(), 32, wordClassTxtString, 32, (255, 255, 255))
+    textGroup.append(wordClassTxt)
+    wordAltTxt = SuffText(32, wordClassTxt.y + 32, 32, '', 32, (255, 255, 255))
+    if len(wordData['alt_spellings']) > 0:
+        wordAltTxt.set_text('alt. ' + ', '.join(wordData['alt_spellings']))
+    textGroup.append(wordAltTxt)
+    wordDefTxt = SuffText(32, wordAltTxt.y + 64, 48, wordData['definition'], 32, (255, 255, 255))
+    textGroup.append(wordDefTxt)
+    wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48,
+                                wordData['word'][0][0].upper() + wordData['word'][0][1:] + ' means ', 32,
+                                (255, 255, 255))
+    textGroup.append(wordTransDescTxt)
+    wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
+                            '；'.join(wordData['translation']), 32, (255, 255, 255), 'zh')
+    textGroup.append(wordTransTxt)
+    tenses = ['present', 'continuous', 'past', 'perfect']
+    prevHeight = 0
+    for key in wordData['forms'].keys():
+        wordFormTitleTxt = SuffText(32, wordTransTxt.y + 64 + prevHeight, 48, key.upper(), 48, (255, 255, 255))
+        textGroup.append(wordFormTitleTxt)
+        prevHeight += 48
+        for w in range(len(wordData['forms'][key])):
+            if key == 'verb':
+                wordTenseTxt = SuffText(32, wordFormTitleTxt.y + 58 + 32 * w, 48, tenses[w], 16, (255, 255, 255))
+            wordFormTxt = SuffText(32 + (wordTenseTxt.get_width() + 16 if key == 'verb' else 0),
+                                   wordFormTitleTxt.y + 48 + 32 * w, 48, wordData['forms'][key][w], 32, (255, 255, 255))
+            prevHeight += 32
+            if key == 'verb': textGroup.append(wordTenseTxt)
+            textGroup.append(wordFormTxt)
+        prevHeight += 48
+
+    scrollAmount = 0
+    txtYOrigin = []
+    txtYOriginalOrigin = []
+    txtText = []
+    for i in range(len(textGroup)):
+        txtText.append(textGroup[i].text)
+        textGroup[i].set_text('')
+        txtYOriginalOrigin.append(textGroup[i].y)
+        txtYOrigin.append(textGroup[i].y)
+    maxScroll = min(-math.ceil((max(txtYOriginalOrigin) + 48 - SCREENSIZE[1]) / 64), 0)
+    print(maxScroll)
+    txtTypeTick = 0
+    playAnim = 3
+    while True:
         state_functions()
-    def update_post(self):
-        state_post_functions()
-    def handle_event(self, event):
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+        wordTitle.x = suff_lerp(wordTitle.x, 32, 1 / FPS * 6)
+        wordTitle.set_alpha(suff_lerp(wordTitle.alpha, 255, 1 / FPS * 6))
 
-class MainMenuState(SuffState):
-    def __init__(self):
-        super().__init__()
-        def dict_hover():
-            global CCC
-            CCC.change_expression('happy')
-            buttonHoverSound.play()
-            global dialogueBox
-            dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
-                                      'Learn some vocabulary for your brain library.', 20, 'right')
-        def dict():
-            buttonPressSound.play()
-            change_state(DictionarySearchState())
-        def quiz_hover():
-            global CCC
-            CCC.change_expression('smug')
-            buttonHoverSound.play()
-            global dialogueBox
-            dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
-        def quiz():
-            buttonPressSound.play()
-            change_state(QuizState())
-        def flashcards_hover():
-            global CCC
-            CCC.change_expression('neutral')
-            buttonHoverSound.play()
-            global dialogueBox
-            dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
-                              'Quickly memorize some words using a traditional Asian method.', 20, 'right')
-        def flashcards():
-            CCC.x += 5
-        def credits_hover():
-            global CCC
-            CCC.change_expression('furious')
-            buttonHoverSound.play()
-            global dialogueBox
-            dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Check out the sole idiot that made this garbage possible.', 20, 'left')
-        def credits():
-            CCC.x += 5
-        self.dictionaryButton = SuffButton((10, 10), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), dict,
-                                           'dictionary',
-                                           'Dictionary Mode', dict_hover, 48, 112)
-        self.quizButton = SuffButton((SCREENSIZE[0] / 2 + 5, 10), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
-                                     quiz,
-                                     'quiz', 'Quiz Mode', quiz_hover, 48, 112)
-        self.flashcardsButton = SuffButton((10, SCREENSIZE[1] / 2 + 5),
-                                           (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
-                                           flashcards, 'flashcards', 'Flashcards', flashcards_hover, 48, 112)
-        self.creditsButton = SuffButton((SCREENSIZE[0] / 2 + 5, SCREENSIZE[1] / 2 + 5),
-                                        (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), credits, 'credits', 'Credits',
-                                        credits_hover, 48, 112)
-    def update(self):
-        super().update()
-        CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.surface.get_width()) / 2, 1 / FPS * 6)
-        CCC.y = suff_lerp(CCC.y, (SCREENSIZE[1] - CCC.head.surface.get_height()) / 2, 1 / FPS * 6)
-        distances = (CCC.x + CCC.head.surface.get_width() / 2 - mousePos[0],
-                     CCC.y + CCC.head.surface.get_height() / 2 - mousePos[1])
-        CCC.angle = distances[0] / SCREENSIZE[0] * 8 * -45 * distances[1] / SCREENSIZE[1] / 2
-
-        self.dictionaryButton.draw()
-        self.quizButton.draw()
-        self.flashcardsButton.draw()
-        self.creditsButton.draw()
+        CCC.x = suff_lerp(CCC.x, SCREENSIZE[0] - (CCC.head.rect.width / 4) * 3, 1 / FPS * 6)
+        CCC.y = suff_lerp(CCC.y, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3, 1 / FPS * 6)
+        CCC.angle = suff_lerp(CCC.angle, 30, 1 / FPS * 6)
         CCC.draw()
-        dialogueBox.draw()
-    def handle_event(self, event):
-        super().handle_event(event)
-        global dialogueBox
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
-                CCC.change_expression(random.choice(['angry', 'furious', 'smug', 'evil', 'house', 'horror']))
-                dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() + 32, 300),
-                                          random.choice(random_dialogue), 20, 'right')
+        txtTypeTick += 1 / FPS
+        playSound = False
+        for i in range(len(textGroup)):
+            if len(textGroup[i].text) < len(txtText[i]) and txtTypeTick > 0.025:
+                if txtText[i][len(textGroup[i].text)] not in DIALOGUE_SILENT_CHARS: playSound = True
+                textGroup[i].set_text(textGroup[i].text + txtText[i][len(textGroup[i].text)])
+            textGroup[i].draw()
+        if playSound:
+            dialogueSound.play()
+            playAnim += 1
+            if playAnim > 3:
+                CCC.talk_force = random.random() * 0.5 + 0.5
+                CCC.talk_tick = 0
+                CCC.talk_offset = random.randint(-10, 10)
+                playAnim = 0
+            txtTypeTick = 0
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    menuExitSound.play()
+                    dictionary_menu()
+            if event.type == pygame.MOUSEWHEEL:
+                scrollAmount += event.y
+                if scrollAmount > 0:
+                    scrollAmount = 0
+                if scrollAmount < maxScroll:
+                    scrollAmount = maxScroll
+                for i in range(len(textGroup)):
+                    txtYOrigin[i] = txtYOriginalOrigin[i] + scrollAmount * 64
+        for i in range(len(textGroup)):
+            textGroup[i].y = suff_lerp(textGroup[i].y, txtYOrigin[i], 1 / FPS * 6)
+        state_post_functions()
+def bubble_sort_word(letter):
+    arrFile = open(f'words/{letter}.json', 'r')
+    arr = json.load(arrFile)
+    arrFile.close()
+    for i in range(len(arr)):
+        for j in range(len(arr) - 1):
+            if arr[j]['word'][0] > arr[j + 1]['word'][0]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    arrFileWrite = open(f'words/{letter}.json', 'w')
+    arrFileWrite.write(json.dumps(arr, indent = 4))
+    arrFileWrite.close()
+def dictionary_menu():
+    state_pre_functions()
+    global CCC
+    global dialogueBox
+    dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
+                              'Type a word in the field and press [ENTER].', 20, 'down', -1)
+    searchTitle = SuffText(128, 32 - 64, 16, 'Search For Word', 80, (255, 255, 255))
+    searchTitle.set_alpha(0)
+    searchQuery = SuffText(128, 192 + 80 + 64, 25, '', 48, (255, 255, 255))
+    searchIBeam = SuffText(128, 192 + 80 + 64, 1, '|', 48, (255, 255, 255))
+    wordList = []
 
-    def update_post(self):
-        super().update_post()
-
-curState = None
-
-def change_state(state):
-    global curState
-    curState = state
-
-change_state(MainMenuState())
-
-class DictionarySearchState(SuffState):
-    def __init__(self):
-        SuffState.__init__(self)
-        global dialogueBox
-        dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
-                                  'Type a word in the field and press [ENTER].', 20, 'down', -1)
-        self.searchTitle = SuffText(128, 32 - 64, 16, 'Search For Word', 80, (255, 255, 255))
-        self.searchTitle.set_alpha(0)
-        self.searchQuery = SuffText(128, 192 + 80 + 64, 25, '', 48, (255, 255, 255))
-        self.searchIBeam = SuffText(128, 192 + 80 + 64, 1, '|', 48, (255, 255, 255))
-        self.wordList = []
-
-    def bubble_sort_word(self, letter):
-        arrFile = open(f'words/{letter}.json', 'r')
-        arr = json.load(arrFile)
-        arrFile.close()
-        for i in range(len(arr)):
-            for j in range(len(arr) - 1):
-                if arr[j]['word'][0] > arr[j + 1]['word'][0]:
-                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
-        arrFileWrite = open(f'words/{letter}.json', 'w')
-        arrFileWrite.write(json.dumps(arr, indent=4))
-        arrFileWrite.close()
-
-    def binary_search_word(self, x):
+    def search_for_word(word):
+        global wordList
+        if not os.path.exists(f'words/{word[0]}.json'):
+            return None
+        bubble_sort_word(word[0])
+        wordFile = open(f'words/{word[0]}.json', 'r')
+        wordList = json.load(wordFile)
+        wordFile.close()
+        wordData = binary_search_word(word)
+        return wordData
+    def binary_search_word(x):
         global wordList
         low = 0
         high = len(wordList) - 1
@@ -532,263 +539,216 @@ class DictionarySearchState(SuffState):
             else:
                 high = mid - 1
         return None
-
-    def search_for_word(self, word):
-        global wordList
-        if not os.path.exists(f'words/{word[0]}.json'):
-            return None
-        self.bubble_sort_word(word[0])
-        wordFile = open(f'words/{word[0]}.json', 'r')
-        wordList = json.load(wordFile)
-        wordFile.close()
-        wordData = self.binary_search_word(word)
-        return wordData
-
-    def update(self):
-        super().update()
-        global dialogueBox
+    while True:
+        state_functions()
 
         CCC.x = suff_lerp(CCC.x, SCREENSIZE[0] / 2 + (SCREENSIZE[0] / 2 - CCC.head.rect.width) / 2, 1 / FPS * 6)
         CCC.y = suff_lerp(CCC.y, (SCREENSIZE[1] - CCC.head.rect.height) / 2, 1 / FPS * 6)
         CCC.angle = suff_lerp(CCC.angle, 0, 1 / FPS * 6)
-        self.searchIBeam.x = self.searchQuery.x + (
-                    len(self.searchQuery.text) % self.searchQuery.width) * self.searchQuery.size * FONT_WIDTH_RATIO
-        self.searchTitle.y = suff_lerp(self.searchTitle.y, 192, 1 / FPS * 6)
-        self.searchTitle.set_alpha(suff_lerp(self.searchTitle.alpha, 255, 1 / FPS * 6))  # smooth fade-in animation
-
         CCC.draw()
+        searchIBeam.x = searchQuery.x + (len(searchQuery.text) % searchQuery.width) * searchQuery.size * FONT_WIDTH_RATIO
+        searchTitle.y = suff_lerp(searchTitle.y, 192, 1 / FPS * 6)
+        searchTitle.set_alpha(suff_lerp(searchTitle.alpha, 255, 1 / FPS * 6)) # smooth fade-in animation
         dialogueBox.draw()
-        self.searchTitle.draw()
-        self.searchQuery.draw()
-        if len(
-                self.searchQuery.text) < self.searchQuery.width: self.searchIBeam.draw()  # Prevent I-Beam from rendering when search field is full.
-
-    def handle_event(self, event):
-        super().handle_event(event)
-        global dialogueBox
-        global curState
-
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
-                if self.searchQuery.text.replace(' ', '').isalpha():
-                    w = self.search_for_word(
-                        self.searchQuery.text.lower().strip())  # get word data from word folder (also
-                    # removes leading/ending whitespaces and
-                    # makes it lowercase)
-                    if w:
-                        buttonPressSound.play()
-                        global curState
-                        curState = DictionaryWordState(w)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    if searchQuery.text.replace(' ', '').isalpha():
+                        w = search_for_word(searchQuery.text.lower().strip()) # get word data from word folder (also
+                                                                              # removes leading/ending whitespaces and
+                                                                              # makes it lowercase)
+                        if w:
+                            buttonPressSound.play()
+                            dictionary_word_menu(w)
+                        else:
+                            invalidSound.play()
+                            CCC.change_expression('angry')
+                            dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
+                                                      'I don\'t think that word exists in the biology curriculum.', 20,
+                                                      'down', -1)
                     else:
                         invalidSound.play()
                         CCC.change_expression('angry')
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
-                                                  'I don\'t think that word exists in the biology curriculum.', 20,
-                                                  'down', -1)
-                else:
-                    invalidSound.play()
-                    CCC.change_expression('angry')
-                    dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
-                                              'I don\'t believe a human speaks like that.', 20, 'down', -1)
-            elif event.key == pygame.K_BACKSPACE:
-                self.searchQuery.set_text(self.searchQuery.text[0:len(self.searchQuery.text) - 1])
-                textEraseSound.play()
-            elif len(self.searchQuery.text) < self.searchQuery.width:
-                self.searchQuery.set_text(self.searchQuery.text + event.unicode)
-                textTypeSound.play()
-            if event.key == pygame.K_ESCAPE:
-                menuExitSound.play()
-                curState = MainMenuState()
+                                                  'I don\'t believe a human speaks like that.', 20, 'down', -1)
+                elif event.key == pygame.K_BACKSPACE:
+                    searchQuery.set_text(searchQuery.text[0:len(searchQuery.text)-1])
+                    textEraseSound.play()
+                elif len(searchQuery.text) < searchQuery.width:
+                    searchQuery.set_text(searchQuery.text + event.unicode)
+                    textTypeSound.play()
+                if event.key == pygame.K_ESCAPE:
+                    menuExitSound.play()
+                    main_menu()
 
-    def update_post(self):
-        super().update_post()
+        searchTitle.draw()
+        searchQuery.draw()
+        if len(searchQuery.text) < searchQuery.width: searchIBeam.draw() # Prevent I-Beam from rendering when search field is full.
 
-class DictionaryWordState(SuffState):
-    def __init__(self, wordData):
-        super().__init__()
-        self.wordData = wordData
-        self.textGroup = []
-
-        wordTitle = SuffText(32, 32, 32, wordData['word'][0].upper(), 96,
-                             (255, 255, 255))
-        self.textGroup.append(wordTitle)
-        wordClassTxtString = wordData['word_class'] # part of speech
-        if len(wordData['plural']) > 0:
-            wordClassTxtString += ', plural \'' + ', '.join(wordData['plural']) + '\'' # plural form
-        wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height(), 32, wordClassTxtString, 32, (255, 255, 255))
-        self.textGroup.append(wordClassTxt)
-        wordAltTxt = SuffText(32, wordClassTxt.y + 32, 32, '', 32, (255, 255, 255))
-        if len(wordData['alt_spellings']) > 0:
-            wordAltTxt.set_text('alt. ' + ', '.join(wordData['alt_spellings']))
-        self.textGroup.append(wordAltTxt)
-        wordDefTxt = SuffText(32, wordAltTxt.y + 64, 48, wordData['definition'], 32, (255, 255, 255))
-        self.textGroup.append(wordDefTxt)
-        wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48,
-                                    wordData['word'][0][0].upper() + wordData['word'][0][1:] + ' means ', 32,
-                                    (255, 255, 255))
-        self.textGroup.append(wordTransDescTxt)
-        wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
-                                '；'.join(wordData['translation']), 32, (255, 255, 255), 'zh')
-        self.textGroup.append(wordTransTxt)
-        tenses = ['present', 'continuous', 'past', 'perfect']
-        prevHeight = 0
-        for key in wordData['forms'].keys():
-            wordFormTitleTxt = SuffText(32, wordTransTxt.y + 64 + prevHeight, 48, key.upper(), 48, (255, 255, 255))
-            self.textGroup.append(wordFormTitleTxt)
-            prevHeight += 48
-            for w in range(len(wordData['forms'][key])):
-                if key == 'verb':
-                    wordTenseTxt = SuffText(32, wordFormTitleTxt.y + 58 + 32 * w, 48, tenses[w], 16, (255, 255, 255))
-                wordFormTxt = SuffText(32 + (wordTenseTxt.get_width() + 16 if key == 'verb' else 0),
-                                       wordFormTitleTxt.y + 48 + 32 * w, 48, wordData['forms'][key][w], 32, (255, 255, 255))
-                prevHeight += 32
-                if key == 'verb': self.textGroup.append(wordTenseTxt)
-                self.textGroup.append(wordFormTxt)
-            prevHeight += 48
-
-        self.scrollAmount = 0
-        self.txtYOrigin = []
-        self.txtYOriginalOrigin = []
-        self.txtText = []
-        for i in range(len(self.textGroup)):
-            self.txtText.append(self.textGroup[i].text)
-            self.textGroup[i].set_text('')
-            self.txtYOriginalOrigin.append(self.textGroup[i].y)
-            self.txtYOrigin.append(self.textGroup[i].y)
-        self.maxScroll = min(-math.ceil((max(self.txtYOriginalOrigin) + 48 - SCREENSIZE[1]) / 64), 0)
-        self.txtTypeTick = 0
-        self.playAnim = 3
-    def update(self):
-        state_functions()
-
-        CCC.x = suff_lerp(CCC.x, SCREENSIZE[0] - (CCC.head.rect.width / 4) * 3, 1 / FPS * 6)
-        CCC.y = suff_lerp(CCC.y, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3, 1 / FPS * 6)
-        CCC.angle = suff_lerp(CCC.angle, 30, 1 / FPS * 6)
-        CCC.draw()
-        self.txtTypeTick += 1 / FPS
-        playSound = False
-        for i in range(len(self.textGroup)):
-            if len(self.textGroup[i].text) < len(self.txtText[i]) and self.txtTypeTick > 0.025:
-                if self.txtText[i][len(self.textGroup[i].text)] not in DIALOGUE_SILENT_CHARS: playSound = True
-                self.textGroup[i].set_text(self.textGroup[i].text + self.txtText[i][len(self.textGroup[i].text)])
-            self.textGroup[i].draw()
-        if playSound:
-            dialogueSound.play()
-            self.playAnim += 1
-            if self.playAnim > 3:
-                CCC.talk_force = random.random() * 0.5 + 0.5
-                CCC.talk_tick = 0
-                CCC.talk_offset = random.randint(-10, 10)
-                self.playAnim = 0
-            self.txtTypeTick = 0
-        for i in range(len(self.textGroup)):
-            self.textGroup[i].y = suff_lerp(self.textGroup[i].y, self.txtYOrigin[i], 1 / FPS * 6)
-    def handle_event(self, event):
-        super().handle_event(event)
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                menuExitSound.play()
-                global curState
-                curState = DictionarySearchState()
-        if event.type == pygame.MOUSEWHEEL:
-            self.scrollAmount += event.y
-            if self.scrollAmount > 0:
-                self.scrollAmount = 0
-            if self.scrollAmount < self.maxScroll:
-                self.scrollAmount = self.maxScroll
-            for i in range(len(self.textGroup)):
-                self.txtYOrigin[i] = self.txtYOriginalOrigin[i] + self.scrollAmount * 64
-
-class QuizState(SuffState):
-    def __init__(self):
-        super().__init__()
-        self.leWordData = dict()
-        self.allowInput = False
-        self.derList = []
-        for alp in [chr(i) for i in range(ord('a'), ord('z'))]:
-            if os.path.exists(f'words/{alp}.json'):
-                file = open(f'words/{alp}.json', 'r')
-                leJson = json.load(file)
-                file.close()
-                for item in leJson:
-                    self.derList.append(item)
-
-        self.lives = 3
-        self.cccExpressions = ['demon', 'furious', 'angry', 'neutral', 'happy'] # life based
-        self.cccHappyLines = [
-            'Very good.',
-            'Quite good.',
-            'Acceptable.'
-        ]
-        self.cccAngryLines = [
-            'Go eat a banana.',
-            'Go home and eat a banana.',
-            '6 o\' clock.',
-            'Beijing cerebrum.',
-            'Way too weak.',
-            'Your concept is not clear.',
-            'Dropping is your only option.',
-            'Low level.',
-            'Zero marks.'
-        ]
-
-        self.searchQuery = SuffText(256, 580, 25, '', 64, (255, 255, 255))
-        self.reset()
-    def reset(self):
+        state_post_functions()
+leWordData = dict()
+allowInput = False
+derList = []
+for alp in [chr(i) for i in range(ord('a'), ord('z'))]:
+    if os.path.exists(f'words/{alp}.json'):
+        file = open(f'words/{alp}.json', 'r')
+        leJson = json.load(file)
+        file.close()
+        for item in leJson:
+            derList.append(item)
+def quiz_menu():
+    global dialogueBox
+    global CCC
+    state_pre_functions()
+    # load all words
+    lives = 3
+    cccExpressions = ['demon', 'furious', 'angry', 'neutral', 'happy'] # life based
+    cccHappyLines = [
+        'Very good.',
+        'Quite good.',
+        'Acceptable.'
+    ]
+    cccAngryLines = [
+        'Go eat a banana.',
+        'Go home and eat a banana.',
+        '6 o\' clock.',
+        'Beijing cerebrum.',
+        'Way too weak.',
+        'Your concept is not clear.',
+        'Dropping is your only option.',
+        'Low level.',
+        'Zero marks.'
+    ]
+    global allowInput
+    def reset():
         global dialogueBox
-        self.allowInput = True
-        self.leWordData = random.choice(self.derList)
-        ogDef = self.leWordData['definition']
+        global allowInput
+        global leWordData
+        allowInput = True
+        leWordData = random.choice(derList)
+        ogDef = leWordData['definition']
         senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2),
-                                  f'What is the {self.leWordData['word_class']} for {senDef}?', 50, 'down', -1)
+                                  f'What is {senDef}?', 50, 'down', -1)
 
-    def update(self):
-        super().update()
+    reset()
+    searchQuery = SuffText(256, 580, 25, '', 64, (255, 255, 255))
+    while True:
+        state_functions()
         CCC.angle = suff_lerp(CCC.angle, 0, 1 / FPS * 6)
         CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.rect.width) / 2, 1 / FPS * 6)
         CCC.y = suff_lerp(CCC.y, 50, 1 / FPS * 6)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    main_menu()
+                elif event.key == pygame.K_BACKSPACE:
+                    searchQuery.set_text(searchQuery.text[:-1])
+                elif event.key == pygame.K_RETURN:
+                    if allowInput:
+                        allowInput = False
+                        if searchQuery.text.lower().strip() in leWordData['word']:
+                            dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
+                                      random.choice(cccHappyLines), 16, 'up', 1.5, reset)
+                            lives += 1
+                        else:
+                            dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
+                                                                    random.choice(cccAngryLines), 16, 'up', 1.5, reset)
+                            lives -= 1
+                        CCC.change_expression(cccExpressions[lives])
+                else:
+                    searchQuery.set_text(searchQuery.text + event.unicode)
+                searchQuery.x = (SCREENSIZE[0] - searchQuery.get_width()) / 2
         CCC.draw()
         dialogueBox.draw()
-        self.searchQuery.draw()
-    def handle_event(self, event):
-        super().handle_event(event)
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                change_state(MainMenuState())
-                menuExitSound.play()
-            elif event.key == pygame.K_BACKSPACE:
-                self.searchQuery.set_text(self.searchQuery.text[:-1])
-                textEraseSound.play()
-            elif event.key == pygame.K_RETURN:
-                global dialogueBox
-                if self.allowInput:
-                    if dialogueBox.displayed_text != dialogueBox.text:
-                        dialogueBox.displayed_text = dialogueBox.text
-                        dialogueBox.box_text.set_text(dialogueBox.displayed_text)
-                        return
-                    self.allowInput = False
-                    if self.searchQuery.text.lower().strip() in self.leWordData['word']:
-                        dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
-                                  random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
-                        self.lives = clamp(self.lives + 1, 0, 4)
-                    else:
-                        dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
-                                                                random.choice(self.cccAngryLines), 16, 'up', 1, self.reset)
-                        self.lives = clamp(self.lives - 1, 0, 4)
-                        invalidSound.play()
-                    self.searchQuery.set_text('')
-                    CCC.change_expression(self.cccExpressions[self.lives])
-            else:
-                self.searchQuery.set_text(self.searchQuery.text + event.unicode)
-                textTypeSound.play()
-            self.searchQuery.x = (SCREENSIZE[0] - self.searchQuery.get_width()) / 2
+        searchQuery.draw()
 
-while True:
-    for event in pygame.event.get():
-        curState.handle_event(event)
-    curState.update()
-    curState.update_post()
+        state_post_functions()
+def main_menu():
+    state_pre_functions()
+    def dict_hover():
+        global CCC
+        CCC.change_expression('happy')
+        buttonHoverSound.play()
+        global dialogueBox
+        dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
+                                  'Learn some vocabulary for your brain library.', 20, 'right')
+
+    def dict():
+        buttonPressSound.play()
+        dictionary_menu()
+
+    def quiz_hover():
+        global CCC
+        CCC.change_expression('smug')
+        buttonHoverSound.play()
+        global dialogueBox
+        dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
+
+    def quiz():
+        buttonPressSound.play()
+        quiz_menu()
+
+    def flashcards_hover():
+        global CCC
+        CCC.change_expression('neutral')
+        buttonHoverSound.play()
+        global dialogueBox
+        dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
+                          'Quickly memorize some words using a traditional Asian method.', 20, 'right')
+
+    def flashcards():
+        CCC.x += 5
+
+    def credits_hover():
+        global CCC
+        CCC.change_expression('furious')
+        buttonHoverSound.play()
+        global dialogueBox
+        dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Check out the sole idiot that made this garbage possible.', 20, 'left')
+
+    def credits():
+        CCC.x += 5
+
+    dictionaryButton = SuffButton((10, 10), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), dict, 'dictionary',
+                                   'Dictionary Mode', dict_hover, 48, 112)
+    quizButton = SuffButton((SCREENSIZE[0] / 2 + 5, 10), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), quiz,
+                             'quiz', 'Quiz Mode', quiz_hover, 48, 112)
+    flashcardsButton = SuffButton((10, SCREENSIZE[1] / 2 + 5), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
+                                   flashcards, 'flashcards', 'Flashcards', flashcards_hover, 48, 112)
+    creditsButton = SuffButton((SCREENSIZE[0] / 2 + 5, SCREENSIZE[1] / 2 + 5),
+                                (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), credits, 'credits', 'Credits',
+                                credits_hover, 48, 112)
+    while True:
+        global dialogueBox
+        state_functions()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    CCC.change_expression(random.choice(['angry', 'furious', 'smug', 'evil', 'house', 'horror']))
+                    dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() + 32, 300),
+                                              random.choice(random_dialogue), 20, 'right')
+        # button rendering
+        dictionaryButton.draw()
+        quizButton.draw()
+        flashcardsButton.draw()
+        creditsButton.draw()
+        CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.surface.get_width()) / 2, 1 / FPS * 6)
+        CCC.y = suff_lerp(CCC.y, (SCREENSIZE[1] - CCC.head.surface.get_height()) / 2, 1 / FPS * 6)
+        distances = (CCC.x + CCC.head.surface.get_width() / 2 - mousePos[0],
+                     CCC.y + CCC.head.surface.get_height() / 2 - mousePos[1])
+        CCC.angle = distances[0] / SCREENSIZE[0] * 8 * -45 * distances[1] / SCREENSIZE[1] / 2
+        CCC.draw()
+        if dialogueBox.text != '': dialogueBox.draw()
+
+        state_post_functions()
+main_menu()
