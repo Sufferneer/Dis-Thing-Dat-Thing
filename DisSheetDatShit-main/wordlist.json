@@ -1,0 +1,618 @@
+{
+    "Access Point": {
+        "alias": [
+            "AP"
+        ],
+        "translation": [
+            "\u7db2\u7d61\u63a5\u9054\u9ede"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A networking hardware device that allows other Wi-Fi devices to connect to a wired network or wireless network."
+    },
+    "actual argument": {
+        "alias": [
+            "actual parameter"
+        ],
+        "translation": [
+            "\u5be6\u969b\u8b8a\u5143/\u5be6\u969b\u53c3\u6578"
+        ],
+        "word_class": "noun phrase",
+        "definition": "The values or expressions provided to a function when it is executed."
+    },
+    "adapter": {
+        "alias": [],
+        "translation": [
+            "\u9069\u914d\u5668"
+        ],
+        "word_class": "noun",
+        "definition": "A device that allows one electrical device with different ports to connect with each other."
+    },
+    "address": {
+        "alias": [],
+        "translation": [
+            "\u4f4d\u5740\uff1b\u5730\u5740"
+        ],
+        "word_class": "noun",
+        "definition": "A string assigned to a device connected to a computer network that uses the Internet Protocol for communication."
+    },
+    "adware": {
+        "alias": [],
+        "translation": [
+            "\u5ee3\u544a\u7a0b\u5f0f\uff1b\u5ee3\u544a\u8edf\u4ef6"
+        ],
+        "word_class": "noun",
+        "definition": "Malware that displays online advertisements in the user interface or on a screen for revenue."
+    },
+    "aggregate function": {
+        "alias": [],
+        "translation": [
+            "\u96c6\u5408\u51fd\u6578"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A function where multiple values are processed together to form a single summary statistic."
+    },
+    "algorithm": {
+        "alias": [],
+        "translation": [
+            "\u7b97\u6cd5"
+        ],
+        "word_class": "noun",
+        "definition": "A sequence of code used to perform computation."
+    },
+    "aliasing": {
+        "alias": [],
+        "translation": [
+            "\u968e\u68af\u6548\u61c9\uff1b\u5716\u5f62\u5931\u771f"
+        ],
+        "word_class": "noun",
+        "definition": "A phenomenon which bitmap images look pixelated when the image data is poorly reconstructed."
+    },
+    "American National Standards Institute": {
+        "alias": [
+            "ANSI"
+        ],
+        "translation": [
+            "\u7f8e\u570b\u570b\u5bb6\u6a19\u6e96\u5b78\u6703"
+        ],
+        "word_class": "noun",
+        "definition": "An organization that assigns unique ID for products."
+    },
+    "American Standard Code for Information Interchange": {
+        "alias": [
+            "ASCII"
+        ],
+        "translation": [
+            "\u7f8e\u570b\u4fe1\u606f\u4ea4\u63db\u6a19\u6e96\u78bc"
+        ],
+        "word_class": "noun",
+        "definition": "A character encoding standard for representing a set of characters typically seen on an American keyboard."
+    },
+    "analog": {
+        "alias": [
+            "analogue"
+        ],
+        "translation": [
+            "\u6a21\u64ec"
+        ],
+        "word_class": "adjective",
+        "definition": "Relating to signals or information represented by a physical variable."
+    },
+    "Analog Digital Converter": {
+        "alias": [
+            "ADC"
+        ],
+        "translation": [
+            "\u6a21\u64ec\u6578\u78bc\u8f49\u63db\u5668"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A system that converts an analog signal into a digital signal."
+    },
+    "anchor": {
+        "alias": [],
+        "translation": [
+            "\u9328\u9ede\uff1b\u9396\u5b9a\u9ede"
+        ],
+        "word_class": "noun",
+        "definition": "An HTML tag that redirects the user to another hyperlink when clicked."
+    },
+    "applet": {
+        "alias": [],
+        "translation": [
+            "\u5fae\u61c9\u7528\u7a0b\u5f0f"
+        ],
+        "word_class": "noun",
+        "definition": "A small application that performs one specific task."
+    },
+    "application program interface": {
+        "alias": [
+            "API"
+        ],
+        "translation": [
+            "\u61c9\u7528\u7a0b\u5f0f\u754c\u9762"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A connection between computer programs that offers a service to other pieces of software."
+    },
+    "Application Service Provider": {
+        "alias": [
+            "ASP"
+        ],
+        "translation": [
+            "\u61c9\u7528\u670d\u52d9\u4f9b\u61c9\u5546"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A company that offers access to applications and related services over the internet."
+    },
+    "argument": {
+        "alias": [],
+        "translation": [
+            "\u8b8a\u5143"
+        ],
+        "word_class": "noun",
+        "definition": "A special variable used to provide data to a subprogram when it is called."
+    },
+    "Arithmetic and Logic Unit": {
+        "alias": [
+            "ALU"
+        ],
+        "translation": [
+            "\u7b97\u8853\u53ca\u908f\u8f2f\u904b\u7b97\u90e8\u4ef6"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A part of a CPU that performs arithmetic and bitwise operations."
+    },
+    "array": {
+        "alias": [],
+        "translation": [
+            "\u9663\u5217"
+        ],
+        "word_class": "noun",
+        "definition": "A data structure consisting of multiple elements (values or variables)."
+    },
+    "Artificial Intelligence": {
+        "alias": [
+            "AI"
+        ],
+        "translation": [
+            "\u4eba\u5de5\u667a\u80fd"
+        ],
+        "word_class": "noun phrase",
+        "definition": "The capability of computers to perform tasks typically associated with human intelligence."
+    },
+    "assembler": {
+        "alias": [],
+        "translation": [
+            "\u532f\u7de8\u7a0b\u5f0f"
+        ],
+        "word_class": "noun",
+        "definition": "A computer program that takes in human code and converts them into machine code."
+    },
+    "assembly language": {
+        "alias": [],
+        "translation": [
+            "\u532f\u7de8\u8a9e\u8a00"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A low-level programming language that represents machine code strongly."
+    },
+    "assignment statement": {
+        "alias": [],
+        "translation": [
+            "\u8ce6\u503c\u8a9e\u53e5"
+        ],
+        "word_class": "noun phrase",
+        "definition": "An instruction to set a value to the variable name in a program."
+    },
+    "attenuation": {
+        "alias": [],
+        "translation": [
+            "\u8870\u6e1b\uff1b\u8870\u6e1b\u4f5c\u7528"
+        ],
+        "word_class": "noun",
+        "definition": "The loss of signal strength in networking cables or connections."
+    },
+    "attribute": {
+        "alias": [],
+        "translation": [
+            "\u5c6c\u6027"
+        ],
+        "word_class": "noun",
+        "definition": "A field for each record in a database."
+    },
+    "Augmented Reality": {
+        "alias": [
+            "AR"
+        ],
+        "translation": [
+            "\u64f4\u589e\u5be6\u5883"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A technology that overlays real-time 3D computer graphics onto a portion of the real world through a display."
+    },
+    "bandwidth": {
+        "alias": [],
+        "translation": [
+            "\u983b\u5bec"
+        ],
+        "word_class": "noun",
+        "definition": "The maximum rate of data transfer through a period of time."
+    },
+    "bar code": {
+        "alias": [
+            "barcode"
+        ],
+        "translation": [
+            "\u689d\u78bc"
+        ],
+        "word_class": "noun",
+        "definition": "A row of black bars with variable thickness that represents data in a machine-readable form."
+    },
+    "Basic Input / Output System (BIOS)": {
+        "alias": [],
+        "translation": [
+            "\u57fa\u672c\u8f38\u5165\u8f38\u51fa\u7cfb\u7d71"
+        ],
+        "word_class": "noun",
+        "definition": "A type of firmware that performs hardware initialization during the booting process."
+    },
+    "batch processing": {
+        "alias": [],
+        "translation": [
+            "\u6210\u6279\u8655\u7406\uff1b\u6574\u6279\u8655\u7406\uff1b\u6210\u6279\u5de5\u4ef6\u8655\u7406"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A processing method when computers processes data in a set time interval."
+    },
+    "Beginning Of File": {
+        "alias": [
+            "BOF"
+        ],
+        "translation": [
+            "\u6a94\u8d77\u59cb"
+        ],
+        "word_class": "noun",
+        "definition": "The starting point of any data file used as a reference for file reading."
+    },
+    "BIG-5 code": {
+        "alias": [
+            "BIG-5"
+        ],
+        "translation": [
+            "\u5927\u4e94\u78bc"
+        ],
+        "word_class": "noun",
+        "definition": "A character encoding system for traditional Chinese characters."
+    },
+    "bit": {
+        "alias": [],
+        "translation": [
+            "\u4f4d\u5143\uff1b\u4e8c\u9032\u5236\u4f4d"
+        ],
+        "word_class": "unit",
+        "definition": "The basic unit of information, represented by 1/0."
+    },
+    "bitmap": {
+        "alias": [],
+        "translation": [
+            "\u9ede\u9663\u5716\uff1b\u4f4d\u5716"
+        ],
+        "word_class": "noun",
+        "definition": "An image type formed from pixels."
+    },
+    "bitwise complement": {
+        "alias": [],
+        "translation": [
+            "\u9806\u4f4d\u5143\u65b9\u5f0f\u4e92\u88dc"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A operation that flips the bits of a given binary value."
+    },
+    "blog": {
+        "alias": [],
+        "translation": [
+            "\u7db2\u8a8c\uff1b\u7db2\u4e0a\u65e5\u8a8c"
+        ],
+        "word_class": "noun",
+        "definition": "A website that consists of its owner's diary-style posts."
+    },
+    "Bluetooth": {
+        "alias": [],
+        "translation": [
+            "\u85cd\u7259"
+        ],
+        "word_class": "noun",
+        "definition": "A technology that is used for exchanging data between fixed and mobile devices over short distances."
+    },
+    "Boolean": {
+        "alias": [],
+        "translation": [
+            "\u5e03\u723e"
+        ],
+        "word_class": "noun",
+        "definition": "Data type that has one of two possible values: True/False"
+    },
+    "boot": {
+        "alias": [],
+        "translation": [
+            "\u555f\u52d5"
+        ],
+        "word_class": "verb",
+        "definition": "To start up a computer."
+    },
+    "buffer": {
+        "alias": [],
+        "translation": [
+            "\u7de9\u885d\u5340"
+        ],
+        "word_class": "noun",
+        "definition": "A region of memory used to store data temporarily while it is being moved from one place to another."
+    },
+    "bug": {
+        "alias": [],
+        "translation": [
+            "\u932f\u8aa4"
+        ],
+        "word_class": "noun",
+        "definition": "A mistake in a program that results in an error in an algorithm."
+    },
+    "bundled software": {
+        "alias": [],
+        "translation": [
+            "\u9644\u96a8\u8edf\u4ef6"
+        ],
+        "word_class": "noun phrase",
+        "definition": "A piece of software that comes with an operating system for free after purchase."
+    },
+    "bus": {
+        "alias": [],
+        "translation": [
+            "\u532f\u6d41\u6392\uff1b\u7e3d\u7dda"
+        ],
+        "word_class": "noun",
+        "definition": "A pathway that transfers data between components inside a computer."
+    },
+    "byte": {
+        "alias": [],
+        "translation": [
+            "\u5b57\u7bc0\uff1b\u4f4d\u5143\u7d44"
+        ],
+        "word_class": "unit",
+        "definition": "8 bits = 1 byte"
+    },
+    "cache": {
+        "alias": [],
+        "translation": [
+            "\u5feb\u53d6\u8a18\u61b6\u9ad4\uff1b\u9ad8\u901f\u7de9\u885d\u5668"
+        ],
+        "word_class": "noun",
+        "definition": "A hardware or software component that stores data so that it can be retrieved faster later."
+    },
+    "candidate key": {
+        "alias": [],
+        "translation": [
+            "\u5019\u9078\u9375\u78bc"
+        ],
+        "word_class": "noun",
+        "definition": "A potential field in a table that could be an identifier for a record."
+    },
+    "Cascading Style Sheet": {
+        "alias": [
+            "Cascading Style Sheets",
+            "CSS"
+        ],
+        "translation": [
+            "\u7d1a\u806f\u5f0f\u9801\u9762\uff1b\u5c64\u758a\u6a23\u5f0f\u8868"
+        ],
+        "word_class": "noun",
+        "definition": "A language used for specifying the styling of a HTML document."
+    },
+    "Central Processing Unit": {
+        "alias": [
+            "CPU"
+        ],
+        "translation": [
+            "\u4e2d\u592e\u8655\u7406\u5668"
+        ],
+        "word_class": "noun",
+        "definition": "A computer component that is responsible in arithmetic, logic, and input/output (I/O) operations."
+    },
+    "Certificate Authority": {
+        "alias": [
+            "CA"
+        ],
+        "translation": [
+            "\u6838\u8b49\u6a5f\u95dc"
+        ],
+        "word_class": "noun",
+        "definition": "An organization that stores, signs, and issues digital certificates."
+    },
+    "character": {
+        "alias": [],
+        "translation": [
+            "\u5b57\u7b26\uff1b\u5b57\u5143"
+        ],
+        "word_class": "noun",
+        "definition": "A letter, number, or symbol used in strings."
+    },
+    "check box": {
+        "alias": [
+            "checkbox"
+        ],
+        "translation": [
+            "\u8907\u9078\u6846"
+        ],
+        "word_class": "noun",
+        "definition": "Usually an answer field that only allows True/False for answering questions with multiple answers."
+    },
+    "check digit": {
+        "alias": [],
+        "translation": [
+            "\u6aa2\u67e5\u6578\u4f4d"
+        ],
+        "word_class": "noun",
+        "definition": "A redundancy check used for error detection on identification numbers."
+    },
+    "chip": {
+        "alias": [],
+        "translation": [
+            "\u6676\u7247"
+        ],
+        "word_class": "noun",
+        "definition": "A piece of integrated circuit typically small in size."
+    },
+    "client-side": {
+        "alias": [],
+        "translation": [
+            "\u5ba2\u6236\u7aef"
+        ],
+        "word_class": "adjective",
+        "definition": "Refers to operations that are performed by the client in a computer network."
+    },
+    "code": {
+        "alias": [],
+        "translation": [
+            "\u7de8\u78bc",
+            "\u4ee3\u78bc"
+        ],
+        "word_class": "noun",
+        "definition": "A string of text used to communicate instructions for a computer."
+    },
+    "command line interface": {
+        "alias": [
+            "CLI"
+        ],
+        "translation": [
+            "\u547d\u4ee4\u884c\u754c\u9762"
+        ],
+        "word_class": "noun",
+        "definition": "An user interface that does not contain any graphics and contains purely of text."
+    },
+    "Compact Disc": {
+        "alias": [
+            "CD"
+        ],
+        "translation": [
+            "\u5149\u789f"
+        ],
+        "word_class": "noun",
+        "definition": "a small plastic disk with a shiny surface on which information is recorded."
+    },
+    "Compact Disc Read-Only Memory (CD-ROM)": {
+        "alias": [],
+        "translation": [
+            "\u552f\u8b80\u5149\u789f"
+        ],
+        "word_class": "noun",
+        "definition": "A CD that can only be read, but not written to."
+    },
+    "Compact Disc Recordable (CD-R)": {
+        "alias": [],
+        "translation": [
+            "\u53ef\u8a18\u9304\u5149\u789f"
+        ],
+        "word_class": "noun",
+        "definition": "A CD that can only be written once, but can be read multiple times."
+    },
+    "Compact Disc Rewritable (CD-RW)": {
+        "alias": [],
+        "translation": [
+            "\u5fa9\u5beb\u5149\u789f\uff1b\u53ef\u91cd\u5beb\u5149\u789f"
+        ],
+        "word_class": "noun",
+        "definition": "A CD that can be written multiple times."
+    },
+    "compiler": {
+        "alias": [],
+        "translation": [
+            "\u7de8\u8b6f\u7a0b\u5f0f\uff1b\u7de8\u8b6f\u5668"
+        ],
+        "word_class": "noun",
+        "definition": "A computer program that translates computer code written in one programming language into another language."
+    },
+    "console": {
+        "alias": [],
+        "translation": [
+            "\u63a7\u5236\u53f0"
+        ],
+        "word_class": "noun",
+        "definition": "An interface that can be used for entering data into a computer."
+    },
+    "constant": {
+        "alias": [],
+        "translation": [
+            "\u5e38\u6578\uff1b\u5e38\u91cf"
+        ],
+        "word_class": "noun",
+        "definition": "A variable with an unassignable value."
+    },
+    "cookie": {
+        "alias": [
+            "cookies"
+        ],
+        "translation": [
+            "\u66f2\u5947\uff1b\u5c0f\u578b\u6587\u5b57\u6a94\u6848"
+        ],
+        "word_class": "noun",
+        "definition": "A small block of data created by a web server while a user is browsing a website."
+    },
+    "crack": {
+        "alias": [
+            "cracking"
+        ],
+        "translation": [
+            "\u7834\u89e3"
+        ],
+        "word_class": "verb",
+        "definition": "To remove copy protection from a software."
+    },
+    "cryptography": {
+        "alias": [],
+        "translation": [
+            "\u5bc6\u78bc\u5b78"
+        ],
+        "word_class": "noun",
+        "definition": "The study of techniques for secure communication."
+    },
+    "cursor": {
+        "alias": [],
+        "translation": [
+            "\u5149\u6a19\uff1b\u6e38\u6a19"
+        ],
+        "word_class": "noun",
+        "definition": "An indicator used to show the position on a monitor that will respond to input."
+    },
+    "data mine": {
+        "alias": [
+            "data mining"
+        ],
+        "translation": [
+            "\u6578\u64da\u958b\u63a1"
+        ],
+        "word_class": "verb phrase",
+        "definition": "To extract and finding patterns in massive data sets."
+    },
+    "data redundancy": {
+        "alias": [],
+        "translation": [
+            "\u6578\u64da\u5197\u9918\u5ea6\uff1b\u6578\u64da\u5197\u9918\u6027"
+        ],
+        "word_class": "noun",
+        "definition": "The existence of unnecessary data that permits correction of errors."
+    },
+    "data structure": {
+        "alias": [],
+        "translation": [
+            "\u6578\u64da\u7d50\u69cb"
+        ],
+        "word_class": "noun",
+        "definition": "A way of arranging data so that it can be accessed and updated efficiently."
+    },
+    "database": {
+        "alias": [],
+        "translation": [
+            "\u6578\u64da\u5eab"
+        ],
+        "word_class": "noun",
+        "definition": "An organized collection of data on people, places or things."
+    }
+}

@@ -1,0 +1,67 @@
+[
+    {
+        "word": [
+            "sexual reproduction",
+            "sexually reproduce"
+        ],
+        "word_class": "noun",
+        "forms": {
+            "verb": [
+                "sexually reproduce",
+                "sexually reproducing",
+                "sexually reproduced",
+                "sexually reproduced"
+            ]
+        },
+        "plural": [],
+        "definition": "A form of reproduction that involves gametes that usually come from two parents of opposite sexes",
+        "translation": [
+            "\u6709\u6027\u751f\u6b96"
+        ]
+    },
+    {
+        "word": [
+            "stimulus",
+            "stimuli",
+            "stimulate"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {
+            "verb": [
+                "stimulate",
+                "stimulating",
+                "stimulated",
+                "stimulated"
+            ]
+        },
+        "plural": [
+            "stimuli"
+        ],
+        "definition": "Something that causes part of the body to react",
+        "translation": [
+            "\u523a\u6fc0"
+        ]
+    },
+    {
+        "word": [
+            "system",
+            "systems"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {
+            "adjective": [
+                "systemic"
+            ]
+        },
+        "plural": [
+            "systems"
+        ],
+        "definition": "A group of several organs that perform related functions.",
+        "translation": [
+            "\u7cfb\u7d71"
+        ],
+        "source": "Wikipedia"
+    }
+]
