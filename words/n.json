@@ -23,7 +23,9 @@
         "alt_spellings": [],
         "word_class": "noun",
         "forms": {
-            "adjective": ["nutritional"]
+            "adjective": [
+                "nutritional"
+            ]
         },
         "plural": [],
         "definition": "A process in which organisms obtain food for energy, growth and maintaining health",

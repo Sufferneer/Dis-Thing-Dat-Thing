@@ -257,7 +257,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
     :param float fade_time: The seconds it takes for the dialogue box to disappear after the text finishes.
     """
     padding = 20
-    def __init__(self, pos, text, max_char = 10, style = 'up', fade_time = 1.5):
+    def __init__(self, pos, text, max_char = 10, style = 'up', fade_time = 1.5, fade_function = None):
         pygame.sprite.Group.__init__(self)
         self.pos:tuple = pos
         self.text:str = text
@@ -268,13 +268,14 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         self.max_char:int = max_char
         self.tick:float = 0
         self.fade_time:float = fade_time
+        self.fade_function = fade_function
         self.tip = SuffSprite(pos[0], pos[1], f'images/dialogue/dialogue_box_tip_{style}.png')
         width, height = max_char * 32 * FONT_WIDTH_RATIO + self.padding * 2, 32 * len(separate_string(self.text, self.max_char)) + self.padding * 2
         if style == 'up':
-            box_pos = (self.pos[0] - (width - self.tip.rect.width) / 2 - 20, self.pos[1] - height + 4)
+            box_pos = (self.pos[0] - (width - self.tip.rect.width) / 2 - 20, self.pos[1] - height + 6 - self.tip.rect.height)
             tip_pos = (self.pos[0] - 20, self.pos[1] - self.tip.rect.height)
         elif style == 'down':
-            box_pos = (self.pos[0] - (width - self.tip.rect.width) / 2 - 20, self.pos[1] + self.tip.rect.height - 4)
+            box_pos = (self.pos[0] - (width - self.tip.rect.width) / 2 - 20, self.pos[1] + self.tip.rect.height - 3)
             tip_pos = (self.pos[0] - 20, self.pos[1])
         elif style == 'left':
             box_pos = (self.pos[0] - self.tip.rect.width - width + 4, self.pos[1])
@@ -307,6 +308,10 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
             self.box.draw()
             self.tip.draw()
             self.box_text.draw()
+        if self.tick >= self.fade_time:
+            if self.fade_function is not None:
+                print('a')
+                self.fade_function()
 fpsCounter = SuffText(0, 0, 16, '0 FPS', 16, (255, 255, 255))
 background = SuffSprite(0, 0, 'images/background_1.png')
 background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
@@ -350,10 +355,12 @@ changeBG = True
 def state_pre_functions(): # This function is called every time a menu initializes
     global dustGroup
     global CCC
+    global dialogueBox
     for dust in dustGroup: # Dust scattering
         randomPos = (random.randint(0, SCREENSIZE[0]), random.randint(0, SCREENSIZE[1]))
         dust.x = randomPos[0]
         dust.y = randomPos[1]
+    dialogueBox = DialogueBox((0, 0), '', 10)
     CCC.change_expression('neutral') # Make CCC neutral every time he switches to menu
 def state_functions(): # This function is called before every tick function in a menu
     global curTime
@@ -582,6 +589,88 @@ def dictionary_menu():
         if len(searchQuery.text) < searchQuery.width: searchIBeam.draw() # Prevent I-Beam from rendering when search field is full.
 
         state_post_functions()
+def quiz_menu():
+    global dialogueBox
+    global CCC
+    state_pre_functions()
+    # load all words
+    derList = []
+    for alp in [chr(i) for i in range(ord('a'), ord('z'))]:
+        if os.path.exists(f'words/{alp}.json'):
+            file = open(f'words/{alp}.json', 'r')
+            leJson = json.load(file)
+            file.close()
+            for item in leJson:
+                derList.append(item)
+    leWordData = random.choice(derList)
+    allowInput = False
+    allowInput2 = True
+    def reset_word():
+        global allowInput
+        global allowInput2
+        allowInput = False
+        allowInput2 = True
+    lives = 3
+    cccExpressions = ['demon', 'furious', 'angry', 'neutral', 'happy'] # life based
+    cccHappyLines = [
+        'Very good.',
+        'Quite good.',
+        'Acceptable.'
+    ]
+    cccAngryLines = [
+        'Go eat a banana.',
+        'Go home and eat a banana.',
+        '6 o\' clock.',
+        'Beijing cerebrum.',
+        'Way too weak.',
+        'Your concept is not clear.',
+        'Dropping is your only option.',
+        'Low level.',
+        'Zero marks.',
+        'You WILL be a fatso one day.'
+    ]
+
+    searchQuery = SuffText(256, 580, 25, '', 64, (255, 255, 255))
+    while True:
+        state_functions()
+        CCC.angle = suff_lerp(CCC.angle, 0, 1 / FPS * 6)
+        CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.rect.width) / 2, 1 / FPS * 6)
+        CCC.y = suff_lerp(CCC.y, 100, 1 / FPS * 6)
+        if not allowInput and allowInput2:
+            ogDef = leWordData['definition']
+            senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
+            dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
+                                      f'What is {senDef}?', 50, 'up', -1)
+            allowInput = True
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    main_menu()
+                elif event.key == pygame.K_BACKSPACE:
+                    searchQuery.set_text(searchQuery.text[:-1])
+                elif event.key == pygame.K_RETURN:
+                    if allowInput2:
+                        allowInput2 = False
+                        if searchQuery.text in leWordData['word']:
+                            dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
+                                      random.choice(cccHappyLines), 16, 'up', 1.5, reset_word())
+                            lives += 1
+                        else:
+                            dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
+                                                                    random.choice(cccAngryLines), 16, 'up', 1.5, reset_word())
+                            lives -= 1
+                        CCC.change_expression(cccExpressions[lives])
+                else:
+                    searchQuery.set_text(searchQuery.text + event.unicode)
+                searchQuery.x = (SCREENSIZE[0] - searchQuery.get_width()) / 2
+        CCC.draw()
+        dialogueBox.draw()
+        searchQuery.draw()
+
+        state_post_functions()
 def main_menu():
     state_pre_functions()
     def dict_hover():
@@ -590,7 +679,7 @@ def main_menu():
         buttonHoverSound.play()
         global dialogueBox
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
-                          'Learn some vocabulary for your brain library.', 20, 'right')
+                                  'Learn some vocabulary for your brain library.', 20, 'right')
 
     def dict():
         buttonPressSound.play()
@@ -604,7 +693,8 @@ def main_menu():
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
 
     def quiz():
-        CCC.x += 5
+        buttonPressSound.play()
+        quiz_menu()
 
     def flashcards_hover():
         global CCC
