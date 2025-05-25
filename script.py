@@ -11,6 +11,7 @@ import pygame
 import math
 import random
 clock = pygame.time.Clock()
+music = pygame.mixer.music
 curTime = pygame.time.get_ticks()
 FPS = 60 # ! I won't recommend on touching this one.
 SCREENSIZE = (1280, 720)
@@ -56,8 +57,10 @@ def separate_string(text, max_char = 16):
             tally += word + ' '
     textlist.append(tally[0:len(tally) - 1].replace('\n ', '')) # Exclude ending space of string and put into list
     return textlist
-def clamp(val, minimum, maximum):
+def clamp(val, minimum, maximum): # Bounds a value within a range of numbers (int or float)
     return min(max(val, minimum), maximum)
+def remove_duplicates(leList): # Merge duplicate items from a list into one
+    return list(dict.fromkeys(leList))
 
 # CONSTANTS FOR SOUNDS
 buttonHoverSound = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
@@ -70,7 +73,7 @@ dialogueSound = pygame.mixer.Sound(get_asset_path('sounds/ui/dialogue.ogg'))
 invalidSound = pygame.mixer.Sound(get_asset_path('sounds/ui/invalid.ogg'))
 
 # CUSTOM OBJECTS THAT MAKE SPRITE/TEXT CREATION MORE CONVENIENT #
-class SuffSprite(pygame.sprite.Sprite): # Custom sprites with its surface and rectangle being stored as sub-variables.
+class SuffSprite(pygame.sprite.Sprite): # Parent class. Custom sprites with its surface and rectangle being stored as sub-variables.
     """
     Creates a configurable PyGame sprite.
 
@@ -93,7 +96,7 @@ class SuffSprite(pygame.sprite.Sprite): # Custom sprites with its surface and re
     def draw(self):
         screen.blit(self.surface, (self.x, self.y), self.rect)
 
-class SuffText(list): # Yes, I know. It's actually a list, but it needs to be for multi-line support
+class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it needs to be for multi-line support
     """
     Creates a configurable PyGame text sprite with multi-line support.
 
@@ -134,7 +137,7 @@ class SuffText(list): # Yes, I know. It's actually a list, but it needs to be fo
         return len(self) * self.size
     def get_width(self):
         return max(len(item[2]) for item in self) * self.size * FONT_WIDTH_RATIO
-class SuffButton(pygame.sprite.Group):
+class SuffButton(pygame.sprite.Group): # Parent class. Buttons
     """
     Creates a custom button that runs a function when clicked.
 
@@ -398,21 +401,24 @@ def state_post_functions(): # This function is called after every tick function 
     infoText.draw()
     pygame.display.update()
 
-class SuffState():
-    def __init__(self):
+class SuffState(): # Parent class. Used for individual menus.
+    def __init__(self): # This is called when the state starts to be loaded. Used to load/fetch data from the `words/` folder
+        super().__init__()
+        self.post_load()
+    def post_load(self): # This is called when the state finishes loading. Used for initializing menu elements.
         state_pre_functions()
-    def update(self):
+    def update(self): # This is called every tick.
         state_functions()
-    def update_post(self):
+    def update_post(self): # This is called every tick after the `update` function. Not used yet.
         state_post_functions()
-    def handle_event(self, event):
+    def handle_event(self, event): # Used to handle events like keyboard presses or mouse presses.
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
 class MainMenuState(SuffState):
-    def __init__(self):
-        super().__init__()
+    def post_load(self):
+        super().post_load()
         def dict_hover():
             global CCC
             CCC.change_expression('happy')
@@ -431,7 +437,10 @@ class MainMenuState(SuffState):
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
         def quiz():
             buttonPressSound.play()
-            change_state(QuizState())
+            if os.path.exists('save.txt'):
+                change_state(QuizState())
+            else:
+                change_state(QuizStartState())
         def flashcards_hover():
             global CCC
             CCC.change_expression('neutral')
@@ -484,9 +493,6 @@ class MainMenuState(SuffState):
                 dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() + 32, 300),
                                           random.choice(random_dialogue), 20, 'right')
 
-    def update_post(self):
-        super().update_post()
-
 curState = None
 
 def change_state(state):
@@ -496,8 +502,8 @@ def change_state(state):
 change_state(MainMenuState())
 
 class DictionarySearchState(SuffState):
-    def __init__(self):
-        SuffState.__init__(self)
+    def post_load(self):
+        super().post_load()
         global dialogueBox
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
                                   'Type a word in the field and press [ENTER].', 20, 'down', -1)
@@ -600,47 +606,46 @@ class DictionarySearchState(SuffState):
                 menuExitSound.play()
                 curState = MainMenuState()
 
-    def update_post(self):
-        super().update_post()
-
 class DictionaryWordState(SuffState):
     def __init__(self, wordData):
-        super().__init__()
         self.wordData = wordData
+        super().__init__()
+    def post_load(self):
+        super().post_load()
         self.textGroup = []
 
-        wordTitle = SuffText(32, 32, 32, wordData['word'][0].upper(), 96,
+        wordTitle = SuffText(32, 32, 32, self.wordData['word'][0].upper(), 96,
                              (255, 255, 255))
         self.textGroup.append(wordTitle)
-        wordClassTxtString = wordData['word_class'] # part of speech
-        if len(wordData['plural']) > 0:
-            wordClassTxtString += ', plural \'' + ', '.join(wordData['plural']) + '\'' # plural form
+        wordClassTxtString = self.wordData['word_class'] # part of speech
+        if len(self.wordData['plural']) > 0:
+            wordClassTxtString += ', plural \'' + ', '.join(self.wordData['plural']) + '\'' # plural form
         wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height(), 32, wordClassTxtString, 32, (255, 255, 255))
         self.textGroup.append(wordClassTxt)
         wordAltTxt = SuffText(32, wordClassTxt.y + 32, 32, '', 32, (255, 255, 255))
-        if len(wordData['alt_spellings']) > 0:
-            wordAltTxt.set_text('alt. ' + ', '.join(wordData['alt_spellings']))
+        if len(self.wordData['alt_spellings']) > 0:
+            wordAltTxt.set_text('alt. ' + ', '.join(self.wordData['alt_spellings']))
         self.textGroup.append(wordAltTxt)
-        wordDefTxt = SuffText(32, wordAltTxt.y + 64, 48, wordData['definition'], 32, (255, 255, 255))
+        wordDefTxt = SuffText(32, wordAltTxt.y + 64, 48, self.wordData['definition'], 32, (255, 255, 255))
         self.textGroup.append(wordDefTxt)
         wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48,
-                                    wordData['word'][0][0].upper() + wordData['word'][0][1:] + ' means ', 32,
+                                    self.wordData['word'][0][0].upper() + self.wordData['word'][0][1:] + ' means ', 32,
                                     (255, 255, 255))
         self.textGroup.append(wordTransDescTxt)
         wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
-                                '；'.join(wordData['translation']), 32, (255, 255, 255), 'zh')
+                                '；'.join(self.wordData['translation']), 32, (255, 255, 255), 'zh')
         self.textGroup.append(wordTransTxt)
         tenses = ['present', 'continuous', 'past', 'perfect']
         prevHeight = 0
-        for key in wordData['forms'].keys():
+        for key in self.wordData['forms'].keys():
             wordFormTitleTxt = SuffText(32, wordTransTxt.y + 64 + prevHeight, 48, key.upper(), 48, (255, 255, 255))
             self.textGroup.append(wordFormTitleTxt)
             prevHeight += 48
-            for w in range(len(wordData['forms'][key])):
+            for w in range(len(self.wordData['forms'][key])):
                 if key == 'verb':
                     wordTenseTxt = SuffText(32, wordFormTitleTxt.y + 58 + 32 * w, 48, tenses[w], 16, (255, 255, 255))
                 wordFormTxt = SuffText(32 + (wordTenseTxt.get_width() + 16 if key == 'verb' else 0),
-                                       wordFormTitleTxt.y + 48 + 32 * w, 48, wordData['forms'][key][w], 32, (255, 255, 255))
+                                       wordFormTitleTxt.y + 48 + 32 * w, 48, self.wordData['forms'][key][w], 32, (255, 255, 255))
                 prevHeight += 32
                 if key == 'verb': self.textGroup.append(wordTenseTxt)
                 self.textGroup.append(wordFormTxt)
@@ -699,9 +704,65 @@ class DictionaryWordState(SuffState):
             for i in range(len(self.textGroup)):
                 self.txtYOrigin[i] = self.txtYOriginalOrigin[i] + self.scrollAmount * 64
 
-class QuizState(SuffState):
+class QuizStartState(SuffState):
     def __init__(self):
         super().__init__()
+        global music
+
+    def post_load(self):
+        self.index = 0
+        self.dialogue = [
+            ["They don\'t call me Chief Executive Chow for nothin', kid.", 'neutral', 0, 0.03],
+            ['I have ruined the futures of countless candidates.', 'happy', 8, 0.03],
+            ["I'll give you a definition and three chances to answer my questions.", 'smug', 16, 0.03],
+            ["And if you use all my chances...", 'evil', 24, 0.03],
+            ["YOU DIE.", 'horror', 28, 0.05],
+            ["", 'horror', 31, 0],
+            ["", '', 32, 0]
+        ]
+        self.black = SuffSprite(0, 0)
+        self.black.rect = pygame.draw.rect(self.black.surface, (0, 0, 0), (0, 0, SCREENSIZE[0], SCREENSIZE[1]))
+        self.black.surface.set_alpha(0)
+        pygame.mixer.music.load(get_asset_path('music/pre_quiz.ogg'))
+        pygame.mixer.music.play()
+        self.curBeat = 0
+        self.prevBeat = 0
+        super().post_load()
+
+    def update(self):
+        global dialogueBox
+        self.curBeat = int((pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000)) # Current beat of the music.
+        if self.prevBeat != self.curBeat:
+            self.prevBeat = self.curBeat
+        super().update()
+        for event in self.dialogue:
+            if event[2] == self.curBeat:
+                if event[0] != '':
+                    dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 100),
+                                              event[0], min(20, len(event[0])), 'up', -1)
+                    dialogueBox.delay = event[3]
+                else:
+                    self.black.surface.set_alpha(255)
+                if event[1] != '':
+                    CCC.change_expression(event[1])
+                self.dialogue.pop(0)
+                print(len(self.dialogue))
+                if len(self.dialogue) <= 0:
+                    change_state(QuizState())
+                self.index += 1
+        CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.rect.width) / 2, 1 / FPS * 6)
+        CCC.y = suff_lerp(CCC.y, (SCREENSIZE[1] - CCC.head.rect.height) / 2 + 100, 1 / FPS * 6)
+        CCC.angle = 0
+        CCC.draw()
+        dialogueBox.draw()
+        self.black.draw()
+
+    def handle_event(self, event):
+        # (Intentional) Without the super() function, quitting is disabled
+        super()
+
+class QuizState(SuffState):
+    def __init__(self):
         self.leWordData = dict()
         self.allowInput = False
         self.derList = []
@@ -714,7 +775,7 @@ class QuizState(SuffState):
                     self.derList.append(item)
 
         self.lives = 3
-        self.cccExpressions = ['demon', 'furious', 'angry', 'neutral', 'happy'] # life based
+        self.cccExpressions = ['demon', 'furious', 'angry', 'neutral', 'smug'] # life based
         self.cccHappyLines = [
             'Very good.',
             'Quite good.',
@@ -731,9 +792,15 @@ class QuizState(SuffState):
             'Low level.',
             'Zero marks.'
         ]
+        super().__init__()
 
-        self.searchQuery = SuffText(256, 580, 25, '', 64, (255, 255, 255))
+    def post_load(self):
+        super().post_load()
+        self.searchQuery = SuffText(SCREENSIZE[0] / 2, 600, 25, '', 64, (255, 255, 255))
+        self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '|', 64, (255, 255, 255))
         self.reset()
+        pygame.mixer.music.load(get_asset_path('music/quiz_loop.ogg'))
+        pygame.mixer.music.play(-1)
     def reset(self):
         global dialogueBox
         self.allowInput = True
@@ -751,11 +818,17 @@ class QuizState(SuffState):
         CCC.draw()
         dialogueBox.draw()
         self.searchQuery.draw()
+        self.searchIBeam.draw()
+
+    def look_for_chars_in_word(self, chars:str, words:list):
+        containingLetters = []
+        for word in range(len(words)):
+            for char in chars:
+                if char in words[word]:
+                    containingLetters.append(char)
+        return remove_duplicates(containingLetters)
     def handle_event(self, event):
         super().handle_event(event)
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 change_state(MainMenuState())
@@ -766,6 +839,7 @@ class QuizState(SuffState):
             elif event.key == pygame.K_RETURN:
                 global dialogueBox
                 if self.allowInput:
+                    containingChars = self.look_for_chars_in_word(self.searchQuery.text.lower().strip(), self.leWordData['word'])
                     if dialogueBox.displayed_text != dialogueBox.text:
                         dialogueBox.displayed_text = dialogueBox.text
                         dialogueBox.box_text.set_text(dialogueBox.displayed_text)
@@ -775,17 +849,25 @@ class QuizState(SuffState):
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
                         self.lives = clamp(self.lives + 1, 0, 4)
+                        CCC.change_expression(self.cccExpressions[self.lives])
+                    elif len(containingChars) > 0:
+                        CCC.change_expression('smug')
+                        CCC.x += random.randint(-50, 50)
+                        CCC.angle += random.randint(-30, 30)
+                        CCC.y -= random.randint(50, 100)
+                        self.allowInput = True
                     else:
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                                                 random.choice(self.cccAngryLines), 16, 'up', 1, self.reset)
                         self.lives = clamp(self.lives - 1, 0, 4)
+                        CCC.change_expression(self.cccExpressions[self.lives])
                         invalidSound.play()
                     self.searchQuery.set_text('')
-                    CCC.change_expression(self.cccExpressions[self.lives])
             else:
                 self.searchQuery.set_text(self.searchQuery.text + event.unicode)
                 textTypeSound.play()
             self.searchQuery.x = (SCREENSIZE[0] - self.searchQuery.get_width()) / 2
+            self.searchIBeam.x = self.searchQuery.x + self.searchQuery.get_width()
 
 while True:
     for event in pygame.event.get():
