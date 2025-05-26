@@ -262,7 +262,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
     :param float fade_time: The seconds it takes for the dialogue box to disappear after the text finishes.
     """
     padding = 20
-    def __init__(self, pos, text, max_char = 10, style = 'up', fade_time = 1.5, fade_function = None):
+    def __init__(self, pos, text, max_char = 10, style = 'up', fade_time = 1.5, fade_function = None, font = 'default'):
         pygame.sprite.Group.__init__(self)
         self.pos:tuple = pos
         self.text:str = text
@@ -294,7 +294,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
 
         self.box.surface.fill((255, 255, 255), (0, 0, width, height))
         self.box.rect = pygame.draw.rect(self.box.surface, (0, 0, 0), (0, 0, width, height), 3)
-        self.box_text = SuffText(self.box.x + self.padding, self.box.y + self.padding, max_char, '', 32)
+        self.box_text = SuffText(self.box.x + self.padding, self.box.y + self.padding, max_char, '', 32, (0, 0, 0), font)
     def draw(self):
         if (self.fade_time != -1 and self.tick < self.fade_time + 1) or (self.fade_time == -1 and self.tick < 2):
             self.tick += 1 / FPS
@@ -317,6 +317,22 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         if self.tick > self.fade_time and not self.fade_function_called:
             self.fade_function_called = True
             if self.fade_function: self.fade_function()
+class JeffreyWong(SuffSprite):
+    def __init__(self, x, y):
+        super().__init__(x, y, 'images/placeholder.png')
+        self.rect = self.surface.get_rect()
+        self.flip_tick = random.random() * 10
+    def draw(self):
+        self.flip_tick -= 1 / FPS * 4
+        if self.flip_tick <= 0:
+            self.flip_tick = 10
+        self.surface2 = pygame.transform.scale(self.surface, (80, 80))
+        self.rect2 = self.surface2.get_rect()
+        if self.flip_tick <= math.pi:
+            self.surface = pygame.transform.scale(self.surface, (80, 80))
+            self.surface2 = pygame.transform.scale(self.surface, (abs(math.cos(self.flip_tick)) * 80, 80))
+            self.rect2 = self.surface2.get_rect()
+        screen.blit(self.surface2, (self.x - abs(math.cos(min(math.pi, self.flip_tick))) * 40, self.y), self.rect2)
 fpsCounter = SuffText(0, 0, 16, '0 FPS', 16, (255, 255, 255))
 background = SuffSprite(0, 0, 'images/background_1.png')
 background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
@@ -367,18 +383,20 @@ def state_pre_functions(): # This function is called every time a menu initializ
         dust.y = randomPos[1]
     dialogueBox = DialogueBox((0, 0), '', 10)
     CCC.change_expression('neutral') # Make CCC neutral every time he switches to menu
-def state_functions(): # This function is called before every tick function in a menu
+def state_functions(draw_bg = True): # This function is called before every tick function in a menu
     global CCC
     global curTime
     global mousePos
-    global background
-    global dustGroup
-    global bgMode
-    global changeBG
     curTime = pygame.time.get_ticks() / FPS
     clock.tick(FPS)
     mousePos = pygame.mouse.get_pos()
     screen.fill((0, 0, 0))
+    if draw_bg: draw_default_bg()
+def draw_default_bg():
+    global background
+    global dustGroup
+    global bgMode
+    global changeBG
     background.x = (SCREENSIZE[0] - background.surface.get_width()) / 2 + math.sin(curTime / 120) * 64
     background.y = (SCREENSIZE[1] - background.surface.get_height()) / 2 + math.cos(curTime / 120) * 36
     if round(math.pow(math.cos(curTime / 30), 2)) == 0 and changeBG == True:
@@ -402,13 +420,14 @@ def state_post_functions(): # This function is called after every tick function 
     pygame.display.update()
 
 class SuffState(): # Parent class. Used for individual menus.
-    def __init__(self): # This is called when the state starts to be loaded. Used to load/fetch data from the `words/` folder
+    def __init__(self, draw_bg = True): # This is called when the state starts to be loaded. Used to load/fetch data from the `words/` folder
         super().__init__()
         self.post_load()
+        self.draw_bg = draw_bg
     def post_load(self): # This is called when the state finishes loading. Used for initializing menu elements.
         state_pre_functions()
     def update(self): # This is called every tick.
-        state_functions()
+        state_functions(self.draw_bg)
     def update_post(self): # This is called every tick after the `update` function. Not used yet.
         state_post_functions()
     def handle_event(self, event): # Used to handle events like keyboard presses or mouse presses.
@@ -706,11 +725,12 @@ class DictionaryWordState(SuffState):
 
 class QuizStartState(SuffState):
     def __init__(self):
-        super().__init__()
+        super().__init__(False)
         global music
 
     def post_load(self):
         self.index = 0
+        # Dialogue, Expression, Beat Number, Dialogue Speed
         self.dialogue = [
             ["They don\'t call me Chief Executive Chow for nothin', kid.", 'neutral', 0, 0.03],
             ['I have ruined the futures of countless candidates.', 'happy', 8, 0.03],
@@ -726,16 +746,13 @@ class QuizStartState(SuffState):
         pygame.mixer.music.load(get_asset_path('music/pre_quiz.ogg'))
         pygame.mixer.music.play()
         self.curBeat = 0
-        self.prevBeat = 0
         super().post_load()
 
     def update(self):
         global dialogueBox
-        self.curBeat = int((pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000)) # Current beat of the music.
-        if self.prevBeat != self.curBeat:
-            self.prevBeat = self.curBeat
+        self.curBeat = int((pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000)) # Current beat of the music. BPM is 144
         super().update()
-        for event in self.dialogue:
+        for event in self.dialogue: # This causes dialogue to sync with the music.
             if event[2] == self.curBeat:
                 if event[0] != '':
                     dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 100),
@@ -759,7 +776,9 @@ class QuizStartState(SuffState):
 
     def handle_event(self, event):
         # (Intentional) Without the super() function, quitting is disabled
-        super()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                change_state(QuizState())
 
 class QuizState(SuffState):
     def __init__(self):
@@ -775,7 +794,7 @@ class QuizState(SuffState):
                     self.derList.append(item)
 
         self.lives = 3
-        self.cccExpressions = ['demon', 'furious', 'angry', 'neutral', 'smug'] # life based
+        self.cccExpressions = ['horror', 'evil', 'smug', 'neutral', 'angry'] # life based
         self.cccHappyLines = [
             'Very good.',
             'Quite good.',
@@ -792,29 +811,45 @@ class QuizState(SuffState):
             'Low level.',
             'Zero marks.'
         ]
-        super().__init__()
+        super().__init__(False)
 
     def post_load(self):
         super().post_load()
         self.searchQuery = SuffText(SCREENSIZE[0] / 2, 600, 25, '', 64, (255, 255, 255))
         self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '|', 64, (255, 255, 255))
         self.reset()
+        self.curBeat = 0
         pygame.mixer.music.load(get_asset_path('music/quiz_loop.ogg'))
         pygame.mixer.music.play(-1)
+        self.jeffs = []
+        for x in range(0, SCREENSIZE[0] // 80 + 1): # Every Jeffrey Wong sprite is 80 x 80.
+            for y in range(0, SCREENSIZE[1] // 80):
+                jeff = JeffreyWong(x * 80, y * 80)
+                jeff.surface.set_alpha(random.randint(128, 192))
+                self.jeffs.append(jeff)
     def reset(self):
         global dialogueBox
         self.allowInput = True
         self.leWordData = random.choice(self.derList)
         ogDef = self.leWordData['definition']
         senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
+        leFont = 'default'
+        if random.choice([True, False]):
+            senDef = ' / '.join(self.leWordData['translation']) # 50% chance that it shows up the Chinese version
+            leFont = 'zh'
+        leDialogue = f'What is the {self.leWordData['word_class']} for {senDef}?'
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2),
-                                  f'What is the {self.leWordData['word_class']} for {senDef}?', 50, 'down', -1)
+                                  leDialogue, min(len(leDialogue), 50), 'down', -1, None, leFont) # Limits dialogue width by 50 chars
 
     def update(self):
         super().update()
-        CCC.angle = suff_lerp(CCC.angle, 0, 1 / FPS * 6)
-        CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.rect.width) / 2, 1 / FPS * 6)
-        CCC.y = suff_lerp(CCC.y, 50, 1 / FPS * 6)
+        for jeff in self.jeffs:
+            jeff.draw()
+        self.curBeat = (pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000) # BPM of music is 144
+        CCC.angle = suff_lerp(CCC.angle, math.sin(self.curBeat * math.pi) * -45, 1 / FPS * 6)
+        CCC.x = (SCREENSIZE[0] - CCC.head.rect.width) / 2 + math.sin(self.curBeat * math.pi) * 400
+        CCC.y = 50 + math.sin(self.curBeat * math.pi * 2) * 100
+        # Makes CCC shift around like a maniac
         CCC.draw()
         dialogueBox.draw()
         self.searchQuery.draw()
@@ -848,7 +883,7 @@ class QuizState(SuffState):
                     if self.searchQuery.text.lower().strip() in self.leWordData['word']:
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
-                        self.lives = clamp(self.lives + 1, 0, 4)
+                        self.lives = clamp(self.lives + 1, 0, 4) # Limit tries
                         CCC.change_expression(self.cccExpressions[self.lives])
                     elif len(containingChars) > 0:
                         CCC.change_expression('smug')

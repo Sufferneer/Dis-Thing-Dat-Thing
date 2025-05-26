@@ -257,7 +257,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
     :param float fade_time: The seconds it takes for the dialogue box to disappear after the text finishes.
     """
     padding = 20
-    def __init__(self, pos, text, max_char = 10, style = 'up', fade_time = 1.5, fade_function = None):
+    def __init__(self, pos, text, max_char = 10, style = 'up', fade_time = 1.5, fade_function = None, font = 'default'):
         pygame.sprite.Group.__init__(self)
         self.pos:tuple = pos
         self.text:str = text
@@ -289,7 +289,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
 
         self.box.surface.fill((255, 255, 255), (0, 0, width, height))
         self.box.rect = pygame.draw.rect(self.box.surface, (0, 0, 0), (0, 0, width, height), 3)
-        self.box_text = SuffText(self.box.x + self.padding, self.box.y + self.padding, max_char, '', 32)
+        self.box_text = SuffText(self.box.x + self.padding, self.box.y + self.padding, max_char, '', 32, (0, 0, 0), font)
     def draw(self):
         if (self.fade_time != -1 and self.tick < self.fade_time + 1) or (self.fade_time == -1 and self.tick < 2):
             self.tick += 1 / FPS
