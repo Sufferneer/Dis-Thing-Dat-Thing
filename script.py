@@ -102,7 +102,8 @@ class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it 
     """
     Creates a configurable PyGame text sprite with multi-line support.
 
-    :param tuple pos: Position of the text
+    :param int x: X position of the text
+    :param int y: Y position of the text
     :param int width: Width in characters of the text
     :param str text: The string to be displayed
     :param int size: The size in pixels of the text
@@ -225,7 +226,8 @@ class CCCSprite(pygame.sprite.Group): # The sprite of the game master capable of
     """
     Summon the almighty biology teacher Mr. Triple C into the algorithm.
 
-    :param tuple pos: The position of Mr. Triple C.
+    :param int x: The X position of Mr. Triple C.
+    :param int y: The Y position of Mr. Triple C.
     """
     def __init__(self, x, y):
         pygame.sprite.Group.__init__(self)
@@ -324,13 +326,13 @@ class JeffreyWong(SuffSprite):
         super().__init__(x, y, f'images/jeff/{random.randint(1, 3)}.png')
         self.surface.set_alpha(random.randint(128, 192))
         self.rect = self.surface.get_rect()
-        self.flip_tick = random.random() * 30
+        self.flip_tick = random.random() * 60
         self.flipped = False
     def draw(self):
         self.flip_tick -= 1 / FPS * 4
         if self.flip_tick <= 0:
             self.flipped = False
-            self.flip_tick = math.pi * 2 + random.random() * 30
+            self.flip_tick = math.pi * 2 + random.random() * 60
         self.surface2 = pygame.transform.scale(self.surface, (160, 160))
         self.rect2 = self.surface2.get_rect()
         if self.flip_tick <= math.pi:
@@ -378,7 +380,6 @@ random_dialogue = [
     'You WILL be a fatso one day.',
     "Having a son is God's divine punishment of my sins."
 ]
-# todo: tidy this button code
 dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() * 1.1, 300), '', 20, 'right')
 bgMode = 1
 changeBG = True
@@ -501,6 +502,7 @@ class MainMenuState(SuffState):
         self.creditsButton = SuffButton((SCREENSIZE[0] / 2 + 5, SCREENSIZE[1] / 2 + 5),
                                         (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), credits, 'credits', 'Credits',
                                         credits_hover, 48, 112)
+        infoText.set_text('Dis Sheet Dat Sheet with CCC')
     def update(self):
         super().update()
         CCC.x = suff_lerp(CCC.x, (SCREENSIZE[0] - CCC.head.surface.get_width()) / 2, 1 / FPS * 6)
@@ -753,7 +755,6 @@ class DictionaryWordState(SuffState):
 
 class QuizStartState(SuffState):
     def __init__(self):
-        self.leQuizState = QuizState()  # preload the quiz state
         super().__init__(False)
 
     def post_load(self):
@@ -849,6 +850,7 @@ class QuizState(SuffState):
         self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '|', 64, (255, 255, 255))
         self.reset()
         self.curBeat = 0
+        self.jeff_velocity = 640
         self.jeffs = []
         self.jeff_width = math.ceil(SCREENSIZE[0] / 160)
         self.jeff_height = math.ceil(SCREENSIZE[1] / 160)
@@ -874,6 +876,7 @@ class QuizState(SuffState):
         self.flash.surface.set_alpha(255)
         pygame.mixer.music.load(get_asset_path('music/quiz_loop.ogg'))
         pygame.mixer.music.play(-1)
+        infoText.set_text('Death By CCC')
     def reset(self):
         CCC.change_expression(self.cccExpressions[self.lives])
         global dialogueBox
@@ -893,8 +896,9 @@ class QuizState(SuffState):
     def update(self):
         super().update()
         self.bg.draw()
+        self.jeff_velocity = suff_lerp(self.jeff_velocity, 640, 1 / FPS)
         for i in range(len(self.jeffs)):
-            self.jeffs[i].x -= 1 / FPS * 640
+            self.jeffs[i].x -= 1 / FPS * self.jeff_velocity
             if self.jeffs[i].x < -160:
                 self.jeffs[i].x = SCREENSIZE[0] + 160 + self.jeffs[i].x
             self.jeffs[i].y = math.sin(self.curBeat * math.pi / 2 + (i // self.jeff_height) * math.pi / self.jeff_height) * 40 + i % self.jeff_height * 160 - 40
@@ -903,8 +907,8 @@ class QuizState(SuffState):
             dust.x += math.sin(self.curBeat * math.pi / 2 * dust.flitter_speed * dust.flitter_torque) * dust.flitter_torque / 5
             dust.y -= 1 / FPS * 320
             if dust.real_y < -160:
-                dust.y = SCREENSIZE[1]
-                dust.real_y = SCREENSIZE[1]
+                dust.y = SCREENSIZE[1] + SCREENSIZE[1] * random.random() / 2
+                dust.real_y = dust.y
             dust.draw()
         self.curBeat = (pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000) # BPM of music is 144
         CCC.angle = math.sin(self.curBeat * math.pi / 2) * -60 / (self.lives + 1)
