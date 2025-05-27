@@ -4,6 +4,8 @@
 # ! I am usually called 'Suff' within my peers, so although it may sound weird,
 # ! This algorithm is 100% self-made made only with the assist of PyGame documentations and tutorials.
 
+# I don't wanna separate those classes into different scripts
+
 import json
 import os
 import sys
@@ -11,19 +13,18 @@ import pygame
 import math
 import random
 clock = pygame.time.Clock()
-music = pygame.mixer.music
 curTime = pygame.time.get_ticks()
-FPS = 60 # ! I won't recommend on touching this one.
-SCREENSIZE = (1280, 720)
-FONT_WIDTH_RATIO = 0.5625 # Because the font size does not equal to a character's width, this value is multiplied by the
+FPS:int = 60 # ! I won't recommend on touching this one.
+SCREENSIZE:tuple = (1280, 720)
+FONT_WIDTH_RATIO:float = 0.5625 # Because the font size does not equal to a character's width, this value is multiplied by the
                           # font size of a text to get its character width
 
 pygame.init()
 pygame.display.set_caption('Dis Sheet Dat Sheet - With CCC')
 screen = pygame.display.set_mode(SCREENSIZE)
 mousePos = pygame.mouse.get_pos() # Mouse position variable that updates every tick.
-DIALOGUE_SILENT_CHARS = [' ', ',', "'", '"', '.', '!', '?', '(', ')'] # These characters do NOT play the dialogue sound
-DIALOGUE_PAUSE_CHARS = [',', ';', ':', '.', '!', '?'] # These characters delay the dialogue
+DIALOGUE_SILENT_CHARS:list = [' ', ',', "'", '"', '.', '!', '?', '(', ')'] # These characters do NOT play the dialogue sound
+DIALOGUE_PAUSE_CHARS:list = [',', ';', ':', '.', '!', '?'] # These characters delay the dialogue
 pygame.mixer.music.set_volume(0)
 
 def get_asset_path(path):
@@ -62,17 +63,24 @@ def clamp(val, minimum, maximum): # Bounds a value within a range of numbers (in
     return min(max(val, minimum), maximum)
 def remove_duplicates(leList): # Merge duplicate items from a list into one
     return list(dict.fromkeys(leList))
+def adjust_color(surface:pygame.surface.Surface, color:tuple, intensity:float = 1):
+    size = surface.get_size()
+    for x in range(size[0]):
+        for y in range(size[1]):
+            pixel = surface.get_at((x, y)) # Preserve alpha of pixel
+            r, g, b = suff_lerp(pixel[0], color[0], intensity), suff_lerp(pixel[1], color[1], intensity), suff_lerp(pixel[2], color[2], intensity)
+            surface.set_at((x, y), pygame.color.Color(int(r), int(g), int(b), pixel[3]))
 
 pygame.display.set_icon(pygame.image.load(get_asset_path('images/icon.png')))
 # CONSTANTS FOR SOUNDS
-buttonHoverSound = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
-buttonPressSound = pygame.mixer.Sound(get_asset_path('sounds/ui/click.ogg'))
-textTypeSound = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
-textEraseSound = pygame.mixer.Sound(get_asset_path('sounds/ui/release.ogg'))
-menuExitSound = pygame.mixer.Sound(get_asset_path('sounds/ui/toggle_off.ogg'))
+BUTTON_HOVER_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
+BUTTON_PRESS_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/click.ogg'))
+TEXT_TYPE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
+TEXT_ERASE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/release.ogg'))
+MENU_EXIT_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/toggle_off.ogg'))
 
-dialogueSound = pygame.mixer.Sound(get_asset_path('sounds/ui/dialogue.ogg'))
-invalidSound = pygame.mixer.Sound(get_asset_path('sounds/ui/invalid.ogg'))
+DIALOGUE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/dialogue.ogg'))
+INVALID_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/invalid.ogg'))
 
 # CUSTOM OBJECTS THAT MAKE SPRITE/TEXT CREATION MORE CONVENIENT #
 class SuffSprite(pygame.sprite.Sprite): # Parent class. Custom sprites with its surface and rectangle being stored as sub-variables.
@@ -95,8 +103,14 @@ class SuffSprite(pygame.sprite.Sprite): # Parent class. Custom sprites with its 
     def load_graphic(self, imagePath):
         self.surface = pygame.image.load(get_asset_path(imagePath)).convert_alpha()
         self.rect = self.surface.get_rect()
-    def draw(self):
-        screen.blit(self.surface, (self.x, self.y), self.rect)
+    def draw(self, surface = None, rect = None):
+        if surface is None:
+            usedSurf = self.surface
+        else:
+            usedSurf = surface
+        if rect is None: usedRect = self.rect
+        else: usedRect = rect
+        screen.blit(usedSurf, (self.x, self.y), usedRect)
 
 class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it needs to be for multi-line support
     """
@@ -202,7 +216,28 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
                         get_asset_path(f'images/buttons/{self.base_texture}.png')).convert_alpha()
                     self.base.surface.set_alpha(128)
                     self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
-
+class SuffSave(dict):
+    def load(self, directory = 'save'): # load save file from disk to memory
+        if not os.path.exists(directory + '.json'):
+            saveFile = open(directory + '.json', 'w') # create new json file if file does not exist
+            saveFile.write(json.dumps(dict(), indent = 4))
+            saveFile.close()
+            return
+        saveFile = open(directory + '.json', 'r')
+        saveJson = json.load(saveFile)
+        saveFile.close()
+        for key in list(saveJson.keys()):
+            self[key] = saveJson[key]
+        return
+    def flush(self, directory = 'save'): # overrides save file from memory to disk
+        saveFile = open(directory + '.json', 'w')
+        saveContents = json.dumps(self, indent = 4)
+        saveFile.write(saveContents)
+        saveFile.close()
+    def fetch(self, variable): # returns value of save variable
+        if variable in list(self.keys()):
+            return self[variable]
+        return None
 # OBJECTS THAT ARE BUILT ON THE ABOVE CUSTOM OBJECTS #
 # They contain special code that is personalized for them #
 class Dust(SuffSprite): # Ambient dust particles
@@ -305,7 +340,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         if self.displayed_text != self.text:
             if self.tick >= (self.delay if self.text[self.cur_letter - 1] not in DIALOGUE_PAUSE_CHARS else self.delay * 4):
                 if self.text[self.cur_letter] not in DIALOGUE_SILENT_CHARS:
-                    pygame.mixer.Sound.play(dialogueSound)
+                    pygame.mixer.Sound.play(DIALOGUE_SOUND)
                     if self.cur_letter % 3 == 0 or self.delay >= 0.05:
                         CCC.talk_tick = 0
                         CCC.talk_force = random.random() * 0.5 + 0.5
@@ -321,9 +356,9 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         if self.tick > self.fade_time and not self.fade_function_called:
             self.fade_function_called = True
             if self.fade_function: self.fade_function()
-class JeffreyWong(SuffSprite):
+class QuizBGTile(SuffSprite):
     def __init__(self, x, y):
-        super().__init__(x, y, f'images/jeff/{random.randint(1, 3)}.png')
+        super().__init__(x, y, f'images/quiz/tile/{random.randint(1, 3)}.png')
         self.surface.set_alpha(random.randint(128, 192))
         self.rect = self.surface.get_rect()
         self.flip_tick = random.random() * 60
@@ -337,13 +372,15 @@ class JeffreyWong(SuffSprite):
         self.rect2 = self.surface2.get_rect()
         if self.flip_tick <= math.pi:
             if self.flip_tick <= math.pi / 2 and not self.flipped:
-                self.load_graphic(f'images/jeff/{random.randint(1, 3)}.png')
+                self.load_graphic(f'images/quiz/tile/{random.randint(1, 3)}.png')
                 self.surface.set_alpha(random.randint(128, 192))
                 self.flipped = True
             self.surface = pygame.transform.scale(self.surface, (160, 160))
             self.surface2 = pygame.transform.scale(self.surface, (abs(math.cos(self.flip_tick)) * 160, 160))
             self.rect2 = self.surface2.get_rect()
         screen.blit(self.surface2, (self.x - abs(math.cos(min(math.pi, self.flip_tick))) * 80 + 80, self.y), self.rect2)
+curSave = SuffSave()
+curSave.load('save')
 fpsCounter = SuffText(0, 0, 16, '0 FPS', 16, (255, 255, 255))
 background = SuffSprite(0, 0, 'images/background_1.png')
 background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
@@ -454,29 +491,26 @@ class MainMenuState(SuffState):
         def dict_hover():
             global CCC
             CCC.change_expression('happy')
-            buttonHoverSound.play()
+            BUTTON_HOVER_SOUND.play()
             global dialogueBox
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
                                       'Learn some vocabulary for your brain library.', 20, 'right')
         def dict():
-            buttonPressSound.play()
+            BUTTON_PRESS_SOUND.play()
             change_state('dictionary_search')
         def quiz_hover():
             global CCC
             CCC.change_expression('smug')
-            buttonHoverSound.play()
+            BUTTON_HOVER_SOUND.play()
             global dialogueBox
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
         def quiz():
-            buttonPressSound.play()
-            if os.path.exists('save.txt'):
-                change_state('quiz')
-            else:
-                change_state('quiz_start')
+            BUTTON_PRESS_SOUND.play()
+            change_state('quiz_start')
         def flashcards_hover():
             global CCC
             CCC.change_expression('neutral')
-            buttonHoverSound.play()
+            BUTTON_HOVER_SOUND.play()
             global dialogueBox
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
                               'Quickly memorize some words using a traditional Asian method.', 20, 'right')
@@ -485,7 +519,7 @@ class MainMenuState(SuffState):
         def credits_hover():
             global CCC
             CCC.change_expression('furious')
-            buttonHoverSound.play()
+            BUTTON_HOVER_SOUND.play()
             global dialogueBox
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Check out the sole idiot that made this garbage possible.', 20, 'left')
         def credits():
@@ -629,30 +663,30 @@ class DictionarySearchState(SuffState):
                     # removes leading/ending whitespaces and
                     # makes it lowercase)
                     if w:
-                        buttonPressSound.play()
+                        BUTTON_PRESS_SOUND.play()
                         global curState
                         global curWordData
                         curWordData = w
                         curState = DictionaryWordState()
                     else:
-                        invalidSound.play()
+                        INVALID_SOUND.play()
                         CCC.change_expression('angry')
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
                                                   'I don\'t think that word exists in the biology curriculum.', 20,
                                                   'down', -1)
                 else:
-                    invalidSound.play()
+                    INVALID_SOUND.play()
                     CCC.change_expression('angry')
                     dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
                                               'I don\'t believe a human speaks like that.', 20, 'down', -1)
             elif event.key == pygame.K_BACKSPACE:
                 self.searchQuery.set_text(self.searchQuery.text[0:len(self.searchQuery.text) - 1])
-                textEraseSound.play()
+                TEXT_ERASE_SOUND.play()
             elif len(self.searchQuery.text) < self.searchQuery.width:
                 self.searchQuery.set_text(self.searchQuery.text + event.unicode)
-                textTypeSound.play()
+                TEXT_TYPE_SOUND.play()
             if event.key == pygame.K_ESCAPE:
-                menuExitSound.play()
+                MENU_EXIT_SOUND.play()
                 curState = MainMenuState()
 
 class DictionaryWordState(SuffState):
@@ -727,7 +761,7 @@ class DictionaryWordState(SuffState):
                 self.textGroup[i].set_text(self.textGroup[i].text + self.txtText[i][len(self.textGroup[i].text)])
             self.textGroup[i].draw()
         if playSound:
-            dialogueSound.play()
+            DIALOGUE_SOUND.play()
             self.playAnim += 1
             if self.playAnim > 3:
                 CCC.talk_force = random.random() * 0.5 + 0.5
@@ -741,7 +775,7 @@ class DictionaryWordState(SuffState):
         super().handle_event(event)
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                menuExitSound.play()
+                MENU_EXIT_SOUND.play()
                 global curState
                 curState = DictionarySearchState()
         if event.type == pygame.MOUSEWHEEL:
@@ -775,6 +809,7 @@ class QuizStartState(SuffState):
         pygame.mixer.music.load(get_asset_path('music/pre_quiz.ogg'))
         pygame.mixer.music.play()
         self.curBeat = 0
+        infoText.set_text('Press [ENTER] To Skip' if curSave.fetch('quiz_highscore') else '')
         super().post_load()
 
     def update(self):
@@ -792,7 +827,6 @@ class QuizStartState(SuffState):
                 if event[1] != '':
                     CCC.change_expression(event[1])
                 self.dialogue.pop(0)
-                print(len(self.dialogue))
                 if len(self.dialogue) <= 0:
                     change_state('quiz')
                 self.index += 1
@@ -806,7 +840,7 @@ class QuizStartState(SuffState):
     def handle_event(self, event):
         # (Intentional) Without the super() function, quitting is disabled
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
+            if event.key == pygame.K_RETURN and curSave.fetch('quiz_highscore') is not None:
                 change_state('quiz')
 
 class QuizState(SuffState):
@@ -846,26 +880,25 @@ class QuizState(SuffState):
 
     def post_load(self):
         super().post_load()
+        self.jeffs = [] # Group for background tiles that "rotate"
+        self.dust = [] # Group for dust particles
+        self.reds = [] # Group for translucent red overlay
         self.searchQuery = SuffText(SCREENSIZE[0] / 2, 600, 25, '', 64, (255, 255, 255))
         self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '|', 64, (255, 255, 255))
-        self.reset()
         self.curBeat = 0
         self.jeff_velocity = 640
-        self.jeffs = []
         self.jeff_width = math.ceil(SCREENSIZE[0] / 160)
         self.jeff_height = math.ceil(SCREENSIZE[1] / 160)
         for x in range(0, self.jeff_width + 1):  # Every Jeffrey Wong sprite is 80 x 80.
             for y in range(0, self.jeff_height):
-                jeff = JeffreyWong(x * 160, y * 160 - 40)
+                jeff = QuizBGTile(x * 160, y * 160 - 40)
                 self.jeffs.append(jeff)
-        self.bg = SuffSprite(0, 0, 'images/vibrio_cholerae.png')
+        self.bg = SuffSprite(0, 0, 'images/quiz/bg.png')
         self.bg.surface = pygame.transform.scale(self.bg.surface, (SCREENSIZE[0], SCREENSIZE[1]))
         self.bg.rect = self.bg.surface.get_rect()
-        self.dust = []
         for i in range(0, 50):
             red = Dust(random.randint(0, SCREENSIZE[0]), random.randint(0, SCREENSIZE[1]))
             self.dust.append(red)
-        self.reds = []
         for i in range(1, 9):
             red = SuffSprite(0, SCREENSIZE[1] - SCREENSIZE[1] / 3 / 8 * i)
             red.rect = pygame.draw.rect(red.surface, (255, 0, 0), (0, 0, SCREENSIZE[0], SCREENSIZE[1] / 3 / 8 * i))
@@ -877,6 +910,11 @@ class QuizState(SuffState):
         pygame.mixer.music.load(get_asset_path('music/quiz_loop.ogg'))
         pygame.mixer.music.play(-1)
         infoText.set_text('Death By CCC')
+        self.cccVelocityX = SCREENSIZE[0] / math.ceil((random.random() + 0.01) * 2) * random.choice([1, -1])
+        self.cccVelocityY = SCREENSIZE[1] / math.ceil((random.random() + 0.01) * 2) * random.choice([1, -1])
+
+        self.reset()
+        self.curScore = 0
     def reset(self):
         CCC.change_expression(self.cccExpressions[self.lives])
         global dialogueBox
@@ -896,29 +934,35 @@ class QuizState(SuffState):
     def update(self):
         super().update()
         self.bg.draw()
-        self.jeff_velocity = suff_lerp(self.jeff_velocity, 640, 1 / FPS)
+        self.jeff_velocity = suff_lerp(self.jeff_velocity, 480 + (3 - self.lives) * 240, 1 / FPS * 4) # Tiles scroll faster with each life lost
+        self.cccVelocityX = suff_lerp(self.cccVelocityX, 150 + (3 - self.lives) * 80, 1 / FPS * 2)
+        self.cccVelocityY = suff_lerp(self.cccVelocityY, 50 + max(0, 3 - self.lives) * 50, 1 / FPS * 2)
         for i in range(len(self.jeffs)):
             self.jeffs[i].x -= 1 / FPS * self.jeff_velocity
             if self.jeffs[i].x < -160:
-                self.jeffs[i].x = SCREENSIZE[0] + 160 + self.jeffs[i].x
-            self.jeffs[i].y = math.sin(self.curBeat * math.pi / 2 + (i // self.jeff_height) * math.pi / self.jeff_height) * 40 + i % self.jeff_height * 160 - 40
+                self.jeffs[i].x = SCREENSIZE[0] + 160 + self.jeffs[i].x # Put tiles back to their starting position (off-screen)
+            self.jeffs[i].y = math.sin(self.curBeat * math.pi / 2 + (
+                    i // self.jeff_height) * math.pi / self.jeff_height) * 40 + i % self.jeff_height * 160 - 40
+            # Make tiles fluctuate in a wave pattern.
             self.jeffs[i].draw()
         for dust in self.dust:
             dust.x += math.sin(self.curBeat * math.pi / 2 * dust.flitter_speed * dust.flitter_torque) * dust.flitter_torque / 5
-            dust.y -= 1 / FPS * 320
+            # Make dust particles move left and right to stimulate sparks/smoke produced from burning.
+            dust.y -= 1 / FPS * 320 * abs(dust.flitter_speed * dust.flitter_torque * 2 + 1) # Make le dust go up
             if dust.real_y < -160:
-                dust.y = SCREENSIZE[1] + SCREENSIZE[1] * random.random() / 2
+                dust.y = SCREENSIZE[1] + SCREENSIZE[1] * random.random() / 2 # Put dust back to their starting position, along with a random offset (off-screen)
                 dust.real_y = dust.y
             dust.draw()
-        self.curBeat = (pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000) # BPM of music is 144
-        CCC.angle = math.sin(self.curBeat * math.pi / 2) * -60 / (self.lives + 1)
-        CCC.x = (SCREENSIZE[0] - CCC.head.rect.width) / 2 + math.sin(self.curBeat * math.pi / 2) * 500 / (self.lives + 1)
-        CCC.y = 50 + math.sin(self.curBeat * math.pi) * 200 / (self.lives + 1)
+        self.curBeat = (pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000) # Current beat of the BGM, BPM of music is 144
+        CCC.angle = math.sin(self.curBeat * math.pi / 2) * -45 / (self.lives + 1)
+        CCC.x = (SCREENSIZE[0] - CCC.head.rect.width) / 2 + math.sin(self.curBeat * math.pi / 2) * self.cccVelocityX
+        CCC.y = 50 + math.sin(self.curBeat * math.pi) * self.cccVelocityY
         # Makes CCC shift around like a maniac
         CCC.draw()
         dialogueBox.draw()
         for i in range(len(self.reds)):
             self.reds[i].y = SCREENSIZE[1] - math.pow(math.sin(self.curBeat / 4 * math.pi + math.pi / 4), 2) * SCREENSIZE[1] / 3 / 8 * i
+            # Makes red overlay fluctuate with rhythm
             self.reds[i].draw()
         self.searchQuery.draw()
         self.searchIBeam.draw()
@@ -933,15 +977,30 @@ class QuizState(SuffState):
                 if char in words[word]:
                     containingLetters.append(char)
         return remove_duplicates(containingLetters)
+    def just_effin_die(self):
+        if curSave.fetch('quiz_highscore') is None:
+            curSave['quiz_highscore'] = self.curScore
+        elif self.curScore > curSave.fetch('quiz_highscore'):
+            curSave['quiz_highscore'] = self.curScore
+            QuizGameOverState.highscore = True
+        else:
+            QuizGameOverState.highscore = False
+        curSave.flush('save')
+
+        QuizGameOverState.curScore = self.curScore
+        change_state('quiz_game_over')
+        pygame.mixer.Sound(get_asset_path('sounds/quiz_die.ogg')).play()
     def handle_event(self, event):
-        super().handle_event(event)
+        if event.type == pygame.QUIT:
+            self.just_effin_die()
+            return # If you try to quit, CCC will smite you immediately.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                change_state('main_menu')
-                menuExitSound.play()
+                self.just_effin_die()
+                return # If you try to escape, CCC will smite you immediately.
             elif event.key == pygame.K_BACKSPACE:
                 self.searchQuery.set_text(self.searchQuery.text[:-1])
-                textEraseSound.play()
+                TEXT_ERASE_SOUND.play()
             elif event.key == pygame.K_RETURN:
                 global dialogueBox
                 if self.allowInput:
@@ -955,6 +1014,7 @@ class QuizState(SuffState):
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
                         self.lives = clamp(self.lives + 1, 0, 4) # Limit tries
+                        self.curScore += 1
                         CCC.change_expression(random.choice(self.cccHappyExpressions))
                     elif len(containingChars) > 0:
                         CCC.change_expression('smug')
@@ -963,19 +1023,101 @@ class QuizState(SuffState):
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                                                 random.choice(self.cccAngryLines), 16, 'up', 1, self.reset)
                         self.lives = clamp(self.lives - 1, 0, 4)
+                        if self.lives <= 0:
+                            self.just_effin_die()
+                            return
                         CCC.change_expression(random.choice(self.cccAngryExpressions))
-                        invalidSound.play()
+                        INVALID_SOUND.play()
                     self.searchQuery.set_text('')
             else:
                 self.searchQuery.set_text(self.searchQuery.text + event.unicode)
-                textTypeSound.play()
+                TEXT_TYPE_SOUND.play()
             self.searchQuery.x = (SCREENSIZE[0] - self.searchQuery.get_width()) / 2
             self.searchIBeam.x = self.searchQuery.x + self.searchQuery.get_width()
+
+class QuizGameOverState(SuffState):
+    curScore = 0
+    highscore = True
+
+    def __init__(self):
+        pygame.mixer.music.stop()
+        super().__init__(False)
+    def post_load(self):
+        CCC.angle = 0
+        CCC.x, CCC.y = (SCREENSIZE[0] - CCC.head.surface.get_width()) / 2, 100
+        self.flash = SuffSprite(0, 0)
+        self.flash.rect = pygame.draw.rect(self.flash.surface, (255, 0, 0), (0, 0, SCREENSIZE[0], SCREENSIZE[1]))
+        self.flash.rect = self.flash.surface.get_rect()
+        self.flash.surface.set_alpha(255)
+
+        self.hand = SuffSprite(540, 0, 'images/quiz/hand.png')
+        self.hand.surface.set_alpha(255)
+        super().post_load()
+        CCC.change_expression('horror')
+        infoText.set_text('')
+
+        self.tick = 0
+        self.grabbing = True
+        self.allowQuit = False
+    def update(self):
+        super().update()
+        if self.grabbing:
+            self.tick += 1 / FPS
+            CCC.draw()
+            if self.tick > 1.6 and self.grabbing:
+                self.grabbing = False
+                self.mcdonalds = SuffSprite(0, 0, f'images/quiz/fate/{random.randint(1, 5)}.png')
+                self.mcdonalds.surface = pygame.transform.scale(self.mcdonalds.surface, SCREENSIZE)
+                self.mcdonalds.rect = self.mcdonalds.surface.get_rect()
+                self.mcdonalds.surface.set_alpha(255)
+        else:
+            if self.tick > 0:
+                self.tick -= 1 / FPS
+            else:
+                if not self.allowQuit:
+                    self.allowQuit = True
+                    self.curScoreTxt = SuffText(0, 100, 16, f'Your Score: {self.curScore}', 64, (255, 255, 255))
+                    self.curScoreTxt.x = (SCREENSIZE[0] - self.curScoreTxt.get_width()) / 2
+
+                    self.highscoreTxt = SuffText(0, self.curScoreTxt.y + 300, 16, f'Highscore: {curSave.fetch('quiz_highscore')}', 64, (255, 255, 128))
+                    self.highscoreTxt.x = (SCREENSIZE[0] - self.highscoreTxt.get_width()) / 2
+
+                    self.newHighscoreTxt = SuffText(0, self.highscoreTxt.y - 32, 16, 'NEW HIGHSCORE!', 32,
+                                                    (255, 255, 0))
+                    self.newHighscoreTxt.x = (SCREENSIZE[0] - self.newHighscoreTxt.get_width()) / 2
+                    self.newHighscoreTxt.set_alpha(128 if self.highscore else 0)
+
+                    self.exitTxt = SuffText(0, 0, 64, 'Press [ENTER] or [ESCAPE] to exit', 32,
+                                                    (255, 255, 255))
+                    self.exitTxt.x = (SCREENSIZE[0] - self.exitTxt.get_width()) / 2
+                    self.exitTxt.y = SCREENSIZE[1] - self.exitTxt.get_height()
+                self.mcdonalds.surface.set_alpha(suff_lerp(self.mcdonalds.surface.get_alpha(), 64, 1 / FPS * 6))
+                self.curScoreTxt.draw()
+                self.highscoreTxt.draw()
+                self.newHighscoreTxt.y = self.highscoreTxt.y - 32 + abs(math.sin(curTime / 2)) * -20
+                self.newHighscoreTxt.draw()
+                self.exitTxt.draw()
+            self.mcdonalds.draw()
+        self.flash.surface.set_alpha(suff_lerp(self.flash.surface.get_alpha(), 0, 1 / FPS))
+        self.flash.draw()
+
+        # self.hand.surface.set_alpha(int(math.pow(255, self.tick / 4)))
+        self.hand.surface2 = pygame.transform.scale(self.hand.surface, (600 * math.pow(self.tick, 4), 530 * math.pow(self.tick, 4)))
+        self.hand.rect2 = self.hand.surface2.get_rect()
+        self.hand.x = 800 - self.hand.rect2.width / 1.6
+        self.hand.y = 300 - self.hand.rect2.height / 1.8
+        self.hand.draw(self.hand.surface2, self.hand.rect2)
+    def handle_event(self, event):
+        # No quitting
+        if event.type == pygame.KEYDOWN:
+            if (event.key == pygame.K_ESCAPE or event.key == pygame.K_RETURN) and self.allowQuit:
+                change_state('main_menu')
 
 states = {
     'main_menu': MainMenuState(),
     'quiz': QuizState(),
     'quiz_start': QuizStartState(),
+    'quiz_game_over': QuizGameOverState(),
     'dictionary_search': DictionarySearchState(),
     'dictionary_word': DictionaryWordState()
 }
