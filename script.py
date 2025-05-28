@@ -187,7 +187,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
         self.base = SuffSprite(pos[0], pos[1], f'images/buttons/{base_texture}.png')
         self.base.surface.set_alpha(128)
         self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
-        self.button_text = SuffText(pos[0] + text_size / 2, pos[1] + size[1] / 4, size[0] // (text_hover_size // 2), self.text, text_size, (255, 255, 255))
+        self.button_text = SuffText(pos[0] + text_size / 2, pos[1] + size[1] / 4, size[0] // (self.text_hover_size // 2), self.text, text_size, (255, 255, 255))
     def draw(self):
         self.base.draw()
         self.button_text.draw()
@@ -505,7 +505,12 @@ class MainMenuState(SuffState):
             global dialogueBox
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Get mentally tortured while I test your knowledge.', 20, 'left')
         def quiz():
+            global dialogueBox
             BUTTON_PRESS_SOUND.play()
+            if len(curSave.fetch('saved_words')) < 4:
+                dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2),
+                                          'You must have at least FOUR words bookmarked.', 20, 'left')
+                return
             change_state('quiz_start')
         def flashcards_hover():
             global CCC
@@ -692,6 +697,17 @@ class DictionarySearchState(SuffState):
 class DictionaryWordState(SuffState):
     def __init__(self):
         super().__init__()
+    def save_word(self):
+        global dialogueBox
+        if curSave.fetch('saved_words') is None:
+            curSave['saved_words'] = []
+        if curWordData['word'][0] in curSave['saved_words']:
+            curSave['saved_words'].remove(curWordData['word'][0])
+            dialogueBox = DialogueBox((CCC.x, CCC.y), 'Word unbookmarked.', 16, 'left')
+        else:
+            curSave['saved_words'].append(curWordData['word'][0])
+            dialogueBox = DialogueBox((CCC.x, CCC.y), 'Word bookmarked.', 16, 'left')
+        curSave.flush('save')
     def post_load(self):
         global curWordData
         super().post_load()
@@ -734,6 +750,9 @@ class DictionaryWordState(SuffState):
                 self.textGroup.append(wordFormTxt)
             prevHeight += 48
 
+        self.personalDictButton = SuffButton((SCREENSIZE[0] - 74, 10), (64, 64), self.save_word, 'bookmark', '',
+                                             None, 16)
+
         self.scrollAmount = 0
         self.txtYOrigin = []
         self.txtYOriginalOrigin = []
@@ -753,6 +772,8 @@ class DictionaryWordState(SuffState):
         CCC.y = suff_lerp(CCC.y, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3, 1 / FPS * 6)
         CCC.angle = suff_lerp(CCC.angle, 30, 1 / FPS * 6)
         CCC.draw()
+        dialogueBox.draw()
+        self.personalDictButton.draw()
         self.txtTypeTick += 1 / FPS
         playSound = False
         for i in range(len(self.textGroup)):
@@ -865,6 +886,8 @@ class QuizState(SuffState):
             'Quite good.',
             'Acceptable.'
         ]
+        self.baseTimeLimit = 30
+        self.timeLeft = 30
         self.cccAngryLines = [
             'Go eat a banana.',
             'Go home and eat a banana.',
@@ -883,6 +906,9 @@ class QuizState(SuffState):
         self.jeffs = [] # Group for background tiles that "rotate"
         self.dust = [] # Group for dust particles
         self.reds = [] # Group for translucent red overlay
+        self.hearts = [] # Group for number of lives
+        self.brokenHearts = []  # Group for number of lives
+        self.correctChars = []  # Group for number of lives
         self.searchQuery = SuffText(SCREENSIZE[0] / 2, 600, 25, '', 64, (255, 255, 255))
         self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '|', 64, (255, 255, 255))
         self.curBeat = 0
@@ -913,13 +939,19 @@ class QuizState(SuffState):
         self.cccVelocityX = SCREENSIZE[0] / math.ceil((random.random() + 0.01) * 2) * random.choice([1, -1])
         self.cccVelocityY = SCREENSIZE[1] / math.ceil((random.random() + 0.01) * 2) * random.choice([1, -1])
 
-        self.reset()
+        self.timeTxt = SuffText(0, 0, 4, '', 16 * 16, (255, 255, 255))
+        for i in range(self.lives):
+            self.add_heart()
+
         self.curScore = 0
+        self.reset()
     def reset(self):
         CCC.change_expression(self.cccExpressions[self.lives])
         global dialogueBox
         self.allowInput = True
         self.leWordData = random.choice(self.derList)
+        self.baseTimeLimit = int(clamp(35 - math.pow(30, 0.05 * self.curScore), 5, 30))
+        self.timeLeft = self.baseTimeLimit
         ogDef = self.leWordData['definition']
         senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
         leFont = 'default'
@@ -930,10 +962,22 @@ class QuizState(SuffState):
         print(self.leWordData['word'])
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2),
                                   leDialogue, min(len(leDialogue), 50), 'down', -1, None, leFont) # Limits dialogue width by 50 chars
+    def add_heart(self):
+        heart = SuffSprite(0, SCREENSIZE[1], 'images/quiz/heart.png')
+        heart.surface = pygame.transform.scale(heart.surface, (50, 50))
+        heart.rect = heart.surface.get_rect()
+        self.hearts.append(heart)
+    def remove_heart(self):
+        leLittleHeart:SuffSprite = self.hearts.pop()
+        leLittleHeart.load_graphic('images/quiz/heart_broken.png')
+        leLittleHeart.surface = pygame.transform.scale(leLittleHeart.surface, (50, 50))
+        leLittleHeart.rect = leLittleHeart.surface.get_rect()
+        self.brokenHearts.append(leLittleHeart)
 
     def update(self):
         super().update()
         self.bg.draw()
+
         self.jeff_velocity = suff_lerp(self.jeff_velocity, 480 + (3 - self.lives) * 240, 1 / FPS * 4) # Tiles scroll faster with each life lost
         self.cccVelocityX = suff_lerp(self.cccVelocityX, 150 + (3 - self.lives) * 80, 1 / FPS * 2)
         self.cccVelocityY = suff_lerp(self.cccVelocityY, 50 + max(0, 3 - self.lives) * 50, 1 / FPS * 2)
@@ -964,6 +1008,30 @@ class QuizState(SuffState):
             self.reds[i].y = SCREENSIZE[1] - math.pow(math.sin(self.curBeat / 4 * math.pi + math.pi / 4), 2) * SCREENSIZE[1] / 3 / 8 * i
             # Makes red overlay fluctuate with rhythm
             self.reds[i].draw()
+        for heart in self.hearts:
+            leIndex = self.hearts.index(heart)
+            if self.allowInput:
+                heartBasePos = (dialogueBox.pos[0] - dialogueBox.box.rect.width / 2,
+                                dialogueBox.pos[1] + 40 + dialogueBox.box.rect.height)
+            else:
+                heartBasePos = (dialogueBox.pos[0] - dialogueBox.box.rect.width / 2,
+                                SCREENSIZE[1] * 1.5)
+            heart.x = suff_lerp(heart.x, heartBasePos[0] + leIndex * 50 + math.sin(
+                self.curBeat * math.pi / 4 + leIndex) * 10, 1 / FPS * 4)
+            heart.y = suff_lerp(heart.y, heartBasePos[1] + math.sin(
+                self.curBeat * math.pi / 2 + leIndex) * 10, 1 / FPS * 4)
+            heart.draw()
+        for broken_heart in self.brokenHearts:
+            broken_heart.y += 1 / FPS * 720
+            broken_heart.draw()
+
+        self.timeLeft -= 1 / FPS
+        self.timeTxt.set_text(str(int(self.timeLeft)))
+        self.timeTxt.x = (SCREENSIZE[0] - self.timeTxt.get_width()) / 2
+        self.timeTxt.y = SCREENSIZE[1] - self.timeTxt.get_height()
+        self.timeTxt.set_alpha(64)
+        self.timeTxt.draw()
+
         self.searchQuery.draw()
         self.searchIBeam.draw()
 
@@ -1013,6 +1081,7 @@ class QuizState(SuffState):
                     if self.searchQuery.text.lower().strip() in self.leWordData['word']:
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
+                        if self.lives < 4: self.add_heart()
                         self.lives = clamp(self.lives + 1, 0, 4) # Limit tries
                         self.curScore += 1
                         CCC.change_expression(random.choice(self.cccHappyExpressions))
@@ -1023,6 +1092,7 @@ class QuizState(SuffState):
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                                                 random.choice(self.cccAngryLines), 16, 'up', 1, self.reset)
                         self.lives = clamp(self.lives - 1, 0, 4)
+                        self.remove_heart()
                         if self.lives <= 0:
                             self.just_effin_die()
                             return
@@ -1109,9 +1179,11 @@ class QuizGameOverState(SuffState):
         self.hand.draw(self.hand.surface2, self.hand.rect2)
     def handle_event(self, event):
         # No quitting
-        if event.type == pygame.KEYDOWN:
-            if (event.key == pygame.K_ESCAPE or event.key == pygame.K_RETURN) and self.allowQuit:
-                change_state('main_menu')
+        if self.allowQuit:
+            if event.type == pygame.KEYDOWN:
+                if (event.key == pygame.K_ESCAPE or event.key == pygame.K_RETURN):
+                    change_state('main_menu')
+            super().handle_event(event)
 
 states = {
     'main_menu': MainMenuState(),
