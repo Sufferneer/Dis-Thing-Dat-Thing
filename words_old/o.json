@@ -1,0 +1,65 @@
+[
+    {
+        "word": [
+            "offspring"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {},
+        "plural": [
+            "offspring"
+        ],
+        "definition": "The young creation of living organisms produced by reproduction.",
+        "translation": [
+            "\u5f8c\u4ee3"
+        ]
+    },
+    {
+        "word": [
+            "organ",
+            "organs"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {},
+        "plural": [
+            "organs"
+        ],
+        "definition": "A group of tissues of different types that perform a specific function.",
+        "translation": [
+            "\u5668\u5b98"
+        ]
+    },
+    {
+        "word": [
+            "organelle",
+            "organelles"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {},
+        "plural": [
+            "organelles"
+        ],
+        "definition": "An organized or specialized structure within a living cell.",
+        "translation": [
+            "\u7d30\u80de\u5668"
+        ]
+    },
+    {
+        "word": [
+            "organism",
+            "organisms"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {},
+        "plural": [
+            "organisms"
+        ],
+        "definition": "An individual form of life, made up of organs and organelles which work together to perform various life processes.",
+        "translation": [
+            "\u751f\u7269"
+        ]
+    }
+]

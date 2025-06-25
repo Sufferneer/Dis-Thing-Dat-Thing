@@ -1,0 +1,36 @@
+[
+    {
+        "word": [
+            "nitrate",
+            "nitrates"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {},
+        "plural": [
+            "nitrates"
+        ],
+        "definition": "Salts that contain NO[2+] ions.",
+        "translation": [
+            "\u785d\u9178\u9e7d"
+        ]
+    },
+    {
+        "word": [
+            "nutrition",
+            "nutritional"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {
+            "adjective": [
+                "nutritional"
+            ]
+        },
+        "plural": [],
+        "definition": "A process in which organisms obtain food for energy, growth and maintaining health.",
+        "translation": [
+            "\u71df\u990a"
+        ]
+    }
+]

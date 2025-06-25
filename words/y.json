@@ -1,0 +1,5133 @@
+[
+    {
+        "word": "ya",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "(spelled the way it is often spoken) you",
+                        "examples": [
+                            "He greeted me with \"How ya doin’?\""
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "abbreviation for young adult",
+                        "examples": [
+                            "the YA market",
+                            "a YA novel/author"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yacht",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a boat with sails and sometimes an engine, used for either racing or travelling on for pleasure",
+                        "examples": [
+                            "a luxury yacht",
+                            "a yacht club"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yachting",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the sport or activity of sailing yachts",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yachts",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a boat with sails and sometimes an engine, used for either racing or travelling on for pleasure",
+                        "examples": [
+                            "a luxury yacht",
+                            "a yacht club"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yachtsman",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a man who sails or owns a yacht",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yachtsmen",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a man who sails or owns a yacht",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yachtswoman",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a woman who sails or owns a yacht",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yachtswomen",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a woman who sails or owns a yacht",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yack",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously, especially informally about things that are not very important",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yacked",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yack",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously, especially informally about things that are not very important",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yacking",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yack",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously, especially informally about things that are not very important",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yacks",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously, especially informally about things that are not very important",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yah",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "→ yes",
+                        "examples": [
+                            "Yah, okay, I understand what you're saying.",
+                            "Oh yah, I like that a lot."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yahoo",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a rude, loud, unpleasant person, especially one who has little education",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yahoos",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a rude, loud, unpleasant person, especially one who has little education",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yak",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of cattle with long hair and long horns, found mainly in Tibet",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "→ yack",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yakka",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "work",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yakked",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of cattle with long hair and long horns, found mainly in Tibet",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "→ yack",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yakker",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "work",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yakking",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of cattle with long hair and long horns, found mainly in Tibet",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "→ yack",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yaks",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of cattle with long hair and long horns, found mainly in Tibet",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "→ yack",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yale",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a brand name for a type of lock, especially for doors, that is cylinder-shaped and is operated by a flat key",
+                        "examples": [
+                            "a Yale lock key"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yam",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a potato-like root from a tropical climbing plant that can be eaten, or the plant it grows from",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a sweet potato",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yammer",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously for a long time in a way that is annoying to other people",
+                        "examples": [
+                            "She never stops yammering about that dog of hers.",
+                            "He just kept yammering on, though noone was listening."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yammered",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yammer",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously for a long time in a way that is annoying to other people",
+                        "examples": [
+                            "She never stops yammering about that dog of hers.",
+                            "He just kept yammering on, though noone was listening."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yammering",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yammer",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously for a long time in a way that is annoying to other people",
+                        "examples": [
+                            "She never stops yammering about that dog of hers.",
+                            "He just kept yammering on, though noone was listening."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yammers",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to talk continuously for a long time in a way that is annoying to other people",
+                        "examples": [
+                            "She never stops yammering about that dog of hers.",
+                            "He just kept yammering on, though noone was listening."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yams",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a potato-like root from a tropical climbing plant that can be eaten, or the plant it grows from",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a sweet potato",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yang",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "in Chinese philosophy, the male principle of the universe, represented as light and positive",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yank",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to pull something forcefully with a quick movement",
+                        "examples": [
+                            "He tripped over the cord and yanked the plug out.",
+                            "She yanked open the cupboard door and everything fell out."
+                        ]
+                    },
+                    {
+                        "definition": "to suddenly remove someone or something",
+                        "examples": [
+                            "I was yanked out of school and forced to go to work."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a quick forceful pull of something",
+                        "examples": [
+                            "Give the door a yank and it should open.",
+                            "A single yank of the lever opened the trapdoors."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a person from the US",
+                        "examples": [
+                            "The place was full of Yanks."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yanked",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yank",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to pull something forcefully with a quick movement",
+                        "examples": [
+                            "He tripped over the cord and yanked the plug out.",
+                            "She yanked open the cupboard door and everything fell out."
+                        ]
+                    },
+                    {
+                        "definition": "to suddenly remove someone or something",
+                        "examples": [
+                            "I was yanked out of school and forced to go to work."
+                        ]
+                    },
+                    {
+                        "definition": "",
+                        "examples": [
+                            "Give the door a yank and it should open."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yankee",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a Yank",
+                        "examples": []
+                    },
+                    {
+                        "definition": "an American who comes from the Northern US",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yankees",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a Yank",
+                        "examples": []
+                    },
+                    {
+                        "definition": "an American who comes from the Northern US",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yanking",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yank",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to pull something forcefully with a quick movement",
+                        "examples": [
+                            "He tripped over the cord and yanked the plug out.",
+                            "She yanked open the cupboard door and everything fell out."
+                        ]
+                    },
+                    {
+                        "definition": "to suddenly remove someone or something",
+                        "examples": [
+                            "I was yanked out of school and forced to go to work."
+                        ]
+                    },
+                    {
+                        "definition": "",
+                        "examples": [
+                            "Give the door a yank and it should open."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yanks",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to pull something forcefully with a quick movement",
+                        "examples": [
+                            "He tripped over the cord and yanked the plug out.",
+                            "She yanked open the cupboard door and everything fell out."
+                        ]
+                    },
+                    {
+                        "definition": "to suddenly remove someone or something",
+                        "examples": [
+                            "I was yanked out of school and forced to go to work."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a quick forceful pull of something",
+                        "examples": [
+                            "Give the door a yank and it should open.",
+                            "A single yank of the lever opened the trapdoors."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a person from the US",
+                        "examples": [
+                            "The place was full of Yanks."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yap",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If a small dog yaps, it makes short, high sounds",
+                        "examples": [
+                            "She has a horrible little dog that yaps around your ankles."
+                        ]
+                    },
+                    {
+                        "definition": "to talk continuously",
+                        "examples": [
+                            "I've just had my mother on the phone, yapping away for half an hour!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a short, high-pitched sound made by a dog",
+                        "examples": [
+                            "The sound of barking bounces off the walls, with yaps and howls all jumbled together."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yapped",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yap disapproving or informal",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yappier",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "(of a dog) often making short high sounds",
+                        "examples": [
+                            "a yappy little dog",
+                            "Yorkshire Terriers have a reputation for being yappy."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yappiest",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "(of a dog) often making short high sounds",
+                        "examples": [
+                            "a yappy little dog",
+                            "Yorkshire Terriers have a reputation for being yappy."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yapping",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yap disapproving or informal",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yappy",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "(of a dog) often making short high sounds",
+                        "examples": [
+                            "a yappy little dog",
+                            "Yorkshire Terriers have a reputation for being yappy."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yaps",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If a small dog yaps, it makes short, high sounds",
+                        "examples": [
+                            "She has a horrible little dog that yaps around your ankles."
+                        ]
+                    },
+                    {
+                        "definition": "to talk continuously",
+                        "examples": [
+                            "I've just had my mother on the phone, yapping away for half an hour!"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a short, high-pitched sound made by a dog",
+                        "examples": [
+                            "The sound of barking bounces off the walls, with yaps and howls all jumbled together."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yard",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a unit of measurement equal to three feet or approximately 91.4 centimetres",
+                        "examples": []
+                    },
+                    {
+                        "definition": "an area of land in which a particular type of work is done, often one from which goods are sold",
+                        "examples": [
+                            "a lumber yard",
+                            "a scrap yard"
+                        ]
+                    },
+                    {
+                        "definition": "an area of land next to a building that usually has a hard surface and that is used for a special purpose ",
+                        "examples": [
+                            "The house has a small yard at the back.",
+                            "The children played in the school yard.",
+                            "a prison yard"
+                        ]
+                    },
+                    {
+                        "definition": "a piece of land next to a house, usually used for growing flowers, grass, and other plants",
+                        "examples": [
+                            "The kids were playing in the yard."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yards",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a unit of measurement equal to three feet or approximately 91.4 centimetres",
+                        "examples": []
+                    },
+                    {
+                        "definition": "an area of land in which a particular type of work is done, often one from which goods are sold",
+                        "examples": [
+                            "a lumber yard",
+                            "a scrap yard"
+                        ]
+                    },
+                    {
+                        "definition": "an area of land next to a building that usually has a hard surface and that is used for a special purpose ",
+                        "examples": [
+                            "The house has a small yard at the back.",
+                            "The children played in the school yard.",
+                            "a prison yard"
+                        ]
+                    },
+                    {
+                        "definition": "a piece of land next to a house, usually used for growing flowers, grass, and other plants",
+                        "examples": [
+                            "The kids were playing in the yard."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yardstick",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a fact or standard by which you can judge the success or value of something",
+                        "examples": [
+                            "Productivity is not the only yardstick of success."
+                        ]
+                    },
+                    {
+                        "definition": "a ruler (= a long flat object used for measuring the length of things) that is one yard (= approximately 91.4 centimetres) long",
+                        "examples": [
+                            "The dressmaker measured the cloth with a yardstick."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yardsticks",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a fact or standard by which you can judge the success or value of something",
+                        "examples": [
+                            "Productivity is not the only yardstick of success."
+                        ]
+                    },
+                    {
+                        "definition": "a ruler (= a long flat object used for measuring the length of things) that is one yard (= approximately 91.4 centimetres) long",
+                        "examples": [
+                            "The dressmaker measured the cloth with a yardstick."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yardwork",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "work done in someone's garden and the area outside their house, for example taking care of plants and removing garden waste",
+                        "examples": [
+                            "He often helped neighbors with yardwork."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yarmulke",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a small, circular cover for the head worn by Jewish men, especially at religious ceremonies",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yarmulkes",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a small, circular cover for the head worn by Jewish men, especially at religious ceremonies",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yarn",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "thread used for making cloth or for knitting",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a story, usually a long one with a lot of excitement or interest",
+                        "examples": [
+                            "He knew how to spin a good yarn (= tell a good story)."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yarns",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "thread used for making cloth or for knitting",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a story, usually a long one with a lot of excitement or interest",
+                        "examples": [
+                            "He knew how to spin a good yarn (= tell a good story)."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yashmak",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a piece of cloth worn by some Muslim women to cover parts of the face when they are in public",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yashmaks",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a piece of cloth worn by some Muslim women to cover parts of the face when they are in public",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yaw",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If an aircraft or ship yaws, it moves slightly to the side of its intended direction",
+                        "examples": [
+                            "The boat pitched and yawed in the bay.",
+                            "Witnesses to the crash reported seeing the Challenger yaw to the right."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slight movement of an aircraft or ship, to the side of its intended direction",
+                        "examples": [
+                            "The rudder is a vertical flap on the tail that controls yaw.",
+                            "I felt a slight pitch and yaw, like a hiccup in the floor beneath me."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yawed",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yaw",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If an aircraft or ship yaws, it moves slightly to the side of its intended direction.",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yawing",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yaw",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If an aircraft or ship yaws, it moves slightly to the side of its intended direction.",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yawn",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to open the mouth wide and take a lot of air into the lungs and slowly send it out, usually when tired or bored",
+                        "examples": [
+                            "I can't stop yawning - I must be tired."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an act of yawning",
+                        "examples": [
+                            "Her eyes watered as she tried to stifle (= stop) a yawn."
+                        ]
+                    },
+                    {
+                        "definition": "something or someone that is very boring",
+                        "examples": [
+                            "The film was a total yawn."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yawned",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yawn",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to open the mouth wide and take a lot of air into the lungs and slowly send it out, usually when tired or bored",
+                        "examples": [
+                            "I can't stop yawning - I must be tired."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yawning",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "used to describe a difference or amount that is extremely large and difficult to reduce",
+                        "examples": [
+                            "There exists nowadays a yawning gap between rich and poor."
+                        ]
+                    },
+                    {
+                        "definition": "A yawning space or hole is very wide",
+                        "examples": [
+                            "a yawning crevasse"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yawns",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to open the mouth wide and take a lot of air into the lungs and slowly send it out, usually when tired or bored",
+                        "examples": [
+                            "I can't stop yawning - I must be tired."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an act of yawning",
+                        "examples": [
+                            "Her eyes watered as she tried to stifle (= stop) a yawn."
+                        ]
+                    },
+                    {
+                        "definition": "something or someone that is very boring",
+                        "examples": [
+                            "The film was a total yawn."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yaws",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If an aircraft or ship yaws, it moves slightly to the side of its intended direction",
+                        "examples": [
+                            "The boat pitched and yawed in the bay.",
+                            "Witnesses to the crash reported seeing the Challenger yaw to the right."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slight movement of an aircraft or ship, to the side of its intended direction",
+                        "examples": [
+                            "The rudder is a vertical flap on the tail that controls yaw.",
+                            "I felt a slight pitch and yaw, like a hiccup in the floor beneath me."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yay",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "used to show that you are very pleased about something",
+                        "examples": [
+                            "\"We won.\" \"Yay!\""
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "so; to a particular degree",
+                        "examples": [
+                            "It was about yay long."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "ye",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "a word meaning \"you\", used when talking to more than one person",
+                        "examples": [
+                            "Ye cannot serve God and mammon."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "determiner",
+                "definitions": [
+                    {
+                        "definition": "a word meaning \"the\", used especially in the names of pubs to make them seem old",
+                        "examples": [
+                            "a pub in the village called Ye Olde Barn"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yea",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "yes",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeah",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "yes",
+                        "examples": [
+                            "\"Do you like your job?\" \"Yeah, it's all right I suppose.\"",
+                            "\"Will you drive?\" \"Yeah, sure.\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "year",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a period of twelve months, especially from 1 January to 31 December",
+                        "examples": [
+                            "Annette worked in Italy for two years.",
+                            "2005 was one of the worst years of my life.",
+                            "We went to Egypt on holiday last year.",
+                            "At this time of year the beaches are almost deserted.",
+                            "This species keeps its leaves all year (round) (= through the year)."
+                        ]
+                    },
+                    {
+                        "definition": "a period of twelve months relating to a particular activity",
+                        "examples": [
+                            "The financial/tax year begins in April."
+                        ]
+                    },
+                    {
+                        "definition": "the part of the year, in a school or university, during which courses are taught",
+                        "examples": [
+                            "the academic/school year",
+                            "She's now in her final/first/second year at Manchester University.",
+                            "My daughter is in her freshman/sophomore/junior/senior year."
+                        ]
+                    },
+                    {
+                        "definition": "a group of students who start school, college, university, or a course together",
+                        "examples": [
+                            "Kathy was in the year above me at college."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "suffix",
+                "definitions": [
+                    {
+                        "definition": "used to refer to a student in a particular year group at a school, college, or university",
+                        "examples": [
+                            "I like teaching the first-years, but the second-years can be difficult.",
+                            "a first-year student"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearbook",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a book published every year by a school, that gives information about the events and achievements of the previous year, and has pictures of the students",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a book published every year by an organization that gives information about the events and achievements of the previous year ",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearbooks",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a book published every year by a school, that gives information about the events and achievements of the previous year, and has pictures of the students",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a book published every year by an organization that gives information about the events and achievements of the previous year ",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearling",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a local authority bond which must be paid back in a year",
+                        "examples": [
+                            "County treasurers are having to pay 15% for yearling bonds."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearlong",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "lasting one year, or one school year",
+                        "examples": [
+                            "The class is a standard yearlong introduction to Western civilization."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearly",
+        "categories": [
+            {
+                "type": "adjectiveadverb",
+                "definitions": [
+                    {
+                        "definition": "every year or once every year",
+                        "examples": [
+                            "We get a yearly pay increase.",
+                            "Interest is paid yearly."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearn",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to wish very strongly, especially for something that you cannot have or something that is very difficult to have",
+                        "examples": [
+                            "Despite his great commercial success he still yearns for critical approval.",
+                            "Sometimes I just yearn to be alone."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearned",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yearn",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to wish very strongly, especially for something that you cannot have or something that is very difficult to have",
+                        "examples": [
+                            "Despite his great commercial success he still yearns for critical approval.",
+                            "Sometimes I just yearn to be alone."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearning",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a strong feeling of wishing for something, especially something that you cannot have or get easily",
+                        "examples": [
+                            "I suppose it's because I live in a city that I have this yearning for open spaces."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearnings",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a strong feeling of wishing for something, especially something that you cannot have or get easily",
+                        "examples": [
+                            "I suppose it's because I live in a city that I have this yearning for open spaces."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yearns",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to wish very strongly, especially for something that you cannot have or something that is very difficult to have",
+                        "examples": [
+                            "Despite his great commercial success he still yearns for critical approval.",
+                            "Sometimes I just yearn to be alone."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "years",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a period of twelve months, especially from 1 January to 31 December",
+                        "examples": [
+                            "Annette worked in Italy for two years.",
+                            "2005 was one of the worst years of my life.",
+                            "We went to Egypt on holiday last year.",
+                            "At this time of year the beaches are almost deserted.",
+                            "This species keeps its leaves all year (round) (= through the year)."
+                        ]
+                    },
+                    {
+                        "definition": "a period of twelve months relating to a particular activity",
+                        "examples": [
+                            "The financial/tax year begins in April."
+                        ]
+                    },
+                    {
+                        "definition": "the part of the year, in a school or university, during which courses are taught",
+                        "examples": [
+                            "the academic/school year",
+                            "She's now in her final/first/second year at Manchester University.",
+                            "My daughter is in her freshman/sophomore/junior/senior year."
+                        ]
+                    },
+                    {
+                        "definition": "a group of students who start school, college, university, or a course together",
+                        "examples": [
+                            "Kathy was in the year above me at college."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "suffix",
+                "definitions": [
+                    {
+                        "definition": "used to refer to a student in a particular year group at a school, college, or university",
+                        "examples": [
+                            "I like teaching the first-years, but the second-years can be difficult.",
+                            "a first-year student"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeast",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of fungus that is used in making alcoholic drinks such as beer and wine, and for making bread swell and become light",
+                        "examples": [
+                            "dried/fresh yeast",
+                            "yeast extract"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeastier",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "similar to or containing yeast (= a type of fungus that is used in making alcoholic drinks such as beer and wine, and for making bread rise)",
+                        "examples": [
+                            "The air outside had a sweet, yeasty smell.",
+                            "It smells like a good yeasty bread dough."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeastiest",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "similar to or containing yeast (= a type of fungus that is used in making alcoholic drinks such as beer and wine, and for making bread rise)",
+                        "examples": [
+                            "The air outside had a sweet, yeasty smell.",
+                            "It smells like a good yeasty bread dough."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeasts",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of fungus that is used in making alcoholic drinks such as beer and wine, and for making bread swell and become light",
+                        "examples": [
+                            "dried/fresh yeast",
+                            "yeast extract"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeasty",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "similar to or containing yeast (= a type of fungus that is used in making alcoholic drinks such as beer and wine, and for making bread rise)",
+                        "examples": [
+                            "The air outside had a sweet, yeasty smell.",
+                            "It smells like a good yeasty bread dough."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeh",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "→ yeah informal",
+                        "examples": [
+                            "\"Did you hand in your homework?\" \"Yeh. You already asked me that.\"",
+                            "If it's important, yeh, why not do it?"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yell",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to shout something or make a loud noise, usually when you are angry, in pain, or excited",
+                        "examples": [
+                            "Our neighbours were yelling (obscenities) at each other this morning.",
+                            "The child yelled out in pain.",
+                            "\"Just get out of here!\" she yelled."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a loud shout, usually when you are angry, in pain, or excited",
+                        "examples": [
+                            "Suddenly there was a loud yell from the bathroom.",
+                            "I heard a yell and a heavy crunch as he fell to the floor."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yelled",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yell",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to shout something or make a loud noise, usually when you are angry, in pain, or excited",
+                        "examples": [
+                            "Our neighbours were yelling (obscenities) at each other this morning.",
+                            "The child yelled out in pain.",
+                            "\"Just get out of here!\" she yelled."
+                        ]
+                    },
+                    {
+                        "definition": "",
+                        "examples": [
+                            "Suddenly there was a loud yell from the bathroom."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yelling",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yell",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to shout something or make a loud noise, usually when you are angry, in pain, or excited",
+                        "examples": [
+                            "Our neighbours were yelling (obscenities) at each other this morning.",
+                            "The child yelled out in pain.",
+                            "\"Just get out of here!\" she yelled."
+                        ]
+                    },
+                    {
+                        "definition": "",
+                        "examples": [
+                            "Suddenly there was a loud yell from the bathroom."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellow",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "It was early autumn and the leaves were turning yellow.",
+                            "You should wear more yellow - it suits you."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "of a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "a bright yellow flower/T-shirt"
+                        ]
+                    },
+                    {
+                        "definition": "belonging to a race that has pale yellowish-brown skin",
+                        "examples": []
+                    },
+                    {
+                        "definition": "easily frightened and not brave",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to become yellow, or to make something become yellow",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellowed",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yellow",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to become yellow, or to make something become yellow",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellower",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "It was early autumn and the leaves were turning yellow.",
+                            "You should wear more yellow - it suits you."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "of a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "a bright yellow flower/T-shirt"
+                        ]
+                    },
+                    {
+                        "definition": "belonging to a race that has pale yellowish-brown skin",
+                        "examples": []
+                    },
+                    {
+                        "definition": "easily frightened and not brave",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to become yellow, or to make something become yellow",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellowest",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "It was early autumn and the leaves were turning yellow.",
+                            "You should wear more yellow - it suits you."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "of a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "a bright yellow flower/T-shirt"
+                        ]
+                    },
+                    {
+                        "definition": "belonging to a race that has pale yellowish-brown skin",
+                        "examples": []
+                    },
+                    {
+                        "definition": "easily frightened and not brave",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to become yellow, or to make something become yellow",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellowing",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yellow",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to become yellow, or to make something become yellow",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellowish",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "slightly yellow",
+                        "examples": [
+                            "The leaves vary from yellowish-green to dark green."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellowness",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the quality of being yellow in colour",
+                        "examples": [
+                            "His black jacket exaggerated the yellowness of his skin.",
+                            "The yellowness of the sun stretched in an oblong on the path."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellows",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "It was early autumn and the leaves were turning yellow.",
+                            "You should wear more yellow - it suits you."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "of a colour like that of a lemon or gold or the sun",
+                        "examples": [
+                            "a bright yellow flower/T-shirt"
+                        ]
+                    },
+                    {
+                        "definition": "belonging to a race that has pale yellowish-brown skin",
+                        "examples": []
+                    },
+                    {
+                        "definition": "easily frightened and not brave",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to become yellow, or to make something become yellow",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yellowy",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "slightly yellow",
+                        "examples": [
+                            "The leaves vary from yellowish-green to dark green."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yells",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to shout something or make a loud noise, usually when you are angry, in pain, or excited",
+                        "examples": [
+                            "Our neighbours were yelling (obscenities) at each other this morning.",
+                            "The child yelled out in pain.",
+                            "\"Just get out of here!\" she yelled."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a loud shout, usually when you are angry, in pain, or excited",
+                        "examples": [
+                            "Suddenly there was a loud yell from the bathroom.",
+                            "I heard a yell and a heavy crunch as he fell to the floor."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yelp",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a sudden, short, high sound, usually when in pain",
+                        "examples": [
+                            "I accidentally stepped on the dog's foot and it yelped.",
+                            "She yelped, as if being punched in the stomach."
+                        ]
+                    },
+                    {
+                        "definition": "to say something suddenly and quickly, like someone who is in pain",
+                        "examples": [
+                            "\"Nooooo,\" yelped a small girl at one point.",
+                            "\"This is an outrage!\" he yelped."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a sudden, short, high sound, like that made by a person or animal in pain",
+                        "examples": [
+                            "Feeling something sting her cheek, she stifled a yelp.",
+                            "She heard her pet's yelps of pain and rushed to his side."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yelped",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yelp",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a sudden, short, high sound, usually when in pain",
+                        "examples": [
+                            "I accidentally stepped on the dog's foot and it yelped.",
+                            "She yelped, as if being punched in the stomach."
+                        ]
+                    },
+                    {
+                        "definition": "to say something suddenly and quickly, like someone who is in pain",
+                        "examples": [
+                            "\"Nooooo,\" yelped a small girl at one point.",
+                            "\"This is an outrage!\" he yelped."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yelping",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yelp",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a sudden, short, high sound, usually when in pain",
+                        "examples": [
+                            "I accidentally stepped on the dog's foot and it yelped.",
+                            "She yelped, as if being punched in the stomach."
+                        ]
+                    },
+                    {
+                        "definition": "to say something suddenly and quickly, like someone who is in pain",
+                        "examples": [
+                            "\"Nooooo,\" yelped a small girl at one point.",
+                            "\"This is an outrage!\" he yelped."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yelps",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a sudden, short, high sound, usually when in pain",
+                        "examples": [
+                            "I accidentally stepped on the dog's foot and it yelped.",
+                            "She yelped, as if being punched in the stomach."
+                        ]
+                    },
+                    {
+                        "definition": "to say something suddenly and quickly, like someone who is in pain",
+                        "examples": [
+                            "\"Nooooo,\" yelped a small girl at one point.",
+                            "\"This is an outrage!\" he yelped."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a sudden, short, high sound, like that made by a person or animal in pain",
+                        "examples": [
+                            "Feeling something sting her cheek, she stifled a yelp.",
+                            "She heard her pet's yelps of pain and rushed to his side."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yen",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the standard unit of money used in Japan",
+                        "examples": [
+                            "She earns 400,000 yen a month as an English teacher in Tokyo."
+                        ]
+                    },
+                    {
+                        "definition": "the value of the yen, used in comparing the values of different types of money from around the world",
+                        "examples": [
+                            "The yen fell/rose against (= was worth less/more compared to) the dollar today."
+                        ]
+                    },
+                    {
+                        "definition": "a strong feeling of wanting or wishing for something",
+                        "examples": [
+                            "I have a yen for travelling."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeoman",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "in the past, a man who was not a servant and who owned and cultivated (= grew crops on) an area of land",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeomen",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "in the past, a man who was not a servant and who owned and cultivated (= grew crops on) an area of land",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yep",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "yes",
+                        "examples": [
+                            "\"Do I press this button?\" \"Yep, that's right.\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yes",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "used to express willingness or agreement",
+                        "examples": [
+                            "\"Would you like a glass of wine?\" \"Yes, thanks.\"",
+                            "\"Do you like Thai food?\" \"Yes, I love it.\"",
+                            "\"He's a really nice guy.\" \"Yes, he is.\"",
+                            "\"Report to me at nine o'clock tomorrow morning.\" \"Yes, sir.\"",
+                            "\"Have you had enough to eat?\" \"Yes, thank you.\"",
+                            "If you'd say yes (= agree) to the request you'd avoid a lot of trouble."
+                        ]
+                    },
+                    {
+                        "definition": "used for emphasis",
+                        "examples": [
+                            "We visited all 50 states, yes sir, all 50."
+                        ]
+                    },
+                    {
+                        "definition": "used to show that you are listening to someone, or that you are ready to listen and to give them an answer or information",
+                        "examples": [
+                            "\"Dad.\" \"Yes, what do you want, honey?\"",
+                            "Yes, can I help you?"
+                        ]
+                    },
+                    {
+                        "definition": "used when you are disagreeing with a negative statement",
+                        "examples": [
+                            "\"I'm not a very good cook, though.\" \"Yes, you are - you make wonderful food!\""
+                        ]
+                    },
+                    {
+                        "definition": "used at the end of a sentence to invite someone to agree with you or to check that you have understood something correctly",
+                        "examples": [
+                            "It's better this way. Yes?",
+                            "You are going to help me, yes?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a vote supporting a particular plan of action or a reply accepting an invitation",
+                        "examples": [
+                            "\"Have you had any replies yet?\" \"Six yeses and two noes so far.\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeses",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "used to express willingness or agreement",
+                        "examples": [
+                            "\"Would you like a glass of wine?\" \"Yes, thanks.\"",
+                            "\"Do you like Thai food?\" \"Yes, I love it.\"",
+                            "\"He's a really nice guy.\" \"Yes, he is.\"",
+                            "\"Report to me at nine o'clock tomorrow morning.\" \"Yes, sir.\"",
+                            "\"Have you had enough to eat?\" \"Yes, thank you.\"",
+                            "If you'd say yes (= agree) to the request you'd avoid a lot of trouble."
+                        ]
+                    },
+                    {
+                        "definition": "used for emphasis",
+                        "examples": [
+                            "We visited all 50 states, yes sir, all 50."
+                        ]
+                    },
+                    {
+                        "definition": "used to show that you are listening to someone, or that you are ready to listen and to give them an answer or information",
+                        "examples": [
+                            "\"Dad.\" \"Yes, what do you want, honey?\"",
+                            "Yes, can I help you?"
+                        ]
+                    },
+                    {
+                        "definition": "used when you are disagreeing with a negative statement",
+                        "examples": [
+                            "\"I'm not a very good cook, though.\" \"Yes, you are - you make wonderful food!\""
+                        ]
+                    },
+                    {
+                        "definition": "used at the end of a sentence to invite someone to agree with you or to check that you have understood something correctly",
+                        "examples": [
+                            "It's better this way. Yes?",
+                            "You are going to help me, yes?"
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a vote supporting a particular plan of action or a reply accepting an invitation",
+                        "examples": [
+                            "\"Have you had any replies yet?\" \"Six yeses and two noes so far.\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yesterday",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "on the day before today",
+                        "examples": [
+                            "He called yesterday while you were out.",
+                            "I saw her yesterday afternoon."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the day before today",
+                        "examples": [
+                            "\"Is that today's paper?\" \"No, it's yesterday's.\""
+                        ]
+                    },
+                    {
+                        "definition": "two days ago",
+                        "examples": [
+                            "I called her the day before yesterday."
+                        ]
+                    },
+                    {
+                        "definition": "the recent past",
+                        "examples": [
+                            "Nobody's interested in yesterday's pop stars.",
+                            "These songs are a part of all our yesterdays."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yesteryear",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a time in the past",
+                        "examples": [
+                            "the Hollywood stars of yesteryear"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yet",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "still; until the present time",
+                        "examples": [
+                            "I haven't spoken to her yet.",
+                            "He hasn't finished yet.",
+                            "\"Are you ready?\" \"Not yet - wait a minute.\""
+                        ]
+                    },
+                    {
+                        "definition": "the best, worst, etc. until now",
+                        "examples": [
+                            "Of all the songs I've heard tonight, that's the best yet."
+                        ]
+                    },
+                    {
+                        "definition": "until and including this time",
+                        "examples": [
+                            "We haven't needed extra staff as yet, but we may in the future.",
+                            "No ambulances had as yet managed to get across the river."
+                        ]
+                    },
+                    {
+                        "definition": "from now and for a particular period of time in the future",
+                        "examples": [
+                            "She won't be back for a long time yet.",
+                            "Our holiday isn't for weeks yet."
+                        ]
+                    },
+                    {
+                        "definition": "If you have yet to do something, you have not done it",
+                        "examples": [
+                            "They have yet to make a decision."
+                        ]
+                    },
+                    {
+                        "definition": "even at this stage or time",
+                        "examples": [
+                            "We could yet succeed - you never know.",
+                            "You might yet prove me wrong.",
+                            "He may win yet."
+                        ]
+                    },
+                    {
+                        "definition": "used to add emphasis to words such as another and again, especially to show an increase in amount or the number of times something happens",
+                        "examples": [
+                            "Rachel bought yet another pair of shoes to add to her collection.",
+                            "I'm sorry to bother you yet again.",
+                            "He's given us yet more work to do."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adverbconjunction",
+                "definitions": [
+                    {
+                        "definition": "(and) despite that; used to add something that seems surprising because of what you have just said",
+                        "examples": [
+                            "simple yet effective",
+                            "He's overweight and bald, (and) yet somehow, he's attractive."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yeti",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a big creature like a human covered in hair that is believed by some people to live in the Himalayas",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yetis",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a big creature like a human covered in hair that is believed by some people to live in the Himalayas",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yew",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an evergreen tree (= one that never loses its leaves) with flat leaves like needles and small, red fruits ",
+                        "examples": [
+                            "In the middle of the churchyard stands an old yew.",
+                            "Yew, box, or holly are suitable for hedges.",
+                            "a yew tree"
+                        ]
+                    },
+                    {
+                        "definition": "wood from the yew tree",
+                        "examples": [
+                            "yew furniture",
+                            "a bowl made from yew"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yews",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an evergreen tree (= one that never loses its leaves) with flat leaves like needles and small, red fruits ",
+                        "examples": [
+                            "In the middle of the churchyard stands an old yew.",
+                            "Yew, box, or holly are suitable for hedges.",
+                            "a yew tree"
+                        ]
+                    },
+                    {
+                        "definition": "wood from the yew tree",
+                        "examples": [
+                            "yew furniture",
+                            "a bowl made from yew"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yid",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a Jewish person",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yids",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a Jewish person",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yield",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to supply or produce something positive such as a profit, an amount of food or information",
+                        "examples": [
+                            "an attempt to yield increased profits",
+                            "The investigation yielded some unexpected results.",
+                            "Favourable weather yielded a good crop."
+                        ]
+                    },
+                    {
+                        "definition": "to give up the control of or responsibility for something, often because you have been forced to",
+                        "examples": [
+                            "They were forced to yield (up) their land to the occupying forces.",
+                            "Despite renewed pressure to give up the occupied territory, they will not yield."
+                        ]
+                    },
+                    {
+                        "definition": "to bend or break under pressure",
+                        "examples": [
+                            "His legs began to yield under the sheer weight of his body."
+                        ]
+                    },
+                    {
+                        "definition": "to stop in order to allow other vehicles to go past, especially before you drive onto a bigger road",
+                        "examples": [
+                            "If you're going downhill, you need to yield to bikers going uphill."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an amount of something positive, such as food or profit, that is produced or supplied",
+                        "examples": [
+                            "Crop yields have risen steadily.",
+                            "Yields on gas and electricity shares are consistently high."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yielded",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yield",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to supply or produce something positive such as a profit, an amount of food or information",
+                        "examples": [
+                            "an attempt to yield increased profits",
+                            "The investigation yielded some unexpected results.",
+                            "Favourable weather yielded a good crop."
+                        ]
+                    },
+                    {
+                        "definition": "to give up the control of or responsibility for something, often because you have been forced to",
+                        "examples": [
+                            "They were forced to yield (up) their land to the occupying forces.",
+                            "Despite renewed pressure to give up the occupied territory, they will not yield."
+                        ]
+                    },
+                    {
+                        "definition": "to bend or break under pressure",
+                        "examples": [
+                            "His legs began to yield under the sheer weight of his body."
+                        ]
+                    },
+                    {
+                        "definition": "to stop in order to allow other vehicles to go past, especially before you drive onto a bigger road",
+                        "examples": [
+                            "If you're going downhill, you need to yield to bikers going uphill."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yielding",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "Soft substances or qualities that are yielding can bend",
+                        "examples": [
+                            "a yielding mire of wet leaves",
+                            "yielding flesh/softness"
+                        ]
+                    },
+                    {
+                        "definition": "A yielding person can change the way they normally behave or deal with situations when it is helpful or necessary.",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yields",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to supply or produce something positive such as a profit, an amount of food or information",
+                        "examples": [
+                            "an attempt to yield increased profits",
+                            "The investigation yielded some unexpected results.",
+                            "Favourable weather yielded a good crop."
+                        ]
+                    },
+                    {
+                        "definition": "to give up the control of or responsibility for something, often because you have been forced to",
+                        "examples": [
+                            "They were forced to yield (up) their land to the occupying forces.",
+                            "Despite renewed pressure to give up the occupied territory, they will not yield."
+                        ]
+                    },
+                    {
+                        "definition": "to bend or break under pressure",
+                        "examples": [
+                            "His legs began to yield under the sheer weight of his body."
+                        ]
+                    },
+                    {
+                        "definition": "to stop in order to allow other vehicles to go past, especially before you drive onto a bigger road",
+                        "examples": [
+                            "If you're going downhill, you need to yield to bikers going uphill."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an amount of something positive, such as food or profit, that is produced or supplied",
+                        "examples": [
+                            "Crop yields have risen steadily.",
+                            "Yields on gas and electricity shares are consistently high."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yikes",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "used to show that you are worried, surprised, or shocked",
+                        "examples": [
+                            "I start my new job tomorrow. Yikes!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yin",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "in Chinese philosophy, the female principle of the universe, represented as dark and negative",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yip",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a short, sharp cry",
+                        "examples": [
+                            "Prairie dog chatter is described by observers as a series of yips, or high-pitched barks."
+                        ]
+                    },
+                    {
+                        "definition": "in sports, especially golf, a condition when a player is not able to hit, throw, or kick the ball well, usually because of nervousness",
+                        "examples": [
+                            "He gave up competitive golf after developing a serious case of the yips on his putting."
+                        ]
+                    },
+                    {
+                        "definition": "a state of nervousness",
+                        "examples": [
+                            "\"People have the yips about a conservative owning a newspaper in a liberal town,\" she said."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If an animal such as a dog yips, it makes a short, sharp cry",
+                        "examples": [
+                            "The dogs yipped at each other from their crates in the back of the van.",
+                            "A pack of coyotes is heard yipping at night."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yippee",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "used to express happiness, excitement, or great satisfaction",
+                        "examples": [
+                            "No school for five weeks - yippee!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yips",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a short, sharp cry",
+                        "examples": [
+                            "Prairie dog chatter is described by observers as a series of yips, or high-pitched barks."
+                        ]
+                    },
+                    {
+                        "definition": "in sports, especially golf, a condition when a player is not able to hit, throw, or kick the ball well, usually because of nervousness",
+                        "examples": [
+                            "He gave up competitive golf after developing a serious case of the yips on his putting."
+                        ]
+                    },
+                    {
+                        "definition": "a state of nervousness",
+                        "examples": [
+                            "\"People have the yips about a conservative owning a newspaper in a liberal town,\" she said."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "If an animal such as a dog yips, it makes a short, sharp cry",
+                        "examples": [
+                            "The dogs yipped at each other from their crates in the back of the van.",
+                            "A pack of coyotes is heard yipping at night."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yo",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "used as an informal greeting between people who know each other or as an expression of approval",
+                        "examples": [
+                            "\"Yo, Mickie! How's things?\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yob",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young man who behaves in a very rude, offensive, and sometimes violent way",
+                        "examples": [
+                            "a gang of loud-mouthed yobs"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yobbo",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young man who behaves in a very rude, offensive, and sometimes violent way",
+                        "examples": [
+                            "a gang of loud-mouthed yobs"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yobbos",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young man who behaves in a very rude, offensive, and sometimes violent way",
+                        "examples": [
+                            "a gang of loud-mouthed yobs"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yobs",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young man who behaves in a very rude, offensive, and sometimes violent way",
+                        "examples": [
+                            "a gang of loud-mouthed yobs"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yodel",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to sing by making a series of very fast changes between the natural voice and a much higher voice",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a song or a part of a song that is yodelled",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yodeled",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to sing by making a series of very fast changes between the natural voice and a much higher voice",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a song or a part of a song that is yodelled",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yodeling",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to sing by making a series of very fast changes between the natural voice and a much higher voice",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a song or a part of a song that is yodelled",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yodelled",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yodel",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yodelling",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yodel",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yodels",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to sing by making a series of very fast changes between the natural voice and a much higher voice",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a song or a part of a song that is yodelled",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoga",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a set of physical and mental exercises, originally from India, intended to give control over the body and mind",
+                        "examples": [
+                            "a yoga class"
+                        ]
+                    },
+                    {
+                        "definition": "a Hindu system of philosophy that aims to unite the self with god",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoghourt",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slightly sour, thick liquid made from milk with bacteria added to it, sometimes eaten plain and sometimes with sugar, fruit, etc. added",
+                        "examples": [
+                            "natural/plain yogurt",
+                            "strawberry yogurt",
+                            "low-fat yogurt",
+                            "I only had a yogurt (= a container of this) for lunch."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoghourts",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slightly sour, thick liquid made from milk with bacteria added to it, sometimes eaten plain and sometimes with sugar, fruit, etc. added",
+                        "examples": [
+                            "natural/plain yogurt",
+                            "strawberry yogurt",
+                            "low-fat yogurt",
+                            "I only had a yogurt (= a container of this) for lunch."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoghurt",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slightly sour, thick liquid made from milk with bacteria added to it, sometimes eaten plain and sometimes with sugar, fruit, etc. added",
+                        "examples": [
+                            "natural/plain yogurt",
+                            "strawberry yogurt",
+                            "low-fat yogurt",
+                            "I only had a yogurt (= a container of this) for lunch."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoghurts",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slightly sour, thick liquid made from milk with bacteria added to it, sometimes eaten plain and sometimes with sugar, fruit, etc. added",
+                        "examples": [
+                            "natural/plain yogurt",
+                            "strawberry yogurt",
+                            "low-fat yogurt",
+                            "I only had a yogurt (= a container of this) for lunch."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yogi",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a person who has spent a lot of their life doing yoga and studying the philosophy of yoga",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yogic",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "relating to the activity or philosophy of yoga",
+                        "examples": [
+                            "yogic exercises",
+                            "Gandhi's pursuit of yogic chastity"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yogis",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a person who has spent a lot of their life doing yoga and studying the philosophy of yoga",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yogurt",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slightly sour, thick liquid made from milk with bacteria added to it, sometimes eaten plain and sometimes with sugar, fruit, etc. added",
+                        "examples": [
+                            "natural/plain yogurt",
+                            "strawberry yogurt",
+                            "low-fat yogurt",
+                            "I only had a yogurt (= a container of this) for lunch."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yogurts",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a slightly sour, thick liquid made from milk with bacteria added to it, sometimes eaten plain and sometimes with sugar, fruit, etc. added",
+                        "examples": [
+                            "natural/plain yogurt",
+                            "strawberry yogurt",
+                            "low-fat yogurt",
+                            "I only had a yogurt (= a container of this) for lunch."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoke",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a wooden bar that is fastened over the necks of two animals, especially cattle, and connected to the vehicle or load that they are pulling",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a fitted part of a piece of clothing, especially a strip that goes around the shoulders or waist, to which is sewn a looser piece of material",
+                        "examples": []
+                    },
+                    {
+                        "definition": "something that connects two things or people, usually in a way that unfairly limits freedom",
+                        "examples": [
+                            "the yoke of marriage",
+                            "Both countries had thrown off the communist yoke."
+                        ]
+                    },
+                    {
+                        "definition": "a thing whose name you do not know or cannot remember",
+                        "examples": [
+                            "What's that yoke there?",
+                            "Ah, it's a great yoke."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to put a yoke on animals, especially cattle, so that they are fastened together and to a connected vehicle or load",
+                        "examples": [
+                            "Two oxen yoked to a plough walked wearily up and down the field."
+                        ]
+                    },
+                    {
+                        "definition": "to combine or connect two things",
+                        "examples": [
+                            "All these different political elements have somehow been yoked together to form a new alliance."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoked",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yoke",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to put a yoke on animals, especially cattle, so that they are fastened together and to a connected vehicle or load",
+                        "examples": [
+                            "Two oxen yoked to a plough walked wearily up and down the field."
+                        ]
+                    },
+                    {
+                        "definition": "to combine or connect two things",
+                        "examples": [
+                            "All these different political elements have somehow been yoked together to form a new alliance."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yokel",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a stupid or awkward person who lives in the countryside rather than a town, especially one whose appearance is in some way strange or humorous",
+                        "examples": [
+                            "He plays the country yokel in the butter ad."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yokels",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a stupid or awkward person who lives in the countryside rather than a town, especially one whose appearance is in some way strange or humorous",
+                        "examples": [
+                            "He plays the country yokel in the butter ad."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yokes",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a wooden bar that is fastened over the necks of two animals, especially cattle, and connected to the vehicle or load that they are pulling",
+                        "examples": []
+                    },
+                    {
+                        "definition": "a fitted part of a piece of clothing, especially a strip that goes around the shoulders or waist, to which is sewn a looser piece of material",
+                        "examples": []
+                    },
+                    {
+                        "definition": "something that connects two things or people, usually in a way that unfairly limits freedom",
+                        "examples": [
+                            "the yoke of marriage",
+                            "Both countries had thrown off the communist yoke."
+                        ]
+                    },
+                    {
+                        "definition": "a thing whose name you do not know or cannot remember",
+                        "examples": [
+                            "What's that yoke there?",
+                            "Ah, it's a great yoke."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to put a yoke on animals, especially cattle, so that they are fastened together and to a connected vehicle or load",
+                        "examples": [
+                            "Two oxen yoked to a plough walked wearily up and down the field."
+                        ]
+                    },
+                    {
+                        "definition": "to combine or connect two things",
+                        "examples": [
+                            "All these different political elements have somehow been yoked together to form a new alliance."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoking",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yoke",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to put a yoke on animals, especially cattle, so that they are fastened together and to a connected vehicle or load",
+                        "examples": [
+                            "Two oxen yoked to a plough walked wearily up and down the field."
+                        ]
+                    },
+                    {
+                        "definition": "to combine or connect two things",
+                        "examples": [
+                            "All these different political elements have somehow been yoked together to form a new alliance."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yolk",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the yellow, middle part of an egg",
+                        "examples": [
+                            "I like eggs lightly cooked so that the yolk is still runny.",
+                            "Separate the yolks from the whites."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yolks",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the yellow, middle part of an egg",
+                        "examples": [
+                            "I like eggs lightly cooked so that the yolk is still runny.",
+                            "Separate the yolks from the whites."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yom",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a Jewish holy day in September or October when nothing is eaten all day and people say prayers in the synagogue asking God to forgive them for things they have done wrong",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yomp",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "(often of soldiers) to walk quickly and energetically, usually while carrying a lot of equipment",
+                        "examples": [
+                            "Energetic types can be out before breakfast and yomp about the hills until 10 a.m."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a quick and energetic walk, usually while carrying a lot of equipment",
+                        "examples": [
+                            "The captain completed a 30-mile yomp across Dartmoor with five minutes to spare."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yomped",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yomp",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "(often of soldiers) to walk quickly and energetically, usually while carrying a lot of equipment",
+                        "examples": [
+                            "Energetic types can be out before breakfast and yomp about the hills until 10 a.m."
+                        ]
+                    },
+                    {
+                        "definition": "",
+                        "examples": [
+                            "The captain completed a 30-mile yomp across Dartmoor with five minutes to spare."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yomping",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yomp",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "(often of soldiers) to walk quickly and energetically, usually while carrying a lot of equipment",
+                        "examples": [
+                            "Energetic types can be out before breakfast and yomp about the hills until 10 a.m."
+                        ]
+                    },
+                    {
+                        "definition": "",
+                        "examples": [
+                            "The captain completed a 30-mile yomp across Dartmoor with five minutes to spare."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yomps",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "(often of soldiers) to walk quickly and energetically, usually while carrying a lot of equipment",
+                        "examples": [
+                            "Energetic types can be out before breakfast and yomp about the hills until 10 a.m."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a quick and energetic walk, usually while carrying a lot of equipment",
+                        "examples": [
+                            "The captain completed a 30-mile yomp across Dartmoor with five minutes to spare."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yon",
+        "categories": [
+            {
+                "type": "determineradverb",
+                "definitions": [
+                    {
+                        "definition": "in the place or direction shown; over there",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yonder",
+        "categories": [
+            {
+                "type": "determineradverb",
+                "definitions": [
+                    {
+                        "definition": "in the place or direction shown; over there",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yonks",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a very long time, usually a number of years",
+                        "examples": [
+                            "How is Gareth? I haven't seen him for yonks!"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoof",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "relating to young people, especially those influenced by the most recent fashions and ideas",
+                        "examples": [
+                            "The adverts target yoof culture."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "young people",
+                        "examples": [
+                            "He's a comedian who claims to be the voice of British yoof."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yore",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "of a long time ago",
+                        "examples": [
+                            "This was once a Roman road in days of yore."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yores",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "of a long time ago",
+                        "examples": [
+                            "This was once a Roman road in days of yore."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "york",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a city in northern England",
+                        "examples": [
+                            "The beautiful city of York, forty-five minutes from the hotel, has a famous Minster and the popular Jorvik (Viking) Centre.",
+                            "Flood alerts are in place for York and for other areas of North Yorkshire."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yorker",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "someone from the US city of New York",
+                        "examples": [
+                            "I was accompanied by a New Yorker from the Bronx.",
+                            "New Yorkers mostly take film crews for granted, living as they do in one of the most famous cities in the world."
+                        ]
+                    },
+                    {
+                        "definition": "someone from the US state of New York",
+                        "examples": [
+                            "New Yorkers and New Jerseyans try to get around fireworks bans in their home states by buying them in Pennsylvania.",
+                            "Banks made his reputation exploring the lives and disappointments of rural New Yorkers."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yorkers",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "someone from the US city of New York",
+                        "examples": [
+                            "I was accompanied by a New Yorker from the Bronx.",
+                            "New Yorkers mostly take film crews for granted, living as they do in one of the most famous cities in the world."
+                        ]
+                    },
+                    {
+                        "definition": "someone from the US state of New York",
+                        "examples": [
+                            "New Yorkers and New Jerseyans try to get around fireworks bans in their home states by buying them in Pennsylvania.",
+                            "Banks made his reputation exploring the lives and disappointments of rural New Yorkers."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "you",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "used to refer to the person or people being spoken or written to",
+                        "examples": [
+                            "You look nice.",
+                            "I love you.",
+                            "You said I could go with you.",
+                            "You're coming tonight, aren't you?",
+                            "Are you two ready?",
+                            "You painted that yourself? That's great!"
+                        ]
+                    },
+                    {
+                        "definition": "people in general",
+                        "examples": [
+                            "You learn to accept these things as you get older.",
+                            "You can't get a driving licence till you're 17 in this country.",
+                            "Too much alcohol is bad for you.",
+                            "How do you get this thing to start?"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "young",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "having lived or existed for only a short time and not old",
+                        "examples": [
+                            "young adults/children",
+                            "His girlfriend's very young.",
+                            "The trees in this part of the forest are still fairly young.",
+                            "Philippa is the youngest person in the family.",
+                            "Angela is two years younger than Clare."
+                        ]
+                    },
+                    {
+                        "definition": "used after someone's name to show that they are the younger of two people who have the same name, especially a father and son",
+                        "examples": [
+                            "He played a large part in the administration of George Bush the Younger."
+                        ]
+                    },
+                    {
+                        "definition": "suitable for young people",
+                        "examples": [
+                            "young fashion/ideas",
+                            "Be honest now - do you think this dress is a bit/too young for me (= is more suitable for someone younger)?"
+                        ]
+                    },
+                    {
+                        "definition": "to look younger than you really are",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "young people considered together as a group",
+                        "examples": [
+                            "I have nothing against miniskirts, but I think they're strictly for the young."
+                        ]
+                    },
+                    {
+                        "definition": "the babies of an animal",
+                        "examples": [
+                            "Meanwhile, the mother flies back to the nest to feed her young."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "younger",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "having lived or existed for only a short time and not old",
+                        "examples": [
+                            "young adults/children",
+                            "His girlfriend's very young.",
+                            "The trees in this part of the forest are still fairly young.",
+                            "Philippa is the youngest person in the family.",
+                            "Angela is two years younger than Clare."
+                        ]
+                    },
+                    {
+                        "definition": "used after someone's name to show that they are the younger of two people who have the same name, especially a father and son",
+                        "examples": [
+                            "He played a large part in the administration of George Bush the Younger."
+                        ]
+                    },
+                    {
+                        "definition": "suitable for young people",
+                        "examples": [
+                            "young fashion/ideas",
+                            "Be honest now - do you think this dress is a bit/too young for me (= is more suitable for someone younger)?"
+                        ]
+                    },
+                    {
+                        "definition": "to look younger than you really are",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "young people considered together as a group",
+                        "examples": [
+                            "I have nothing against miniskirts, but I think they're strictly for the young."
+                        ]
+                    },
+                    {
+                        "definition": "the babies of an animal",
+                        "examples": [
+                            "Meanwhile, the mother flies back to the nest to feed her young."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youngest",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "having lived or existed for only a short time and not old",
+                        "examples": [
+                            "young adults/children",
+                            "His girlfriend's very young.",
+                            "The trees in this part of the forest are still fairly young.",
+                            "Philippa is the youngest person in the family.",
+                            "Angela is two years younger than Clare."
+                        ]
+                    },
+                    {
+                        "definition": "used after someone's name to show that they are the younger of two people who have the same name, especially a father and son",
+                        "examples": [
+                            "He played a large part in the administration of George Bush the Younger."
+                        ]
+                    },
+                    {
+                        "definition": "suitable for young people",
+                        "examples": [
+                            "young fashion/ideas",
+                            "Be honest now - do you think this dress is a bit/too young for me (= is more suitable for someone younger)?"
+                        ]
+                    },
+                    {
+                        "definition": "to look younger than you really are",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "young people considered together as a group",
+                        "examples": [
+                            "I have nothing against miniskirts, but I think they're strictly for the young."
+                        ]
+                    },
+                    {
+                        "definition": "the babies of an animal",
+                        "examples": [
+                            "Meanwhile, the mother flies back to the nest to feed her young."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youngster",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young person, usually an older child",
+                        "examples": [
+                            "The scheme is for youngsters between the ages of ten and 16."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youngsters",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young person, usually an older child",
+                        "examples": [
+                            "The scheme is for youngsters between the ages of ten and 16."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "your",
+        "categories": [
+            {
+                "type": "determiner",
+                "definitions": [
+                    {
+                        "definition": "belonging or relating to the person or group of people being spoken or written to",
+                        "examples": [
+                            "Is this your bag?",
+                            "It's not your fault.",
+                            "Your mother is driving me crazy.",
+                            "What's your problem?"
+                        ]
+                    },
+                    {
+                        "definition": "belonging or relating to people generally",
+                        "examples": [
+                            "Of course you want the best for your children.",
+                            "Garlic is good for your blood."
+                        ]
+                    },
+                    {
+                        "definition": "said before a typical example of something is given",
+                        "examples": [
+                            "This isn't your usual science fiction novel, but then Brinkworth isn't exactly your typical author."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yours",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "the one(s) belonging to or connected with the person or group of people being spoken or written to",
+                        "examples": [
+                            "Is this pen yours?",
+                            "Unfortunately my legs aren't as long as yours.",
+                            "I've got something of yours (= that belongs to you).",
+                            "Yours is the room on the top floor, on the left."
+                        ]
+                    },
+                    {
+                        "definition": "used at the beginning of some phrases written at the end of a letter, before giving a name",
+                        "examples": [
+                            "Yours, Jack",
+                            "Yours faithfully/sincerely, K. Maxwell."
+                        ]
+                    },
+                    {
+                        "definition": "used to show that something belongs to or is connected with people generally",
+                        "examples": [
+                            "Other people's children always seem to be better behaved than yours."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yourself",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "used when the subject of the verb is \"you\" or the person being spoken to, and the object is the same person",
+                        "examples": [
+                            "Be careful with that knife or you'll cut yourself!",
+                            "Katie, control yourself!"
+                        ]
+                    },
+                    {
+                        "definition": "used for emphasis when the subject is \"you\"",
+                        "examples": [
+                            "Did you make the dress yourself?",
+                            "You can do that yourself."
+                        ]
+                    },
+                    {
+                        "definition": "to behave in your usual manner, rather than behaving in a way you think other people might like",
+                        "examples": [
+                            "The best thing you can do is to go into the interview and just be yourself."
+                        ]
+                    },
+                    {
+                        "definition": "alone or without help from anyone else",
+                        "examples": [
+                            "I'm amazed you managed to move those boxes all by yourself.",
+                            "Do you like being by yourself sometimes or do you get lonely?"
+                        ]
+                    },
+                    {
+                        "definition": "for your use only",
+                        "examples": [
+                            "So you have the whole house to yourself this weekend?"
+                        ]
+                    },
+                    {
+                        "definition": "not to be, seem, or feel as happy or healthy as usual",
+                        "examples": [
+                            "Why don't you go home early if you're not feeling yourself?"
+                        ]
+                    },
+                    {
+                        "definition": "used when asking someone about their state of mind when they are physically ill",
+                        "examples": [
+                            "I know you must still be uncomfortable, but how are you in yourself?"
+                        ]
+                    },
+                    {
+                        "definition": "used when both the subject and object of the verb are \"you\" and \"you\" is also being used to refer to people generally",
+                        "examples": [
+                            "You tell yourself everything's all right but you know it's not really."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yourselves",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "plural of yourself",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yous",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "used to mean \"you\", when addressing a group of people that you are speaking to",
+                        "examples": [
+                            "See yous later."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youse",
+        "categories": [
+            {
+                "type": "pronoun",
+                "definitions": [
+                    {
+                        "definition": "used to mean \"you\", when addressing a group of people that you are speaking to",
+                        "examples": [
+                            "See yous later."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youth",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the period of your life when you are young, or the state of being young",
+                        "examples": [
+                            "I was a fairly good football player in my youth.",
+                            "The first volume is the author's account of his misspent youth in the bars of Dublin.",
+                            "He looks like a man who's found the secret to eternal youth (= staying young).",
+                            "You may not have played tennis as often as him, but at least you've got youth on your side (= you are young)."
+                        ]
+                    },
+                    {
+                        "definition": "a boy or a young man",
+                        "examples": [
+                            "Gangs of youths were throwing stones and bottles at the police."
+                        ]
+                    },
+                    {
+                        "definition": "young people, both male and female, considered as a group",
+                        "examples": [
+                            "the youth of today",
+                            "the nation's disaffected youth"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youthful",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "having the qualities that are typical of young people",
+                        "examples": [
+                            "At the time I admired his youthful enthusiasm.",
+                            "She has very youthful skin."
+                        ]
+                    },
+                    {
+                        "definition": "young",
+                        "examples": [
+                            "A youthful president can be good for a country's morale."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youthfully",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "in a way that is similar to, typical of, or relates to young people",
+                        "examples": [
+                            "The singer has a youthfully enthusiastic stage presence.",
+                            "Judy believes that dressing youthfully is about keeping up with trends."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youthfulness",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the quality of being similar to or typical of young people",
+                        "examples": [
+                            "His face retained a youthfulness that his wife's had lost.",
+                            "Aging gracefully is better than keeping up a facade of eternal youthfulness."
+                        ]
+                    },
+                    {
+                        "definition": "the fact of being young",
+                        "examples": [
+                            "His relative youthfulness and message of change resonate on campus.",
+                            "He was concerned at the extreme youthfulness of Diana, but hoped she would grow into her role."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youthquake",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an important social or political change that is started by young people",
+                        "examples": [
+                            "Some commentators predict a \"youthquake\" in the coming elections.",
+                            "There's a youthquake going on and it started online."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "youths",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the period of your life when you are young, or the state of being young",
+                        "examples": [
+                            "I was a fairly good football player in my youth.",
+                            "The first volume is the author's account of his misspent youth in the bars of Dublin.",
+                            "He looks like a man who's found the secret to eternal youth (= staying young).",
+                            "You may not have played tennis as often as him, but at least you've got youth on your side (= you are young)."
+                        ]
+                    },
+                    {
+                        "definition": "a boy or a young man",
+                        "examples": [
+                            "Gangs of youths were throwing stones and bottles at the police."
+                        ]
+                    },
+                    {
+                        "definition": "young people, both male and female, considered as a group",
+                        "examples": [
+                            "the youth of today",
+                            "the nation's disaffected youth"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yowl",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a long, high, unhappy cry, usually when hurt or fighting",
+                        "examples": [
+                            "I was woken up by cats yowling outside my window.",
+                            "On the hills, the foxes yowled and yelped."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a long, high, unhappy cry, usually made by an animal that is hurt or fighting",
+                        "examples": [
+                            "As he lifted her damaged leg the dog let out a fierce yowl.",
+                            "The squealing became slightly louder, and clearer - the yowls of an animal in pain."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yowled",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yowl",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a long, high, unhappy cry, usually when hurt or fighting",
+                        "examples": [
+                            "I was woken up by cats yowling outside my window.",
+                            "On the hills, the foxes yowled and yelped."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yowling",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yowl",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a long, high, unhappy cry, usually when hurt or fighting",
+                        "examples": [
+                            "I was woken up by cats yowling outside my window.",
+                            "On the hills, the foxes yowled and yelped."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yowls",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to make a long, high, unhappy cry, usually when hurt or fighting",
+                        "examples": [
+                            "I was woken up by cats yowling outside my window.",
+                            "On the hills, the foxes yowled and yelped."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a long, high, unhappy cry, usually made by an animal that is hurt or fighting",
+                        "examples": [
+                            "As he lifted her damaged leg the dog let out a fierce yowl.",
+                            "The squealing became slightly louder, and clearer - the yowls of an animal in pain."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yoyo",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a toy consisting of a circular object that can be made to go up and down a long piece of string to which it is tied",
+                        "examples": [
+                            "The scientists were inspired by spinning toys invented before the industrial age, such as yo-yos and tops.",
+                            "His hand was going up and down like a yoyo."
+                        ]
+                    },
+                    {
+                        "definition": "a decoration made from a circular piece of fabric that is stitched around the edge, with the thread then being pulled tight so that there are folds in the fabric ",
+                        "examples": [
+                            "Fabric yo-yos, which look something like gathered flowers, are perfect for adorning anything from wearable accessories to home decor items."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "used to describe something that moves up and down quickly, or something that changes repeatedly between one level and another",
+                        "examples": [
+                            "yo-yo dieting (= in which someone loses weight and then gains it again, repeatedly)",
+                            "It’s the yoyo syndrome - they break up, then get scared and run back to each other, only to break up again."
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to move up and down quickly, or to change repeatedly between one level and another",
+                        "examples": [
+                            "She said that her weight had yo-yoed over the years.",
+                            "They said that the price of fossil fuels is going to yoyo."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuan",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the standard unit of money used in the People's Republic of China",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuans",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the standard unit of money used in the People's Republic of China",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yucca",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a plant with long, stiff leaves on a thick stem and sometimes white, bell-shaped flowers",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuccas",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a plant with long, stiff leaves on a thick stem and sometimes white, bell-shaped flowers",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuck",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "an expression of disgust (= disapproval and dislike)",
+                        "examples": [
+                            "\"Yuck, what a horrible smell!\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuckier",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "disgusting or unpleasant",
+                        "examples": [
+                            "a yucky green colour"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuckiest",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "disgusting or unpleasant",
+                        "examples": [
+                            "a yucky green colour"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yucky",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "disgusting or unpleasant",
+                        "examples": [
+                            "a yucky green colour"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuk",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "an expression of disgust (= disapproval and dislike)",
+                        "examples": [
+                            "\"Yuck, what a horrible smell!\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yukky",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "disgusting or unpleasant",
+                        "examples": [
+                            "a yucky green colour"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yule",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "Christmas",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yules",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "Christmas",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuletide",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the period around Christmas",
+                        "examples": [
+                            "Yuletide greetings"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuletides",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "the period around Christmas",
+                        "examples": [
+                            "Yuletide greetings"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yum",
+        "categories": [
+            {
+                "type": "exclamation",
+                "definitions": [
+                    {
+                        "definition": "used to say that food tastes or smells very good",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yummier",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "tasting extremely good",
+                        "examples": [
+                            "I think I'll have some more of that yummy chocolate cake.",
+                            "There are some yummy-looking desserts over there."
+                        ]
+                    },
+                    {
+                        "definition": "sexually attractive",
+                        "examples": [
+                            "And tell her to bring along that yummy brother of hers."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yummiest",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "tasting extremely good",
+                        "examples": [
+                            "I think I'll have some more of that yummy chocolate cake.",
+                            "There are some yummy-looking desserts over there."
+                        ]
+                    },
+                    {
+                        "definition": "sexually attractive",
+                        "examples": [
+                            "And tell her to bring along that yummy brother of hers."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yummy",
+        "categories": [
+            {
+                "type": "adjective",
+                "definitions": [
+                    {
+                        "definition": "tasting extremely good",
+                        "examples": [
+                            "I think I'll have some more of that yummy chocolate cake.",
+                            "There are some yummy-looking desserts over there."
+                        ]
+                    },
+                    {
+                        "definition": "sexually attractive",
+                        "examples": [
+                            "And tell her to bring along that yummy brother of hers."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yup",
+        "categories": [
+            {
+                "type": "adverb",
+                "definitions": [
+                    {
+                        "definition": "(spelled the way it is spoken) yes",
+                        "examples": [
+                            "\"Can you see it?\" \"Yup, there it is.\""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppie",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young person who lives in a city, earns a lot of money, and spends it doing fashionable things and buying expensive possessions",
+                        "examples": [
+                            "They're just a couple of yuppies with more money than sense."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppies",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young person who lives in a city, earns a lot of money, and spends it doing fashionable things and buying expensive possessions",
+                        "examples": [
+                            "They're just a couple of yuppies with more money than sense."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppified",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "past simple and past participle of yuppify",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to change the appearance of a place to suit or attract people who earn and spend a lot of money",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppifies",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to change the appearance of a place to suit or attract people who earn and spend a lot of money",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppify",
+        "categories": [
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to change the appearance of a place to suit or attract people who earn and spend a lot of money",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppifying",
+        "categories": [
+            {
+                "type": "",
+                "definitions": [
+                    {
+                        "definition": "present participle of yuppify",
+                        "examples": []
+                    }
+                ]
+            },
+            {
+                "type": "verb",
+                "definitions": [
+                    {
+                        "definition": "to change the appearance of a place to suit or attract people who earn and spend a lot of money",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuppy",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a young person who lives in a city, earns a lot of money, and spends it doing fashionable things and buying expensive possessions",
+                        "examples": [
+                            "They're just a couple of yuppies with more money than sense."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yurt",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of round tent with a wooden frame, used traditionally as a home by some Central Asian people, and now sometimes used for camping in Western countries",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yurts",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "a type of round tent with a wooden frame, used traditionally as a home by some Central Asian people, and now sometimes used for camping in Western countries",
+                        "examples": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuzu",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an Asian citrus fruit that looks like a lemon",
+                        "examples": [
+                            "The yuzu tastes like a mix of lemon, mandarin, and grapefruit.",
+                            "This delicious chocolate is flavoured with yuzu essential oil for distinctive citrus notes."
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "word": "yuzus",
+        "categories": [
+            {
+                "type": "noun",
+                "definitions": [
+                    {
+                        "definition": "an Asian citrus fruit that looks like a lemon",
+                        "examples": [
+                            "The yuzu tastes like a mix of lemon, mandarin, and grapefruit.",
+                            "This delicious chocolate is flavoured with yuzu essential oil for distinctive citrus notes."
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

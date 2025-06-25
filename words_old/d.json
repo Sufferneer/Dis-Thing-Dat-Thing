@@ -1,0 +1,50 @@
+[
+    {
+        "word": [
+            "development",
+            "develop"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {
+            "verb": [
+                "develop",
+                "developing",
+                "developed",
+                "developed"
+            ],
+            "adjective": [
+                "developed"
+            ]
+        },
+        "plural": [],
+        "definition": "An irreversible change in the form of an organism and an increase in its complexity",
+        "translation": [
+            "\u767c\u80b2"
+        ]
+    },
+    {
+        "word": [
+            "digestion",
+            "digest"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun",
+        "forms": {
+            "verb": [
+                "digest",
+                "digesting",
+                "digested",
+                "digested"
+            ],
+            "adjective": [
+                "digested"
+            ]
+        },
+        "plural": [],
+        "definition": "The process of breaking down complex food to simple compounds for absorption.",
+        "translation": [
+            "消化"
+        ]
+    }
+]
