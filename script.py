@@ -1,4 +1,8 @@
-# ! DISCLAIMER !
+# Dis Sheet Dat Sheet with CCC
+# Nick Tsang 5423
+# St Joseph's Anglo-Chinese School
+
+# ! DISCLAIMER
 # ! In many instances of the code, instances of someone in the name of 'Suff' can be found.
 # ! Before you scream plagiarism, please note that 'Suff' is a pseudonym.
 # ! I am usually called 'Suff' within my peers, so although it may sound weird,
@@ -101,7 +105,7 @@ class SuffSprite(pygame.sprite.Sprite): # Parent class. Custom sprites with its 
         if imagePath != '': # So that sprite allows invisible sprites
             self.load_graphic(imagePath)
     def load_graphic(self, imagePath):
-        self.surface = pygame.image.load(get_asset_path(imagePath)).convert_alpha()
+        self.surface = pygame.image.load(get_asset_path(f'images/{imagePath}.png')).convert_alpha()
         self.rect = self.surface.get_rect()
     def draw(self, surface = None, rect = None):
         if surface is None:
@@ -184,7 +188,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
             self.text_hover_size = text_hover_size
         else:
             self.text_hover_size = self.text_size
-        self.base = SuffSprite(pos[0], pos[1], f'images/buttons/{base_texture}.png')
+        self.base = SuffSprite(pos[0], pos[1], f'{base_texture}')
         self.base.surface.set_alpha(128)
         self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
         self.button_text = SuffText(pos[0] + text_size / 2, pos[1] + size[1] / 4, size[0] // (self.text_hover_size // 2), self.text, text_size, (255, 255, 255))
@@ -197,10 +201,9 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
                 if self.hover_function is not None: self.hover_function()
                 self.hovered = True
             self.button_text.set_size(int(suff_lerp(self.button_text.size, self.text_hover_size, 1 / FPS * 6)))
-            if os.path.exists(get_asset_path(f'images/buttons/{self.base_texture}_highlighted.png')):
+            if os.path.exists(get_asset_path(f'images/{self.base_texture}_hovered.png')):
                 self.base.surface = pygame.image.load(
-                    get_asset_path(f'images/buttons/{self.base_texture}_highlighted.png')).convert_alpha()
-                self.base.surface.set_alpha(128)
+                    get_asset_path(f'images/{self.base_texture}_hovered.png')).convert_alpha()
                 self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
             if pygame.mouse.get_pressed()[0] == 1 and not self.clicked:
                 self.function()
@@ -211,11 +214,14 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
             self.button_text.set_size(int(suff_lerp(self.button_text.size, self.text_size, 1 / FPS * 6)))
             if self.hovered:
                 self.hovered = False
-                if os.path.exists(get_asset_path(f'images/buttons/{self.base_texture}_highlighted.png')):
+                if os.path.exists(get_asset_path(f'images/{self.base_texture}_hovered.png')):
                     self.base.surface = pygame.image.load(
-                        get_asset_path(f'images/buttons/{self.base_texture}.png')).convert_alpha()
-                    self.base.surface.set_alpha(128)
+                        get_asset_path(f'images/{self.base_texture}.png')).convert_alpha()
                     self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
+    def change_base_texture(self, image):
+        self.base_texture = image
+        self.base.surface = pygame.image.load(
+            get_asset_path(f'images/{self.base_texture}.png')).convert_alpha()
 class SuffSave(dict):
     def load(self, directory = 'save'): # load save file from disk to memory
         if not os.path.exists(directory + '.json'):
@@ -273,11 +279,11 @@ class CCCSprite(pygame.sprite.Group): # The sprite of the game master capable of
         self.talk_tick = 1
         self.talk_force = 1
         self.talk_offset = 0
-        self.head = SuffSprite(self.x, self.y, 'images/ccc/neutral_head.png')
-        self.mouth = SuffSprite(self.x, self.y, 'images/ccc/neutral_mouth.png')
+        self.head = SuffSprite(self.x, self.y, 'ccc/neutral_head')
+        self.mouth = SuffSprite(self.x, self.y, 'ccc/neutral_mouth')
     def change_expression(self, expression):
-        self.head.load_graphic(f'images/ccc/{expression}_head.png')
-        self.mouth.load_graphic(f'images/ccc/{expression}_mouth.png')
+        self.head.load_graphic(f'ccc/{expression}_head')
+        self.mouth.load_graphic(f'ccc/{expression}_mouth')
     def draw(self):
         if self.talk_tick < math.pi * 3:
             self.talk_tick += 1 / FPS * 30
@@ -310,12 +316,13 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
         self.displayed_text:str = ''
         self.style:str = style
         self.max_char:int = max_char
+        self.true_max_char: int = min(len(self.text), self.max_char)
         self.tick:float = 0
         self.fade_time:float = fade_time
         self.fade_function = fade_function
         self.fade_function_called = False
-        self.tip = SuffSprite(pos[0], pos[1], f'images/dialogue/dialogue_box_tip_{style}.png')
-        width, height = max_char * 32 * FONT_WIDTH_RATIO + self.padding * 2, 32 * len(separate_string(self.text, self.max_char)) + self.padding * 2
+        self.tip = SuffSprite(pos[0], pos[1], f'dialogue/dialogue_box_tip_{style}')
+        width, height = self.true_max_char * 32 * FONT_WIDTH_RATIO + self.padding * 2, 32 * len(separate_string(self.text, self.true_max_char)) + self.padding * 2
         if style == 'up':
             box_pos = (self.pos[0] - (width - self.tip.rect.width) / 2 - 20, self.pos[1] - height + 6 - self.tip.rect.height)
             tip_pos = (self.pos[0] - 20, self.pos[1] - self.tip.rect.height)
@@ -358,7 +365,7 @@ class DialogueBox(pygame.sprite.Group): # RPG styled text boxes used for dialogu
             if self.fade_function: self.fade_function()
 class QuizBGTile(SuffSprite):
     def __init__(self, x, y):
-        super().__init__(x, y, f'images/quiz/tile/{random.randint(1, 3)}.png')
+        super().__init__(x, y, f'quiz/tile/{random.randint(1, 3)}')
         self.surface.set_alpha(random.randint(128, 192))
         self.rect = self.surface.get_rect()
         self.flip_tick = random.random() * 60
@@ -372,7 +379,7 @@ class QuizBGTile(SuffSprite):
         self.rect2 = self.surface2.get_rect()
         if self.flip_tick <= math.pi:
             if self.flip_tick <= math.pi / 2 and not self.flipped:
-                self.load_graphic(f'images/quiz/tile/{random.randint(1, 3)}.png')
+                self.load_graphic(f'quiz/tile/{random.randint(1, 3)}')
                 self.surface.set_alpha(random.randint(128, 192))
                 self.flipped = True
             self.surface = pygame.transform.scale(self.surface, (160, 160))
@@ -382,7 +389,7 @@ class QuizBGTile(SuffSprite):
 curSave = SuffSave()
 curSave.load('save')
 fpsCounter = SuffText(0, 0, 16, '0 FPS', 16, (255, 255, 255))
-background = SuffSprite(0, 0, 'images/background_1.png')
+background = SuffSprite(0, 0, 'background_1')
 background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
 background.surface = pygame.transform.scale(background.surface, (background.rect.width, background.rect.height))
 infoText = SuffText(0, 0, 64, 'Dis Sheet Dat Sheet With CCC', 16,(255, 255, 255))
@@ -450,7 +457,7 @@ def draw_default_bg():
         changeBG = False
         bgMode += 1
         if bgMode > 2: bgMode = 1
-        background.load_graphic(f'images/background_{bgMode}.png')
+        background.load_graphic(f'background_{bgMode}')
         background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
         background.surface = pygame.transform.scale(background.surface, (background.rect.width, background.rect.height))
     if round(math.pow(math.cos(curTime / 30), 2)) == 1 and changeBG == False:
@@ -467,7 +474,7 @@ def state_post_functions(): # This function is called after every tick function 
     pygame.display.update()
 
 class SuffState(): # Parent class. Used for individual menus.
-    def __init__(self, draw_bg = True): # This is called when the state starts to be loaded. Used to load/fetch data from the `words/` folder
+    def __init__(self, draw_bg = True): # This is called when the state starts to be loaded. Used to load/fetch data from the `words_beta/` folder
         super().__init__()
         self.post_load()
         self.draw_bg = draw_bg
@@ -482,10 +489,35 @@ class SuffState(): # Parent class. Used for individual menus.
             pygame.quit()
             sys.exit()
 
+class TitleState(SuffState):
+    def __init__(self):
+        super().__init__()
+    def post_load(self):
+        super().post_load()
+        self.banner = SuffSprite(0, 0, 'banner')
+        self.banner.surface.set_alpha(255)
+
+        self.text = SuffText(0, 0, 32, 'Press [ENTER]', 64)
+        self.text.x = (SCREENSIZE[0] - self.text.get_width()) / 2
+        self.text.y = (SCREENSIZE[1] - self.text.get_height()) - 64
+        pygame.mixer.music.load(get_asset_path('music/title.ogg'))
+        pygame.mixer.music.play()
+    def update(self):
+        super().update()
+        self.banner.draw()
+        self.text.set_alpha(math.pow(math.sin(curTime / math.pi), 2) * 255)
+        self.text.draw()
+    def handle_event(self, event):
+        super().handle_event(event)
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                pygame.mixer.music.load(get_asset_path('music/main_loop.ogg'))
+                pygame.mixer.music.play(-1, 0, random.randint(4000, 8000))
+                change_state('main_menu')
+
 class MainMenuState(SuffState):
     def __init__(self):
         super().__init__()
-        pygame.mixer.music.stop()
     def post_load(self):
         super().post_load()
         def dict_hover():
@@ -507,20 +539,7 @@ class MainMenuState(SuffState):
         def quiz():
             global dialogueBox
             BUTTON_PRESS_SOUND.play()
-            if len(curSave.fetch('saved_words')) < 4:
-                dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2),
-                                          'You must have at least FOUR words bookmarked.', 20, 'left')
-                return
             change_state('quiz_start')
-        def flashcards_hover():
-            global CCC
-            CCC.change_expression('neutral')
-            BUTTON_HOVER_SOUND.play()
-            global dialogueBox
-            dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + 100, SCREENSIZE[1] / 2),
-                              'Quickly memorize some words using a traditional Asian method.', 20, 'right')
-        def flashcards():
-            CCC.x += 5
         def credits_hover():
             global CCC
             CCC.change_expression('furious')
@@ -529,17 +548,13 @@ class MainMenuState(SuffState):
             dialogueBox = DialogueBox((SCREENSIZE[0] / 2 - 100, SCREENSIZE[1] / 2), 'Check out the sole idiot that made this garbage possible.', 20, 'left')
         def credits():
             CCC.x += 5
-        self.dictionaryButton = SuffButton((10, 10), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), dict,
-                                           'dictionary',
+        self.dictionaryButton = SuffButton((10, 10), (SCREENSIZE[0] - 20, SCREENSIZE[1] / 2 - 15), dict,
+                                           'main_menu/dictionary_button',
                                            'Dictionary Mode', dict_hover, 48, 112)
-        self.quizButton = SuffButton((SCREENSIZE[0] / 2 + 5, 10), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
-                                     quiz,
-                                     'quiz', 'Quiz Mode', quiz_hover, 48, 112)
-        self.flashcardsButton = SuffButton((10, SCREENSIZE[1] / 2 + 5),
-                                           (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
-                                           flashcards, 'flashcards', 'Flashcards', flashcards_hover, 48, 112)
+        self.quizButton = SuffButton((10, SCREENSIZE[1] / 2 + 5), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
+                                     quiz, 'main_menu/quiz_button', 'Quiz Mode', quiz_hover, 48, 112)
         self.creditsButton = SuffButton((SCREENSIZE[0] / 2 + 5, SCREENSIZE[1] / 2 + 5),
-                                        (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), credits, 'credits', 'Credits',
+                                        (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15), credits, 'main_menu/credits_button', 'Credits',
                                         credits_hover, 48, 112)
         infoText.set_text('Dis Sheet Dat Sheet with CCC')
     def update(self):
@@ -552,7 +567,6 @@ class MainMenuState(SuffState):
 
         self.dictionaryButton.draw()
         self.quizButton.draw()
-        self.flashcardsButton.draw()
         self.creditsButton.draw()
         CCC.draw()
         dialogueBox.draw()
@@ -573,17 +587,23 @@ def change_state(state):
     states[state].__init__()
 
 curWordData = {
-    "word": [
-        "excretion",
-        "excrete"
-    ],
-    "alt_spellings": [],
-    "word_class": "noun",
-    "forms": {},
+        "word": [
+            "asexual reproduction"
+        ],
+        "alt_spellings": [],
+        "word_class": "noun phrase",
+        "forms": {
+        "verb": [
+            "asexually reproduce",
+            "asexually reproducing",
+            "asexually reproduced",
+            "asexually reproduced"
+        ]
+    },
     "plural": [],
-    "definition": "An process of which an organism removes metabolic wastes",
+    "definition": "A form of reproduction that involves a single parent by mitotic cell division.",
     "translation": [
-        "\u6392\u6cc4\u4f5c\u7528"
+        "\u7121\u6027\u751f\u6b96"
     ]
 }
 
@@ -617,7 +637,7 @@ class DictionarySearchState(SuffState):
         high = len(wordList) - 1
         while low <= high:
             mid = low + (high - low) // 2
-            if x in wordList[mid]['word']:
+            if x in wordList[mid]['word'] or x in wordList[mid]['alt_spellings']:
                 return wordList[mid]
             elif (wordList[mid]['word'][0] < x):
                 low = mid + 1
@@ -677,7 +697,7 @@ class DictionarySearchState(SuffState):
                         INVALID_SOUND.play()
                         CCC.change_expression('angry')
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2 + SCREENSIZE[0] / 4, SCREENSIZE[1] / 2 + 180),
-                                                  'I don\'t think that word exists in the biology curriculum.', 20,
+                                                  'I don\'t think that word exists in my library.', 20,
                                                   'down', -1)
                 else:
                     INVALID_SOUND.play()
@@ -750,7 +770,7 @@ class DictionaryWordState(SuffState):
                 self.textGroup.append(wordFormTxt)
             prevHeight += 48
 
-        self.personalDictButton = SuffButton((SCREENSIZE[0] - 74, 10), (64, 64), self.save_word, 'bookmark', '',
+        self.personalDictButton = SuffButton((SCREENSIZE[0] - 74, 10), (72, 104), self.save_word, 'dictionary/bookmark', '',
                                              None, 16)
 
         self.scrollAmount = 0
@@ -875,7 +895,8 @@ class QuizState(SuffState):
                 leJson = json.load(file)
                 file.close()
                 for item in leJson:
-                    self.derList.append(item)
+                    if 'easter_egg' not in item.keys() or item['easter_egg'] == False:
+                        self.derList.append(item)
 
         self.lives = 3
         self.cccExpressions = ['horror', 'demon', 'evil', 'smug', 'neutral'] # life based
@@ -888,6 +909,7 @@ class QuizState(SuffState):
         ]
         self.baseTimeLimit = 30
         self.timeLeft = 30
+        self.countdown = False
         self.cccAngryLines = [
             'Go eat a banana.',
             'Go home and eat a banana.',
@@ -906,20 +928,21 @@ class QuizState(SuffState):
         self.jeffs = [] # Group for background tiles that "rotate"
         self.dust = [] # Group for dust particles
         self.reds = [] # Group for translucent red overlay
-        self.hearts = [] # Group for number of lives
-        self.brokenHearts = []  # Group for number of lives
-        self.correctChars = []  # Group for number of lives
-        self.searchQuery = SuffText(SCREENSIZE[0] / 2, 600, 25, '', 64, (255, 255, 255))
-        self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '|', 64, (255, 255, 255))
-        self.curBeat = 0
+        self.hearts = [] # Group for heart sprites (indicator for num. of lives)
+        self.brokenHearts = [] # Group for broken heart sprites
+
+        self.searchQuery = SuffText(SCREENSIZE[0] / 2, 600, 25, '', 64, (255, 255, 255)) # Actual player input
+        self.searchIBeam = SuffText(SCREENSIZE[0] / 2, 600, 25, '_', 64, (255, 255, 255)) # That I-Beam you see when you usually type something
+        self.curBeat = 0 # Current beat of the background music
+        # BG Stuff
         self.jeff_velocity = 640
         self.jeff_width = math.ceil(SCREENSIZE[0] / 160)
         self.jeff_height = math.ceil(SCREENSIZE[1] / 160)
-        for x in range(0, self.jeff_width + 1):  # Every Jeffrey Wong sprite is 80 x 80.
+        for x in range(0, self.jeff_width + 1):  # Every Quiz BG Tile sprite is 80 x 80.
             for y in range(0, self.jeff_height):
                 jeff = QuizBGTile(x * 160, y * 160 - 40)
                 self.jeffs.append(jeff)
-        self.bg = SuffSprite(0, 0, 'images/quiz/bg.png')
+        self.bg = SuffSprite(0, 0, 'quiz/bg')
         self.bg.surface = pygame.transform.scale(self.bg.surface, (SCREENSIZE[0], SCREENSIZE[1]))
         self.bg.rect = self.bg.surface.get_rect()
         for i in range(0, 50):
@@ -948,28 +971,36 @@ class QuizState(SuffState):
     def reset(self):
         CCC.change_expression(self.cccExpressions[self.lives])
         global dialogueBox
+        self.attempts = 0
         self.allowInput = True
-        self.leWordData = random.choice(self.derList)
-        self.baseTimeLimit = int(clamp(35 - math.pow(30, 0.05 * self.curScore), 5, 30))
-        self.timeLeft = self.baseTimeLimit
+        self.leWordData = random.choice(self.derList) # current word, answer
+        self.baseTimeLimit = int(clamp(35 - math.pow(30, 0.05 * self.curScore), 4, 31))
+        # With each correct answer, CCC's patience decreases. When you play really well, you only get 4 seconds to guess.
+        # Maximum of 31 seconds are given.
+        self.timeLeft = self.baseTimeLimit # Actual timer
+        self.misplacedLetters = []  # List of characters that exist in the word but wrong position
+        self.correctLetters = []  # List of characters that exist in the word and correct position
+        self.wrongLetters = []  # List of characters that does not satisfy both requirements
         ogDef = self.leWordData['definition']
-        senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
         leFont = 'default'
-        if random.choice([True, False]):
-            senDef = ' / '.join(self.leWordData['translation']) # 50% chance that it shows up the Chinese version
-            leFont = 'zh'
-        leDialogue = f'What is the {self.leWordData['word_class']} for {senDef}?'
-        print(self.leWordData['word'])
+        if random.choice([True, False]): # 50% chance to display the Chinese definition instead
+            ogDef = self.leWordData['translation'][0]
+            leFont = 'zh' # Uses Chinese font instead
+        senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
+        partOfSpeech = self.leWordData['word_class']
+        wordLength = len(self.leWordData['word'][0])
+        leDialogue = f'What is the {wordLength}-letter {partOfSpeech} for {senDef}?'
+        print(self.leWordData['word'][0])
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2),
-                                  leDialogue, min(len(leDialogue), 50), 'down', -1, None, leFont) # Limits dialogue width by 50 chars
+                                  leDialogue, 50, 'down', -1, None, leFont) # Limits dialogue width by 50 chars
     def add_heart(self):
-        heart = SuffSprite(0, SCREENSIZE[1], 'images/quiz/heart.png')
+        heart = SuffSprite(0, SCREENSIZE[1], 'quiz/heart')
         heart.surface = pygame.transform.scale(heart.surface, (50, 50))
         heart.rect = heart.surface.get_rect()
         self.hearts.append(heart)
     def remove_heart(self):
         leLittleHeart:SuffSprite = self.hearts.pop()
-        leLittleHeart.load_graphic('images/quiz/heart_broken.png')
+        leLittleHeart.load_graphic('quiz/heart_broken')
         leLittleHeart.surface = pygame.transform.scale(leLittleHeart.surface, (50, 50))
         leLittleHeart.rect = leLittleHeart.surface.get_rect()
         self.brokenHearts.append(leLittleHeart)
@@ -977,6 +1008,7 @@ class QuizState(SuffState):
     def update(self):
         super().update()
         self.bg.draw()
+        global dialogueBox
 
         self.jeff_velocity = suff_lerp(self.jeff_velocity, 480 + (3 - self.lives) * 240, 1 / FPS * 4) # Tiles scroll faster with each life lost
         self.cccVelocityX = suff_lerp(self.cccVelocityX, 150 + (3 - self.lives) * 80, 1 / FPS * 2)
@@ -997,8 +1029,10 @@ class QuizState(SuffState):
                 dust.y = SCREENSIZE[1] + SCREENSIZE[1] * random.random() / 2 # Put dust back to their starting position, along with a random offset (off-screen)
                 dust.real_y = dust.y
             dust.draw()
+        if not self.countdown and dialogueBox.text == dialogueBox.displayed_text and self.allowInput:
+            self.countdown = True
         self.curBeat = (pygame.mixer.music.get_pos() + 10) / (60 / 144 * 1000) # Current beat of the BGM, BPM of music is 144
-        CCC.angle = math.sin(self.curBeat * math.pi / 2) * -45 / (self.lives + 1)
+        CCC.angle = math.sin(self.curBeat * math.pi / 2) * -45 / max(1, self.lives)
         CCC.x = (SCREENSIZE[0] - CCC.head.rect.width) / 2 + math.sin(self.curBeat * math.pi / 2) * self.cccVelocityX
         CCC.y = 50 + math.sin(self.curBeat * math.pi) * self.cccVelocityY
         # Makes CCC shift around like a maniac
@@ -1025,12 +1059,26 @@ class QuizState(SuffState):
             broken_heart.y += 1 / FPS * 720
             broken_heart.draw()
 
-        self.timeLeft -= 1 / FPS
-        self.timeTxt.set_text(str(int(self.timeLeft)))
-        self.timeTxt.x = (SCREENSIZE[0] - self.timeTxt.get_width()) / 2
-        self.timeTxt.y = SCREENSIZE[1] - self.timeTxt.get_height()
-        self.timeTxt.set_alpha(64)
-        self.timeTxt.draw()
+        if self.countdown:
+            self.timeLeft -= 1 / FPS
+            self.timeTxt.set_text(str(int(self.timeLeft)))
+            self.timeTxt.x = (SCREENSIZE[0] - self.timeTxt.get_width()) / 2
+            self.timeTxt.y = SCREENSIZE[1] - self.timeTxt.get_height()
+            self.timeTxt.set_alpha(64)
+            self.timeTxt.draw()
+            if self.timeLeft < 0:
+                self.allowInput = False
+                INVALID_SOUND.play()
+                CCC.change_expression(random.choice(self.cccAngryExpressions))
+                leLine = random.choice(self.cccAngryLines)
+                dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
+                                          leLine, min(16, len(leLine)), 'up', 1, self.reset)
+                self.lives = clamp(self.lives - 1, 0, 4)
+                self.remove_heart()
+                if self.lives <= 0:
+                    self.just_die()
+                    return
+                self.countdown = False
 
         self.searchQuery.draw()
         self.searchIBeam.draw()
@@ -1038,14 +1086,18 @@ class QuizState(SuffState):
         self.flash.surface.set_alpha(suff_lerp(self.flash.surface.get_alpha(), 0, 1 / FPS * 6))
         self.flash.draw()
 
-    def look_for_chars_in_word(self, chars:str, words:list):
-        containingLetters = []
-        for word in range(len(words)):
-            for char in chars:
-                if char in words[word]:
-                    containingLetters.append(char)
-        return remove_duplicates(containingLetters)
-    def just_effin_die(self):
+    def update_letter_list(self, chars:str, word:str):
+        for i in range(len(chars)):
+            if chars[i] == word[i]:
+                self.correctLetters.append(chars[i]) # Runs this first
+            elif chars[i] in word:
+                self.misplacedLetters.append(chars[i]) # So that this won't run if word is correct
+            else:
+                self.wrongLetters.append(chars[i])
+        remove_duplicates(self.correctLetters)
+        remove_duplicates(self.misplacedLetters)
+        remove_duplicates(self.wrongLetters)
+    def just_die(self):
         if curSave.fetch('quiz_highscore') is None:
             curSave['quiz_highscore'] = self.curScore
         elif self.curScore > curSave.fetch('quiz_highscore'):
@@ -1060,49 +1112,52 @@ class QuizState(SuffState):
         pygame.mixer.Sound(get_asset_path('sounds/quiz_die.ogg')).play()
     def handle_event(self, event):
         if event.type == pygame.QUIT:
-            self.just_effin_die()
+            self.just_die()
             return # If you try to quit, CCC will smite you immediately.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                self.just_effin_die()
-                return # If you try to escape, CCC will smite you immediately.
+                self.just_die()
+                return # If you try to press escape, CCC will smite you immediately.
             elif event.key == pygame.K_BACKSPACE:
                 self.searchQuery.set_text(self.searchQuery.text[:-1])
                 TEXT_ERASE_SOUND.play()
             elif event.key == pygame.K_RETURN:
                 global dialogueBox
                 if self.allowInput:
-                    containingChars = self.look_for_chars_in_word(self.searchQuery.text.lower().strip(), self.leWordData['word'])
                     if dialogueBox.displayed_text != dialogueBox.text:
                         dialogueBox.displayed_text = dialogueBox.text
                         dialogueBox.box_text.set_text(dialogueBox.displayed_text)
                         return
-                    self.allowInput = False
-                    if self.searchQuery.text.lower().strip() in self.leWordData['word']:
+                    self.attempts += 1
+                    if len(self.searchQuery.text.lower().strip()) != len(self.leWordData['word'][0]):
+                        # Mismatch of character length
+                        self.timeLeft -= (self.baseTimeLimit - 1) / 4
+                    elif self.searchQuery.text.lower().strip() == self.leWordData['word'][0]:
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
-                        if self.lives < 4: self.add_heart()
-                        self.lives = clamp(self.lives + 1, 0, 4) # Limit tries
+                        if self.lives < 4 and self.attempts <= 1: # Limit tries
+                            self.lives += 1 # Extra life for first-guesses
+                            self.add_heart()
                         self.curScore += 1
                         CCC.change_expression(random.choice(self.cccHappyExpressions))
-                    elif len(containingChars) > 0:
-                        CCC.change_expression('smug')
-                        self.allowInput = True
+                        self.countdown = False
+                        self.allowInput = False
                     else:
-                        dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
-                                                                random.choice(self.cccAngryLines), 16, 'up', 1, self.reset)
-                        self.lives = clamp(self.lives - 1, 0, 4)
-                        self.remove_heart()
-                        if self.lives <= 0:
-                            self.just_effin_die()
-                            return
-                        CCC.change_expression(random.choice(self.cccAngryExpressions))
+                        prevCorrectLetters = self.correctLetters
+                        prevMisplacedLetters = self.misplacedLetters
+                        self.update_letter_list(self.searchQuery.text.lower().strip(), self.leWordData['word'][0])
                         INVALID_SOUND.play()
+                        self.timeLeft -= (self.baseTimeLimit - 1) / 4
+                        if len(self.correctLetters) - len(prevCorrectLetters) <= 0 or len(self.misplacedLetters) - len(prevMisplacedLetters) <= 0:
+                            # If any subsequent guesses do not increase the number of correct/misplaced letters, time
+                            # penalty is doubled.
+                            self.timeLeft -= (self.baseTimeLimit - 1) / 4
+
                     self.searchQuery.set_text('')
             else:
                 self.searchQuery.set_text(self.searchQuery.text + event.unicode)
                 TEXT_TYPE_SOUND.play()
-            self.searchQuery.x = (SCREENSIZE[0] - self.searchQuery.get_width()) / 2
+            self.searchQuery.x = (SCREENSIZE[0] - self.searchQuery.get_width()) / 2 # Adjust I-Beam position
             self.searchIBeam.x = self.searchQuery.x + self.searchQuery.get_width()
 
 class QuizGameOverState(SuffState):
@@ -1120,7 +1175,7 @@ class QuizGameOverState(SuffState):
         self.flash.rect = self.flash.surface.get_rect()
         self.flash.surface.set_alpha(255)
 
-        self.hand = SuffSprite(540, 0, 'images/quiz/hand.png')
+        self.hand = SuffSprite(540, 0, 'quiz/hand')
         self.hand.surface.set_alpha(255)
         super().post_load()
         CCC.change_expression('horror')
@@ -1136,7 +1191,7 @@ class QuizGameOverState(SuffState):
             CCC.draw()
             if self.tick > 1.6 and self.grabbing:
                 self.grabbing = False
-                self.mcdonalds = SuffSprite(0, 0, f'images/quiz/fate/{random.randint(1, 5)}.png')
+                self.mcdonalds = SuffSprite(0, 0, f'quiz/fate/{random.randint(1, 5)}')
                 self.mcdonalds.surface = pygame.transform.scale(self.mcdonalds.surface, SCREENSIZE)
                 self.mcdonalds.rect = self.mcdonalds.surface.get_rect()
                 self.mcdonalds.surface.set_alpha(255)
@@ -1149,7 +1204,8 @@ class QuizGameOverState(SuffState):
                     self.curScoreTxt = SuffText(0, 100, 16, f'Your Score: {self.curScore}', 64, (255, 255, 255))
                     self.curScoreTxt.x = (SCREENSIZE[0] - self.curScoreTxt.get_width()) / 2
 
-                    self.highscoreTxt = SuffText(0, self.curScoreTxt.y + 300, 16, f'Highscore: {curSave.fetch('quiz_highscore')}', 64, (255, 255, 128))
+                    highscore = curSave.fetch('quiz_highscore')
+                    self.highscoreTxt = SuffText(0, self.curScoreTxt.y + 300, 16, f'Highscore: {highscore}', 64, (255, 255, 128))
                     self.highscoreTxt.x = (SCREENSIZE[0] - self.highscoreTxt.get_width()) / 2
 
                     self.newHighscoreTxt = SuffText(0, self.highscoreTxt.y - 32, 16, 'NEW HIGHSCORE!', 32,
@@ -1182,10 +1238,12 @@ class QuizGameOverState(SuffState):
         if self.allowQuit:
             if event.type == pygame.KEYDOWN:
                 if (event.key == pygame.K_ESCAPE or event.key == pygame.K_RETURN):
+                    pygame.mixer.music.load(get_asset_path('music/main_loop.ogg'))
+                    pygame.mixer.music.play(-1, 0, random.randint(4000, 8000))
                     change_state('main_menu')
             super().handle_event(event)
-
-states = {
+states = { # Attempt to preload all screens by calling these classes
+    'title': TitleState(),
     'main_menu': MainMenuState(),
     'quiz': QuizState(),
     'quiz_start': QuizStartState(),
@@ -1193,8 +1251,8 @@ states = {
     'dictionary_search': DictionarySearchState(),
     'dictionary_word': DictionaryWordState()
 }
-change_state('main_menu')
 pygame.mixer.music.set_volume(1)
+change_state('title')
 
 while True:
     for event in pygame.event.get():
