@@ -1,0 +1,30 @@
+[
+    {
+        "word": "vaccination",
+        "plural": "vaccinations",
+        "word_class": "noun",
+        "translation": "疫苗接種",
+        "definition": "The administration of a vaccine to stimulate immunity against a disease."
+    },
+    {
+        "word": "ventilation",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "通氣",
+        "definition": "Mechanical process of breathing (inspiration + expiration)."
+    },
+    {
+        "word": "villus",
+        "plural": "villi",
+        "word_class": "noun",
+        "translation": "絨毛",
+        "definition": "Finger-like projections in small intestine increasing absorption area."
+    },
+    {
+        "word": "Vivien",
+        "plural": "",
+        "word_class": "easter egg",
+        "translation": "",
+        "definition": "An ICT teacher and a serial kidnapper of Usagi plushies."
+    }
+]

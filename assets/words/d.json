@@ -1,0 +1,23 @@
+[
+    {
+        "word": "diaphragm",
+        "plural": "diaphragms",
+        "word_class": "noun",
+        "translation": "橫膈膜",
+        "definition": "Dome-shaped muscle below lungs controlling inhalation/exhalation."
+    },
+    {
+        "word": "diffusion",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "擴散",
+        "definition": "The passive movement of molecules from high to low concentration."
+    },
+    {
+        "word": "DNA replication",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "DNA複製",
+        "definition": "The process where DNA makes an identical copy before cell division."
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "word": "aerobic respiration",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "需氧呼吸",
+        "definition": "The breakdown of glucose using oxygen to produce ATP, CO₂, and water."
+    },
+    {
+        "word": "air sac",
+        "plural": "Air sacs",
+        "word_class": "noun",
+        "translation": "肺泡",
+        "definition": "Tiny cavities in lungs where O₂ and CO₂ exchange occurs."
+    },
+    {
+        "word": "allele",
+        "plural": "Alleles",
+        "word_class": "noun",
+        "translation": "等位基因",
+        "definition": "Different versions of the same gene (e.g., dominant vs. recessive)."
+    },
+    {
+        "word": "anaerobic respiration",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "厭氧呼吸",
+        "definition": "The energy production without oxygen, producing lactate (animals) or ethanol (yeast)."
+    },
+    {
+        "word": "antibody",
+        "plural": "antibodies",
+        "word_class": "noun",
+        "translation": "抗體",
+        "definition": "A protein produced by the immune system to neutralize pathogens."
+    },
+    {
+        "word": "asexual reproduction",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "無性生殖",
+        "definition": "Reproduction without gametes (e.g., budding, binary fission)."
+    },
+    {
+        "word": "assimilation",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "同化作用",
+        "definition": "Incorporation of absorbed nutrients into body tissues."
+    },
+    {
+        "word": "ATP",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "三磷酸腺苷",
+        "definition": "The energy currency of cells, storing and transferring chemical energy."
+    }
+]

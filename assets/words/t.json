@@ -1,0 +1,51 @@
+[
+    {
+        "word": "testis",
+        "plural": "testes",
+        "word_class": "noun",
+        "translation": "睾丸",
+        "definition": "Male organ producing sperm and testosterone."
+    },
+    {
+        "word": "Tommy Ma",
+        "plural": "",
+        "word_class": "easter egg",
+        "translation": "This guy has cholera.",
+        "definition": "A bad to the bone class mathematician and the unfortunate parent of an Usagi plushie."
+    },
+    {
+        "word": "trachea",
+        "plural": "tracheae",
+        "word_class": "noun",
+        "translation": "氣管",
+        "definition": "Windpipe carrying air to bronchi; lined with cilia and mucus."
+    },
+    {
+        "word": "transcription",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "轉錄",
+        "definition": "The synthesis of mRNA from a DNA template in the nucleus."
+    },
+    {
+        "word": "translation",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "轉譯",
+        "definition": "The process which ribosomes read mRNA to assemble amino acids into proteins."
+    },
+    {
+        "word": "transpiration",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "蒸騰作用",
+        "definition": "Loss of water vapor from plant leaves, creating a transpiration pull."
+    },
+    {
+        "word": "trophic level",
+        "plural": "trophic levels",
+        "word_class": "noun",
+        "translation": "營養級",
+        "definition": "An organism's position in a food chain (e.g., producer, consumer)."
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "word": "gamete",
+        "plural": "gametes",
+        "word_class": "noun",
+        "translation": "配子",
+        "definition": "Reproductive cell (sperm in males, egg in females) with half the chromosomes."
+    },
+    {
+        "word": "gene",
+        "plural": "Genes",
+        "word_class": "noun",
+        "translation": "基因",
+        "definition": "A unit of heredity made of DNA that codes for a specific protein or trait."
+    },
+    {
+        "word": "genetic engineering",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "基因工程",
+        "definition": "The direct manipulation of an organism's genes using biotechnology."
+    },
+    {
+        "word": "germination",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "萌發",
+        "definition": "Process where a seed develops into a new plant."
+    },
+    {
+        "word": "gestation",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "妊娠",
+        "definition": "Pregnancy period (∼40 weeks in humans)."
+    },
+    {
+        "word": "glycolysis",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "糖酵解",
+        "definition": "The first stage of respiration, breaking glucose into pyruvate in the cytoplasm."
+    },
+    {
+        "word": "guard cell",
+        "plural": "guard cells",
+        "word_class": "noun",
+        "translation": "保衛細胞",
+        "definition": "Cells surrounding stomata that regulate their opening/closing."
+    }
+]

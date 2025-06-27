@@ -1,0 +1,51 @@
+[
+    {
+        "word": "calvin cycle",
+        "plural": "calvin cycles",
+        "word_class": "noun",
+        "translation": "卡爾文循環",
+        "definition": "Light-independent reactions using ATP and NADPH to fix CO₂ into glucose."
+    },
+    {
+        "word": "carbon cycle",
+        "plural": "carbon cycles",
+        "word_class": "noun",
+        "translation": "碳循環",
+        "definition": "The movement of carbon between organisms, the atmosphere, and Earth."
+    },
+    {
+        "word": "carpel",
+        "plural": "carpels",
+        "word_class": "noun",
+        "translation": "雌蕊",
+        "definition": "Female reproductive organ (stigma, style, ovary)."
+    },
+    {
+        "word": "chlorophyll",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "葉綠素",
+        "definition": "A green pigment in chloroplasts that absorbs light for photosynthesis."
+    },
+    {
+        "word": "ChrisSch",
+        "plural": "",
+        "word_class": "easter egg",
+        "translation": "This man is cool.",
+        "definition": "A horrifyingly talented programmer who is obsessed with the Disney cartoon series Sofia the First."
+    },
+    {
+        "word": "chromosome",
+        "plural": "chromosomes",
+        "word_class": "noun",
+        "translation": "染色體",
+        "definition": "A thread-like structure of DNA and proteins carrying genetic information."
+    },
+    {
+        "word": "cross-pollination",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "異花傳粉",
+        "definition": "Pollen transfers to stigma of a different plant (increases genetic diversity)."
+    }
+]

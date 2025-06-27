@@ -1,0 +1,23 @@
+[
+    {
+        "word": "fertilization",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "受精",
+        "definition": "Fusion of male (pollen) and female (ovule) gametes to form a zygote."
+    },
+    {
+        "word": "fertilization",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "受精",
+        "definition": "Fusion of sperm and egg nuclei to form a diploid zygote."
+    },
+    {
+        "word": "food chain",
+        "plural": "food chains",
+        "word_class": "noun",
+        "translation": "食物鏈",
+        "definition": "A linear sequence showing energy transfer between organisms."
+    }
+]

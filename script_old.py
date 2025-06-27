@@ -12,12 +12,10 @@
 
 import json
 import os
-import string
 import sys
 import pygame
 import math
 import random
-
 clock = pygame.time.Clock()
 curTime = pygame.time.get_ticks()
 FPS:int = 60 # ! I won't recommend on touching this one.
@@ -69,6 +67,13 @@ def clamp(val, minimum, maximum): # Bounds a value within a range of numbers (in
     return min(max(val, minimum), maximum)
 def remove_duplicates(leList): # Merge duplicate items from a list into one
     return list(dict.fromkeys(leList))
+def adjust_color(surface:pygame.surface.Surface, color:tuple, intensity:float = 1):
+    size = surface.get_size()
+    for x in range(size[0]):
+        for y in range(size[1]):
+            pixel = surface.get_at((x, y)) # Preserve alpha of pixel
+            r, g, b = suff_lerp(pixel[0], color[0], intensity), suff_lerp(pixel[1], color[1], intensity), suff_lerp(pixel[2], color[2], intensity)
+            surface.set_at((x, y), pygame.color.Color(int(r), int(g), int(b), pixel[3]))
 
 pygame.display.set_icon(pygame.image.load(get_asset_path('images/icon.png')))
 # CONSTANTS FOR SOUNDS
@@ -142,7 +147,6 @@ class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it 
         for text in self:
             text[0] = self.text_font.render(text[2], False, self.color)
             text[1] = text[0].get_rect()
-
     def set_alpha(self, alpha):
         self.alpha = alpha
         for text in self:
@@ -154,8 +158,6 @@ class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it 
         return len(self) * self.size
     def get_width(self):
         return max(len(item[2]) for item in self) * self.size * FONT_WIDTH_RATIO
-    def is_colliding(self):
-        return self.x + self.get_width() >= mousePos[0] >= self.x and self.y + self.get_height() >= mousePos[1] >= self.y
 class SuffButton(pygame.sprite.Group): # Parent class. Buttons
     """
     Creates a custom button that runs a function when clicked.
@@ -172,8 +174,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
     """
     def __init__(self, pos, size, function, base_texture = '', text = '', hover_function = None, text_size = 32, text_hover_size = None, text_color = (255, 255, 255)):
         pygame.sprite.Group.__init__(self)
-        self.x = pos[0]
-        self.y = pos[1]
+        self.pos = pos
         self.hovered = False
         self.clicked = False
         self.size = size
@@ -187,15 +188,15 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
             self.text_hover_size = text_hover_size
         else:
             self.text_hover_size = self.text_size
-        self.base = SuffSprite(self.x, self.y, f'{base_texture}')
+        self.base = SuffSprite(pos[0], pos[1], f'{base_texture}')
         self.base.surface.set_alpha(128)
         self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
-        self.button_text = SuffText(self.x + text_size / 2, self.y + size[1] / 4, size[0] // (self.text_hover_size // 2), self.text, text_size, (255, 255, 255))
+        self.button_text = SuffText(pos[0] + text_size / 2, pos[1] + size[1] / 4, size[0] // (self.text_hover_size // 2), self.text, text_size, (255, 255, 255))
     def draw(self):
         self.base.draw()
         self.button_text.draw()
-        if self.x + self.size[0] >= mousePos[0] >= self.x and self.y + self.size[1] >= mousePos[1] >= \
-                self.y:
+        if self.pos[0] + self.size[0] >= mousePos[0] >= self.pos[0] and self.pos[1] + self.size[1] >= mousePos[1] >= \
+                self.pos[1]:
             if not self.hovered:
                 if self.hover_function is not None: self.hover_function()
                 self.hovered = True
@@ -205,7 +206,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
                     get_asset_path(f'images/{self.base_texture}_hovered.png')).convert_alpha()
                 self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
             if pygame.mouse.get_pressed()[0] == 1 and not self.clicked:
-                self.callback()
+                self.function()
                 self.clicked = True
             elif pygame.mouse.get_pressed()[0] == 0 and self.clicked:
                 self.clicked = False
@@ -221,10 +222,6 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
         self.base_texture = image
         self.base.surface = pygame.image.load(
             get_asset_path(f'images/{self.base_texture}.png')).convert_alpha()
-
-    def callback(self, *args):
-        if self.function:
-            self.function = self.function(*args)
 class SuffSave(dict):
     def load(self, directory = 'save'): # load save file from disk to memory
         if not os.path.exists(directory + '.json'):
@@ -589,11 +586,23 @@ def change_state(state):
     states[state].__init__()
 
 curWordData = {
-    "word": "asexual reproduction",
-    "word_class": "noun phrase",
-    "plural": "",
+        "word": [
+            "asexual reproduction"
+        ],
+        "word_class": "noun phrase",
+        "forms": {
+        "verb": [
+            "asexually reproduce",
+            "asexually reproducing",
+            "asexually reproduced",
+            "asexually reproduced"
+        ]
+    },
+    "plural": [],
     "definition": "A form of reproduction that involves a single parent by mitotic cell division.",
-    "translation": "\u7121\u6027\u751f\u6b96"
+    "translation": [
+        "\u7121\u6027\u751f\u6b96"
+    ]
 }
 
 class DictionarySearchState(SuffState):
@@ -605,23 +614,19 @@ class DictionarySearchState(SuffState):
         self.searchTitle = SuffText(128, 32 - 64, 16, 'Search For Word', 80, (255, 255, 255))
         self.searchTitle.set_alpha(0)
         self.searchQuery = SuffText(128, 192 + 80 + 64, 25, '', 48, (255, 255, 255))
-        self.searchIBeam = SuffText(128, self.searchQuery.y, 1, '_', 48, (255, 255, 255))
+        self.searchIBeam = SuffText(128, 192 + 80 + 64, 1, '|', 48, (255, 255, 255))
         self.wordList = []
-        def go_to_bookmarks():
-            change_state('dictionary_bookmarks')
-        self.bookmarkButton = SuffButton((128, 192 + 80 + 64 + 72 + 32), (72, 104), go_to_bookmarks, 'dictionary/bookmark', '', None, 16)
-        self.bookmarkText = SuffText(self.bookmarkButton.x + 72 + 16, self.bookmarkButton.y + 24, 32, 'Bookmarked Words', 32, (255, 255, 255))
 
     def bubble_sort_word(self, letter):
-        arrFile = open(get_asset_path(f'words/{letter}.json'), 'r')
+        arrFile = open(f'words/{letter}.json', 'r')
         arr = json.load(arrFile)
         arrFile.close()
         for i in range(len(arr)):
             for j in range(len(arr) - 1):
-                if arr[j]['word'].lower() > arr[j + 1]['word'].lower():
+                if arr[j]['word'][0] > arr[j + 1]['word'][0]:
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
-        arrFileWrite = open(get_asset_path(f'words/{letter}.json'), 'w')
-        arrFileWrite.write(json.dumps(arr, indent=4, ensure_ascii=False))
+        arrFileWrite = open(f'words/{letter}.json', 'w')
+        arrFileWrite.write(json.dumps(arr, indent=4))
         arrFileWrite.close()
 
     def binary_search_word(self, x):
@@ -630,9 +635,9 @@ class DictionarySearchState(SuffState):
         high = len(wordList) - 1
         while low <= high:
             mid = low + (high - low) // 2
-            if x.lower() == wordList[mid]['word'].lower() or x.lower() == wordList[mid]['plural'].lower():
+            if x.lower() in (i.lower() for i in wordList[mid]['word']) or x in wordList[mid]['plural']:
                 return wordList[mid]
-            elif (wordList[mid]['word'].lower() < x.lower()):
+            elif (wordList[mid]['word'][0] < x):
                 low = mid + 1
             else:
                 high = mid - 1
@@ -640,10 +645,10 @@ class DictionarySearchState(SuffState):
 
     def search_for_word(self, word):
         global wordList
-        if not os.path.exists(get_asset_path(f'words/{word[0]}.json')):
+        if not os.path.exists(f'words/{word[0]}.json'):
             return None
         self.bubble_sort_word(word[0])
-        wordFile = open(get_asset_path(f'words/{word[0]}.json'), 'r')
+        wordFile = open(f'words/{word[0]}.json', 'r')
         wordList = json.load(wordFile)
         # print(wordList)
         wordFile.close()
@@ -666,9 +671,8 @@ class DictionarySearchState(SuffState):
         dialogueBox.draw()
         self.searchTitle.draw()
         self.searchQuery.draw()
-        self.bookmarkButton.draw()
-        self.bookmarkText.draw()
-        if len(self.searchQuery.text) < self.searchQuery.width: self.searchIBeam.draw()  # Prevent I-Beam from rendering when search field is full.
+        if len(
+                self.searchQuery.text) < self.searchQuery.width: self.searchIBeam.draw()  # Prevent I-Beam from rendering when search field is full.
 
     def handle_event(self, event):
         super().handle_event(event)
@@ -682,11 +686,12 @@ class DictionarySearchState(SuffState):
                         self.searchQuery.text.lower().strip())  # get word words from word folder (also
                     # removes leading/ending whitespaces and
                     # makes it lowercase)
-                    if w: # if word data exists
+                    if w:
                         BUTTON_PRESS_SOUND.play()
+                        global curState
                         global curWordData
                         curWordData = w
-                        change_state('dictionary_word')
+                        curState = DictionaryWordState()
                     else:
                         INVALID_SOUND.play()
                         CCC.change_expression('angry')
@@ -713,14 +718,14 @@ class DictionaryWordState(SuffState):
         super().__init__()
     def save_word(self):
         global dialogueBox
-        if curSave.fetch('bookmarked_words') is None:
-            curSave['bookmarked_words'] = []
-        if curWordData['word'] in curSave['bookmarked_words']:
-            curSave['bookmarked_words'].remove(curWordData['word'])
+        if curSave.fetch('saved_words') is None:
+            curSave['saved_words'] = []
+        if curWordData['word'][0] in curSave['saved_words']:
+            curSave['saved_words'].remove(curWordData['word'][0])
             dialogueBox = DialogueBox((CCC.x, CCC.y), 'Word unbookmarked.', 16, 'left')
             self.bookmarkButton.change_base_texture('dictionary/bookmark')
         else:
-            curSave['bookmarked_words'].append(curWordData['word'])
+            curSave['saved_words'].append(curWordData['word'][0])
             dialogueBox = DialogueBox((CCC.x, CCC.y), 'Word bookmarked.', 16, 'left')
             self.bookmarkButton.change_base_texture('dictionary/unbookmark')
         curSave.flush('save')
@@ -729,28 +734,41 @@ class DictionaryWordState(SuffState):
         super().post_load()
         self.textGroup = []
 
-        wordTitle = SuffText(32, 32, 32, curWordData['word'].upper(), 96,
+        wordTitle = SuffText(32, 32, 32, curWordData['word'][0].upper(), 96,
                              (255, 255, 255))
         self.textGroup.append(wordTitle)
         wordClassTxtString = curWordData['word_class'] # part of speech
         if len(curWordData['plural']) > 0:
-            wordClassTxtString += ', plural \'' + curWordData['plural'] + '\'' # plural form
+            wordClassTxtString += ', plural \'' + ', '.join(curWordData['plural']) + '\'' # plural form
         wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height(), 32, wordClassTxtString, 32, (255, 255, 255))
         self.textGroup.append(wordClassTxt)
         wordDefTxt = SuffText(32, wordClassTxt.y + 64, 48, curWordData['definition'], 32, (255, 255, 255))
         self.textGroup.append(wordDefTxt)
         wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48,
-                                    curWordData['word'][0].upper() + curWordData['word'][1:] + ' means ', 32,
+                                    curWordData['word'][0][0].upper() + curWordData['word'][0][1:] + ' means ', 32,
                                     (255, 255, 255))
         self.textGroup.append(wordTransDescTxt)
         wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
-                                curWordData['translation'], 32, (255, 255, 255), 'zh')
+                                '；'.join(curWordData['translation']), 32, (255, 255, 255), 'zh')
         self.textGroup.append(wordTransTxt)
+        tenses = ['present', 'continuous', 'past', 'perfect']
+        prevHeight = 0
+        for key in curWordData['forms'].keys():
+            wordFormTitleTxt = SuffText(32, wordTransTxt.y + 64 + prevHeight, 48, key.upper(), 48, (255, 255, 255))
+            self.textGroup.append(wordFormTitleTxt)
+            prevHeight += 48
+            for w in range(len(curWordData['forms'][key])):
+                if key == 'verb':
+                    wordTenseTxt = SuffText(32, wordFormTitleTxt.y + 58 + 32 * w, 48, tenses[w], 16, (255, 255, 255))
+                wordFormTxt = SuffText(32 + (wordTenseTxt.get_width() + 16 if key == 'verb' else 0),
+                                       wordFormTitleTxt.y + 48 + 32 * w, 48, curWordData['forms'][key][w], 32, (255, 255, 255))
+                prevHeight += 32
+                if key == 'verb': self.textGroup.append(wordTenseTxt)
+                self.textGroup.append(wordFormTxt)
+            prevHeight += 48
 
         self.bookmarkButton = SuffButton((SCREENSIZE[0] - 72 - 10, 10), (72, 104), self.save_word, 'dictionary/bookmark', '',
                                              None, 16)
-        if curWordData['word'] in curSave['bookmarked_words']:
-            self.bookmarkButton.change_base_texture('dictionary/unbookmark')
 
         self.scrollAmount = 0
         self.txtYOrigin = []
@@ -798,80 +816,6 @@ class DictionaryWordState(SuffState):
                 MENU_EXIT_SOUND.play()
                 global curState
                 curState = DictionarySearchState()
-        if event.type == pygame.MOUSEWHEEL:
-            self.scrollAmount += event.y
-            if self.scrollAmount > 0:
-                self.scrollAmount = 0
-            if self.scrollAmount < self.maxScroll:
-                self.scrollAmount = self.maxScroll
-            for i in range(len(self.textGroup)):
-                self.txtYOrigin[i] = self.txtYOriginalOrigin[i] + self.scrollAmount * 64
-class DictionaryBookmarkState(SuffState):
-    def __init__(self):
-        super().__init__()
-    def binary_search_word(self, x):
-        print(x)
-    def post_load(self):
-        savedWords = curSave.fetch('bookmarked_words')
-        daLength = len(savedWords)  # Length of words
-        for i in range(len(savedWords)): # Sorts list of bookmarked words
-            for j in range(daLength - i - 1):
-                if savedWords[j] > savedWords[j + 1]:
-                    savedWords[j], savedWords[j + 1] = savedWords[j + 1], savedWords[j]  # Swap
-        curSave['bookmarked_words'] = savedWords
-        curSave.flush('save') # Save to save file
-
-        super().post_load()
-        pointer = 0
-        leEntryList = []
-        DictWithWords = dict()
-        for word in savedWords: # Group words by alphabetical order
-            if word.lower()[0] == string.ascii_lowercase[pointer]:
-                leEntryList.append(word)
-            else:
-                DictWithWords[string.ascii_lowercase[pointer]] = leEntryList
-                pointer += ord(word.lower()[0]) - ord(string.ascii_lowercase[pointer])
-                leEntryList = []
-                leEntryList.append(word)
-        DictWithWords[string.ascii_lowercase[pointer]] = leEntryList
-        self.textGroup = []
-
-        self.curWord = ''
-
-        prevHeight = 32
-        for alpha in DictWithWords.keys():
-            alphaText = SuffText(32, prevHeight, 32, alpha.upper(), 128,
-                                 (255, 255, 255))
-            self.textGroup.append(alphaText)
-            prevHeight += alphaText.get_height()
-            for word in DictWithWords[alpha]:
-                wordButton = SuffButton((32, prevHeight), (256, 32), self.binary_search_word(x = word), '', word) # Visually, it is not a button, but it still calls functions when clicked
-                self.textGroup.append(wordButton)
-                prevHeight += wordButton.size[1] * 1.5
-
-        self.scrollAmount = 0
-        self.txtYOrigin = []
-        self.txtYOriginalOrigin = []
-        for i in range(len(self.textGroup)):
-            self.txtYOriginalOrigin.append(self.textGroup[i].y)
-            self.txtYOrigin.append(self.textGroup[i].y)
-        self.maxScroll = min(-math.ceil((max(self.txtYOriginalOrigin) + 128 - SCREENSIZE[1]) / 64), 0)
-    def update(self):
-        state_functions()
-
-        CCC.x = suff_lerp(CCC.x, SCREENSIZE[0] - (CCC.head.rect.width / 4) * 3, 1 / FPS * 6)
-        CCC.y = suff_lerp(CCC.y, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3, 1 / FPS * 6)
-        CCC.angle = suff_lerp(CCC.angle, 30, 1 / FPS * 6)
-        CCC.draw()
-        for i in range(len(self.textGroup)):
-            self.textGroup[i].draw()
-            self.textGroup[i].y = suff_lerp(self.textGroup[i].y, self.txtYOrigin[i], 1 / FPS * 6)
-    def handle_event(self, event):
-        super().handle_event(event)
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                MENU_EXIT_SOUND.play()
-                change_state('main_menu')
         if event.type == pygame.MOUSEWHEEL:
             self.scrollAmount += event.y
             if self.scrollAmount > 0:
@@ -943,13 +887,13 @@ class QuizState(SuffState):
         self.leWordData = dict()
         self.allowInput = False
         self.derList = []
-        for alp in string.ascii_lowercase: # From a to z
-            if os.path.exists(get_asset_path(f'words/{alp}.json')):
-                file = open(get_asset_path(f'words/{alp}.json'), 'r')
+        for alp in [chr(i) for i in range(ord('a'), ord('z'))]:
+            if os.path.exists(f'words/{alp}.json'):
+                file = open(f'words/{alp}.json', 'r')
                 leJson = json.load(file)
                 file.close()
                 for item in leJson:
-                    if item['word_class'] != 'easter egg':
+                    if 'easter_egg' not in item.keys() or item['easter_egg'] == False:
                         self.derList.append(item)
 
         self.lives = 3
@@ -1039,16 +983,16 @@ class QuizState(SuffState):
         ogDef = self.leWordData['definition']
         leFont = 'default'
         if random.choice([True, False]): # 50% chance to display the Chinese definition instead
-            ogDef = self.leWordData['translation']
+            ogDef = self.leWordData['translation'][0]
             leFont = 'zh' # Uses Chinese font instead
         senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
         partOfSpeech = self.leWordData['word_class']
         wordLength = 0
-        for i in self.leWordData['word']:
+        for i in self.leWordData['word'][0]:
             if i.isalpha():
                 wordLength += 1
         leDialogue = f'What is the {wordLength}-letter {partOfSpeech} for {senDef}?'
-        # print(self.leWordData['word'])
+        # print(self.leWordData['word'][0])
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2),
                                   leDialogue, 50, 'down', -1, None, leFont) # Limits dialogue width by 50 chars
     def add_heart(self):
@@ -1186,10 +1130,10 @@ class QuizState(SuffState):
                         dialogueBox.box_text.set_text(dialogueBox.displayed_text)
                         return
                     self.attempts += 1
-                    if len(self.searchQuery.text.lower().strip()) != len(self.leWordData['word']):
+                    if len(self.searchQuery.text.lower().strip()) != len(self.leWordData['word'][0]):
                         # Mismatch of character length
                         self.timeLeft -= (self.baseTimeLimit - 1) / 4
-                    elif self.searchQuery.text.lower().strip() == self.leWordData['word']:
+                    elif self.searchQuery.text.lower().strip() == self.leWordData['word'][0]:
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   random.choice(self.cccHappyLines), 16, 'up', 1, self.reset)
                         if self.lives < 4 and self.attempts <= 1: # Limit tries
@@ -1202,7 +1146,7 @@ class QuizState(SuffState):
                     else:
                         prevCorrectLetters = self.correctLetters
                         prevMisplacedLetters = self.misplacedLetters
-                        self.update_letter_list(self.searchQuery.text.lower().strip(), self.leWordData['word'])
+                        self.update_letter_list(self.searchQuery.text.lower().strip(), self.leWordData['word'][0])
                         INVALID_SOUND.play()
                         self.timeLeft -= (self.baseTimeLimit - 1) / 4
                         if len(self.correctLetters) - len(prevCorrectLetters) <= 0 or len(self.misplacedLetters) - len(prevMisplacedLetters) <= 0:
@@ -1303,6 +1247,7 @@ class CreditsState(SuffState):
     def __init__(self):
         super().__init__()
     def post_load(self):
+        global curWordData
         CREDITS = [
             ["PROGRAMMER", "default", 64], # Text, Font, Font Size
             ["Nick Tsang", "default", 48],
@@ -1370,7 +1315,6 @@ states = { # Attempt to preload all screens by calling these classes
     'quiz_start': QuizStartState(),
     'quiz_game_over': QuizGameOverState(),
     'dictionary_search': DictionarySearchState(),
-    'dictionary_bookmarks': DictionaryBookmarkState(),
     'dictionary_word': DictionaryWordState(),
     'credits': CreditsState()
 }

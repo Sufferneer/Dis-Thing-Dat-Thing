@@ -1,0 +1,23 @@
+[
+    {
+        "word": "lenticel",
+        "plural": "lenticels",
+        "word_class": "noun",
+        "translation": "皮孔",
+        "definition": "Small openings on stems allowing gas exchange in woody plants."
+    },
+    {
+        "word": "light-dependent reaction",
+        "plural": "light-dependent reactions",
+        "word_class": "noun",
+        "translation": "光反應",
+        "definition": "A photosynthesis stage converting light energy into ATP and NADPH, releasing O₂."
+    },
+    {
+        "word": "limiting factor",
+        "plural": "limiting factors",
+        "word_class": "noun",
+        "translation": "限制因子",
+        "definition": "An environmental factor (e.g., light, CO₂) that restricts photosynthesis rate."
+    }
+]

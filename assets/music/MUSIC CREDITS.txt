@@ -1,0 +1,9 @@
+main_loop.ogg
+Artistic Expression - Kawai Sprite
+Used under the Creative Commons Attribution-ShareAlike 4.0 License
+and artist's open permission.
+No copyright infringement is intentionally made upon these artists.
+
+pre_quiz.ogg, quiz_loop.ogg
+Ardentineko - Nick Tsang
+Music project file is included in the `art` file.

@@ -1,0 +1,58 @@
+[
+    {
+        "word": "pathogen",
+        "plural": "pathogens",
+        "word_class": "noun",
+        "translation": "病原體",
+        "definition": "A disease-causing microorganism (e.g., bacteria, viruses, fungi)."
+    },
+    {
+        "word": "peristalsis",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "蠕動",
+        "definition": "Wave-like muscle contractions moving food through the digestive tract."
+    },
+    {
+        "word": "petal",
+        "plural": "petals",
+        "word_class": "noun",
+        "translation": "花瓣",
+        "definition": "Colorful flower part attracting pollinators."
+    },
+    {
+        "word": "phloem",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "韌皮部",
+        "definition": "Vascular tissue transporting sugars (e.g., sucrose) from leaves to other parts."
+    },
+    {
+        "word": "photosynthesis",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "光合作用",
+        "definition": "The process by which green plants use sunlight to synthesize nutrients from CO₂ and water."
+    },
+    {
+        "word": "placenta",
+        "plural": "Placentas",
+        "word_class": "noun",
+        "translation": "胎盤",
+        "definition": "Organ nourishing fetus via umbilical cord; exchanges nutrients/wastes."
+    },
+    {
+        "word": "pollen grain",
+        "plural": "Pollen grains",
+        "word_class": "noun",
+        "translation": "花粉粒",
+        "definition": "Male gametophyte in plants, containing sperm cells."
+    },
+    {
+        "word": "pollination",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "傳粉",
+        "definition": "The transfer of pollen from anther to stigma, enabling fertilization."
+    }
+]

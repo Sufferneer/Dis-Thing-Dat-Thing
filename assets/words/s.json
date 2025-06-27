@@ -1,0 +1,58 @@
+[
+    {
+        "word": "seed dispersal",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "種子傳播",
+        "definition": "Movement of seeds away from parent plant (e.g., wind, animals)."
+    },
+    {
+        "word": "self-pollination",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "自花傳粉",
+        "definition": "Pollen transfers to stigma of the same flower/plant."
+    },
+    {
+        "word": "sexual reproduction",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "有性生殖",
+        "definition": "Reproduction involving fusion of male and female gametes."
+    },
+    {
+        "word": "sperm",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "精子",
+        "definition": "Male gamete, motile and small, produced in testes."
+    },
+    {
+        "word": "spongy mesophyll",
+        "plural": "",
+        "word_class": "noun",
+        "translation": "海綿組織",
+        "definition": "Leaf tissue with air spaces for gas diffusion in photosynthesis."
+    },
+    {
+        "word": "stamen",
+        "plural": "stamens",
+        "word_class": "noun",
+        "translation": "雄蕊",
+        "definition": "Male reproductive organ (anther + filament)."
+    },
+    {
+        "word": "stoma",
+        "plural": "stomata",
+        "word_class": "noun",
+        "translation": "氣孔",
+        "definition": "Tiny leaf openings allowing gas exchange (CO₂ in, O₂ out)."
+    },
+    {
+        "word": "succession",
+        "plural": "successions",
+        "word_class": "noun",
+        "translation": "演替",
+        "definition": "The gradual change in an ecosystem's species composition over time."
+    }
+]
