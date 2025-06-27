@@ -188,12 +188,14 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
         else:
             self.text_hover_size = self.text_size
         self.base = SuffSprite(self.x, self.y, f'{base_texture}')
-        self.base.surface.set_alpha(128)
         self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
+        self.base.surface.set_alpha(128)
         self.button_text = SuffText(self.x + text_size / 2, self.y + size[1] / 4, size[0] // (self.text_hover_size // 2), self.text, text_size, (255, 255, 255))
     def draw(self):
-        self.base.draw()
-        self.button_text.draw()
+        self.base.x = self.x
+        self.base.y = self.y
+        self.button_text.x = self.x + self.text_size / 2
+        self.button_text.y = self.y + self.size[1] / 4
         if self.x + self.size[0] >= mousePos[0] >= self.x and self.y + self.size[1] >= mousePos[1] >= \
                 self.y:
             if not self.hovered:
@@ -217,6 +219,8 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
                     self.base.surface = pygame.image.load(
                         get_asset_path(f'images/{self.base_texture}.png')).convert_alpha()
                     self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
+        self.base.draw()
+        self.button_text.draw()
     def change_base_texture(self, image):
         self.base_texture = image
         self.base.surface = pygame.image.load(
@@ -224,7 +228,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
 
     def callback(self, *args):
         if self.function:
-            self.function = self.function(*args)
+            return self.function(*args)
 class SuffSave(dict):
     def load(self, directory = 'save'): # load save file from disk to memory
         if not os.path.exists(directory + '.json'):
@@ -809,8 +813,23 @@ class DictionaryWordState(SuffState):
 class DictionaryBookmarkState(SuffState):
     def __init__(self):
         super().__init__()
-    def binary_search_word(self, x):
+    def binary_search_word(self):
+        x = self.curWord
         print(x)
+        f = open(get_asset_path(f'words/{x[0]}.json'), 'r')
+        wordList = json.load(f)
+        f.close()
+        low = 0
+        high = len(wordList) - 1
+        while low <= high:
+            mid = low + (high - low) // 2
+            if x.lower() == wordList[mid]['word'].lower():
+                return wordList[mid]
+            elif (wordList[mid]['word'].lower() < x.lower()):
+                low = mid + 1
+            else:
+                high = mid - 1
+        return None
     def post_load(self):
         savedWords = curSave.fetch('bookmarked_words')
         daLength = len(savedWords)  # Length of words
@@ -845,7 +864,8 @@ class DictionaryBookmarkState(SuffState):
             self.textGroup.append(alphaText)
             prevHeight += alphaText.get_height()
             for word in DictWithWords[alpha]:
-                wordButton = SuffButton((32, prevHeight), (256, 32), self.binary_search_word(x = word), '', word) # Visually, it is not a button, but it still calls functions when clicked
+                wordButton = SuffButton((32, prevHeight), (32 * len(word), 32), self.binary_search_word, '', word, None, 32, 48) # Visually, it is not a button, but it still calls functions when clicked
+                wordButton.base.surface.set_alpha(0)
                 self.textGroup.append(wordButton)
                 prevHeight += wordButton.size[1] * 1.5
 
@@ -866,6 +886,8 @@ class DictionaryBookmarkState(SuffState):
         for i in range(len(self.textGroup)):
             self.textGroup[i].draw()
             self.textGroup[i].y = suff_lerp(self.textGroup[i].y, self.txtYOrigin[i], 1 / FPS * 6)
+            if type(self.textGroup[i]) == SuffButton and self.textGroup[i].hovered:
+                self.curWord = self.textGroup[i].text
     def handle_event(self, event):
         super().handle_event(event)
         if event.type == pygame.KEYDOWN:

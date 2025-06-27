@@ -4,64 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="new branch, new library of words">
-      <change afterPath="$PROJECT_DIR$/script_old.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="idk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/default.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/default.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/tile/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/quiz/tile/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/tile/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/quiz/tile/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/tile/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/quiz/tile/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/pre_quiz.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/pre_quiz.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/quiz_loop.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/quiz_loop.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/title.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_prototype.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_prototype.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/save.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/g.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/h.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/i.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/j.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/k.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/l.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/m.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/n.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/o.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/p.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/q.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/r.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/s.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/t.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/u.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/v.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/w.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/x.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/y.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words/z.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/d.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/g.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/h.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/i.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/m.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/n.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/o.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/p.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/r.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/s.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/t.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/v.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/words_old/z.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.Constants.executor": "Run",
-    "Python.CoolUtils.executor": "Run",
-    "Python.console_prototype.executor": "Run",
-    "Python.fetch_from_cambridge.executor": "Run",
-    "Python.formatter.executor": "Run",
-    "Python.script.executor": "Run",
-    "Python.script_new.executor": "Run",
-    "Python.text.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Sufferneer/PycharmProjects/SJACS_SBA",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.Constants.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CoolUtils.executor&quot;: &quot;Run&quot;,
+    &quot;Python.console_prototype.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fetch_from_cambridge.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formatter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script_new.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA" />
@@ -187,7 +132,47 @@
       <option name="project" value="LOCAL" />
       <updated>1750862145744</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="idk">
+      <option name="closed" value="true" />
+      <created>1751017591802</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1751017591802</updated>
+    </task>
+    <task id="LOCAL-00007" summary="idk">
+      <option name="closed" value="true" />
+      <created>1751017683664</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751017683664</updated>
+    </task>
+    <task id="LOCAL-00008" summary="idk">
+      <option name="closed" value="true" />
+      <created>1751017716928</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1751017716928</updated>
+    </task>
+    <task id="LOCAL-00009" summary="idk">
+      <option name="closed" value="true" />
+      <created>1751018118743</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751018118743</updated>
+    </task>
+    <task id="LOCAL-00010" summary="idk">
+      <option name="closed" value="true" />
+      <created>1751018449005</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751018449005</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +203,7 @@
     <MESSAGE value="wip quiz mode" />
     <MESSAGE value="wip quiz mode 2" />
     <MESSAGE value="new branch, new library of words" />
-    <option name="LAST_COMMIT_MESSAGE" value="new branch, new library of words" />
+    <MESSAGE value="idk" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk" />
   </component>
 </project>
