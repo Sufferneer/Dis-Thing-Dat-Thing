@@ -815,7 +815,7 @@ class DictionaryBookmarkState(SuffState):
         super().__init__()
     def binary_search_word(self):
         x = self.curWord
-        print(x)
+        if len(x) <= 0: return
         f = open(get_asset_path(f'words/{x[0]}.json'), 'r')
         wordList = json.load(f)
         f.close()
@@ -824,7 +824,9 @@ class DictionaryBookmarkState(SuffState):
         while low <= high:
             mid = low + (high - low) // 2
             if x.lower() == wordList[mid]['word'].lower():
-                return wordList[mid]
+                global curWordData
+                curWordData = wordList[mid]
+                change_state('dictionary_word')
             elif (wordList[mid]['word'].lower() < x.lower()):
                 low = mid + 1
             else:
