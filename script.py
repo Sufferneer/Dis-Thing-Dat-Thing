@@ -1,3 +1,5 @@
+# TODO: Quiz misplaced/absent letters, bookmark sorting
+
 # Dis Sheet Dat Sheet with CCC
 # Nick Tsang 5423
 # St Joseph's Anglo-Chinese School
