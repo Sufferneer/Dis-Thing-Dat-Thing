@@ -1,21 +1,21 @@
 [
     {
         "word": "ecosystem",
-        "plural": "Ecosystems",
+        "plural": "ecosystems",
         "word_class": "noun",
         "translation": "生態系統",
         "definition": "A community of interacting organisms and their physical environment."
     },
     {
         "word": "electron transport chain",
-        "plural": "Electron transport chains",
-        "word_class": "noun",
+        "plural": "electron transport chains",
+        "word_class": "noun phrase",
         "translation": "電子傳遞鏈",
         "definition": "The final respiration stage, generating ATP via oxidative phosphorylation."
     },
     {
         "word": "embryo",
-        "plural": "Embryos",
+        "plural": "embryos",
         "word_class": "noun",
         "translation": "胚胎",
         "definition": "Developing organism from zygote to 8 weeks (humans)."

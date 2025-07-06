@@ -78,7 +78,7 @@ phloem||||Noun||韌皮部||Vascular tissue transporting sugars (e.g., sucrose) f
 nitrate||nitrates||Noun||硝酸鹽||Mineral ion absorbed by roots for amino acid/protein synthesis.
 root hair||root hairs||Noun||根毛||Microscopic extensions of root epidermis increasing absorption surface area.
 assimilation||||Noun||同化作用||Incorporation of absorbed nutrients into body tissues.
-ChrisSch||||Easter Egg||This man is cool.||A horrifyingly talented programmer who is obsessed with the Disney cartoon series Sofia the First.
-Vivien||||Easter Egg||||An ICT teacher and a serial kidnapper of Usagi plushies.
+ChrisSch||||Easter Egg||This man is a princess.||A horrifyingly talented programmer who is obsessed with the Disney cartoon series Sofia the First.
+Vivien||||Easter Egg||No comments.||An ICT teacher and a serial kidnapper of Usagi plushies.
 Tommy Ma||||Easter Egg||This guy has cholera.||A bad to the bone class mathematician and the unfortunate parent of an Usagi plushie.
 Jerry||||Easter Egg||This guy doesn't like going outside.||A semi-solid specimen who LOATHES eating out for lunch.

@@ -1,7 +1,7 @@
 [
     {
-        "word": "calvin cycle",
-        "plural": "calvin cycles",
+        "word": "Calvin cycle",
+        "plural": "Calvin cycles",
         "word_class": "noun",
         "translation": "卡爾文循環",
         "definition": "Light-independent reactions using ATP and NADPH to fix CO₂ into glucose."
@@ -28,10 +28,10 @@
         "definition": "A green pigment in chloroplasts that absorbs light for photosynthesis."
     },
     {
-        "word": "ChrisSch",
+        "word": "Chris",
         "plural": "",
         "word_class": "easter egg",
-        "translation": "This man is cool.",
+        "translation": "Whoever wrote this definition is just shoe-shining at this point.",
         "definition": "A horrifyingly talented programmer who is obsessed with the Disney cartoon series Sofia the First."
     },
     {
@@ -44,7 +44,7 @@
     {
         "word": "cross-pollination",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "異花傳粉",
         "definition": "Pollen transfers to stigma of a different plant (increases genetic diversity)."
     }

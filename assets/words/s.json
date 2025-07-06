@@ -16,7 +16,7 @@
     {
         "word": "sexual reproduction",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "有性生殖",
         "definition": "Reproduction involving fusion of male and female gametes."
     },
@@ -30,7 +30,7 @@
     {
         "word": "spongy mesophyll",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "海綿組織",
         "definition": "Leaf tissue with air spaces for gas diffusion in photosynthesis."
     },

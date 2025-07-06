@@ -2,20 +2,20 @@
     {
         "word": "aerobic respiration",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "需氧呼吸",
         "definition": "The breakdown of glucose using oxygen to produce ATP, CO₂, and water."
     },
     {
         "word": "air sac",
-        "plural": "Air sacs",
+        "plural": "air sacs",
         "word_class": "noun",
         "translation": "肺泡",
         "definition": "Tiny cavities in lungs where O₂ and CO₂ exchange occurs."
     },
     {
         "word": "allele",
-        "plural": "Alleles",
+        "plural": "alleles",
         "word_class": "noun",
         "translation": "等位基因",
         "definition": "Different versions of the same gene (e.g., dominant vs. recessive)."
@@ -23,9 +23,9 @@
     {
         "word": "anaerobic respiration",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "厭氧呼吸",
-        "definition": "The energy production without oxygen, producing lactate (animals) or ethanol (yeast)."
+        "definition": "The energy production without oxygen, producing lactic acid (animals) or ethanol (yeast)."
     },
     {
         "word": "antibody",
@@ -37,9 +37,9 @@
     {
         "word": "asexual reproduction",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "無性生殖",
-        "definition": "Reproduction without gametes (e.g., budding, binary fission)."
+        "definition": "Reproduction without gametes (e.g., mitosis, binary fission)."
     },
     {
         "word": "assimilation",
@@ -47,12 +47,5 @@
         "word_class": "noun",
         "translation": "同化作用",
         "definition": "Incorporation of absorbed nutrients into body tissues."
-    },
-    {
-        "word": "ATP",
-        "plural": "",
-        "word_class": "noun",
-        "translation": "三磷酸腺苷",
-        "definition": "The energy currency of cells, storing and transferring chemical energy."
     }
 ]

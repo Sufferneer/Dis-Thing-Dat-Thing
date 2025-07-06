@@ -8,7 +8,7 @@
     },
     {
         "word": "gene",
-        "plural": "Genes",
+        "plural": "genes",
         "word_class": "noun",
         "translation": "基因",
         "definition": "A unit of heredity made of DNA that codes for a specific protein or trait."
@@ -16,7 +16,7 @@
     {
         "word": "genetic engineering",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "基因工程",
         "definition": "The direct manipulation of an organism's genes using biotechnology."
     },

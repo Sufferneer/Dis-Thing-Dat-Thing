@@ -9,7 +9,7 @@
     {
         "word": "menstrual cycle",
         "plural": "",
-        "word_class": "noun",
+        "word_class": "noun phrase",
         "translation": "月經週期",
         "definition": "Monthly cycle preparing uterus for pregnancy (avg. 28 days)."
     },
@@ -29,7 +29,7 @@
     },
     {
         "word": "mutation",
-        "plural": "Mutations",
+        "plural": "mutations",
         "word_class": "noun",
         "translation": "突變",
         "definition": "A change in DNA sequence, which may affect protein function."

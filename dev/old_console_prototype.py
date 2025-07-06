@@ -1,3 +1,6 @@
+# ! DISCLAIMER
+# This script uses the old JSON format. Do not use.
+
 import json
 import os
 wordList = []

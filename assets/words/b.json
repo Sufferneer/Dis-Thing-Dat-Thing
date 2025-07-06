@@ -4,7 +4,7 @@
         "plural": "",
         "word_class": "noun",
         "translation": "膽汁",
-        "definition": "Liver secretion emulsifying fats for lipase action (stored in gallbladder)."
+        "definition": "Liver secretion emulsifying fats for facilitating lipid digestion (stored in gallbladder)."
     },
     {
         "word": "biodiversity",
@@ -12,12 +12,5 @@
         "word_class": "noun",
         "translation": "生物多樣性",
         "definition": "The variety of life in an ecosystem, including species and genetic diversity."
-    },
-    {
-        "word": "biomagnification",
-        "plural": "",
-        "word_class": "noun",
-        "translation": "生物放大作用",
-        "definition": "The increase in toxin concentration at higher trophic levels."
     }
 ]
