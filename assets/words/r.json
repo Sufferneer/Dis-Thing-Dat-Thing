@@ -2,6 +2,13 @@
     {
         "word": "respiration",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["respire", "respires", "respiring", "respired", "respired"],
+            "adjective": ["respiratory"]
+        },
         "word_class": "noun",
         "translation": "呼吸作用",
         "definition": "The metabolic process where organisms convert glucose into energy (ATP), releasing CO₂."
@@ -9,8 +16,23 @@
     {
         "word": "root hair",
         "plural": "root hairs",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "根毛",
         "definition": "Microscopic extensions of root epidermis increasing absorption surface area."
+    },
+    {
+        "word": "RNA",
+        "plural": "",
+        "redirects": [],
+        "full": "ribonucleic acid",
+        "alt_spellings": [],
+        "forms": {},
+        "word_class": "noun",
+        "translation": "RNA",
+        "definition": "A nucleic acid that is involved in polypeptide synthesis during protein synthesis."
     }
 ]

@@ -2,6 +2,12 @@
     {
         "word": "aerobic respiration",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["aerobically respire", "aerobically respires", "aerobically respiring", "aerobically respired", "aerobically respired"]
+        },
         "word_class": "noun phrase",
         "translation": "需氧呼吸",
         "definition": "The breakdown of glucose using oxygen to produce ATP, CO₂, and water."
@@ -9,6 +15,12 @@
     {
         "word": "air sac",
         "plural": "air sacs",
+        "redirects": ["alveolus", "alveoli"],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["alveolar"]
+        },
         "word_class": "noun",
         "translation": "肺泡",
         "definition": "Tiny cavities in lungs where O₂ and CO₂ exchange occurs."
@@ -16,6 +28,10 @@
     {
         "word": "allele",
         "plural": "alleles",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "等位基因",
         "definition": "Different versions of the same gene (e.g., dominant vs. recessive)."
@@ -23,6 +39,12 @@
     {
         "word": "anaerobic respiration",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["anaerobically respire", "anaerobically respires", "anaerobically respiring", "anaerobically respired", "anaerobically respired"]
+        },
         "word_class": "noun phrase",
         "translation": "厭氧呼吸",
         "definition": "The energy production without oxygen, producing lactic acid (animals) or ethanol (yeast)."
@@ -30,6 +52,10 @@
     {
         "word": "antibody",
         "plural": "antibodies",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "抗體",
         "definition": "A protein produced by the immune system to neutralize pathogens."
@@ -37,6 +63,12 @@
     {
         "word": "asexual reproduction",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["asexually reproduce", "asexually reproduces", "asexually reproducing", "asexually reproduced", "asexually reproduced"]
+        },
         "word_class": "noun phrase",
         "translation": "無性生殖",
         "definition": "Reproduction without gametes (e.g., mitosis, binary fission)."
@@ -44,6 +76,12 @@
     {
         "word": "assimilation",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["assimilate", "assimilates", "assimilating", "assimilated", "assimilated"]
+        },
         "word_class": "noun",
         "translation": "同化作用",
         "definition": "Incorporation of absorbed nutrients into body tissues."

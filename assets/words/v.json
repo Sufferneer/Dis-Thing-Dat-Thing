@@ -2,6 +2,13 @@
     {
         "word": "vaccination",
         "plural": "vaccinations",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["vaccinate", "vaccinates", "vaccinating", "vaccinated", "vaccinated"],
+            "noun, object": ["vaccine"]
+        },
         "word_class": "noun",
         "translation": "疫苗接種",
         "definition": "The administration of a vaccine to stimulate immunity against a disease."
@@ -9,6 +16,12 @@
     {
         "word": "ventilation",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["ventilate", "ventilates", "ventilating", "ventilated", "ventilated"]
+        },
         "word_class": "noun",
         "translation": "通氣",
         "definition": "Mechanical process of breathing (inspiration + expiration)."
@@ -16,6 +29,10 @@
     {
         "word": "villus",
         "plural": "villi",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "絨毛",
         "definition": "Finger-like projections in small intestine increasing absorption area."
@@ -23,6 +40,10 @@
     {
         "word": "Vivien",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "easter egg",
         "translation": "I have no comments.",
         "definition": "An ICT teacher and a serial kidnapper of Usagi plushies."

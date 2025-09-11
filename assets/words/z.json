@@ -1,7 +1,11 @@
 [
     {
         "word": "zygote",
-        "plural": "Zygotes",
+        "plural": "zygotes",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "受精卵",
         "definition": "First diploid cell formed after fertilization."

@@ -5,62 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="idk">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-06-27_01_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-06-27_01_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/background_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/background_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/background_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/background_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/background_overlay.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/background_overlay.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/angry_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/angry_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/angry_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/angry_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/demon_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/demon_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/demon_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/demon_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/evil_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/evil_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/evil_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/evil_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/furious_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/furious_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/furious_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/furious_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/happy_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/happy_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/happy_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/happy_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/horror_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/horror_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/horror_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/horror_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/house_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/house_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/house_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/house_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/neutral_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/neutral_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/neutral_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/neutral_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/smug_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/smug_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/smug_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/smug_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/main_menu/credits_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/main_menu/credits_button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/main_menu/dictionary_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/main_menu/dictionary_button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/main_menu/flashcards_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/main_menu/quiz_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/main_menu/quiz_button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/quiz/hand.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/quiz/hand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sounds/a_carinha_dele.ogg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/b.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/d.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/d.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/e.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/e.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/f.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/g.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/g.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/h.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/j.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/j.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/k.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/k.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/l.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/l.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/m.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/n.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/n.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/o.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/o.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/p.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/r.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/r.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/s.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/s.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/v.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/v.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_prototype.py" beforeDir="false" afterPath="$PROJECT_DIR$/dev/old_console_prototype.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/dev/formatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_old.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/word.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dev/word.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/t.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

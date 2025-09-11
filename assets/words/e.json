@@ -2,6 +2,10 @@
     {
         "word": "ecosystem",
         "plural": "ecosystems",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "生態系統",
         "definition": "A community of interacting organisms and their physical environment."
@@ -9,6 +13,10 @@
     {
         "word": "electron transport chain",
         "plural": "electron transport chains",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun phrase",
         "translation": "電子傳遞鏈",
         "definition": "The final respiration stage, generating ATP via oxidative phosphorylation."
@@ -16,6 +24,12 @@
     {
         "word": "embryo",
         "plural": "embryos",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["embryonic"]
+        },
         "word_class": "noun",
         "translation": "胚胎",
         "definition": "Developing organism from zygote to 8 weeks (humans)."
@@ -23,6 +37,12 @@
     {
         "word": "enzyme",
         "plural": "enzymes",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["enzymatic"]
+        },
         "word_class": "noun",
         "translation": "酶",
         "definition": "A biological catalyst that speeds up chemical reactions without being consumed."

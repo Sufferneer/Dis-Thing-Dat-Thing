@@ -2,6 +2,12 @@
     {
         "word": "osmosis",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["osmotic"]
+        },
         "word_class": "noun",
         "translation": "滲透",
         "definition": "The diffusion of water across a differentially permeable membrane."
@@ -9,6 +15,10 @@
     {
         "word": "ovary",
         "plural": "ovaries",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "卵巢",
         "definition": "Female organ producing ova and hormones (e.g. estrogen)."
@@ -16,6 +26,12 @@
     {
         "word": "ovule",
         "plural": "ovules",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["ovular"]
+        },
         "word_class": "noun",
         "translation": "胚珠",
         "definition": "Structure in ovary that develops into a seed after fertilization."
@@ -23,6 +39,12 @@
     {
         "word": "ovum",
         "plural": "ova",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["ovular"]
+        },
         "word_class": "noun",
         "translation": "卵子",
         "definition": "Female gamete, large and non-motile, produced in ovaries."

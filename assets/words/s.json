@@ -2,6 +2,12 @@
     {
         "word": "seed dispersal",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb, dispersal": ["disperse", "disperses", "dispersing", "dispersed", "dispersed"]
+        },
         "word_class": "noun",
         "translation": "種子傳播",
         "definition": "Movement of seeds away from parent plant (e.g., wind, animals)."
@@ -9,6 +15,12 @@
     {
         "word": "self-pollination",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["self pollinate", "self pollinates", "self pollinating", "self pollinated", "self pollinated"]
+        },
         "word_class": "noun",
         "translation": "自花傳粉",
         "definition": "Pollen transfers to stigma of the same flower/plant."
@@ -16,6 +28,12 @@
     {
         "word": "sexual reproduction",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["sexually reproduce", "sexually reproduces", "sexually reproducing", "sexually reproduced", "sexually reproduced"]
+        },
         "word_class": "noun phrase",
         "translation": "有性生殖",
         "definition": "Reproduction involving fusion of male and female gametes."
@@ -23,6 +41,12 @@
     {
         "word": "sperm",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["spermous"]
+        },
         "word_class": "noun",
         "translation": "精子",
         "definition": "Male gamete, motile and small, produced in testes."
@@ -30,6 +54,10 @@
     {
         "word": "spongy mesophyll",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun phrase",
         "translation": "海綿組織",
         "definition": "Leaf tissue with air spaces for gas diffusion in photosynthesis."
@@ -37,6 +65,10 @@
     {
         "word": "stamen",
         "plural": "stamens",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "雄蕊",
         "definition": "Male reproductive organ (anther + filament)."
@@ -44,6 +76,10 @@
     {
         "word": "stoma",
         "plural": "stomata",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "氣孔",
         "definition": "Tiny leaf openings allowing gas exchange (CO₂ in, O₂ out)."
@@ -51,6 +87,12 @@
     {
         "word": "succession",
         "plural": "successions",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": ["succeed", "succeeds", "succeeding", "succeeded", "succeeded"]
+        },
         "word_class": "noun",
         "translation": "演替",
         "definition": "The gradual change in an ecosystem's species composition over time."

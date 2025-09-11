@@ -2,6 +2,10 @@
     {
         "word": "bile",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "word_class": "noun",
         "translation": "膽汁",
         "definition": "Liver secretion emulsifying fats for facilitating lipid digestion (stored in gallbladder)."
@@ -9,6 +13,12 @@
     {
         "word": "biodiversity",
         "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "adjective": ["biodiverse"]
+        },
         "word_class": "noun",
         "translation": "生物多樣性",
         "definition": "The variety of life in an ecosystem, including species and genetic diversity."
