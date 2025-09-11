@@ -2,11 +2,15 @@
     {
         "word": "meiosis",
         "plural": "",
-        "redirects": ["meiotic cell division"],
+        "redirects": [
+            "meiotic cell division"
+        ],
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": ["meiotic"]
+            "adjective": [
+                "meiotic"
+            ]
         },
         "word_class": "noun",
         "translation": "減數分裂",
@@ -19,7 +23,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb, menstrual": ["menstruate", "menstruates", "menstruating", "menstruated", "menstruated"]
+            "verb, menstrual": [
+                "menstruate",
+                "menstruates",
+                "menstruating",
+                "menstruated",
+                "menstruated"
+            ]
         },
         "word_class": "noun phrase",
         "translation": "月經週期",
@@ -32,8 +42,16 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["menstruate", "menstruates", "menstruating", "menstruated", "menstruated"],
-            "adjective": ["menstrual"]
+            "verb": [
+                "menstruate",
+                "menstruates",
+                "menstruating",
+                "menstruated",
+                "menstruated"
+            ],
+            "adjective": [
+                "menstrual"
+            ]
         },
         "word_class": "noun",
         "translation": "月經",
@@ -42,11 +60,15 @@
     {
         "word": "mitosis",
         "plural": "",
-        "redirects": ["mitotic cell division"],
+        "redirects": [
+            "mitotic cell division"
+        ],
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": ["mitotic"]
+            "adjective": [
+                "mitotic"
+            ]
         },
         "word_class": "noun",
         "translation": "有絲分裂",
@@ -59,8 +81,16 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["mutate", "mutates", "mutating", "mutated", "mutated"],
-            "noun, affected person": ["mutant"]
+            "verb": [
+                "mutate",
+                "mutates",
+                "mutating",
+                "mutated",
+                "mutated"
+            ],
+            "noun, affected person": [
+                "mutant"
+            ]
         },
         "word_class": "noun",
         "translation": "突變",

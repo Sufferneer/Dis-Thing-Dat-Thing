@@ -4,7 +4,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": ["haemoglobin"],
+        "alt_spellings": [
+            "haemoglobin"
+        ],
         "forms": {},
         "word_class": "noun",
         "translation": "血紅蛋白",
@@ -17,7 +19,9 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": ["homeostatic"]
+            "adjective": [
+                "homeostatic"
+            ]
         },
         "word_class": "noun",
         "translation": "體內平衡",

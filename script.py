@@ -151,7 +151,7 @@ class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it 
         for i in range(len(self)):
             screen.blit(self[i][0], (self.x, self.y + i * self.size), self[i][1])
     def get_height(self):
-        return len(self) * self.size
+        return len(self) * self.size if len(self[0]) > 0 else 0
     def get_width(self):
         return max(len(item[2]) for item in self) * self.size * FONT_WIDTH_RATIO
     def is_colliding(self):
@@ -681,7 +681,8 @@ class DictionarySearchState(SuffState):
         high = len(wordList) - 1
         while low <= high:
             mid = low + (high - low) // 2
-            if x.lower() == wordList[mid]['word'].lower() or x.lower() == wordList[mid]['plural'].lower():
+            if (x.lower() == wordList[mid]['word'].lower() or x.lower() == wordList[mid]['plural'].lower()
+                    or x.lower() in wordList[mid]['redirects'] or x.lower() in wordList[mid]['alt_spellings']):
                 return wordList[mid]
             elif (wordList[mid]['word'].lower() < x.lower()):
                 low = mid + 1
@@ -762,6 +763,10 @@ class DictionaryWordState(SuffState):
     curWordData = {
         "word": "asexual reproduction",
         "word_class": "noun phrase",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
         "plural": "",
         "definition": "A form of reproduction that involves a single parent by mitotic cell division.",
         "translation": "\u7121\u6027\u751f\u6b96"
@@ -796,14 +801,15 @@ class DictionaryWordState(SuffState):
         wordClassTxtString = self.curWordData['word_class'] # part of speech
         if len(self.curWordData['plural']) > 0:
             wordClassTxtString += ', plural \'' + self.curWordData['plural'] + '\'' # plural form
+        if len(self.curWordData['full']) > 0:
+            wordClassTxtString += ', full form \'' + self.curWordData['full'] + '\'' # plural form
         wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height(), 32, wordClassTxtString, 32, (255, 255, 255))
         self.textGroup.append(wordClassTxt)
         wordDefTxt = SuffText(32, wordClassTxt.y + 64, 48, self.curWordData['definition'], 32, (255, 255, 255))
         self.textGroup.append(wordDefTxt)
+        wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48, '', 32, (255, 255, 255))
         if self.curWordData['word_class'] != 'easter egg':
-            wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48,
-                                        self.curWordData['word'][0].upper() + self.curWordData['word'][1:] + ' means ', 32,
-                                        (255, 255, 255))
+            wordTransDescTxt.set_text(self.curWordData['word'][0].upper() + self.curWordData['word'][1:] + ' means ')
             self.textGroup.append(wordTransDescTxt)
             wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
                                     self.curWordData['translation'], 32, (255, 255, 255), 'zh')
@@ -812,6 +818,17 @@ class DictionaryWordState(SuffState):
             pygame.mixer.Sound(get_asset_path('sounds/a_carinha_dele.ogg')).play()
             global dialogueBox
             dialogueBox = DialogueBox((SCREENSIZE[0] - (CCC.head.rect.width / 4) * 3, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3), self.curWordData['translation'], 16, 'left', -1)
+
+        wordDescTxt = SuffText(32, wordTransDescTxt.y + wordTransDescTxt.get_height() + 32, 48, '', 48, (128, 128, 128))
+        if len(self.curWordData['alt_spellings']) > 0:
+            wordDescTxt.set_text('{ ACCEPTABLE SPELLINGS }')
+            self.textGroup.append(wordDescTxt)
+            altSpellings = self.curWordData['alt_spellings']
+            for word in altSpellings:
+                wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height(), 48, '- ' + word, 32,
+                                       (255, 255, 255))
+                self.textGroup.append(wordDescTxt)
+
 
         self.bookmarkButton = SuffButton((SCREENSIZE[0] - 72 - 10, 10), (72, 104), self.save_word, 'dictionary/bookmark', '',
                                              None, 16)

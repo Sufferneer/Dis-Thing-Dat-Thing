@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="idk">
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] added more complex data structures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/c.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/d.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/e.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/e.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/g.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/g.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/h.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/j.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/j.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/k.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/k.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/l.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/l.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/m.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/n.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/n.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/o.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/o.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/p.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/r.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/r.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/s.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/s.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/t.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/script.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,25 +52,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Python.Constants.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CoolUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.console_prototype.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fetch_from_cambridge.executor&quot;: &quot;Run&quot;,
-    &quot;Python.formatter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.script.executor&quot;: &quot;Run&quot;,
-    &quot;Python.script_new.executor&quot;: &quot;Run&quot;,
-    &quot;Python.text.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.Constants.executor": "Run",
+    "Python.CoolUtils.executor": "Run",
+    "Python.console_prototype.executor": "Run",
+    "Python.fetch_from_cambridge.executor": "Run",
+    "Python.formatter.executor": "Run",
+    "Python.old_console_prototype.executor": "Run",
+    "Python.script.executor": "Run",
+    "Python.script_new.executor": "Run",
+    "Python.text.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Sufferneer/PycharmProjects/SJACS_SBA",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA" />
@@ -206,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751021334416</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[update] added more complex data structures">
+      <option name="closed" value="true" />
+      <created>1757610307574</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1757610307574</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,6 +233,7 @@
     <MESSAGE value="wip quiz mode 2" />
     <MESSAGE value="new branch, new library of words" />
     <MESSAGE value="idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk" />
+    <MESSAGE value="[update] added more complex data structures" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] added more complex data structures" />
   </component>
 </project>

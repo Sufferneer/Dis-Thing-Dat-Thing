@@ -17,7 +17,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["diffuse", "diffuses", "diffusing", "diffused", "diffused"]
+            "verb": [
+                "diffuse",
+                "diffuses",
+                "diffusing",
+                "diffused",
+                "diffused"
+            ]
         },
         "word_class": "noun",
         "translation": "擴散",
@@ -41,7 +47,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["replicate", "replicates", "replicating", "replicated", "replicated"]
+            "verb": [
+                "replicate",
+                "replicates",
+                "replicating",
+                "replicated",
+                "replicated"
+            ]
         },
         "word_class": "noun",
         "translation": "DNA複製",
