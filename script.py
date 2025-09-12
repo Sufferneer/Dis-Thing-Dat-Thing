@@ -151,9 +151,9 @@ class SuffText(list): # Parent class. Yes, I know. It's actually a list, but it 
         for i in range(len(self)):
             screen.blit(self[i][0], (self.x, self.y + i * self.size), self[i][1])
     def get_height(self):
-        return len(self) * self.size if len(self[0]) > 0 else 0
+        return int(len(self) * self.size) if len(self[0]) > 0 else 0
     def get_width(self):
-        return max(len(item[2]) for item in self) * self.size * FONT_WIDTH_RATIO
+        return int(max(len(item[2]) for item in self) * self.size * FONT_WIDTH_RATIO)
     def is_colliding(self):
         return self.x + self.get_width() >= mousePos[0] >= self.x and self.y + self.get_height() >= mousePos[1] >= self.y
 class SuffButton(pygame.sprite.Group): # Parent class. Buttons
@@ -809,11 +809,12 @@ class DictionaryWordState(SuffState):
         self.textGroup.append(wordDefTxt)
         wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48, '', 32, (255, 255, 255))
         if self.curWordData['word_class'] != 'easter egg':
-            wordTransDescTxt.set_text(self.curWordData['word'][0].upper() + self.curWordData['word'][1:] + ' means ')
-            self.textGroup.append(wordTransDescTxt)
-            wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
-                                    self.curWordData['translation'], 32, (255, 255, 255), 'zh')
-            self.textGroup.append(wordTransTxt)
+            if self.curWordData['translation'] != self.curWordData['word']:
+                wordTransDescTxt.set_text(self.curWordData['word'][0].upper() + self.curWordData['word'][1:] + ' means ')
+                self.textGroup.append(wordTransDescTxt)
+                wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
+                                        self.curWordData['translation'], 32, (255, 255, 255), 'zh')
+                self.textGroup.append(wordTransTxt)
         else:
             pygame.mixer.Sound(get_asset_path('sounds/a_carinha_dele.ogg')).play()
             global dialogueBox
@@ -828,6 +829,33 @@ class DictionaryWordState(SuffState):
                 wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height(), 48, '- ' + word, 32,
                                        (255, 255, 255))
                 self.textGroup.append(wordDescTxt)
+        if len(self.curWordData['forms']) > 0:
+            wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height() + 32, 48, '{ FORMS }', 64,
+                                   (128, 128, 128))
+            self.textGroup.append(wordDescTxt)
+            for key in self.curWordData['forms'].keys():
+                wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height() + 32, 48, key, 48,
+                                       (192, 192, 192))
+                self.textGroup.append(wordDescTxt)
+                formContent = self.curWordData['forms'][key]
+                tenses = [
+                    'present',
+                    '3rd person present',
+                    'continuous',
+                    'past',
+                    'participle'
+                ]
+                for i in range(len(formContent)):
+                    wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height(),
+                                           48, '', 16,
+                                           (128, 128, 128))
+                    if key.find('verb') != -1:
+                        wordDescTxt.set_text(tenses[i] + ' ')
+                        self.textGroup.append(wordDescTxt)
+                    wordDescTxt = SuffText(32 + wordDescTxt.get_width(), wordDescTxt.y, 48,
+                                           formContent[i], 32,
+                                           (255, 255, 255))
+                    self.textGroup.append(wordDescTxt)
 
 
         self.bookmarkButton = SuffButton((SCREENSIZE[0] - 72 - 10, 10), (72, 104), self.save_word, 'dictionary/bookmark', '',
