@@ -1,22 +1,15 @@
 [
     {
-        "word": "fertilization",
+        "word": "fertilisation",
         "plural": "",
         "redirects": [],
         "full": "",
         "alt_spellings": [
-            "fertilisation"
+            "fertilization"
         ],
         "forms": {
             "adjective": [
                 "fertile"
-            ],
-            "verb": [
-                "fertilize",
-                "fertilizes",
-                "fertilizing",
-                "fertilized",
-                "fertilized"
             ],
             "verb, British": [
                 "fertilise",
@@ -24,6 +17,13 @@
                 "fertilising",
                 "fertilised",
                 "fertilised"
+            ],
+            "verb, American": [
+                "fertilize",
+                "fertilizes",
+                "fertilizing",
+                "fertilized",
+                "fertilized"
             ]
         },
         "word_class": "noun",

@@ -61,7 +61,9 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": ["chromosomal"]
+            "adjective": [
+                "chromosomal"
+            ]
         },
         "word_class": "noun",
         "translation": "染色體",
@@ -74,7 +76,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["cross pollinate", "cross pollinates", "cross pollinating", "cross pollinated", "cross pollinated"]
+            "verb": [
+                "cross pollinate",
+                "cross pollinates",
+                "cross pollinating",
+                "cross pollinated",
+                "cross pollinated"
+            ]
         },
         "word_class": "noun phrase",
         "translation": "異花傳粉",

@@ -6,7 +6,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["aerobically respire", "aerobically respires", "aerobically respiring", "aerobically respired", "aerobically respired"]
+            "verb": [
+                "aerobically respire",
+                "aerobically respires",
+                "aerobically respiring",
+                "aerobically respired",
+                "aerobically respired"
+            ]
         },
         "word_class": "noun phrase",
         "translation": "需氧呼吸",
@@ -15,11 +21,16 @@
     {
         "word": "air sac",
         "plural": "air sacs",
-        "redirects": ["alveolus", "alveoli"],
+        "redirects": [
+            "alveolus",
+            "alveoli"
+        ],
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": ["alveolar"]
+            "adjective": [
+                "alveolar"
+            ]
         },
         "word_class": "noun",
         "translation": "肺泡",
@@ -43,7 +54,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["anaerobically respire", "anaerobically respires", "anaerobically respiring", "anaerobically respired", "anaerobically respired"]
+            "verb": [
+                "anaerobically respire",
+                "anaerobically respires",
+                "anaerobically respiring",
+                "anaerobically respired",
+                "anaerobically respired"
+            ]
         },
         "word_class": "noun phrase",
         "translation": "厭氧呼吸",
@@ -67,7 +84,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["asexually reproduce", "asexually reproduces", "asexually reproducing", "asexually reproduced", "asexually reproduced"]
+            "verb": [
+                "asexually reproduce",
+                "asexually reproduces",
+                "asexually reproducing",
+                "asexually reproduced",
+                "asexually reproduced"
+            ]
         },
         "word_class": "noun phrase",
         "translation": "無性生殖",
@@ -80,10 +103,27 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["assimilate", "assimilates", "assimilating", "assimilated", "assimilated"]
+            "verb": [
+                "assimilate",
+                "assimilates",
+                "assimilating",
+                "assimilated",
+                "assimilated"
+            ]
         },
         "word_class": "noun",
         "translation": "同化作用",
         "definition": "Incorporation of absorbed nutrients into body tissues."
+    },
+    {
+        "word": "ATP",
+        "plural": "",
+        "redirects": [],
+        "full": "adenosine triphosphate",
+        "alt_spellings": [],
+        "forms": {},
+        "word_class": "noun",
+        "translation": "ATP",
+        "definition": "Product of respiration that provides energy in living cells."
     }
 ]

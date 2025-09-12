@@ -4,12 +4,17 @@
         "plural": "testes",
         "redirects": [],
         "full": "",
-        "alt_spellings": ["testicle", "testicles"],
+        "alt_spellings": [
+            "testicle",
+            "testicles"
+        ],
         "forms": {
-            "adjective": ["testicular"]
+            "adjective": [
+                "testicular"
+            ]
         },
         "word_class": "noun",
-        "translation": "睾丸",
+        "translation": "睪丸",
         "definition": "Male organ producing sperm and testosterone."
     },
     {
@@ -30,7 +35,9 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": ["tracheal"]
+            "adjective": [
+                "tracheal"
+            ]
         },
         "word_class": "noun",
         "translation": "氣管",
@@ -43,7 +50,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["transcribe", "transcribes", "transcribing", "transcribed", "transcribed"]
+            "verb": [
+                "transcribe",
+                "transcribes",
+                "transcribing",
+                "transcribed",
+                "transcribed"
+            ]
         },
         "word_class": "noun",
         "translation": "轉錄",
@@ -56,7 +69,13 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["translate", "translates", "translating", "translated", "translated"]
+            "verb": [
+                "translate",
+                "translates",
+                "translating",
+                "translated",
+                "translated"
+            ]
         },
         "word_class": "noun",
         "translation": "轉譯",
@@ -69,11 +88,17 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": ["transpire", "transpires", "transpiring", "transpired", "transpired"]
+            "verb": [
+                "transpire",
+                "transpires",
+                "transpiring",
+                "transpired",
+                "transpired"
+            ]
         },
         "word_class": "noun",
         "translation": "蒸騰作用",
-        "definition": "Loss of water vapor from plant leaves, creating a transpiration pull."
+        "definition": "Loss of water vapor from plant leaves, creating a pull."
     },
     {
         "word": "trophic level",

@@ -4,12 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] added more complex data structures">
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] added alt spelling support">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-06-27_01_13_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-06-27_01_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/d.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/d.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/art/fonts/Suffirat Mono.json" beforeDir="false" afterPath="$PROJECT_DIR$/artsrc/fonts/Suffirat Mono.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/art/fonts/suffirat_mono.pdn" beforeDir="false" afterPath="$PROJECT_DIR$/artsrc/fonts/suffirat_mono.pdn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/c.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/p.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/h.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/t.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/formatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/old_console_prototype.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/word.txt" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/word.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.json" beforeDir="false" afterPath="$PROJECT_DIR$/save.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/word_documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/word_documentation.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +45,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -52,32 +66,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.Constants.executor": "Run",
-    "Python.CoolUtils.executor": "Run",
-    "Python.console_prototype.executor": "Run",
-    "Python.fetch_from_cambridge.executor": "Run",
-    "Python.formatter.executor": "Run",
-    "Python.old_console_prototype.executor": "Run",
-    "Python.script.executor": "Run",
-    "Python.script_new.executor": "Run",
-    "Python.text.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Sufferneer/PycharmProjects/SJACS_SBA",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.Constants.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CoolUtils.executor&quot;: &quot;Run&quot;,
+    &quot;Python.console_prototype.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fetch_from_cambridge.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formatter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.old_console_prototype.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script_new.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\source\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\assets\words" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\dev" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\source" />
     </key>
@@ -201,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757610307574</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[update] added alt spelling support">
+      <option name="closed" value="true" />
+      <created>1757611396309</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757611396309</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +257,18 @@
     <MESSAGE value="new branch, new library of words" />
     <MESSAGE value="idk" />
     <MESSAGE value="[update] added more complex data structures" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] added more complex data structures" />
+    <MESSAGE value="[update] added alt spelling support" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] added alt spelling support" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/Lib/site-packages/pygame/__pyinstaller/hook-pygame.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

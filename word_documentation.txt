@@ -1,6 +1,7 @@
 This text file shows the format of words in all dictionary entries.
 
 Rules:
+- All the wording of keywords abides Biology DSE guidelines.
 - All keywords are either nouns or noun phrases
 - All words uses their British spelling by default
 - Should the British spelling be different to the American spelling,
@@ -9,6 +10,8 @@ Rules:
 - All Chinese characters should use the most widely accepted writing forms.
 (e.g. 睾 should be 睪)
 - If possible, definitions and translations should abide by official Biology DSE definitions.
+- Some Chinese translations of molecules with long names (e.g. DNA, ATP, etc.) are
+not used in Chinese DSE. Avoid including them.
 
 Variables:
 "word": String. The keyword's default wording
