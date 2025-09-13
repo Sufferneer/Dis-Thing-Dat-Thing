@@ -4,67 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] prepared for exe conversion">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cx_setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/json_formatter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/unicode_fix.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/word.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/a.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/b.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/c.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/g.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/h.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/j.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/k.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/l.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/m.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/n.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/o.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/p.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/r.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/s.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/t.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/v.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/x.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/z.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/house_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/house_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/house_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/house_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/sprites_atlas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/dictionary/unbookmark.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dictionary/unbookmark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/dictionary/unbookmark_hovered.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dictionary/unbookmark_hovered.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/main_menu/flashcards_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/MUSIC CREDITS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/pre_quiz.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/pre_quiz.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/music/quiz_loop.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/quiz_loop.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/e.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/g.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/g.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/h.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/k.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/k.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/m.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/n.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/n.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/o.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/o.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/p.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/r.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/r.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/s.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/s.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/t.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/v.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/v.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/x.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/x.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/z.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/z.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/formatter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/word.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.json" beforeDir="false" />
-    </list>
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] prepared for exe conversion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,29 +42,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Python.Constants.executor": "Run",
-    "Python.CoolUtils.executor": "Run",
-    "Python.console_prototype.executor": "Run",
-    "Python.fetch_from_cambridge.executor": "Run",
-    "Python.formatter.executor": "Run",
-    "Python.game.executor": "Run",
-    "Python.old_console_prototype.executor": "Run",
-    "Python.script.executor": "Run",
-    "Python.script_new.executor": "Run",
-    "Python.text.executor": "Run",
-    "Python.unicode_fix.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Sufferneer/PycharmProjects/SJACS_SBA/devtools",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Python.Constants.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CoolUtils.executor&quot;: &quot;Run&quot;,
+    &quot;Python.console_prototype.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fetch_from_cambridge.executor&quot;: &quot;Run&quot;,
+    &quot;Python.formatter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.old_console_prototype.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script.executor&quot;: &quot;Run&quot;,
+    &quot;Python.script_new.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;Python.unicode_fix.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA/devtools&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\devtools" />
