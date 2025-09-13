@@ -4,14 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Added search suggestions and base for options menu">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] prepared for exe conversion">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx_setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/json_formatter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/unicode_fix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/word.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/g.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/h.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/j.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/k.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/l.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/m.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/n.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/o.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/p.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/r.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/s.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/t.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/v.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/x.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devtools/words_unicode/z.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sounds/a_carinha_dele.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/a_carinha_dele.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/ccc/house_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/house_head.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/ccc/house_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/house_mouth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/ccc/sprites_atlas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/dictionary/unbookmark.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dictionary/unbookmark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/dictionary/unbookmark_hovered.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dictionary/unbookmark_hovered.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/main_menu/flashcards_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/MUSIC CREDITS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/pre_quiz.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/pre_quiz.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/music/quiz_loop.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/music/quiz_loop.ogg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/a.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/e.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/f.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/g.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/g.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/h.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/k.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/k.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/m.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/n.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/n.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/o.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/o.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/p.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/r.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/r.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/s.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/s.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/t.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/words/v.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/v.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/x.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/x.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/words/z.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/words/z.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devtools/formatter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/devtools/word.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,15 +274,7 @@
       <option name="project" value="LOCAL" />
       <updated>1757690114195</updated>
     </task>
-    <task id="LOCAL-00016" summary="[update] Added search suggestions and base for options menu">
-      <option name="closed" value="true" />
-      <created>1757787536381</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1757787536382</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,8 +309,7 @@
     <MESSAGE value="[update] added more complex data structures" />
     <MESSAGE value="[update] added alt spelling support" />
     <MESSAGE value="[update] prepared for exe conversion" />
-    <MESSAGE value="[update] Added search suggestions and base for options menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] Added search suggestions and base for options menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] prepared for exe conversion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
