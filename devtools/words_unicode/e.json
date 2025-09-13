@@ -7,7 +7,7 @@
         "alt_spellings": [],
         "forms": {},
         "word_class": "noun",
-        "translation": "\u751f\u614b\u7cfb\u7d71",
+        "translation": "生態系統",
         "definition": "A community of interacting organisms and their physical environment."
     },
     {
@@ -18,7 +18,7 @@
         "alt_spellings": [],
         "forms": {},
         "word_class": "noun phrase",
-        "translation": "\u96fb\u5b50\u50b3\u905e\u93c8",
+        "translation": "電子傳遞鏈",
         "definition": "The final respiration stage, generating ATP via oxidative phosphorylation."
     },
     {
@@ -28,15 +28,10 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "embryonic"
-            ],
-            "adverb": [
-                "embryonically"
-            ]
+            "adjective": ["embryonic"]
         },
         "word_class": "noun",
-        "translation": "\u80da\u80ce",
+        "translation": "胚胎",
         "definition": "Developing organism from zygote to 8 weeks (humans)."
     },
     {
@@ -46,15 +41,10 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "enzymatic"
-            ],
-            "adverb": [
-                "enzymatically"
-            ]
+            "adjective": ["enzymatic"]
         },
         "word_class": "noun",
-        "translation": "\u9176",
+        "translation": "酶",
         "definition": "A biological catalyst that speeds up chemical reactions without being consumed."
     }
 ]

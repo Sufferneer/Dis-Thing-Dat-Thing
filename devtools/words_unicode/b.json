@@ -17,33 +17,10 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "biodiverse"
-            ],
-            "adverb": [
-                "biodiversely"
-            ]
+            "adjective": ["biodiverse"]
         },
         "word_class": "noun",
         "translation": "生物多樣性",
         "definition": "The variety of life in an ecosystem, including species and genetic diversity."
-    },
-    {
-        "word": "biology",
-        "plural": "",
-        "redirects": [],
-        "full": "",
-        "alt_spellings": [],
-        "forms": {
-            "adjective": [
-                "biological"
-            ],
-            "adverb": [
-                "biologically"
-            ]
-        },
-        "word_class": "noun",
-        "translation": "生物學",
-        "definition": "The study of all living organisms and their functions."
     }
 ]

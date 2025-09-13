@@ -3,11 +3,12 @@ This text file shows the format of words in all dictionary entries.
 Rules:
 - All the wording of keywords abides Biology DSE guidelines.
 - All keywords are either nouns or noun phrases
+- If the desired keyword is an adjective, use its noun form.
 - All words uses their British spelling by default
 - Should the British spelling be different to the American spelling,
     It should be supplemented in the "alt_spellings" array.
 - Translations should be in Traditional Chinese.
-- All Chinese characters should use the most widely accepted writing forms.
+- All Chinese characters should use the commonly used writing forms.
 (e.g. 睾 should be 睪)
 - If possible, definitions and translations should abide by official Biology DSE definitions.
 - Some Chinese translations of molecules with long names (e.g. DNA, ATP, etc.) are

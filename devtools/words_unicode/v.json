@@ -6,16 +6,8 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "vaccinate",
-                "vaccinates",
-                "vaccinating",
-                "vaccinated",
-                "vaccinated"
-            ],
-            "noun, object": [
-                "vaccine"
-            ]
+            "verb": ["vaccinate", "vaccinates", "vaccinating", "vaccinated", "vaccinated"],
+            "noun, object": ["vaccine"]
         },
         "word_class": "noun",
         "translation": "疫苗接種",
@@ -28,13 +20,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "ventilate",
-                "ventilates",
-                "ventilating",
-                "ventilated",
-                "ventilated"
-            ]
+            "verb": ["ventilate", "ventilates", "ventilating", "ventilated", "ventilated"]
         },
         "word_class": "noun",
         "translation": "通氣",
