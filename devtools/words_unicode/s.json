@@ -6,13 +6,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb, dispersal": [
-                "disperse",
-                "disperses",
-                "dispersing",
-                "dispersed",
-                "dispersed"
-            ]
+            "verb, dispersal": ["disperse", "disperses", "dispersing", "dispersed", "dispersed"]
         },
         "word_class": "noun",
         "translation": "種子傳播",
@@ -25,13 +19,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "self-pollinate",
-                "self-pollinates",
-                "self-pollinating",
-                "self-pollinated",
-                "self-pollinated"
-            ]
+            "verb": ["self pollinate", "self pollinates", "self pollinating", "self pollinated", "self pollinated"]
         },
         "word_class": "noun",
         "translation": "自花傳粉",
@@ -44,14 +32,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adverb, sexual": ["sexually"],
-            "verb": [
-                "sexually reproduce",
-                "sexually reproduces",
-                "sexually reproducing",
-                "sexually reproduced",
-                "sexually reproduced"
-            ]
+            "verb": ["sexually reproduce", "sexually reproduces", "sexually reproducing", "sexually reproduced", "sexually reproduced"]
         },
         "word_class": "noun phrase",
         "translation": "有性生殖",
@@ -64,9 +45,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "spermous"
-            ]
+            "adjective": ["spermous"]
         },
         "word_class": "noun",
         "translation": "精子",
@@ -112,13 +91,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "succeed",
-                "succeeds",
-                "succeeding",
-                "succeeded",
-                "succeeded"
-            ]
+            "verb": ["succeed", "succeeds", "succeeding", "succeeded", "succeeded"]
         },
         "word_class": "noun",
         "translation": "演替",

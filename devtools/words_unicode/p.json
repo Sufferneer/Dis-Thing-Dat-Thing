@@ -6,12 +6,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "pathogenic"
-            ],
-            "adverb": [
-                "pathogenically"
-            ]
+            "adjective": ["pathogenic"]
         },
         "word_class": "noun",
         "translation": "病原體",
@@ -24,12 +19,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "peristaltic"
-            ],
-            "adverb": [
-                "peristaltically"
-            ]
+            "adjective": ["peristaltic"]
         },
         "word_class": "noun",
         "translation": "蠕動",
@@ -64,19 +54,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "photosynthetic"
-            ],
-            "adverb": [
-                "photosynthetically"
-            ],
-            "verb": [
-                "photosynthesize",
-                "photosynthesizes",
-                "photosynthesizing",
-                "photosynthesized",
-                "photosynthesized"
-            ]
+            "verb": ["photosynthesize", "photosynthesizes", "photosynthesizing", "photosynthesized", "photosynthesized"]
         },
         "word_class": "noun",
         "translation": "光合作用",
@@ -89,9 +67,7 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "placental"
-            ]
+            "adjective": ["placental"]
         },
         "word_class": "noun",
         "translation": "胎盤",
@@ -100,17 +76,11 @@
     {
         "word": "pollen grain",
         "plural": "pollen grains",
-        "redirects": ["pollen"],
+        "redirects": [],
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb, pollen": [
-                "pollinate",
-                "pollinates",
-                "pollination",
-                "pollinated",
-                "pollinated"
-            ]
+            "verb, pollen": ["pollinate", "pollinates", "pollination", "pollinated", "pollinated"]
         },
         "word_class": "noun",
         "translation": "花粉粒",
@@ -123,16 +93,8 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "pollinate",
-                "pollinates",
-                "pollination",
-                "pollinated",
-                "pollinated"
-            ],
-            "noun, product": [
-                "pollen"
-            ]
+            "verb": ["pollinate", "pollinates", "pollination", "pollinated", "pollinated"],
+            "noun, product": ["pollen"]
         },
         "word_class": "noun",
         "translation": "傳粉",

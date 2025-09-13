@@ -7,7 +7,7 @@
         "alt_spellings": [],
         "forms": {},
         "word_class": "noun",
-        "translation": "\u81bd\u6c41",
+        "translation": "膽汁",
         "definition": "Liver secretion emulsifying fats for facilitating lipid digestion (stored in gallbladder)."
     },
     {
@@ -17,15 +17,10 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "biodiverse"
-            ],
-            "adverb": [
-                "biodiversely"
-            ]
+            "adjective": ["biodiverse"]
         },
         "word_class": "noun",
-        "translation": "\u751f\u7269\u591a\u6a23\u6027",
+        "translation": "生物多樣性",
         "definition": "The variety of life in an ecosystem, including species and genetic diversity."
     }
 ]

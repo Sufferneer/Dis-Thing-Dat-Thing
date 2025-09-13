@@ -6,19 +6,11 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "vaccinate",
-                "vaccinates",
-                "vaccinating",
-                "vaccinated",
-                "vaccinated"
-            ],
-            "noun, object": [
-                "vaccine"
-            ]
+            "verb": ["vaccinate", "vaccinates", "vaccinating", "vaccinated", "vaccinated"],
+            "noun, object": ["vaccine"]
         },
         "word_class": "noun",
-        "translation": "\u75ab\u82d7\u63a5\u7a2e",
+        "translation": "疫苗接種",
         "definition": "The administration of a vaccine to stimulate immunity against a disease."
     },
     {
@@ -28,16 +20,10 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "verb": [
-                "ventilate",
-                "ventilates",
-                "ventilating",
-                "ventilated",
-                "ventilated"
-            ]
+            "verb": ["ventilate", "ventilates", "ventilating", "ventilated", "ventilated"]
         },
         "word_class": "noun",
-        "translation": "\u901a\u6c23",
+        "translation": "通氣",
         "definition": "Mechanical process of breathing (inspiration + expiration)."
     },
     {
@@ -48,7 +34,7 @@
         "alt_spellings": [],
         "forms": {},
         "word_class": "noun",
-        "translation": "\u7d68\u6bdb",
+        "translation": "絨毛",
         "definition": "Finger-like projections in small intestine increasing absorption area."
     },
     {

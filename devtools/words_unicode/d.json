@@ -1,0 +1,62 @@
+[
+    {
+        "word": "diaphragm",
+        "plural": "diaphragms",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {},
+        "word_class": "noun",
+        "translation": "橫膈膜",
+        "definition": "Dome-shaped muscle below lungs controlling inhalation/exhalation."
+    },
+    {
+        "word": "diffusion",
+        "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": [
+                "diffuse",
+                "diffuses",
+                "diffusing",
+                "diffused",
+                "diffused"
+            ]
+        },
+        "word_class": "noun",
+        "translation": "擴散",
+        "definition": "The passive movement of molecules from high to low concentration."
+    },
+    {
+        "word": "DNA",
+        "plural": "",
+        "redirects": [],
+        "full": "deoxyribonucleic acid",
+        "alt_spellings": [],
+        "forms": {},
+        "word_class": "noun",
+        "translation": "DNA",
+        "definition": "A nucleic acid that carries genetic information involving protein synthesis."
+    },
+    {
+        "word": "DNA replication",
+        "plural": "",
+        "redirects": [],
+        "full": "",
+        "alt_spellings": [],
+        "forms": {
+            "verb": [
+                "replicate",
+                "replicates",
+                "replicating",
+                "replicated",
+                "replicated"
+            ]
+        },
+        "word_class": "noun",
+        "translation": "DNA複製",
+        "definition": "The process where DNA makes an identical copy before cell division."
+    }
+]

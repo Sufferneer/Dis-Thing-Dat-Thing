@@ -6,23 +6,12 @@
         "full": "",
         "alt_spellings": [],
         "forms": {
-            "adjective": [
-                "respiratory"
-            ],
-            "adverb": [
-                "respiratorily"
-            ],
-            "verb": [
-                "respire",
-                "respires",
-                "respiring",
-                "respired",
-                "respired"
-            ]
+            "verb": ["respire", "respires", "respiring", "respired", "respired"],
+            "adjective": ["respiratory"]
         },
         "word_class": "noun",
-        "translation": "\u547c\u5438\u4f5c\u7528",
-        "definition": "The metabolic process where organisms convert glucose into energy (ATP), releasing CO\u2082."
+        "translation": "呼吸作用",
+        "definition": "The metabolic process where organisms convert glucose into energy (ATP), releasing CO₂."
     },
     {
         "word": "root hair",
@@ -32,7 +21,7 @@
         "alt_spellings": [],
         "forms": {},
         "word_class": "noun",
-        "translation": "\u6839\u6bdb",
+        "translation": "根毛",
         "definition": "Microscopic extensions of root epidermis increasing absorption surface area."
     },
     {

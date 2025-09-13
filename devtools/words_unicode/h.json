@@ -9,8 +9,8 @@
         ],
         "forms": {},
         "word_class": "noun",
-        "translation": "\u8840\u7d05\u86cb\u767d",
-        "definition": "Iron-containing protein in RBCs that binds O\u2082 for transport."
+        "translation": "血紅蛋白",
+        "definition": "Iron-containing protein in RBCs that binds O₂ for transport."
     },
     {
         "word": "homeostasis",
@@ -21,13 +21,10 @@
         "forms": {
             "adjective": [
                 "homeostatic"
-            ],
-            "adverb": [
-                "homeostatically"
             ]
         },
         "word_class": "noun",
-        "translation": "\u9ad4\u5167\u5e73\u8861",
+        "translation": "體內平衡",
         "definition": "The maintenance of a stable internal environment despite external changes."
     }
 ]
