@@ -1,3 +1,5 @@
+.venv
+.idea
 save.json
 cx_setup.py
 game.ico
