@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Deleted some files">
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Probably the final build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/manual.txt" beforeDir="false" afterPath="$PROJECT_DIR$/manual.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artsrc/ccc_sprites_atlas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/background_overlay.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Sufferneer/PycharmProjects/SJACS_SBA/devtools",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -252,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757848344306</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[update] Probably the final build">
+      <option name="closed" value="true" />
+      <created>1757854136666</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1757854136666</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +298,8 @@
     <MESSAGE value="[update] Updated .gitignore" />
     <MESSAGE value="[update] Added options and reorganized files" />
     <MESSAGE value="[update] Deleted some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] Deleted some files" />
+    <MESSAGE value="[update] Probably the final build" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] Probably the final build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
