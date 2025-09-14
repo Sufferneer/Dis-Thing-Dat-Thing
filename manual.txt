@@ -1,6 +1,6 @@
 OPERATION
 This program requires both a mouse and a keyboard to navigate through menus and input letters.
-HE is shown on screen at all times.
+During the course, CCC will be referred to as HIM for comedic effect.
 To access a menu, hover your mouse over its designated button and press your LEFT MOUSE button.
 To exit a menu, press ESCAPE on your keyboard or click on the exit button on the top left of the screen. (if available)
 Some menus are scrollable. Use the MOUSE WHEEL to scroll up and down in menus.

@@ -4,58 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Updated .gitignore">
-      <change afterPath="$PROJECT_DIR$/assets/data/manual.txt" afterDir="false" />
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Deleted some files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/horror_head.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/horror_head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/ccc/horror_mouth.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ccc/horror_mouth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/d.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/e.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/g.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/g.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/h.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/j.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/j.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/k.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/k.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/l.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/l.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/m.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/n.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/n.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/o.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/o.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/p.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/r.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/r.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/s.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/s.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/t.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/v.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/v.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/x.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/x.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/words/z.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/z.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/json_formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/json_formatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/unicode_fix.py" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/unicode_fix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/word.csv" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/word.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/a.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/b.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/c.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/d.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/e.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/f.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/g.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/g.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/h.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/h.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/j.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/j.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/k.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/k.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/l.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/l.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/m.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/n.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/n.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/o.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/o.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/p.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/p.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/r.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/r.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/s.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/s.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/t.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/t.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/v.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/v.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/x.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/x.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/words_unicode/z.json" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/words_unicode/z.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/manual.txt" beforeDir="false" afterPath="$PROJECT_DIR$/manual.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/banner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/word_documentation.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,29 +47,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Python.Constants.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CoolUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.console_prototype.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fetch_from_cambridge.executor&quot;: &quot;Run&quot;,
-    &quot;Python.formatter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.old_console_prototype.executor&quot;: &quot;Run&quot;,
-    &quot;Python.script.executor&quot;: &quot;Run&quot;,
-    &quot;Python.script_new.executor&quot;: &quot;Run&quot;,
-    &quot;Python.text.executor&quot;: &quot;Run&quot;,
-    &quot;Python.unicode_fix.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA/devtools&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.Constants.executor": "Run",
+    "Python.CoolUtils.executor": "Run",
+    "Python.console_prototype.executor": "Run",
+    "Python.cx_setup.executor": "Run",
+    "Python.fetch_from_cambridge.executor": "Run",
+    "Python.formatter.executor": "Run",
+    "Python.game.executor": "Run",
+    "Python.old_console_prototype.executor": "Run",
+    "Python.script.executor": "Run",
+    "Python.script_new.executor": "Run",
+    "Python.text.executor": "Run",
+    "Python.unicode_fix.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Sufferneer/PycharmProjects/SJACS_SBA/devtools",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\devtools" />
@@ -124,11 +78,11 @@
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\source\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\assets\data" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\devtools" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\assets" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\devtools\aswords" />
-      <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\assets\words" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -282,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757789299341</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="[update] Added options and reorganized files">
+      <option name="closed" value="true" />
+      <created>1757848209632</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1757848209632</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[update] Deleted some files">
+      <option name="closed" value="true" />
+      <created>1757848344306</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757848344306</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,7 +289,9 @@
     <MESSAGE value="[update] prepared for exe conversion" />
     <MESSAGE value="[update] Added search suggestions and base for options menu" />
     <MESSAGE value="[update] Updated .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] Updated .gitignore" />
+    <MESSAGE value="[update] Added options and reorganized files" />
+    <MESSAGE value="[update] Deleted some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] Deleted some files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -16,20 +16,21 @@ import pygame
 from math import sin, cos, ceil, pow, pi
 from random import random, randint, choice
 
-clock = pygame.time.Clock()
-curTime = pygame.time.get_ticks()
-FPS:int = 60 # ! I won't recommend on touching this one.
-SCREENSIZE:tuple = (1280, 720)
-FONT_WIDTH_RATIO:float = 0.5625 # Because the font size does not equal to a character's width, this value is multiplied by the
-                          # font size of a text to get its character width
+if __name__ == '__main__':
+    clock = pygame.time.Clock()
+    curTime = pygame.time.get_ticks()
+    FPS:int = 60 # ! I won't recommend on touching this one.
+    SCREENSIZE:tuple = (1280, 720)
+    FONT_WIDTH_RATIO:float = 0.5625 # Because the font size does not equal to a character's width, this value is multiplied by the
+                              # font size of a text to get its character width
 
-pygame.init()
-pygame.display.set_caption('Dis Thing Dat Thing with CCC')
-screen = pygame.display.set_mode(SCREENSIZE)
-mousePos = pygame.mouse.get_pos() # Mouse position variable that updates every tick.
-DIALOGUE_SILENT_CHARS:list = [' ', ',', "'", '"', '.', '!', '?', '(', ')'] # These characters do NOT play the dialogue sound
-DIALOGUE_PAUSE_CHARS:list = [',', ';', ':', '.', '!', '?'] # These characters delay the dialogue
-pygame.mixer.music.set_volume(0)
+    pygame.init()
+    pygame.display.set_caption('Dis Thing Dat Thing with CCC')
+    screen = pygame.display.set_mode(SCREENSIZE)
+    mousePos = pygame.mouse.get_pos() # Mouse position variable that updates every tick.
+    DIALOGUE_SILENT_CHARS:list = [' ', ',', "'", '"', '.', '!', '?', '(', ')'] # These characters do NOT play the dialogue sound
+    DIALOGUE_PAUSE_CHARS:list = [',', ';', ':', '.', '!', '?'] # These characters delay the dialogue
+    pygame.mixer.music.set_volume(0)
 
 def get_asset_path(path):
     # Simple function that returns the relative path of the assets.
@@ -74,16 +75,17 @@ def get_used_spelling(word:str, word_alt:str = '', reverse:bool = False):
     else:
         return word_alt if not reverse else word
 
-pygame.display.set_icon(pygame.image.load(get_asset_path('images/icon.png')))
-# CONSTANTS FOR SOUNDS
-BUTTON_HOVER_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
-BUTTON_PRESS_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/click.ogg'))
-TEXT_TYPE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
-TEXT_ERASE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/release.ogg'))
-MENU_EXIT_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/toggle_off.ogg'))
+if __name__ == '__main__':
+    pygame.display.set_icon(pygame.image.load(get_asset_path('images/icon.png')))
+    # CONSTANTS FOR SOUNDS
+    BUTTON_HOVER_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
+    BUTTON_PRESS_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/click.ogg'))
+    TEXT_TYPE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/hover.ogg'))
+    TEXT_ERASE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/release.ogg'))
+    MENU_EXIT_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/toggle_off.ogg'))
 
-DIALOGUE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/dialogue.ogg'))
-INVALID_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/invalid.ogg'))
+    DIALOGUE_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/dialogue.ogg'))
+    INVALID_SOUND = pygame.mixer.Sound(get_asset_path('sounds/ui/invalid.ogg'))
 
 # CUSTOM OBJECTS THAT MAKE SPRITE/TEXT CREATION MORE CONVENIENT #
 class SuffSprite(pygame.sprite.Sprite): # Custom sprite.
@@ -176,6 +178,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
     """
     def __init__(self, pos, size, function, base_texture = '', text = '', hover_function = None, text_size = 32, text_color = None, text_hover_size_increase = 16):
         pygame.sprite.Group.__init__(self)
+        self.disabled = False
         self.x = pos[0]
         self.y = pos[1]
         self.hovered = False
@@ -200,7 +203,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
         self.button_text.x = self.x + self.text_size / 2
         self.button_text.y = self.y + self.size[1] / 4
         if self.x + self.size[0] >= mousePos[0] >= self.x and self.y + self.size[1] >= mousePos[1] >= \
-                self.y:
+                self.y and not self.disabled:
             if not self.hovered:
                 self.button_text.set_size(self.text_size + self.text_hover_size_increase)
                 if self.hover_function is not None: self.hover_function()
@@ -408,46 +411,47 @@ class QuizBGTile(SuffSprite):
             self.surface2 = pygame.transform.scale(self.surface, (abs(cos(self.flip_tick)) * 160, 160))
             self.rect2 = self.surface2.get_rect()
         screen.blit(self.surface2, (self.x - abs(cos(min(pi, self.flip_tick))) * 80 + 80, self.y), self.rect2)
-curSave = SuffSave()
-curSave.load('save')
-fpsCounter = SuffText(0, 0, 16, '0 FPS', 16, (255, 255, 255))
-background = SuffSprite(0, 0, 'background_1')
-background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
-background.surface = pygame.transform.scale(background.surface, (background.rect.width, background.rect.height))
-infoText = SuffText(0, 0, 64, 'Dis Thing Dat Thing with CCC', 16,(255, 255, 255))
-infoText.y = SCREENSIZE[1] - infoText.get_height()
-dustGroup = []
-for i in range(20):
-    randomPos = (randint(0, SCREENSIZE[0]), randint(0, SCREENSIZE[1]))
-    dustGroup.append(Dust(randomPos[0], randomPos[1]))
-# the master of the dictionary application
-CCC = CCCSprite(0, 0)
-RANDOM_DIALOGUE = [
-    'Go eat a banana.',
-    'Go home and eat a banana.',
-    'Your mom? Your dad? Who is it?',
-    '12 o\' clock; 3 o\' clock; 6 o\' clock.',
-    'Beijing cerebrum.',
-    'You know Nanjing\'s friend?',
-    'First warning.',
-    'Way too weak.',
-    'Your concept is not clear.',
-    'Dropping is your only option.',
-    'Explain. Describe. Compare.',
-    'I asked you \'cause I KNOW you can\'t hear it.',
-    'Low level.',
-    'Zero marks.',
-    'Correct direction, still zero marks.',
-    'High marks, low intelligence.',
-    'OUT.',
-    'I bet you didn\'t hear that.',
-    'No shame, no pain.',
-    'Shamelessness is the most important way of life.',
-    "Having a son is God's divine punishment of my sins."
-]
-dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() * 1.1, 300), '', 20, 'right')
-bgMode = 1
-changeBG = True
+if __name__ == '__main__':
+    curSave = SuffSave()
+    curSave.load('save')
+    fpsCounter = SuffText(0, 0, 16, '0 FPS', 16, (255, 255, 255))
+    background = SuffSprite(0, 0, 'background_1')
+    background.rect.size = (int(SCREENSIZE[0] * 1.5), int(SCREENSIZE[1] * 1.5))
+    background.surface = pygame.transform.scale(background.surface, (background.rect.width, background.rect.height))
+    infoText = SuffText(0, 0, 64, 'Dis Thing Dat Thing with CCC', 16,(255, 255, 255))
+    infoText.y = SCREENSIZE[1] - infoText.get_height()
+    dustGroup = []
+    for i in range(20):
+        randomPos = (randint(0, SCREENSIZE[0]), randint(0, SCREENSIZE[1]))
+        dustGroup.append(Dust(randomPos[0], randomPos[1]))
+    # the master of the dictionary application
+    CCC = CCCSprite(0, 0)
+    RANDOM_DIALOGUE = [
+        'Go eat a banana.',
+        'Go home and eat a banana.',
+        'Your mom? Your dad? Who is it?',
+        '12 o\' clock; 3 o\' clock; 6 o\' clock.',
+        'Beijing cerebrum.',
+        'You know Nanjing\'s friend?',
+        'First warning.',
+        'Way too weak.',
+        'Your concept is not clear.',
+        'Dropping is your only option.',
+        'Explain. Describe. Compare.',
+        'I asked you \'cause I KNOW you can\'t hear it.',
+        'Low level.',
+        'Zero marks.',
+        'Correct direction, still zero marks.',
+        'High marks, low intelligence.',
+        'OUT.',
+        'I bet you didn\'t hear that.',
+        'No shame, no pain.',
+        'Shamelessness is the most important way of life.',
+        "Having a son is God's divine punishment of my sins."
+    ]
+    dialogueBox = DialogueBox((CCC.x + CCC.head.surface.get_width() * 1.1, 300), '', 20, 'right')
+    bgMode = 1
+    changeBG = True
 def state_pre_functions(): # This function is called every time a menu initializes
     global dustGroup
     global CCC
@@ -511,6 +515,8 @@ class SuffState(): # Parent class. Used for individual menus.
             sys.exit()
 
 class TitleState(SuffState):
+    TITLE_SOUND = pygame.mixer.Sound(get_asset_path('music/intro.ogg'))
+    TITLE_SOUND.set_volume(0.0)
     def __init__(self):
         super().__init__()
     def post_load(self):
@@ -518,9 +524,12 @@ class TitleState(SuffState):
         self.banner = SuffSprite(0, 0, 'banner')
         self.banner.surface.set_alpha(255)
 
-        self.text = SuffText(0, 0, 32, 'Press [ENTER]', 64)
+        self.text = SuffText(0, 0, 32, 'Press Any Mouse Key', 64)
         self.text.x = (SCREENSIZE[0] - self.text.get_width()) / 2
         self.text.y = (SCREENSIZE[1] - self.text.get_height()) - 64
+
+        self.TITLE_SOUND.stop()
+        self.TITLE_SOUND.play()
     def update(self):
         super().update()
         self.banner.draw()
@@ -528,17 +537,18 @@ class TitleState(SuffState):
         self.text.draw()
     def handle_event(self, event):
         super().handle_event(event)
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
-                pygame.mixer.music.load(get_asset_path('music/main_loop.ogg'))
-                pygame.mixer.music.play(-1, 0, randint(4000, 8000))
-                change_state('main_menu')
+        if (event.type == pygame.MOUSEBUTTONDOWN or (event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN)):
+            self.TITLE_SOUND.stop()
+            pygame.mixer.music.load(get_asset_path('music/main_loop.ogg'))
+            pygame.mixer.music.play(-1, 0, randint(4000, 8000))
+            change_state('main_menu')
 
 class MainMenuState(SuffState):
     def __init__(self):
         super().__init__()
     def post_load(self):
         super().post_load()
+        self.renderButtons = False
         def dict_hover():
             global CCC
             CCC.change_expression('happy')
@@ -596,21 +606,26 @@ class MainMenuState(SuffState):
         self.dictionaryButton = SuffButton((10, 10), (SCREENSIZE[0] - 20, SCREENSIZE[1] / 2 - 15), dict,
                                            'main_menu/dictionary_button',
                                            'Dictionary Mode', dict_hover, 96)
+        self.dictionaryButton.disabled = True
         self.quizButton = SuffButton((10, SCREENSIZE[1] / 2 + 5), (SCREENSIZE[0] / 2 - 15, SCREENSIZE[1] / 2 - 15),
                                      quiz, 'main_menu/quiz_button', 'Quiz Mode', quiz_hover, 64)
+        self.quizButton.disabled = True
         self.creditsButton = SuffButton((SCREENSIZE[0] / 2 + 5, SCREENSIZE[1] / 2 + 5),
                                         (SCREENSIZE[0] / 2 - 25 - 165, SCREENSIZE[1] / 2 - 15), credits,
                                         'main_menu/credits_button', 'Credits',
                                         credits_hover, 64)
+        self.creditsButton.disabled = True
         self.optionsButton = SuffButton((SCREENSIZE[0] - 10 - 165, self.creditsButton.y),
                                          (165, 165), options,
                                          'main_menu/options_button', 'Options',
                                          options_hover, 32, None, 4)
+        self.optionsButton.disabled = True
 
         self.infoButton = SuffButton((self.optionsButton.x, SCREENSIZE[1] - 165 - 10),
                                          (165, 165), info,
                                          'main_menu/info_button', 'Manual',
                                          info_hover, 32, None, 8)
+        self.infoButton.disabled = True
         infoText.set_text('Dis Thing Dat Thing with CCC')
     def update(self):
         super().update()
@@ -620,6 +635,14 @@ class MainMenuState(SuffState):
                      CCC.y + CCC.head.surface.get_height() / 2 - mousePos[1])
         CCC.angle = distances[0] / SCREENSIZE[0] * 8 * -45 * distances[1] / SCREENSIZE[1] / 2
 
+        # Prevent user from pressing buttons after going out of menus
+        if not (pygame.mouse.get_pressed(3)[0] or pygame.mouse.get_pressed(3)[1] or pygame.mouse.get_pressed(3)[2]):
+            if not self.renderButtons:
+                self.dictionaryButton.disabled = False
+                self.quizButton.disabled = False
+                self.creditsButton.disabled = False
+                self.optionsButton.disabled = False
+                self.infoButton.disabled = False
         self.dictionaryButton.draw()
         self.quizButton.draw()
         self.creditsButton.draw()
@@ -755,7 +778,8 @@ class OptionsState(SuffState):
 
     def play_dialogue(self, index):
         global dialogueBox
-        dialogueBox = DialogueBox((CCC.x, CCC.y + CCC.head.surface.get_width() // 2), self.AVAILABLE_OPTIONS[index].description, 54, 'left', 1.5, None)
+        dialogueBox = DialogueBox((CCC.x, CCC.y + CCC.head.surface.get_width() // 2),
+                                  self.AVAILABLE_OPTIONS[index].description, 54, 'left', -1)
     def reset_dialogue(self):
         global dialogueBox
         dialogueBox.fade_time = 2
@@ -1263,7 +1287,7 @@ class QuizStartState(SuffState):
         pygame.mixer.music.load(get_asset_path('music/pre_quiz.ogg'))
         pygame.mixer.music.play()
         self.curBeat = 0
-        infoText.set_text('Press [ENTER] To Skip' if curSave.fetch('quiz_highscore') else '')
+        infoText.set_text('Click Anywhere to Skip' if curSave.fetch('quiz_highscore') else '')
         super().post_load()
         self.BPM = 144
 
@@ -1294,9 +1318,8 @@ class QuizStartState(SuffState):
 
     def handle_event(self, event):
         # (Intentional) Without the super() function, quitting is disabled
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN and curSave.fetch('quiz_highscore') is not None:
-                change_state('quiz')
+        if (event.type == pygame.MOUSEBUTTONDOWN or (event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN)) and curSave.fetch('quiz_highscore') is not None:
+            change_state('quiz')
 
 class QuizState(SuffState):
     usesBookmarkWords = False
@@ -1318,6 +1341,7 @@ class QuizState(SuffState):
         self.lives = 3
         self.maxLives = 4
         self.timePenalty = 0.25
+        self.scorePenalty = 0.5
         if curSave.fetch_options('pity_mode'):
             self.lives = 4
             self.maxLives = 6
@@ -1579,10 +1603,11 @@ class QuizState(SuffState):
             leTxt = SuffText(0, SCREENSIZE[1] - self.searchQuery.size, 1, letter, self.searchQuery.size, (128, 0, 0))
             self.wrongLettersTxt.append(leTxt)
     def just_die(self):
+        self.curScore = int(self.curScore * (1 - self.scorePenalty))
         if curSave.fetch('quiz_highscore') is None:
-            curSave['quiz_highscore'] = self.curScore // 4
+            curSave['quiz_highscore'] = self.curScore
         elif self.curScore > curSave.fetch('quiz_highscore'):
-            curSave['quiz_highscore'] = self.curScore // 4
+            curSave['quiz_highscore'] = self.curScore
             QuizGameOverState.highscore = True
         else:
             QuizGameOverState.highscore = False
@@ -1688,10 +1713,10 @@ class QuizGameOverState(SuffState):
                 self.newHighscoreTxt.x = (SCREENSIZE[0] - self.newHighscoreTxt.get_width()) / 2
                 self.newHighscoreTxt.set_alpha(128 if self.highscore else 0)
 
-                self.exitTxt = SuffText(0, 0, 64, 'Press [ENTER] or [ESCAPE] to exit', 32,
+                self.exitTxt = SuffText(0, 0, 64, 'Click anywhere to exit', 32,
                                         (255, 255, 255))
                 self.exitTxt.x = (SCREENSIZE[0] - self.exitTxt.get_width()) / 2
-                self.exitTxt.y = SCREENSIZE[1] - self.exitTxt.get_height()
+                self.exitTxt.y = SCREENSIZE[1] - self.exitTxt.get_height() - 16
             self.curScoreTxt.draw()
             self.highscoreTxt.draw()
             self.newHighscoreTxt.y = self.highscoreTxt.y - 32 + abs(sin(curTime / 2)) * -20
@@ -1709,11 +1734,10 @@ class QuizGameOverState(SuffState):
     def handle_event(self, event):
         # No quitting
         if self.allowQuit:
-            if event.type == pygame.KEYDOWN:
-                if (event.key == pygame.K_ESCAPE or event.key == pygame.K_RETURN):
-                    pygame.mixer.music.load(get_asset_path('music/main_loop.ogg'))
-                    pygame.mixer.music.play(-1, 0, randint(4000, 8000))
-                    change_state('main_menu')
+            if (event.type == pygame.MOUSEBUTTONDOWN or (event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN)):
+                pygame.mixer.music.load(get_asset_path('music/main_loop.ogg'))
+                pygame.mixer.music.play(-1, 0, randint(4000, 8000))
+                change_state('main_menu')
             super().handle_event(event)
 class CreditsState(SuffState):
     def __init__(self):
@@ -1735,6 +1759,7 @@ class CreditsState(SuffState):
              "default", 16],
             ["", "default", 32],
             ["MUSIC", "default", 96],
+            ["That's CCC! - Nick Tsang", "default", 48],
             ["Artistic Expression - Kawai Sprite", "default", 48],
             ["Megalo Strikes Back - Toby Fox", "default", 48],
             ["All music is either self-made or used under the Creative Commons Attribution-ShareAlike 4.0 License. No copyright infringement is intentionally made.", "default", 16],
@@ -1743,6 +1768,13 @@ class CreditsState(SuffState):
             ["Suffirat Mono - Nick Tsang", "default", 48],
             ["JasonHandwriting4 清松手寫體4 - Jason Yu Ching Sung 游清松", "zh", 32],
             ["All typefaces are either self-made or used under the SIL Open Font License.", "default", 16],
+            ["", "default", 32],
+            ["SPECIAL THANKS", "default", 96],
+            ["YellowAfterlife", "default", 32],
+            ["Miss Chan", "default", 32],
+            ["Mr CCC Himself", "default", 32],
+            ["Jerry", "default", 32],
+            ["Chris", "default", 32],
             ["", "default", 32],
             ["Dis Thing Dat Thing is made by Nick Tsang.", "default", 16],
             ["All characters and other entities appearing in this work are fictitious. Any resemblance to real persons, dead or alive, or other real-life entities, past or present, is purely coincidental.", "default", 16],
@@ -1802,7 +1834,7 @@ class InfoState(SuffState):
     def __init__(self):
         super().__init__()
     def post_load(self):
-        CREDITS_FILE = open(get_asset_path('data/manual.txt'))
+        CREDITS_FILE = open('manual.txt')
         CREDITS = CREDITS_FILE.read().split('\n')
         CREDITS_FILE.close()
         super().post_load()
@@ -1868,11 +1900,14 @@ states = { # Attempt to preload all screens by calling these classes
     'options': OptionsState(),
     'info': InfoState()
 }
-pygame.mixer.music.set_volume(1)
-change_state('title')
 
-while True:
-    for event in pygame.event.get():
-        curState.handle_event(event)
-    curState.update()
-    curState.update_post()
+if __name__ == '__main__':
+    pygame.mixer.music.set_volume(1)
+    change_state('title')
+    TitleState.TITLE_SOUND.set_volume(0.75)
+
+    while True:
+        for event in pygame.event.get():
+            curState.handle_event(event)
+        curState.update()
+        curState.update_post()
