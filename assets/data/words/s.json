@@ -4,7 +4,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb, dispersal": [
                 "disperse",
@@ -14,16 +15,17 @@
                 "dispersed"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "種子傳播",
-        "definition": "Movement of seeds away from parent plant (e.g., wind, animals)."
+        "definition": "The movement of seeds away from parent plant (e.g., wind, animals)."
     },
     {
         "word": "self-pollination",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "self-pollinate",
@@ -33,18 +35,21 @@
                 "self-pollinated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "自花傳粉",
-        "definition": "Pollen transfers to stigma of the same flower/plant."
+        "definition": "The process of pollen transferring to stigma of the same flower/plant."
     },
     {
         "word": "sexual reproduction",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
-            "adverb, sexual": ["sexually"],
+            "adverb, sexual": [
+                "sexually"
+            ],
             "verb": [
                 "sexually reproduce",
                 "sexually reproduces",
@@ -53,64 +58,69 @@
                 "sexually reproduced"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "有性生殖",
-        "definition": "Reproduction involving fusion of male and female gametes."
+        "definition": "A type of reproduction involving fusion of male and female gametes."
     },
     {
         "word": "sperm",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "spermous"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "精子",
-        "definition": "Male gamete, motile and small, produced in testes."
+        "definition": "A male gamete, motile and small, produced in testes."
     },
     {
         "word": "spongy mesophyll",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "海綿組織",
-        "definition": "Leaf tissue with air spaces for gas diffusion in photosynthesis."
+        "definition": "The leaf tissue with air spaces for gas diffusion in photosynthesis."
     },
     {
         "word": "stamen",
         "plural": "stamens",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "雄蕊",
-        "definition": "Male reproductive organ (anther + filament)."
+        "definition": "The male reproductive organ in plants. (anther and filament)"
     },
     {
         "word": "stoma",
         "plural": "stomata",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "氣孔",
-        "definition": "Tiny leaf openings allowing gas exchange (CO₂ in, O₂ out)."
+        "definition": "The tiny leaf openings allowing gas exchange (CO₂ in, O₂ out)."
     },
     {
         "word": "succession",
         "plural": "successions",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "succeed",
@@ -120,7 +130,7 @@
                 "succeeded"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "演替",
         "definition": "The gradual change in an ecosystem's species composition over time."
     }

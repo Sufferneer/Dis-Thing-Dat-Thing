@@ -4,9 +4,9 @@
         "plural": "Calvin cycles",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "卡爾文循環",
         "definition": "Light-independent reactions using ATP and NADPH to fix CO₂ into glucose."
     },
@@ -15,9 +15,9 @@
         "plural": "carbon cycles",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "碳循環",
         "definition": "The movement of carbon between organisms, the atmosphere, and Earth."
     },
@@ -26,9 +26,9 @@
         "plural": "carpels",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "雌蕊",
         "definition": "Female reproductive organ (stigma, style, ovary)."
     },
@@ -37,9 +37,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "葉綠素",
         "definition": "A green pigment in chloroplasts that absorbs light for photosynthesis."
     },
@@ -48,9 +48,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "easter egg",
+        "class": "easter egg",
         "translation": "Whoever wrote this definition is just shoe-shining at this point.",
         "definition": "A horrifyingly talented programmer who is obsessed with the Disney cartoon series Sofia the First."
     },
@@ -59,13 +59,13 @@
         "plural": "chromosomes",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "chromosomal"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "染色體",
         "definition": "A thread-like structure of DNA and proteins carrying genetic information."
     },
@@ -74,7 +74,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "cross pollinate",
@@ -84,7 +84,7 @@
                 "cross pollinated"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "異花傳粉",
         "definition": "Pollen transfers to stigma of a different plant (increases genetic diversity)."
     }

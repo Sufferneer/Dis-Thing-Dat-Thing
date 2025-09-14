@@ -1,0 +1,29 @@
+OPERATION
+This program requires both a mouse and a keyboard to navigate through menus and input letters.
+HE is shown on screen at all times.
+To access a menu, hover your mouse over its designated button and press your LEFT MOUSE button.
+To exit a menu, press ESCAPE on your keyboard or click on the exit button on the top left of the screen. (if available)
+Some menus are scrollable. Use the MOUSE WHEEL to scroll up and down in menus.
+
+DICTIONARY MODE
+Initially, you will be directed to the Search Menu. Use your keyboard to type the word you are searching for.
+Search suggestions will be displayed if one of the words begins with what is in the search bar.
+Click on one of them to copy it to your search bar.
+Press ENTER on your keyboard to search.
+
+QUIZ MODE
+You are given a definition or a translation to correctly guess a word with a time limit.
+Type in your guess and press ENTER on your keyboard to submit your attempt.
+With each incorrect attempt, the remaining time will decrease, and hints is given.
+A correct attempt will grant you the most valuable gift of all - more questions.
+Correct answers will also heighten HIS expectations for you, decreasing your total time limit to a minimum of just 4 seconds.
+
+Red letters are incorrect letters that doesn't exist in the word.
+Yellow letters are misplaced letters that exist in the word but are not in the correct position.
+Green letters are correct letters that exist in the word and are in right position.
+
+You are given three lives at the start. (Four if HE is merciful)
+Once the time runs out, you will lose a life.
+Correctly guess a letter without any mistakes grants you one extra life, up to a maximum of four.
+If you lose all lives, you will be grabbed and executed for your incompetence.
+You will never avoid your inevitable punishment, even by pressing ESCAPE.

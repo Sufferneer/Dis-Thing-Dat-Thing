@@ -4,7 +4,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "respiratory"
@@ -20,30 +21,32 @@
                 "respired"
             ]
         },
-        "word_class": "noun",
-        "translation": "\u547c\u5438\u4f5c\u7528",
-        "definition": "The metabolic process where organisms convert glucose into energy (ATP), releasing CO\u2082."
-    },
-    {
-        "word": "root hair",
-        "plural": "root hairs",
-        "redirects": [],
-        "full": "",
-        "alt_spellings": [],
-        "forms": {},
-        "word_class": "noun",
-        "translation": "\u6839\u6bdb",
-        "definition": "Microscopic extensions of root epidermis increasing absorption surface area."
+        "class": "noun",
+        "translation": "呼吸作用",
+        "definition": "The metabolic process where organisms convert glucose into energy (ATP), releasing CO₂."
     },
     {
         "word": "RNA",
         "plural": "",
         "redirects": [],
         "full": "ribonucleic acid",
-        "alt_spellings": [],
+        "plural_alt": "",
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "RNA",
         "definition": "A nucleic acid that is involved in polypeptide synthesis during protein synthesis."
+    },
+    {
+        "word": "root hair",
+        "plural": "root hairs",
+        "redirects": [],
+        "full": "",
+        "word_alt": "",
+        "plural_alt": "",
+        "forms": {},
+        "class": "noun",
+        "translation": "根毛",
+        "definition": "The microscopic extensions of root epidermis increasing absorption surface area."
     }
 ]

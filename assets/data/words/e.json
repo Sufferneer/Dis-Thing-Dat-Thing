@@ -4,9 +4,10 @@
         "plural": "ecosystems",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u751f\u614b\u7cfb\u7d71",
         "definition": "A community of interacting organisms and their physical environment."
     },
@@ -15,9 +16,10 @@
         "plural": "electron transport chains",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "\u96fb\u5b50\u50b3\u905e\u93c8",
         "definition": "The final respiration stage, generating ATP via oxidative phosphorylation."
     },
@@ -26,7 +28,8 @@
         "plural": "embryos",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "embryonic"
@@ -35,16 +38,17 @@
                 "embryonically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u80da\u80ce",
-        "definition": "Developing organism from zygote to 8 weeks (humans)."
+        "definition": "A developing organism from zygote to 8 weeks (humans)."
     },
     {
         "word": "enzyme",
         "plural": "enzymes",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "enzymatic"
@@ -53,7 +57,7 @@
                 "enzymatically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u9176",
         "definition": "A biological catalyst that speeds up chemical reactions without being consumed."
     }

@@ -6,13 +6,13 @@
             "meiotic cell division"
         ],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "meiotic"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "減數分裂",
         "definition": "A type of cell division producing four genetically diverse gametes with half the chromosome number."
     },
@@ -21,7 +21,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb, menstrual": [
                 "menstruate",
@@ -31,7 +31,7 @@
                 "menstruated"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "月經週期",
         "definition": "Monthly cycle preparing uterus for pregnancy (avg. 28 days)."
     },
@@ -40,7 +40,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "menstruate",
@@ -53,7 +53,7 @@
                 "menstrual"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "月經",
         "definition": "Shedding of uterine lining if fertilization does not occur."
     },
@@ -64,13 +64,13 @@
             "mitotic cell division"
         ],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "mitotic"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "有絲分裂",
         "definition": "A type of cell division producing two genetically identical daughter cells for growth and repair."
     },
@@ -79,7 +79,7 @@
         "plural": "mutations",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "mutate",
@@ -92,7 +92,7 @@
                 "mutant"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "突變",
         "definition": "A change in DNA sequence, which may affect protein function."
     }

@@ -67,6 +67,12 @@ def clamp(val, minimum, maximum): # Bounds a value within a range of numbers (in
     return min(max(val, minimum), maximum)
 def remove_duplicates(leList): # Merge duplicate items from a list into one
     return list(dict.fromkeys(leList))
+def get_used_spelling(word:str, word_alt:str = '', reverse:bool = False):
+    american = curSave.fetch_options('american_spelling')
+    if not american or word_alt == '':
+        return word if not reverse else word_alt
+    else:
+        return word_alt if not reverse else word
 
 pygame.display.set_icon(pygame.image.load(get_asset_path('images/icon.png')))
 # CONSTANTS FOR SOUNDS
@@ -187,7 +193,7 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
         self.base = SuffSprite(self.x, self.y, f'{base_texture}')
         self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
         self.base.surface.set_alpha(128)
-        self.button_text = SuffText(self.x + text_size / 2, self.y + size[1] / 4, size[0] // (self.text_size // 2), self.text, text_size, self.text_color)
+        self.button_text = SuffText(self.x + text_size / 2, self.y + size[1] / 4, size[0] // (self.text_size // 2) if self.text_size > 0 else 0, self.text, text_size, self.text_color)
     def draw(self):
         self.base.x = self.x
         self.base.y = self.y
@@ -219,12 +225,18 @@ class SuffButton(pygame.sprite.Group): # Parent class. Buttons
                     self.base.surface.set_alpha(128)
                     self.base.surface = pygame.transform.scale(self.base.surface, (self.size[0], self.size[1]))
         self.base.draw()
-        self.button_text.draw()
+        if self.text_size > 0:
+            self.button_text.draw()
     def change_base_texture(self, image):
         self.base_texture = image
         self.base.surface = pygame.image.load(
             get_asset_path(f'images/{self.base_texture}.png')).convert_alpha()
+        self.base.surface.set_alpha(128)
 class SuffSave(dict):
+    DEFAULT_OPTIONS = {
+        "american_spelling": False,
+        "easy_mode": False
+    }
     def load(self, directory = 'save'): # load save file from disk to memory
         if not path_exists(directory + '.json'):
             saveFile = open(directory + '.json', 'w') # create new json file if file does not exist
@@ -246,6 +258,14 @@ class SuffSave(dict):
         if variable in list(self.keys()):
             return self[variable]
         return None
+    def fetch_options(self, variable):
+        if 'options' not in list(self.keys()):
+            self['options'] = self.DEFAULT_OPTIONS
+        if variable not in list(self['options'].keys()):
+            self['options'][variable] = self.DEFAULT_OPTIONS[variable]
+        self.flush()
+        return self['options'][variable]
+
 # OBJECTS THAT ARE BUILT ON THE ABOVE CUSTOM OBJECTS #
 # They contain special code that is personalized for them #
 class Dust(SuffSprite): # Ambient dust particles
@@ -676,15 +696,71 @@ class QuizSelectionState(SuffState):
                 self.back_to_main_menu()
 
 class OptionsState(SuffState):
+    class Option():
+        def __init__(self, name, variable_type, choices, display_name, description):
+            self.name = name
+            self.variable_type = variable_type
+            self.choices = choices
+            self.display_name = display_name
+            self.description = description
+
+    AVAILABLE_OPTIONS = [
+        Option('american_spelling', 'bool', [True, False], 'American Spelling', "You're really special, aren't you? Well then, I'll use the American spellings instead."),
+        Option('pity_mode', 'bool', [True, False], 'Pity Mode', "You get more time to answer my questions. And I'm gonna donate more lives to you... For a price.")
+    ]
+    curChoices = []
+    selectedOption:int = 0
     def __init__(self):
         super().__init__()
     def post_load(self):
         super().post_load()
         global CCC
         CCC.change_expression('neutral')
+
+        self.curChoices = [option.choices.index(curSave.fetch_options(option.name)) for option in self.AVAILABLE_OPTIONS]
+        self.optionsTxtGroup = []
         self.exitButton = SuffButton((SCREENSIZE[0] - 80, 8), (72, 72), self.back_to_main_menu,
                                      'exit')
+        self.playedDialogue = False
+        optionTxt:SuffText = SuffText(64, 32, 256, 'OPTIONS', 96, (255, 255, 255))
+        self.optionsTxtGroup.append(optionTxt)
+        for i in range(len(self.AVAILABLE_OPTIONS)):
+            entry = self.AVAILABLE_OPTIONS[i]
+            optionButtonSprite = entry.variable_type
+            if optionButtonSprite == 'bool':
+                optionButtonSprite += '_' + str(curSave.fetch_options(entry.name)).lower()
+
+            optionButton = SuffButton((64, optionTxt.y + optionTxt.get_height() + 32), (72, 72),
+                                      self.change_option, f'options/' + optionButtonSprite, str(i), None, 0)
+            optionTxt = SuffText(optionButton.x + optionButton.size[0] + 16, optionButton.y, 256, entry.display_name, 64, (255, 255, 255))
+            self.optionsTxtGroup.append(optionButton)
+            self.optionsTxtGroup.append(optionTxt)
+
+    def change_option(self):
+        name = self.AVAILABLE_OPTIONS[self.selectedOption].name
+        choices = self.AVAILABLE_OPTIONS[self.selectedOption].choices
+
+        self.curChoices[self.selectedOption] += 1
+        if self.curChoices[self.selectedOption] >= len(choices):
+            self.curChoices[self.selectedOption] = 0
+        curSave['options'][name] = choices[self.curChoices[self.selectedOption]]
+        for sprite in self.optionsTxtGroup:
+            if type(sprite) == SuffButton and sprite.hovered:
+                entry = self.AVAILABLE_OPTIONS[int(sprite.text)]
+                optionButtonSprite = entry.variable_type
+                if optionButtonSprite == 'bool':
+                    optionButtonSprite += '_' + str(curSave.fetch_options(entry.name)).lower()
+                sprite.change_base_texture('options/' + optionButtonSprite)
+        print(curSave['options'])
+
+    def play_dialogue(self, index):
+        global dialogueBox
+        dialogueBox = DialogueBox((CCC.x, CCC.y + CCC.head.surface.get_width() // 2), self.AVAILABLE_OPTIONS[index].description, 54, 'left', 1.5, None)
+    def reset_dialogue(self):
+        global dialogueBox
+        dialogueBox.fade_time = 2
     def back_to_main_menu(self):
+        curSave.flush()
         MENU_EXIT_SOUND.play()
         change_state('main_menu')
     def update(self):
@@ -693,6 +769,19 @@ class OptionsState(SuffState):
         CCC.y = suff_lerp(CCC.y, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3, 1 / FPS * 6)
         CCC.angle = suff_lerp(CCC.angle, 30, 1 / FPS * 6)
         CCC.draw()
+        buttonsHovered = 0
+        for sprite in self.optionsTxtGroup:
+            sprite.draw()
+            if type(sprite) == SuffButton and sprite.hovered:
+                self.selectedOption = int(sprite.text)
+                buttonsHovered += 1
+        if buttonsHovered > 0:
+            if not self.playedDialogue:
+                self.playedDialogue = True
+                self.play_dialogue(self.selectedOption)
+        else:
+            self.playedDialogue = False
+
         self.exitButton.draw()
         dialogueBox.draw()
     def handle_event(self, event):
@@ -739,14 +828,14 @@ class DictionarySearchState(SuffState):
                                      'exit')
 
     def bubble_sort_word(self, letter):
-        arrFile = open(get_asset_path(f'words/{letter}.json'), 'r', encoding = 'utf-8')
+        arrFile = open(get_asset_path(f'data/words/{letter}.json'), 'r', encoding = 'utf-8')
         arr = json_load(arrFile)
         arrFile.close()
         for i in range(len(arr)):
             for j in range(len(arr) - 1):
                 if arr[j]['word'].lower() > arr[j + 1]['word'].lower():
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
-        arrFileWrite = open(get_asset_path(f'words/{letter}.json'), 'w')
+        arrFileWrite = open(get_asset_path(f'data/words/{letter}.json'), 'w')
         arrFileWrite.write(json_dumps(arr, indent = 4, ensure_ascii = False))
         arrFileWrite.close()
 
@@ -756,8 +845,11 @@ class DictionarySearchState(SuffState):
         high = len(wordList) - 1
         while low <= high:
             mid = low + (high - low) // 2
-            if (x.lower() == wordList[mid]['word'].lower() or x.lower() == wordList[mid]['plural'].lower()
-                    or x.lower() in wordList[mid]['redirects'] or x.lower() in wordList[mid]['alt_spellings']):
+            if x.lower() == wordList[mid]['word'].lower() or \
+                    x.lower() == wordList[mid]['plural'].lower() or \
+                    x.lower() in wordList[mid]['redirects'] or \
+                    x.lower() == wordList[mid]['word_alt'] or \
+                    x.lower() == wordList[mid]['plural_alt']:
                 return wordList[mid]
             elif (wordList[mid]['word'].lower() < x.lower()):
                 low = mid + 1
@@ -767,10 +859,10 @@ class DictionarySearchState(SuffState):
 
     def search_for_word(self, word):
         global wordList
-        if len(word) < 1 or not path_exists(get_asset_path(f'words/{word[0]}.json')):
+        if len(word) < 1 or not path_exists(get_asset_path(f'data/words/{word[0]}.json')):
             return None
         self.bubble_sort_word(word[0])
-        wordFile = open(get_asset_path(f'words/{word[0]}.json'), 'r', encoding='utf-8')
+        wordFile = open(get_asset_path(f'data/words/{word[0]}.json'), 'r', encoding='utf-8')
         wordList = json_load(wordFile)
         # print(wordList)
         wordFile.close()
@@ -814,13 +906,16 @@ class DictionarySearchState(SuffState):
     def auto_search(self):
         query = self.searchQuery.text
         containingWords = []
-        if len(query) >= 1 and path_exists(get_asset_path(f'words/{query[0]}.json')):
-            wordFile = open(get_asset_path(f'words/{query[0]}.json'), 'r', encoding='utf-8')
+        if len(query) >= 1 and path_exists(get_asset_path(f'data/words/{query[0]}.json')):
+            wordFile = open(get_asset_path(f'data/words/{query[0]}.json'), 'r', encoding='utf-8')
             leWordList = json_load(wordFile)
             wordFile.close()
             for word in leWordList:
-                if word['word'].lower().startswith(query.lower()) and word['word'] != query and word['word_class'] != 'easter egg':
-                    containingWords.append(word['word'])
+                defaultSpelling = get_used_spelling(word['word'], word['word_alt'])
+                if ((word['word'].lower().startswith(query.lower()) and word['word'] != query) or \
+                        (word['word_alt'].lower().startswith(query.lower()) and word['word_alt'] != query)) and \
+                        word['class'] != 'easter egg':
+                    containingWords.append(defaultSpelling)
         # print(containingWords)
         self.render_auto_search_words(containingWords)
 
@@ -883,10 +978,11 @@ class DictionarySearchState(SuffState):
 class DictionaryWordState(SuffState):
     curWordData = {
         "word": "asexual reproduction",
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
         "plural": "",
         "definition": "A form of reproduction that involves a single parent by mitotic cell division.",
@@ -914,24 +1010,28 @@ class DictionaryWordState(SuffState):
         curSave.flush('save')
     def post_load(self):
         super().post_load()
+        defaultSpelling = get_used_spelling(self.curWordData['word'], self.curWordData['word_alt'])
+        altSpelling = get_used_spelling(self.curWordData['word'], self.curWordData['word_alt'], True)
+        defaultPluralSpelling = get_used_spelling(self.curWordData['plural'], self.curWordData['plural_alt'])
+        altPluralSpelling = get_used_spelling(self.curWordData['plural'], self.curWordData['plural_alt'], True)
         self.textGroup = []
-        self.isEasterEgg = self.curWordData['word_class'] == 'easter egg'
-        wordTitle = SuffText(32, 32, 32, self.curWordData['word'], 96,
+        self.isEasterEgg = self.curWordData['class'] == 'easter egg'
+        wordTitle = SuffText(32, 32, 32, defaultSpelling, 96,
                              (255, 255, 255))
         self.textGroup.append(wordTitle)
-        wordClassTxtString = self.curWordData['word_class'] # part of speech
+        wordClassTxtString = self.curWordData['class'] # part of speech
         if len(self.curWordData['plural']) > 0:
-            wordClassTxtString += ', plural \'' + self.curWordData['plural'] + '\'' # plural form
+            wordClassTxtString += ', plural \'' + defaultPluralSpelling + '\'' # plural form
         if len(self.curWordData['full']) > 0:
             wordClassTxtString += ', full form \'' + self.curWordData['full'] + '\'' # plural form
-        wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height(), 32, wordClassTxtString, 32, (255, 255, 255))
+        wordClassTxt = SuffText(32, wordTitle.y + wordTitle.get_height() + 8, 32, wordClassTxtString, 32, (255, 255, 255))
         self.textGroup.append(wordClassTxt)
         wordDefTxt = SuffText(32, wordClassTxt.y + wordClassTxt.get_height() + 32, 48, self.curWordData['definition'], 32, (255, 255, 255))
         self.textGroup.append(wordDefTxt)
         wordTransDescTxt = SuffText(32, wordDefTxt.y + 32 + wordDefTxt.get_height(), 48, '', 32, (255, 255, 255))
         if not self.isEasterEgg:
             if self.curWordData['translation'] != self.curWordData['word']:
-                wordTransDescTxt.set_text(self.curWordData['word'][0].upper() + self.curWordData['word'][1:] + ' means ')
+                wordTransDescTxt.set_text(defaultSpelling[0].upper() + defaultSpelling[1:] + ' means ')
                 self.textGroup.append(wordTransDescTxt)
                 wordTransTxt = SuffText(wordTransDescTxt.x + wordTransDescTxt.get_width(), wordTransDescTxt.y, 48,
                                         self.curWordData['translation'], 32, (255, 255, 255), 'zh')
@@ -942,14 +1042,15 @@ class DictionaryWordState(SuffState):
             dialogueBox = DialogueBox((SCREENSIZE[0] - (CCC.head.rect.width / 4) * 3, SCREENSIZE[1] - (CCC.head.rect.height / 4) * 3), self.curWordData['translation'], 16, 'left', -1)
 
         wordDescTxt = SuffText(32, wordTransDescTxt.y + wordTransDescTxt.get_height() + 32, 48, '', 48, (128, 128, 128))
-        if len(self.curWordData['alt_spellings']) > 0:
-            wordDescTxt.set_text('{ ACCEPTABLE SPELLINGS }')
+        if len(altSpelling) > 0:
+            wordDescTxt.set_text('{ ALTERNATIVE SPELLING }')
             self.textGroup.append(wordDescTxt)
-            altSpellings = self.curWordData['alt_spellings']
-            for word in altSpellings:
-                wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height(), 48, '- ' + word, 32,
-                                       (255, 255, 255))
-                self.textGroup.append(wordDescTxt)
+            altSpellingString = altSpelling
+            if altPluralSpelling != '':
+                altSpellingString += ', plural \'' + altPluralSpelling + '\''
+            wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height(), 48, altSpellingString, 32,
+                                   (255, 255, 255))
+            self.textGroup.append(wordDescTxt)
         if len(self.curWordData['forms']) > 0:
             wordDescTxt = SuffText(32, wordDescTxt.y + wordDescTxt.get_height() + 32, 48, '{ FORMS }', 64,
                                    (128, 128, 128))
@@ -1049,7 +1150,7 @@ class DictionaryBookmarkState(SuffState):
         x = self.curWord
         # print(x)
         if len(x) <= 0: return
-        f = open(get_asset_path(f'words/{x[0]}.json'), 'r', encoding = 'utf-8')
+        f = open(get_asset_path(f'data/words/{x[0]}.json'), 'r', encoding = 'utf-8')
         wordList = json_load(f)
         f.close()
         low = 0
@@ -1201,19 +1302,26 @@ class QuizState(SuffState):
     usesBookmarkWords = False
     def __init__(self):
         self.leWordData = dict()
+        self.defaultSpelling = ''
         self.allowInput = False
         self.derList = []
         for alp in string.ascii_lowercase: # From a to z
-            if path_exists(get_asset_path(f'words/{alp}.json')):
-                file = open(get_asset_path(f'words/{alp}.json'), 'r', encoding = 'utf-8')
+            if path_exists(get_asset_path(f'data/words/{alp}.json')):
+                file = open(get_asset_path(f'data/words/{alp}.json'), 'r', encoding = 'utf-8')
                 leJson = json_load(file)
                 file.close()
                 for item in leJson:
-                    if item['word_class'] != 'easter egg':
+                    if item['class'] != 'easter egg':
                         if (self.usesBookmarkWords and item['word'] in curSave.fetch('bookmarked_words')) or not self.usesBookmarkWords:
                             self.derList.append(item)
 
         self.lives = 3
+        self.maxLives = 4
+        self.timePenalty = 0.25
+        if curSave.fetch_options('pity_mode'):
+            self.lives = 4
+            self.maxLives = 6
+            self.timePenalty = 0.2
         self.cccExpressions = ['horror', 'demon', 'evil', 'smug', 'neutral'] # life based
         self.CCC_HAPPY_EXPRESSIONS = ['smug', 'happy', 'house']
         self.CCC_ANGRY_EXPRESSIONS = ['angry', 'furious']
@@ -1287,20 +1395,23 @@ class QuizState(SuffState):
         self.curScore = 0
         self.reset()
     def reset(self):
-        CCC.change_expression(self.cccExpressions[self.lives])
+        CCC.change_expression(self.cccExpressions[clamp(self.lives, 0, 4)])
         global dialogueBox
         self.attempts = 0
         self.allowInput = True
         self.leWordData = choice(self.derList) # current word, answer
-        # print(self.leWordData['word'])
+        self.defaultSpelling = get_used_spelling(self.leWordData['word'], self.leWordData['word_alt'])
         self.actualInput = ''
         self.searchQuery.set_text(self.string_padding(self.actualInput))
         self.searchQuery.x = (SCREENSIZE[0] - self.searchQuery.get_width()) / 2
         self.searchIBeam.x = self.searchQuery.x + len(
             self.actualInput) * self.searchIBeam.get_width()  # Adjust I-Beam position
-        self.baseTimeLimit = int(clamp(35 - pow(30, 0.05 * self.curScore), 4, 31))
+        self.baseTimeLimit = int(clamp(35 - pow(30, 0.05 * self.curScore), 3, 30))
         # With each correct answer, CCC's patience decreases. When you play really well, you only get 4 seconds to guess.
         # Maximum of 31 seconds are given.
+        if curSave.fetch_options('pity_mode'):
+            self.baseTimeLimit = int(self.baseTimeLimit * 1.5)
+        self.baseTimeLimit += 1
         self.timeLeft = self.baseTimeLimit # Actual timer
         self.misplacedLetters = []  # List of characters that exist in the word but wrong position
         self.correctLetters = []  # List of characters that exist in the word and correct position
@@ -1311,11 +1422,11 @@ class QuizState(SuffState):
         self.wrongLettersTxt = []
         ogDef = self.leWordData['definition']
         leFont = 'default'
-        if choice([True, False]): # 50% chance to display the Chinese definition instead
+        if choice([True, False]) and ogDef == self.leWordData['word']: # 50% chance to display the Chinese definition instead
             ogDef = self.leWordData['translation']
             leFont = 'zh' # Uses Chinese font instead
         senDef = ogDef[0].lower() + ogDef[1:len(ogDef) - 1] + ogDef[len(ogDef) - 1].replace('.', '')
-        partOfSpeech = self.leWordData['word_class']
+        partOfSpeech = self.leWordData['class']
         leDialogue = f'What is the {partOfSpeech} for {senDef}?'
         # print(self.leWordData['word'])
         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2),
@@ -1337,8 +1448,8 @@ class QuizState(SuffState):
         self.bg.draw()
         global dialogueBox
 
-        self.jeff_velocity = suff_lerp(self.jeff_velocity, 240 + (3 - self.lives) * 120, 1 / FPS * 4) # Tiles scroll faster with each life lost
-        self.cccVelocityX = suff_lerp(self.cccVelocityX, 150 + (3 - self.lives) * 80, 1 / FPS * 2)
+        self.jeff_velocity = suff_lerp(self.jeff_velocity, max(0, 240 + (3 - self.lives) * 120), 1 / FPS * 4) # Tiles scroll faster with each life lost
+        self.cccVelocityX = suff_lerp(self.cccVelocityX, max(0, 150 + (3 - self.lives) * 80), 1 / FPS * 2)
         self.cccVelocityY = suff_lerp(self.cccVelocityY, 50 + max(0, 3 - self.lives) * 50, 1 / FPS * 2)
         for i in range(len(self.jeffs)):
             self.jeffs[i].x -= 1 / FPS * self.jeff_velocity
@@ -1378,10 +1489,10 @@ class QuizState(SuffState):
                 self.misplacedLettersTxt = []
                 self.wrongLettersTxt = []
                 CCC.change_expression(choice(self.CCC_ANGRY_EXPRESSIONS))
-                leLine = 'The word is ' + self.leWordData['word'] + '. ' + choice(self.CCC_ANGRY_LINES)
+                leLine = 'The word is ' + self.defaultSpelling + '. ' + choice(self.CCC_ANGRY_LINES)
                 dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                           leLine, min(32, len(leLine)), 'up', 1, self.reset)
-                self.lives = clamp(self.lives - 1, 0, 4)
+                self.lives = clamp(self.lives - 1, 0, self.maxLives)
                 self.remove_heart()
                 if self.lives <= 0:
                     self.just_die()
@@ -1412,16 +1523,16 @@ class QuizState(SuffState):
             letter.y = self.searchQuery.y + sin(letter.x + curTime / 5) * 4
             letter.draw()
         for l in range(len(self.misplacedLettersTxt)):
-            self.misplacedLettersTxt[l].x = (SCREENSIZE[0] - self.misplacedLettersTxt[l].size) / 2 + sin(l + curTime / len(self.leWordData['word'])) * self.searchQuery.get_width() / 2
-            self.misplacedLettersTxt[l].y = self.searchQuery.y - 64 + cos(l + curTime / len(self.leWordData['word'])) * 16
+            self.misplacedLettersTxt[l].x = (SCREENSIZE[0] - self.misplacedLettersTxt[l].size) / 2 + sin(l + curTime / len(self.defaultSpelling)) * self.searchQuery.get_width() / 2
+            self.misplacedLettersTxt[l].y = self.searchQuery.y - 64 + cos(l + curTime / len(self.defaultSpelling)) * 16
             self.misplacedLettersTxt[l].draw()
         for l in range(len(self.wrongLettersTxt)):
-            self.wrongLettersTxt[l].x = (SCREENSIZE[0] - self.wrongLettersTxt[l].size) / 2 + sin(l + curTime / len(self.leWordData['word'])) * SCREENSIZE[0] / 4
+            self.wrongLettersTxt[l].x = (SCREENSIZE[0] - self.wrongLettersTxt[l].size) / 2 + sin(l + curTime / len(self.defaultSpelling)) * SCREENSIZE[0] / 4
             self.wrongLettersTxt[l].draw()
 
         if self.allowInput:
             self.searchQuery.draw()
-            if len(self.actualInput) < len(self.leWordData['word']):
+            if len(self.actualInput) < len(self.defaultSpelling):
                 self.searchIBeam.draw()
 
         self.flash.surface.set_alpha(suff_lerp(self.flash.surface.get_alpha(), 0, 1 / FPS * 6))
@@ -1429,11 +1540,11 @@ class QuizState(SuffState):
 
     def string_padding(self, strin):
         leString = strin
-        for i in range(max(0, len(self.leWordData['word']) - len(strin))):
-            if self.leWordData['word'][i + len(strin)].isalpha():
+        for i in range(max(0, len(self.defaultSpelling) - len(strin))):
+            if self.defaultSpelling[i + len(strin)].isalpha():
                 leString += '_'
             else:
-                leString += self.leWordData['word'][i + len(strin)]
+                leString += self.defaultSpelling[i + len(strin)]
         return leString
 
 
@@ -1469,9 +1580,9 @@ class QuizState(SuffState):
             self.wrongLettersTxt.append(leTxt)
     def just_die(self):
         if curSave.fetch('quiz_highscore') is None:
-            curSave['quiz_highscore'] = self.curScore
+            curSave['quiz_highscore'] = self.curScore // 4
         elif self.curScore > curSave.fetch('quiz_highscore'):
-            curSave['quiz_highscore'] = self.curScore
+            curSave['quiz_highscore'] = self.curScore // 4
             QuizGameOverState.highscore = True
         else:
             QuizGameOverState.highscore = False
@@ -1500,13 +1611,13 @@ class QuizState(SuffState):
                         dialogueBox.box_text.set_text(dialogueBox.displayed_text)
                         return
                     self.attempts += 1
-                    if self.actualInput.lower().strip() == self.leWordData['word'].lower():
+                    if self.actualInput.lower().strip() == self.defaultSpelling.lower():
                         self.correctLettersTxt = []
                         self.misplacedLettersTxt = []
                         self.wrongLettersTxt = []
                         dialogueBox = DialogueBox((SCREENSIZE[0] / 2, SCREENSIZE[1] / 2 - 200),
                                   choice(self.CCC_HAPPY_LINES), 16, 'up', 1, self.reset)
-                        if self.lives < 4 and self.attempts <= 1: # Limit tries
+                        if self.lives < self.maxLives and self.attempts <= 1: # Limit tries
                             self.lives += 1 # Extra life for first-guesses
                             self.add_heart()
                         self.curScore += 1
@@ -1516,12 +1627,12 @@ class QuizState(SuffState):
                     else:
                         prevCorrectLetters = self.correctLetters
                         prevMisplacedLetters = self.misplacedLetters
-                        self.update_letter_list(self.actualInput.lower().strip(), self.leWordData['word'])
+                        self.update_letter_list(self.actualInput.lower().strip(), self.defaultSpelling)
                         INVALID_SOUND.play()
-                        self.timeLeft -= (self.baseTimeLimit - 1) / 4
+                        self.timeLeft -= (self.baseTimeLimit - 1) * self.timePenalty
                     self.actualInput = ''
                     self.searchQuery.set_text(self.string_padding(self.actualInput))
-            elif len(self.actualInput) < len(self.leWordData['word']):
+            elif len(self.actualInput) < len(self.defaultSpelling):
                 self.actualInput += event.unicode
                 self.searchQuery.set_text(self.string_padding(self.actualInput))
                 TEXT_TYPE_SOUND.play()
@@ -1608,7 +1719,7 @@ class CreditsState(SuffState):
     def __init__(self):
         super().__init__()
     def post_load(self):
-        CREDITS = [
+        CREDITS = [ # Credits are hard-coded to ensure no one maliciously changes anything
             ["PROGRAMMING", "default", 96], # Text, Font, Font Size
             ["Nick Tsang", "default", 48],
             ["", "default", 32],
@@ -1691,43 +1802,16 @@ class InfoState(SuffState):
     def __init__(self):
         super().__init__()
     def post_load(self):
-        CREDITS = [
-            ["OPERATION"],
-            ["This program requires both a mouse and a keyboard to navigate through menus and input letters. "],
-            ["To access a menu, hover your mouse over its designated button and press your LEFT MOUSE button."],
-            ["To exit a menu, press ESCAPE on your keyboard or click on the exit button on the top left of the screen. (if available)"],
-            ["Some menus are scrollable. Use the MOUSE WHEEL to scroll up and down in menus."],
-            [""],
-            ["DICTIONARY MODE"],
-            ["Initially, you will be directed to the Search Menu. Use your keyboard to type the word you are searching for."],
-            ["Search suggestions will be displayed if one of the words begins with what is in the search bar."],
-            ["Click on one of them to copy it to your search bar."],
-            ["Press ENTER on your keyboard to search."],
-            [""],
-            ["QUIZ MODE"],
-            ["You are given a definition or a translation to correctly guess a word with a time limit."],
-            ["Type in your guess and press ENTER on your keyboard to submit your attempt."],
-            ["With each incorrect attempt, the remaining time will decrease, and hints is given."],
-            ["A correct attempt will grant you the most valuable gift of all - more questions."],
-            ["Correct answers will also heighten CCC's expectations for you, decreasing your total time limit to a minimum of just 4 seconds."],
-            [""],
-            ["Red letters are incorrect letters that doesn't exist in the word."],
-            ["Yellow letters are misplaced letters that exist in the word but are not in the correct position."],
-            ["Green letters are correct letters that exist in the word and are in right position."],
-            [""],
-            ["You are given three lives at the start."],
-            ["Once the time runs out, you will lose a life."],
-            ["Correctly guess a letter without any mistakes grants you one extra life, up to a maximum of four."],
-            ["If you lose all lives, you will be grabbed and executed for your incompetence."],
-            ["You will never avoid your inevitable punishment, even by pressing ESCAPE."],
-        ]
+        CREDITS_FILE = open(get_asset_path('data/manual.txt'))
+        CREDITS = CREDITS_FILE.read().split('\n')
+        CREDITS_FILE.close()
         super().post_load()
         self.textGroup = []
 
         prevHeight = 32
         for str in CREDITS:
-            wordSize = 96 if str[0].isupper() else 32
-            wordTitle = SuffText(32, prevHeight, int(SCREENSIZE[0] / wordSize), str[0], wordSize,
+            wordSize = 96 if str.isupper() else 32
+            wordTitle = SuffText(32, prevHeight, int(SCREENSIZE[0] / wordSize), str, wordSize,
                                  (255, 255, 255))
             self.textGroup.append(wordTitle)
             prevHeight += wordTitle.get_height() + wordTitle.size // 2

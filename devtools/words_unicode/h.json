@@ -4,11 +4,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [
-            "hemoglobin"
-        ],
+        "word_alt": "hemoglobin",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "血紅蛋白",
         "definition": "Iron-containing protein in RBCs that binds O₂ for transport."
     },
@@ -17,13 +15,13 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "homeostatic"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "體內平衡",
         "definition": "The maintenance of a stable internal environment despite external changes."
     }

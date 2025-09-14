@@ -4,7 +4,8 @@
         "plural": "pathogens",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "pathogenic"
@@ -13,7 +14,7 @@
                 "pathogenically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "病原體",
         "definition": "A disease-causing microorganism (e.g., bacteria, viruses, fungi)."
     },
@@ -22,7 +23,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "peristaltic"
@@ -31,38 +33,41 @@
                 "peristaltically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "蠕動",
-        "definition": "Wave-like muscle contractions moving food through the digestive tract."
+        "definition": "The wave-like muscle contractions moving food through the digestive tract."
     },
     {
         "word": "petal",
         "plural": "petals",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "花瓣",
-        "definition": "Colorful flower part attracting pollinators."
+        "definition": "The colorful flower part attracting pollinators."
     },
     {
         "word": "phloem",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "韌皮部",
-        "definition": "Vascular tissue transporting sugars (e.g., sucrose) from leaves to other parts."
+        "definition": "A vascular tissue transporting sugars (e.g., sucrose) from leaves to other parts."
     },
     {
         "word": "photosynthesis",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "photosynthetic"
@@ -78,7 +83,7 @@
                 "photosynthesized"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "光合作用",
         "definition": "The process by which green plants use sunlight to synthesize nutrients from CO₂ and water."
     },
@@ -87,22 +92,24 @@
         "plural": "placentas",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "placental"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "胎盤",
-        "definition": "Organ nourishing fetus via umbilical cord; exchanges nutrients/wastes."
+        "definition": "The organ that nourishes the foetus via umbilical cord, exchanging nutrients and wastes."
     },
     {
         "word": "pollen grain",
         "plural": "pollen grains",
         "redirects": ["pollen"],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb, pollen": [
                 "pollinate",
@@ -112,7 +119,7 @@
                 "pollinated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "花粉粒",
         "definition": "Grains that carries male gamete produced by plants."
     },
@@ -121,7 +128,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "pollinate",
@@ -134,7 +142,7 @@
                 "pollen"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "傳粉",
         "definition": "The transfer of pollen from anther to stigma, enabling fertilization."
     }

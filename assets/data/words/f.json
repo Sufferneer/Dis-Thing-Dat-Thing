@@ -4,11 +4,13 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [
-            "fertilization"
-        ],
+        "plural_alt": "",
+        "word_alt": "fertilization",
         "forms": {
-            "adjective": [
+            "adjective, British": [
+                "fertilisable"
+            ],
+            "adjective, American": [
                 "fertilizable"
             ],
             "verb, British": [
@@ -26,18 +28,19 @@
                 "fertilized"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "受精",
-        "definition": "Fusion of male and female gametes to form a zygote."
+        "definition": "The fusion of male and female gametes to form a zygote."
     },
     {
         "word": "food chain",
         "plural": "food chains",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "plural_alt": "",
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "食物鏈",
         "definition": "A sequence showing energy transfer between organisms."
     }

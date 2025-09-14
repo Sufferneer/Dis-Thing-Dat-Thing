@@ -4,24 +4,26 @@
         "plural": "gametes",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u914d\u5b50",
-        "definition": "Reproductive cell (sperm in males, egg in females) with half the chromosomes."
+        "definition": "A reproductive cell (sperm in males, egg in females) with half the chromosomes."
     },
     {
         "word": "gene",
         "plural": "genes",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "genetic"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u57fa\u56e0",
         "definition": "A unit of heredity made of DNA that codes for a specific protein or trait."
     },
@@ -30,11 +32,12 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adverb, genetic": ["genetically"]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "\u57fa\u56e0\u5de5\u7a0b",
         "definition": "The direct manipulation of an organism's genes using biotechnology."
     },
@@ -43,7 +46,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "germinate",
@@ -53,16 +57,16 @@
                 "germinated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u840c\u767c",
-        "definition": "Process where a seed develops into a new plant."
+        "definition": "A process where a seed develops into a new plant."
     },
     {
         "word": "gestation",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "gestate",
@@ -72,18 +76,19 @@
                 "gestated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u598a\u5a20",
-        "definition": "Pregnancy period (\u223c40 weeks in humans)."
+        "definition": "A pregnancy period (\u223c40 weeks in humans)."
     },
     {
         "word": "glycolysis",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u7cd6\u9175\u89e3",
         "definition": "The first stage of respiration, breaking glucose into pyruvate in the cytoplasm."
     },
@@ -92,9 +97,10 @@
         "plural": "guard cells",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u4fdd\u885b\u7d30\u80de",
         "definition": "Cells surrounding stomata that regulate their opening/closing."
     }

@@ -6,7 +6,8 @@
             "meiotic cell division"
         ],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "meiotic"
@@ -15,7 +16,7 @@
                 "meiotically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u6e1b\u6578\u5206\u88c2",
         "definition": "A type of cell division producing four genetically diverse gametes with half the chromosome number."
     },
@@ -24,7 +25,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adverb, menstrual": ["menstrually"],
             "verb, menstrual": [
@@ -35,16 +37,17 @@
                 "menstruated"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "\u6708\u7d93\u9031\u671f",
-        "definition": "Monthly cycle preparing uterus for pregnancy (avg. 28 days)."
+        "definition": "The monthly cycle preparing uterus for pregnancy (avg. 28 days)."
     },
     {
         "word": "menstruation",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": ["menstrual"],
             "adverb": ["menstrually"],
@@ -56,9 +59,9 @@
                 "menstruated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u6708\u7d93",
-        "definition": "Shedding of uterine lining if fertilization does not occur."
+        "definition": "The shedding of uterine lining if fertilization does not occur."
     },
     {
         "word": "mitosis",
@@ -67,7 +70,8 @@
             "mitotic cell division"
         ],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "mitotic"
@@ -76,7 +80,7 @@
                 "mitotically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u6709\u7d72\u5206\u88c2",
         "definition": "A type of cell division producing two genetically identical daughter cells for growth and repair."
     },
@@ -85,7 +89,8 @@
         "plural": "mutations",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "mutate",
@@ -98,8 +103,8 @@
                 "mutant"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u7a81\u8b8a",
-        "definition": "A change in DNA sequence, which may affect protein function."
+        "definition": "A sudden change in DNA sequence, which may affect protein function."
     }
 ]

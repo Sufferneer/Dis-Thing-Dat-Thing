@@ -4,10 +4,11 @@
         "plural": "keystone species",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun phrase",
-        "translation": "\u95dc\u9375\u7269\u7a2e",
+        "class": "noun phrase",
+        "translation": "關鍵物種",
         "definition": "A species with a large impact on ecosystem stability (e.g., wolves)."
     },
     {
@@ -15,10 +16,11 @@
         "plural": "Krebs cycles",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun phrase",
-        "translation": "\u514b\u96f7\u5e03\u65af\u5faa\u74b0",
-        "definition": "A series of reactions in mitochondria producing ATP, NADH, and FADH\u2082."
+        "class": "noun phrase",
+        "translation": "克雷布斯循環",
+        "definition": "A series of reactions in mitochondria producing ATP and NADH."
     }
 ]

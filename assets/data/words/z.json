@@ -4,10 +4,11 @@
         "plural": "zygotes",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u53d7\u7cbe\u5375",
-        "definition": "First diploid cell formed after fertilization."
+        "definition": "The first diploid cell formed after fertilization."
     }
 ]

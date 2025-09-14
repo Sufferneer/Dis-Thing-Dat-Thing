@@ -2,18 +2,18 @@
     {
         "word": "testis",
         "plural": "testes",
-        "redirects": [],
-        "full": "",
-        "alt_spellings": [
+        "redirects": [
             "testicle",
             "testicles"
         ],
+        "full": "",
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "testicular"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "睪丸",
         "definition": "Male organ producing sperm and testosterone."
     },
@@ -22,9 +22,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "easter egg",
+        "class": "easter egg",
         "translation": "This guy has cholera.",
         "definition": "A bad to the bone class mathematician and the unfortunate parent of an Usagi plushie."
     },
@@ -33,13 +33,13 @@
         "plural": "tracheae",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "tracheal"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "氣管",
         "definition": "Windpipe carrying air to bronchi; lined with cilia and mucus."
     },
@@ -48,7 +48,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "transcribe",
@@ -58,7 +58,7 @@
                 "transcribed"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "轉錄",
         "definition": "The synthesis of mRNA from a DNA template in the nucleus."
     },
@@ -67,7 +67,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "translate",
@@ -77,7 +77,7 @@
                 "translated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "轉譯",
         "definition": "The process which ribosomes read mRNA to assemble amino acids into proteins."
     },
@@ -86,7 +86,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "transpire",
@@ -96,7 +96,7 @@
                 "transpired"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "蒸騰作用",
         "definition": "Loss of water vapor from plant leaves, creating a pull."
     },
@@ -105,9 +105,9 @@
         "plural": "trophic levels",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "營養級",
         "definition": "An organism's position in a food chain (e.g., producer, consumer)."
     }

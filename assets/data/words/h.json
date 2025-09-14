@@ -4,20 +4,20 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [
-            "hemoglobin"
-        ],
+        "word_alt": "hemoglobin",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
-        "translation": "\u8840\u7d05\u86cb\u767d",
-        "definition": "Iron-containing protein in RBCs that binds O\u2082 for transport."
+        "class": "noun",
+        "translation": "血紅蛋白",
+        "definition": "An iron-containing protein in RBCs that binds O₂ for transport."
     },
     {
         "word": "homeostasis",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "homeostatic"
@@ -26,8 +26,8 @@
                 "homeostatically"
             ]
         },
-        "word_class": "noun",
-        "translation": "\u9ad4\u5167\u5e73\u8861",
+        "class": "noun",
+        "translation": "體內平衡",
         "definition": "The maintenance of a stable internal environment despite external changes."
     }
 ]

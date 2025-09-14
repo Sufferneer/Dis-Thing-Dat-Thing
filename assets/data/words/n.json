@@ -4,10 +4,11 @@
         "plural": "nitrates",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u785d\u9178\u9e7d",
-        "definition": "Mineral ion absorbed by roots for amino acid/protein synthesis."
+        "definition": "A mineral ion absorbed by roots for amino acid/protein synthesis."
     }
 ]

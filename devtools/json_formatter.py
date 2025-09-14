@@ -20,14 +20,14 @@ if input('You will accept that all word files will be overridden. (Y/N): ').lowe
 				{
 					"word": entry[0],
 					"plural": entry[1],
-					"word_class": entry[2],
+					"class": entry[2],
 					"translation": entry[3],
 					"definition": entry[4]
 				}
 			)
 		else:
 			curLetterPointer += (ord(entry[0][0].lower()) - ord(curLetter))
-			overrideFile = open(f'assets/words/{curLetter}.json', 'w')
+			overrideFile = open(f'assets/data/words/{curLetter}.json', 'w')
 			overrideFile.write(json.dumps(leEntryList, ensure_ascii=False, indent=4))
 			print(leEntryList)
 			curLetter = ascii[curLetterPointer]
@@ -36,11 +36,11 @@ if input('You will accept that all word files will be overridden. (Y/N): ').lowe
 				{
 					"word": entry[0],
 					"plural": entry[1],
-					"word_class": entry[2],
+					"class": entry[2],
 					"translation": entry[3],
 					"definition": entry[4]
 				}
 			)
-	overrideFile = open(f'assets/words/{curLetter}.json', 'w')
+	overrideFile = open(f'assets/data/words/{curLetter}.json', 'w')
 	overrideFile.write(json.dumps(leEntryList, ensure_ascii=False, indent = 4))
 	print('All files overridden. Good luck lol')

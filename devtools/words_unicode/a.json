@@ -4,7 +4,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "aerobically respire",
@@ -14,7 +14,7 @@
                 "aerobically respired"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "需氧呼吸",
         "definition": "The breakdown of glucose using oxygen to produce ATP, CO₂, and water."
     },
@@ -26,13 +26,13 @@
             "alveoli"
         ],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": [
                 "alveolar"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "肺泡",
         "definition": "Tiny cavities in lungs where O₂ and CO₂ exchange occurs."
     },
@@ -41,9 +41,9 @@
         "plural": "alleles",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "等位基因",
         "definition": "Different versions of the same gene (e.g., dominant vs. recessive)."
     },
@@ -52,7 +52,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "anaerobically respire",
@@ -62,7 +62,7 @@
                 "anaerobically respired"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "厭氧呼吸",
         "definition": "The energy production without oxygen, producing lactic acid (animals) or ethanol (yeast)."
     },
@@ -71,9 +71,9 @@
         "plural": "antibodies",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "抗體",
         "definition": "A protein produced by the immune system to neutralize pathogens."
     },
@@ -82,7 +82,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "asexually reproduce",
@@ -92,7 +92,7 @@
                 "asexually reproduced"
             ]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "無性生殖",
         "definition": "Reproduction without gametes (e.g., mitosis, binary fission)."
     },
@@ -101,7 +101,7 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": [
                 "assimilate",
@@ -111,7 +111,7 @@
                 "assimilated"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "同化作用",
         "definition": "Incorporation of absorbed nutrients into body tissues."
     },
@@ -120,9 +120,9 @@
         "plural": "",
         "redirects": [],
         "full": "adenosine triphosphate",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "ATP",
         "definition": "Product of respiration that provides energy in living cells."
     }

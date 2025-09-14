@@ -4,11 +4,11 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb, dispersal": ["disperse", "disperses", "dispersing", "dispersed", "dispersed"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "種子傳播",
         "definition": "Movement of seeds away from parent plant (e.g., wind, animals)."
     },
@@ -17,11 +17,11 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": ["self pollinate", "self pollinates", "self pollinating", "self pollinated", "self pollinated"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "自花傳粉",
         "definition": "Pollen transfers to stigma of the same flower/plant."
     },
@@ -30,11 +30,11 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": ["sexually reproduce", "sexually reproduces", "sexually reproducing", "sexually reproduced", "sexually reproduced"]
         },
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "有性生殖",
         "definition": "Reproduction involving fusion of male and female gametes."
     },
@@ -43,11 +43,11 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": ["spermous"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "精子",
         "definition": "Male gamete, motile and small, produced in testes."
     },
@@ -56,9 +56,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun phrase",
+        "class": "noun phrase",
         "translation": "海綿組織",
         "definition": "Leaf tissue with air spaces for gas diffusion in photosynthesis."
     },
@@ -67,9 +67,9 @@
         "plural": "stamens",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "雄蕊",
         "definition": "Male reproductive organ (anther + filament)."
     },
@@ -78,9 +78,9 @@
         "plural": "stomata",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "氣孔",
         "definition": "Tiny leaf openings allowing gas exchange (CO₂ in, O₂ out)."
     },
@@ -89,11 +89,11 @@
         "plural": "successions",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": ["succeed", "succeeds", "succeeding", "succeeded", "succeeded"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "演替",
         "definition": "The gradual change in an ecosystem's species composition over time."
     }

@@ -6,7 +6,7 @@ Rules:
 - If the desired keyword is an adjective, use its noun form.
 - All words uses their British spelling by default
 - Should the British spelling be different to the American spelling,
-    It should be supplemented in the "alt_spellings" array.
+    It should be supplemented in the "word_alt" array.
 - Translations should be in Traditional Chinese.
 - All Chinese characters should use the commonly used writing forms.
 (e.g. 睾 should be 睪)
@@ -21,11 +21,11 @@ the keyword's plural form is the same as the singular one.
 "full": String.
 "redirects": Array<String>. Lists of words that shows the keyword's default wording when searched.
 Useful for synonyms. Leave empty if no synonyms exist.
-"alt_spellings": Array<String>. List of acceptable spellings in the DSE exam.
+"word_alt": Array<String>. List of acceptable spellings in the DSE exam.
 Leave empty if none exists.
 "forms": Dictionary<Array<String>>. The keyword's forms in different parts of speech.
 Leave empty if none is commonly used by major publishing documents.
-"word_class": The part of speech of the keyword.
+"class": The part of speech of the keyword.
 "definition": String. The definition of the keyword.
 "translation": String. The Chinese translation of the keyword.
 Make the same as "word" if Chinese translation is the same or does not exist.

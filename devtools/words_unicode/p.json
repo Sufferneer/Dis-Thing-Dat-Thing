@@ -4,11 +4,11 @@
         "plural": "pathogens",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": ["pathogenic"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "病原體",
         "definition": "A disease-causing microorganism (e.g., bacteria, viruses, fungi)."
     },
@@ -17,11 +17,11 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": ["peristaltic"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "蠕動",
         "definition": "Wave-like muscle contractions moving food through the digestive tract."
     },
@@ -30,9 +30,9 @@
         "plural": "petals",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "花瓣",
         "definition": "Colorful flower part attracting pollinators."
     },
@@ -41,9 +41,9 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "韌皮部",
         "definition": "Vascular tissue transporting sugars (e.g., sucrose) from leaves to other parts."
     },
@@ -52,11 +52,11 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": ["photosynthesize", "photosynthesizes", "photosynthesizing", "photosynthesized", "photosynthesized"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "光合作用",
         "definition": "The process by which green plants use sunlight to synthesize nutrients from CO₂ and water."
     },
@@ -65,11 +65,11 @@
         "plural": "placentas",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "adjective": ["placental"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "胎盤",
         "definition": "Organ nourishing fetus via umbilical cord; exchanges nutrients/wastes."
     },
@@ -78,11 +78,11 @@
         "plural": "pollen grains",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb, pollen": ["pollinate", "pollinates", "pollination", "pollinated", "pollinated"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "花粉粒",
         "definition": "Grains that carries male gamete produced by plants."
     },
@@ -91,12 +91,12 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
         "forms": {
             "verb": ["pollinate", "pollinates", "pollination", "pollinated", "pollinated"],
             "noun, product": ["pollen"]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "傳粉",
         "definition": "The transfer of pollen from anther to stigma, enabling fertilization."
     }

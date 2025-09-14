@@ -4,7 +4,8 @@
         "plural": "vaccinations",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "vaccinate",
@@ -17,8 +18,8 @@
                 "vaccine"
             ]
         },
-        "word_class": "noun",
-        "translation": "\u75ab\u82d7\u63a5\u7a2e",
+        "class": "noun",
+        "translation": "疫苗接種",
         "definition": "The administration of a vaccine to stimulate immunity against a disease."
     },
     {
@@ -26,7 +27,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "verb": [
                 "ventilate",
@@ -36,29 +38,31 @@
                 "ventilated"
             ]
         },
-        "word_class": "noun",
-        "translation": "\u901a\u6c23",
-        "definition": "Mechanical process of breathing (inspiration + expiration)."
+        "class": "noun",
+        "translation": "通氣",
+        "definition": "The mechanical process of breathing (inspiration + expiration)."
     },
     {
         "word": "villus",
         "plural": "villi",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
-        "translation": "\u7d68\u6bdb",
-        "definition": "Finger-like projections in small intestine increasing absorption area."
+        "class": "noun",
+        "translation": "絨毛",
+        "definition": "The finger-like projections in small intestine increasing absorption area."
     },
     {
         "word": "Vivien",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "easter egg",
+        "class": "easter egg",
         "translation": "I have no comments.",
         "definition": "An ICT teacher and a serial kidnapper of Usagi plushies."
     }

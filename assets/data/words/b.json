@@ -4,18 +4,20 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {},
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u81bd\u6c41",
-        "definition": "Liver secretion emulsifying fats for facilitating lipid digestion (stored in gallbladder)."
+        "definition": "A liver secretion emulsifying fats for facilitating lipid digestion (stored in gallbladder)."
     },
     {
         "word": "biodiversity",
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "biodiverse"
@@ -24,7 +26,7 @@
                 "biodiversely"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "\u751f\u7269\u591a\u6a23\u6027",
         "definition": "The variety of life in an ecosystem, including species and genetic diversity."
     },
@@ -33,7 +35,8 @@
         "plural": "",
         "redirects": [],
         "full": "",
-        "alt_spellings": [],
+        "word_alt": "",
+        "plural_alt": "",
         "forms": {
             "adjective": [
                 "biological"
@@ -42,7 +45,7 @@
                 "biologically"
             ]
         },
-        "word_class": "noun",
+        "class": "noun",
         "translation": "生物學",
         "definition": "The study of all living organisms and their functions."
     }
