@@ -106,7 +106,9 @@
     {
         "word": "pollen grain",
         "plural": "pollen grains",
-        "redirects": ["pollen"],
+        "redirects": [
+            "pollen"
+        ],
         "full": "",
         "word_alt": "",
         "plural_alt": "",

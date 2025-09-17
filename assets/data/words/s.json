@@ -1,25 +1,5 @@
 [
     {
-        "word": "seed dispersal",
-        "plural": "",
-        "redirects": [],
-        "full": "",
-        "word_alt": "",
-        "plural_alt": "",
-        "forms": {
-            "verb, dispersal": [
-                "disperse",
-                "disperses",
-                "dispersing",
-                "dispersed",
-                "dispersed"
-            ]
-        },
-        "class": "noun",
-        "translation": "種子傳播",
-        "definition": "The movement of seeds away from parent plant (e.g., wind, animals)."
-    },
-    {
         "word": "self-pollination",
         "plural": "",
         "redirects": [],
@@ -113,25 +93,5 @@
         "class": "noun",
         "translation": "氣孔",
         "definition": "The tiny leaf openings allowing gas exchange (CO₂ in, O₂ out)."
-    },
-    {
-        "word": "succession",
-        "plural": "successions",
-        "redirects": [],
-        "full": "",
-        "word_alt": "",
-        "plural_alt": "",
-        "forms": {
-            "verb": [
-                "succeed",
-                "succeeds",
-                "succeeding",
-                "succeeded",
-                "succeeded"
-            ]
-        },
-        "class": "noun",
-        "translation": "演替",
-        "definition": "The gradual change in an ecosystem's species composition over time."
     }
 ]
