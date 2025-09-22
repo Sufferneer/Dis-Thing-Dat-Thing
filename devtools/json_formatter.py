@@ -4,7 +4,7 @@ if input('You will accept that all word files will be overridden. (Y/N): ').lowe
 	def myFunc(e):
 		return e[0].lower()
 	f = open('word.csv', 'r')
-	content = f.read().split('\n')
+	content = f.read().split(',"')
 	for i in range(1, len(content)):
 		content[i] = content[i].split(' ')
 		content[i][2] = content[i][2].lower()
@@ -18,11 +18,11 @@ if input('You will accept that all word files will be overridden. (Y/N): ').lowe
 		if entry[0][0].lower() == curLetter:
 			leEntryList.append(
 				{
-					"word": entry[0],
-					"plural": entry[1],
-					"class": entry[2],
-					"translation": entry[3],
-					"definition": entry[4]
+					"word": entry[0].replace('"', ''),
+					"plural": entry[1].replace('"', ''),
+					"class": entry[2].replace('"', ''),
+					"translation": entry[3].replace('"', ''),
+					"definition": entry[4].replace('"', '')
 				}
 			)
 		else:
@@ -34,11 +34,11 @@ if input('You will accept that all word files will be overridden. (Y/N): ').lowe
 			leEntryList = []
 			leEntryList.append(
 				{
-					"word": entry[0],
-					"plural": entry[1],
-					"class": entry[2],
-					"translation": entry[3],
-					"definition": entry[4]
+					"word": entry[0].replace('"', ''),
+					"plural": entry[1].replace('"', ''),
+					"class": entry[2].replace('"', ''),
+					"translation": entry[3].replace('"', ''),
+					"definition": entry[4].replace('"', '')
 				}
 			)
 	overrideFile = open(f'assets/data/words/{curLetter}.json', 'w')

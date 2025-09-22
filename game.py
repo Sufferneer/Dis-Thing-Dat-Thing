@@ -1341,7 +1341,7 @@ class QuizState(SuffState):
 		self.lives = 3
 		self.maxLives = 4
 		self.timePenalty = 0.25
-		self.scorePenalty = 1
+		self.scorePenalty = 0
 		if curSave.fetch_options('quiz_easy_mode'):
 			self.lives = 4
 			self.maxLives = 6
