@@ -1400,8 +1400,8 @@ class QuizState(SuffState):
 			red = Dust(randint(0, SCREENSIZE[0]), randint(0, SCREENSIZE[1]))
 			self.dust.append(red)
 		for i in range(1, 9):
-			red = SuffSprite(0, SCREENSIZE[1] - SCREENSIZE[1] / 3 / 8 * i)
-			red.rect = pygame.draw.rect(red.surface, (255, 0, 0), (0, 0, SCREENSIZE[0], SCREENSIZE[1] / 3 / 8 * i))
+			red = SuffSprite(0, SCREENSIZE[1] - SCREENSIZE[1] / 3 / 4 * i)
+			red.rect = pygame.draw.rect(red.surface, (255, 0, 0), (0, 0, SCREENSIZE[0], SCREENSIZE[1] / 3 / 4 * i))
 			red.surface.set_alpha(32)
 			self.reds.append(red)
 		self.flash = SuffSprite(0, 0)
@@ -1524,11 +1524,11 @@ class QuizState(SuffState):
 						self.just_die()
 						return
 					self.countdown = False
-		dialogueBox.draw()
 		for i in range(len(self.reds)):
-			self.reds[i].y = SCREENSIZE[1] - pow(sin(self.curBeat / 4 * pi + pi / 4), 2) * SCREENSIZE[1] / 3 / 8 * i
+			self.reds[i].y = SCREENSIZE[1] - pow(sin(self.curBeat / 4 * pi + pi / 4), 2) * SCREENSIZE[1] / 3 / 4 * i
 			# Makes red overlay fluctuate with rhythm
 			self.reds[i].draw()
+		dialogueBox.draw()
 		for heart in self.hearts:
 			leIndex = self.hearts.index(heart)
 			if self.allowInput:
