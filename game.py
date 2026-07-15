@@ -1,7 +1,6 @@
 # Dis Thing Dat Thing with CCC
-# Nick Tsang, 2025
-# St Joseph's Anglo-Chinese School
-
+# Nick T. (Sufferneer), 2025
+import os.path
 # ! DISCLAIMER
 # ! In many instances of the code, instances of someone in the name of 'Suff' can be found.
 # ! Before you scream plagiarism, please note that 'Suff' is a pseudonym.
@@ -35,7 +34,12 @@ if __name__ == '__main__':
 def get_asset_path(path):
 	# Simple function that returns the relative path of the assets.
 	# I just don't want to type that a hundred times every time I want to get assets.
-	return f'assets/{path}'
+	basePath = ''
+	try:
+		basePath = sys._MEIPASS
+	except:
+		basePath = os.path.abspath('.')
+	return os.path.join(basePath, f'assets/{path}')
 def suff_lerp(a, b, t, e = 1):
 	# This function interpolates a numeric value to another numeric value based on the "percentage" given.
 	# e = exponent of the function, so the interp won't be linear.
@@ -1751,7 +1755,7 @@ class CreditsState(SuffState):
 	def post_load(self):
 		CREDITS = [ # Credits are hard-coded to ensure no one maliciously changes anything
 			["PROGRAMMING", "default", 96], # Text, Font, Font Size
-			["Nick Tsang", "default", 48],
+			["Nick T. (Sufferneer)", "default", 48],
 			["", "default", 32],
 			["DICTIONARY", "default", 96],
 			["Definitions (Most) - New Senior Secondary Mastering Biology (Third Edition) - Oxford University Press", "default", 32],
@@ -1761,18 +1765,18 @@ class CreditsState(SuffState):
 			["", "default", 32],
 			["GRAPHICS", "default", 96],
 			["Credits Button Background - Ministry of Health (Brazil)", "default", 32],
-			["Nick Tsang", "default", 48],
+			["Nick T. (Sufferneer)", "default", 48],
 			["All sprites, drawings and art are either self-made or used under the Creative Commons Attribution 4.0 International License. No copyright infringement is intentionally made.",
 			 "default", 16],
 			["", "default", 32],
 			["MUSIC", "default", 96],
-			["That's CCC! - Nick Tsang", "default", 48],
+			["That's CCC! - Nick T. (Sufferneer)", "default", 48],
 			["Artistic Expression - Kawai Sprite", "default", 48],
 			["Megalo Strikes Back - Toby Fox", "default", 48],
 			["All music is either self-made or used under the Creative Commons Attribution-ShareAlike 4.0 License. No copyright infringement is intentionally made.", "default", 16],
 			["", "default", 32],
 			["TYPEFACES", "default", 96],
-			["Suffirat Mono - Nick Tsang", "default", 48],
+			["Suffirat Mono - Nick T. (Sufferneer)", "default", 48],
 			["JasonHandwriting1 清松手寫體1 - Jason Yu Ching Sung 游清松", "zh", 32],
 			["All typefaces are either self-made or used under the SIL Open Font License.", "default", 16],
 			["", "default", 32],
@@ -1781,7 +1785,7 @@ class CreditsState(SuffState):
 			["Miss Chan", "default", 32],
 			["My Biology Teacher", "default", 32],
 			["Jerry", "default", 32],
-			["Dis Thing Dat Thing is made by Nick Tsang.", "default", 16],
+			["Dis Thing Dat Thing is made by Nick T. (Sufferneer).", "default", 16],
 			["All characters and other entities appearing in this work are fictitious. Any resemblance to real persons, dead or alive, or other real-life entities, past or present, is purely coincidental.", "default", 16],
 			["AI Disclaimer: Although AI assistance is used for data organization, this program does NOT contain any media created by generative artificial intelligence.", "default", 16]
 		]

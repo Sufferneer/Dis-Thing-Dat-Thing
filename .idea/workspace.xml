@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Final commit (trust)">
+    <list default="true" id="8e63e0b5-faa6-4c0e-9381-7f4f7e1c0967" name="Changes" comment="[update] Final commit (trust 4)">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/json_formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/json_formatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devtools/word.csv" beforeDir="false" afterPath="$PROJECT_DIR$/devtools/word.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/words/m.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/words/m.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/quiz/fate/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cx_setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +75,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA/devtools&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sufferneer/PycharmProjects/SJACS_SBA&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
@@ -83,6 +92,110 @@
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\assets" />
       <recent name="C:\Users\Sufferneer\PycharmProjects\SJACS_SBA\devtools\aswords" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Dis-Thing-Dat-Thing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Dis-Thing-Dat-Thing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="Dis-Thing-Dat-Thing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="Dis-Thing-Dat-Thing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="Dis-Thing-Dat-Thing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="Dis-Thing-Dat-Thing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -275,7 +388,31 @@
       <option name="project" value="LOCAL" />
       <updated>1758121019050</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="[update] Final commit (trust)">
+      <option name="closed" value="true" />
+      <created>1758531385937</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1758531385937</updated>
+    </task>
+    <task id="LOCAL-00024" summary="[update] Final commit (trust 3)">
+      <option name="closed" value="true" />
+      <created>1758531838339</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1758531838339</updated>
+    </task>
+    <task id="LOCAL-00025" summary="[update] Final commit (trust 4)">
+      <option name="closed" value="true" />
+      <created>1758532002225</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1758532002225</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,7 +454,9 @@
     <MESSAGE value="[update] Probably the final build" />
     <MESSAGE value="[update] Added art source files" />
     <MESSAGE value="[update] Final commit (trust)" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] Final commit (trust)" />
+    <MESSAGE value="[update] Final commit (trust 3)" />
+    <MESSAGE value="[update] Final commit (trust 4)" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] Final commit (trust 4)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

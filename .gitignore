@@ -1,6 +1,8 @@
-.venv
-.idea
+.venv/
+.idea/
 save.json
 cx_setup.py
 game.ico
 game.spec
+build/
+dist/

@@ -17,7 +17,7 @@
             ]
         },
         "class": "noun",
-        "translation": "\u6e1b\u6578\u5206\u88c2",
+        "translation": "減數分裂",
         "definition": "A type of cell division producing four genetically diverse gametes with half the chromosome number."
     },
     {
@@ -28,7 +28,9 @@
         "word_alt": "",
         "plural_alt": "",
         "forms": {
-            "adverb, menstrual": ["menstrually"],
+            "adverb, menstrual": [
+                "menstrually"
+            ],
             "verb, menstrual": [
                 "menstruate",
                 "menstruates",
@@ -38,7 +40,7 @@
             ]
         },
         "class": "noun phrase",
-        "translation": "\u6708\u7d93\u9031\u671f",
+        "translation": "月經週期",
         "definition": "The monthly cycle preparing uterus for pregnancy (avg. 28 days)."
     },
     {
@@ -49,8 +51,12 @@
         "word_alt": "",
         "plural_alt": "",
         "forms": {
-            "adjective": ["menstrual"],
-            "adverb": ["menstrually"],
+            "adjective": [
+                "menstrual"
+            ],
+            "adverb": [
+                "menstrually"
+            ],
             "verb": [
                 "menstruate",
                 "menstruates",
@@ -60,7 +66,7 @@
             ]
         },
         "class": "noun",
-        "translation": "\u6708\u7d93",
+        "translation": "月經",
         "definition": "The shedding of uterine lining if fertilization does not occur."
     },
     {
@@ -81,7 +87,7 @@
             ]
         },
         "class": "noun",
-        "translation": "\u6709\u7d72\u5206\u88c2",
+        "translation": "有絲分裂",
         "definition": "A type of cell division producing two genetically identical daughter cells for growth and repair."
     },
     {
@@ -104,7 +110,7 @@
             ]
         },
         "class": "noun",
-        "translation": "\u7a81\u8b8a",
+        "translation": "突變",
         "definition": "A sudden change in DNA sequence, which may affect protein function."
     }
 ]
